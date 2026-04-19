@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThinkRoot Young Leaders — Inner Science Programs for Children</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a3a1a;
+    --moss:   #2d5a2d;
+    --sage:   #4a7c4a;
+    --fern:   #6aaa6a;
+    --mint:   #a8d5a8;
+    --mist:   #e8f4e8;
+    --cream:  #faf8f2;
+    --gold:   #c8963c;
+    --gold-light: #f0d898;
+    --gold-bg:    #fdf6e3;
+    --bark:   #3d2b1a;
+    --text:   #1e2820;
+    --text-mid: #3d4f3d;
+    --text-light: #6b7f6b;
+    --white:  #ffffff;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top:0; z-index:100;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(74,124,74,0.15);
+    padding: 0 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    transition: box-shadow 0.2s;
+  }
+  nav.scrolled { box-shadow: 0 2px 16px rgba(26,58,26,0.08); }
+  .nav-logo {
+    font-family:'Playfair Display',serif;
+    font-size: 1.08rem; font-weight:600;
+    color: var(--forest); white-space:nowrap;
+    text-decoration:none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links {
+    display:flex; gap:1.5rem; align-items:center;
+  }
+  .nav-links a {
+    font-family:'DM Sans',sans-serif;
+    font-size:0.72rem; font-weight:500;
+    color: var(--text-mid);
+    text-decoration:none;
+    letter-spacing:0.07em; text-transform:uppercase;
+    white-space:nowrap;
+    padding-bottom:2px;
+    border-bottom:1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-links a:hover { color:var(--forest); border-bottom-color:var(--sage); }
+  .nav-cta {
+    background:var(--forest); color:var(--cream);
+    font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:500;
+    padding:0.5rem 1.1rem; border-radius:4px;
+    text-decoration:none; white-space:nowrap;
+    letter-spacing:0.03em;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background:var(--moss); }
+  @media(max-width:900px) { .nav-links { display:none; } }
+  @media(max-width:600px) { nav { padding:0 1.2rem; } }
+
+  /* ── HERO ── */
+  .hero {
+    background:var(--forest);
+    padding:5rem 3rem 4rem;
+    position:relative; overflow:hidden;
+    display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;
+    min-height:520px;
+  }
+  .hero::before {
+    content:''; position:absolute;
+    right:-120px; top:-120px;
+    width:500px; height:500px;
+    border-radius:50%;
+    border:1px solid rgba(168,213,168,0.08);
+    pointer-events:none;
+  }
+  .hero::after {
+    content:''; position:absolute;
+    right:-40px; top:-40px;
+    width:340px; height:340px;
+    border-radius:50%;
+    border:1px solid rgba(200,150,60,0.08);
+    pointer-events:none;
+  }
+  .hero-text { position:relative; z-index:1; }
+  .hero-eyebrow {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(168,213,168,0.1); border:1px solid rgba(168,213,168,0.2);
+    border-radius:99px; padding:5px 16px;
+    font-size:0.68rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--mint); margin-bottom:1.4rem;
+  }
+  .hero-dot { width:5px; height:5px; border-radius:50%; background:var(--gold); }
+  .hero-h1 {
+    font-family:'Playfair Display',serif;
+    font-size:3.4rem; font-weight:600;
+    color:var(--white); line-height:1.07; letter-spacing:-0.02em;
+    margin-bottom:0.5rem;
+  }
+  .hero-h1 em { color:var(--gold-light); font-style:italic; }
+  .hero-tagline {
+    font-size:1rem; color:var(--mint); line-height:1.6;
+    margin-bottom:1.6rem; opacity:0.9;
+  }
+  .hero-meta {
+    display:flex; flex-wrap:wrap; gap:8px; margin-bottom:2rem;
+  }
+  .pill {
+    font-size:0.72rem; font-weight:500;
+    padding:5px 14px; border-radius:99px;
+    letter-spacing:0.02em;
+  }
+  .pill-forest { background:var(--moss); color:var(--mint); }
+  .pill-mist   { background:rgba(168,213,168,0.12); color:var(--mint); border:1px solid rgba(168,213,168,0.25); }
+  .pill-gold   { background:rgba(200,150,60,0.15); color:var(--gold-light); border:1px solid rgba(200,150,60,0.3); }
+  .hero-buttons { display:flex; flex-wrap:wrap; gap:1rem; }
+  .btn-primary {
+    background:var(--gold); color:var(--bark);
+    font-family:'DM Sans',sans-serif; font-size:0.92rem; font-weight:500;
+    padding:0.75rem 1.6rem; border-radius:4px;
+    text-decoration:none; letter-spacing:0.01em;
+    transition:background 0.2s;
+  }
+  .btn-primary:hover { background:#d4a44a; }
+  .btn-ghost {
+    background:transparent; color:var(--mint);
+    font-family:'DM Sans',sans-serif; font-size:0.92rem; font-weight:500;
+    padding:0.75rem 1.6rem; border-radius:4px;
+    border:1px solid rgba(168,213,168,0.35);
+    text-decoration:none; letter-spacing:0.01em;
+    transition:border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color:var(--mint); color:var(--white); }
+
+  /* Hero program cards */
+  .hero-cards {
+    display:grid; grid-template-columns:1fr 1fr; gap:1rem;
+    position:relative; z-index:1;
+  }
+  .hero-card {
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(168,213,168,0.2);
+    border-radius:8px; padding:1.4rem 1.2rem;
+    text-decoration:none;
+    transition:background 0.2s, border-color 0.2s;
+    display:block;
+  }
+  .hero-card:hover {
+    background:rgba(255,255,255,0.09);
+    border-color:rgba(168,213,168,0.4);
+  }
+  .hero-card-label {
+    font-size:0.62rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:0.5rem;
+  }
+  .hero-card-title {
+    font-family:'Playfair Display',serif;
+    font-size:1.05rem; color:var(--white); font-weight:600;
+    line-height:1.3; margin-bottom:0.5rem;
+  }
+  .hero-card-sub {
+    font-size:0.78rem; color:var(--mint); opacity:0.8; line-height:1.5;
+  }
+  .hero-card-coming {
+    background:rgba(200,150,60,0.1);
+    border:1px solid rgba(200,150,60,0.2);
+    border-radius:8px; padding:1.4rem 1.2rem;
+    grid-column:span 2;
+  }
+  .coming-badge {
+    display:inline-block;
+    font-size:0.6rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--gold); background:rgba(200,150,60,0.15);
+    border:1px solid rgba(200,150,60,0.3);
+    border-radius:99px; padding:2px 10px; margin-bottom:0.5rem;
+  }
+
+  /* Tree SVG area */
+  .hero-visual {
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    position:relative; z-index:1;
+  }
+  .hero-tree-svg { opacity:0.85; }
+  .hero-wordmark {
+    font-family:'Playfair Display',serif;
+    font-size:1rem; font-weight:600; color:var(--gold-light);
+    letter-spacing:0.08em; margin-top:1rem; text-align:center;
+  }
+  .hero-wordmark span { color:var(--mint); }
+
+  @media(max-width:900px) {
+    .hero { grid-template-columns:1fr; padding:3.5rem 1.5rem 3rem; min-height:auto; }
+    .hero-visual { display:none; }
+    .hero-h1 { font-size:2.4rem; }
+    .hero-cards { grid-template-columns:1fr; }
+    .hero-card-coming { grid-column:span 1; }
+  }
+
+  /* ── GOLD STRIP ── */
+  .gold-strip {
+    background:var(--forest);
+    border-top:3px solid var(--gold);
+    padding:2.5rem 3rem;
+    text-align:center;
+  }
+  .gold-strip p {
+    font-family:'Playfair Display',serif;
+    font-size:1.35rem; font-style:italic;
+    color:var(--gold-light); line-height:1.6;
+    max-width:700px; margin:0 auto;
+  }
+  @media(max-width:600px) {
+    .gold-strip { padding:2rem 1.5rem; }
+    .gold-strip p { font-size:1.1rem; }
+  }
+
+  /* ── SECTIONS ── */
+  .section-wrap { padding:5rem 3rem; max-width:1100px; margin:0 auto; }
+  .section-label {
+    display:flex; align-items:center; gap:10px;
+    font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--sage); margin-bottom:1rem;
+  }
+  .section-label::before { content:'—'; color:var(--gold); }
+  .section-h2 {
+    font-family:'Playfair Display',serif;
+    font-size:2.4rem; font-weight:600; color:var(--forest);
+    line-height:1.15; letter-spacing:-0.01em;
+    margin-bottom:1rem;
+  }
+  .section-sub {
+    font-size:1rem; color:var(--text-mid); line-height:1.7;
+    max-width:640px; margin-bottom:2rem;
+  }
+  .section-body { font-size:0.95rem; color:var(--text-mid); line-height:1.75; }
+
+  /* ── THE GAP ── */
+  .gap-section {
+    background:var(--forest);
+    padding:5rem 3rem;
+  }
+  .gap-inner { max-width:800px; margin:0 auto; text-align:center; }
+  .gap-label {
+    font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--fern); margin-bottom:1.2rem;
+  }
+  .gap-h2 {
+    font-family:'Playfair Display',serif;
+    font-size:2rem; color:var(--white);
+    font-weight:600; line-height:1.2;
+    margin-bottom:1.5rem;
+  }
+  .gap-body {
+    font-size:0.97rem; color:var(--mint); line-height:1.8;
+    margin-bottom:1rem;
+  }
+  .gap-bullets {
+    text-align:left; max-width:560px; margin:1.5rem auto 0;
+    display:flex; flex-direction:column; gap:0.75rem;
+  }
+  .gap-bullet {
+    display:flex; gap:0.75rem; align-items:flex-start;
+    font-size:0.92rem; color:var(--mint); line-height:1.6;
+  }
+  .gap-bullet::before {
+    content:'✦'; color:var(--gold); font-size:0.6rem;
+    flex-shrink:0; margin-top:5px;
+  }
+  @media(max-width:600px) {
+    .gap-section { padding:3.5rem 1.5rem; }
+    .gap-h2 { font-size:1.55rem; }
+  }
+
+  /* ── PROGRAM SECTIONS ── */
+  .program-section {
+    padding:5rem 3rem;
+    border-bottom:1px solid rgba(74,124,74,0.12);
+  }
+  .program-section:nth-child(even) { background:var(--mist); }
+  .program-inner { max-width:1100px; margin:0 auto; }
+  .program-header { margin-bottom:2.5rem; }
+  .program-label {
+    font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--sage); margin-bottom:0.6rem;
+    display:flex; align-items:center; gap:8px;
+  }
+  .program-label::before { content:'—'; color:var(--gold); }
+  .program-h2 {
+    font-family:'Playfair Display',serif;
+    font-size:2.3rem; font-weight:600; color:var(--forest);
+    line-height:1.15; margin-bottom:0.5rem;
+  }
+  .program-subhead {
+    font-size:1rem; color:var(--text-mid); line-height:1.6;
+    margin-bottom:1rem;
+  }
+  .program-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:1.5rem; }
+  .program-body {
+    font-size:0.95rem; color:var(--text-mid); line-height:1.75;
+    max-width:680px; margin-bottom:2.5rem;
+  }
+
+  /* Session cards */
+  .sessions-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:1rem;
+    margin-bottom:2.5rem;
+  }
+  .session-card {
+    background:var(--white);
+    border:1px solid rgba(74,124,74,0.15);
+    border-radius:8px; padding:1.4rem 1.4rem;
+    display:flex; gap:1rem;
+  }
+  .session-num {
+    font-family:'Playfair Display',serif;
+    font-size:1.8rem; font-weight:600; color:var(--mist);
+    line-height:1; flex-shrink:0; min-width:2rem;
+  }
+  .session-content {}
+  .session-title {
+    font-family:'DM Sans',sans-serif; font-size:0.88rem;
+    font-weight:600; color:var(--forest); margin-bottom:0.3rem;
+  }
+  .session-quote {
+    font-family:'Playfair Display',serif; font-style:italic;
+    font-size:0.82rem; color:var(--sage); line-height:1.5;
+  }
+  @media(max-width:700px) { .sessions-grid { grid-template-columns:1fr; } }
+
+  /* Takeaways */
+  .takeaways-label {
+    font-size:0.68rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--sage); margin-bottom:0.8rem;
+  }
+  .takeaways-list {
+    display:flex; flex-direction:column; gap:0.5rem; margin-bottom:2rem;
+  }
+  .takeaway-item {
+    display:flex; gap:0.75rem; align-items:flex-start;
+    font-size:0.9rem; color:var(--text-mid); line-height:1.5;
+  }
+  .takeaway-item::before {
+    content:'✓'; color:var(--sage); font-weight:600;
+    flex-shrink:0;
+  }
+
+  /* Why weekly box */
+  .why-box {
+    background:var(--forest);
+    border-radius:8px; padding:1.5rem 1.8rem;
+    margin-bottom:2rem; max-width:640px;
+  }
+  .why-box-label {
+    font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--fern); margin-bottom:0.5rem;
+  }
+  .why-box-text {
+    font-family:'Playfair Display',serif; font-style:italic;
+    font-size:0.9rem; color:var(--mint); line-height:1.65;
+  }
+
+  /* Program CTA */
+  .program-cta { margin-top:0.5rem; }
+
+  @media(max-width:600px) {
+    .program-section { padding:3.5rem 1.5rem; }
+    .program-h2 { font-size:1.7rem; }
+  }
+
+  /* ── SCIENCE ── */
+  .science-section {
+    background:var(--forest);
+    padding:5rem 3rem;
+  }
+  .science-inner { max-width:1000px; margin:0 auto; }
+  .science-label {
+    font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--fern); margin-bottom:1rem;
+    display:flex; align-items:center; gap:8px;
+  }
+  .science-label::before { content:'—'; color:var(--gold); }
+  .science-h2 {
+    font-family:'Playfair Display',serif;
+    font-size:2.2rem; color:var(--white); font-weight:600;
+    margin-bottom:0.5rem; line-height:1.2;
+  }
+  .science-sub {
+    font-size:0.95rem; color:var(--mint); opacity:0.85;
+    margin-bottom:2.5rem; max-width:580px; line-height:1.7;
+  }
+  .science-grid {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;
+  }
+  .science-card {
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(168,213,168,0.15);
+    border-radius:8px; padding:1.2rem 1.2rem;
+  }
+  .science-card-uni {
+    font-family:'Playfair Display',serif;
+    font-size:0.92rem; color:var(--gold-light); font-weight:600;
+    margin-bottom:0.35rem;
+  }
+  .science-card-topic {
+    font-size:0.78rem; color:var(--mint); opacity:0.8; line-height:1.5;
+  }
+  @media(max-width:700px) {
+    .science-grid { grid-template-columns:1fr 1fr; }
+    .science-section { padding:3.5rem 1.5rem; }
+  }
+  @media(max-width:480px) { .science-grid { grid-template-columns:1fr; } }
+
+  /* ── ABOUT ── */
+  .about-section {
+    padding:5rem 3rem;
+    background:var(--cream);
+    border-top:1px solid rgba(74,124,74,0.1);
+  }
+  .about-inner {
+    max-width:1000px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 2fr; gap:3rem; align-items:start;
+  }
+  .about-label {
+    font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--sage); margin-bottom:0.6rem;
+    display:flex; align-items:center; gap:8px;
+  }
+  .about-label::before { content:'—'; color:var(--gold); }
+  .about-name {
+    font-family:'Playfair Display',serif;
+    font-size:2rem; color:var(--forest); font-weight:600;
+    margin-bottom:0.3rem;
+  }
+  .about-title { font-size:0.85rem; color:var(--text-mid); line-height:1.5; }
+  .about-bio { font-size:0.95rem; color:var(--text-mid); line-height:1.8; }
+  @media(max-width:700px) {
+    .about-inner { grid-template-columns:1fr; gap:1.5rem; }
+    .about-section { padding:3.5rem 1.5rem; }
+  }
+
+  /* ── INTEREST LIST ── */
+  .interest-section {
+    background:var(--forest);
+    padding:5rem 3rem;
+  }
+  .interest-inner { max-width:680px; margin:0 auto; text-align:center; }
+  .interest-label {
+    font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--fern); margin-bottom:1rem;
+  }
+  .interest-h2 {
+    font-family:'Playfair Display',serif;
+    font-size:2.2rem; color:var(--white); font-weight:600;
+    line-height:1.2; margin-bottom:0.8rem;
+  }
+  .interest-sub {
+    font-size:0.95rem; color:var(--mint); opacity:0.85;
+    line-height:1.7; margin-bottom:2.5rem;
+  }
+
+  /* Form */
+  .interest-form {
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(168,213,168,0.2);
+    border-radius:8px; padding:2rem 2.2rem;
+    text-align:left;
+  }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem; }
+  .form-field { margin-bottom:1rem; }
+  .form-label {
+    display:block; font-size:0.72rem; font-weight:500;
+    color:var(--fern); letter-spacing:0.07em; text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .form-input {
+    width:100%; padding:0.65rem 0.9rem;
+    border-radius:4px; border:1px solid rgba(168,213,168,0.3);
+    background:rgba(255,255,255,0.08); color:var(--cream);
+    font-family:'DM Sans',sans-serif; font-size:0.9rem;
+    outline:none; transition:border-color 0.2s;
+  }
+  .form-input:focus { border-color:rgba(168,213,168,0.6); }
+  .form-input::placeholder { color:rgba(168,213,168,0.4); }
+  select.form-input {
+    background:rgba(30,56,32,0.95);
+    cursor:pointer;
+  }
+  textarea.form-input { resize:vertical; }
+  .form-hint {
+    font-size:0.75rem; color:var(--fern); opacity:0.8;
+    margin-bottom:8px; line-height:1.4;
+  }
+
+  /* Checkbox/radio groups */
+  .check-group {
+    display:flex; flex-wrap:wrap; gap:8px; margin-top:4px;
+  }
+  .check-group.column { flex-direction:column; gap:10px; }
+  .check-label {
+    display:flex; align-items:center; gap:8px;
+    font-size:0.87rem; color:var(--mint); cursor:pointer; line-height:1.4;
+  }
+  .check-label input { accent-color:#6aaa6a; flex-shrink:0; }
+  .check-label-block {
+    display:flex; align-items:flex-start; gap:10px;
+    font-size:0.87rem; color:var(--mint); cursor:pointer; line-height:1.4;
+  }
+  .check-label-block input { accent-color:#6aaa6a; flex-shrink:0; margin-top:2px; }
+
+  .form-divider {
+    border:none; border-top:1px solid rgba(168,213,168,0.12);
+    margin:1.2rem 0;
+  }
+  .form-section-title {
+    font-size:0.68rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--fern); margin-bottom:0.6rem;
+  }
+
+  .form-submit {
+    width:100%; background:var(--gold); color:var(--bark);
+    border:none; padding:0.9rem;
+    border-radius:4px; font-family:'DM Sans',sans-serif;
+    font-size:1rem; font-weight:500; cursor:pointer;
+    letter-spacing:0.01em; transition:background 0.2s;
+    margin-top:0.5rem;
+  }
+  .form-submit:hover { background:#d4a44a; }
+
+  .form-confirm {
+    display:none; margin-top:1rem; text-align:center;
+    color:var(--mint); font-size:0.92rem; line-height:1.7;
+  }
+  .form-note {
+    font-size:0.78rem; color:var(--fern); opacity:0.75;
+    text-align:center; margin-top:1rem; line-height:1.5;
+  }
+
+  @media(max-width:600px) {
+    .form-row { grid-template-columns:1fr; }
+    .interest-section { padding:3.5rem 1.5rem; }
+    .interest-form { padding:1.5rem 1.2rem; }
+    .interest-h2 { font-size:1.7rem; }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background:var(--forest);
+    border-top:1px solid rgba(168,213,168,0.1);
+    padding:2.5rem 3rem;
+    text-align:center;
+  }
+  .footer-logo {
+    font-family:'Playfair Display',serif;
+    font-size:1.1rem; font-weight:600; color:var(--white);
+    margin-bottom:0.3rem;
+  }
+  .footer-logo span { color:var(--gold); }
+  .footer-tagline {
+    font-size:0.8rem; color:var(--mint); opacity:0.7;
+    margin-bottom:1rem; font-style:italic;
+  }
+  .footer-links {
+    display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;
+    margin-bottom:1.2rem;
+  }
+  .footer-links a {
+    font-size:0.8rem; color:var(--mint); opacity:0.75;
+    text-decoration:none; transition:opacity 0.2s;
+  }
+  .footer-links a:hover { opacity:1; }
+  .footer-copy {
+    font-size:0.72rem; color:var(--mint); opacity:0.45;
+    margin-bottom:0.5rem;
+  }
+  .footer-disclaimer {
+    font-size:0.7rem; color:var(--mint); opacity:0.4;
+    max-width:560px; margin:0 auto; line-height:1.6;
+  }
+  @media(max-width:600px) { footer { padding:2rem 1.5rem; } }
+
+  /* ── FADE IN ── */
+  .fade-up {
+    opacity:0; transform:translateY(18px);
+    transition:opacity 0.55s ease, transform 0.55s ease;
+  }
+  .fade-up.visible { opacity:1; transform:translateY(0); }
+  .delay-1 { transition-delay:0.05s; }
+  .delay-2 { transition-delay:0.12s; }
+  .delay-3 { transition-delay:0.2s; }
+  .delay-4 { transition-delay:0.28s; }
+  .delay-5 { transition-delay:0.36s; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">ThinkRoot <span>Young Leaders</span></a>
+  <div class="nav-links">
+    <a href="#resilience-lab-5day">5-Day</a>
+    <a href="#resilience-lab-6week">6-Week</a>
+    <a href="#about">About</a>
+    <a href="#interest-list">Interest List</a>
+  </div>
+  <a href="#interest-list" class="nav-cta">Join the interest list</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">
+      <span class="hero-dot"></span>
+      Inner Science for Children
+    </div>
+    <h1 class="hero-h1">Where great minds<br><em>take root.</em></h1>
+    <p class="hero-tagline">Inner science programs for children in Grades 2–8. Two programs — one foundation.</p>
+    <div class="hero-meta">
+      <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+      <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+      <span class="pill pill-mist">Small Groups</span>
+    </div>
+    <div class="hero-buttons">
+      <a href="#interest-list" class="btn-primary">Join the interest list →</a>
+      <a href="#resilience-lab-5day" class="btn-ghost">Explore programs</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <svg class="hero-tree-svg" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg" width="220" height="264">
+      <ellipse cx="100" cy="80" rx="60" ry="70" fill="#2d5a2d" opacity="0.7"/>
+      <ellipse cx="100" cy="60" rx="45" ry="55" fill="#3d7a3d" opacity="0.8"/>
+      <ellipse cx="100" cy="42" rx="32" ry="40" fill="#4a7c4a" opacity="0.9"/>
+      <rect x="92" y="145" width="16" height="55" rx="2" fill="#3d2b1a" opacity="0.8"/>
+      <ellipse cx="70" cy="100" rx="25" ry="28" fill="#2d5a2d" opacity="0.5"/>
+      <ellipse cx="130" cy="95" rx="28" ry="30" fill="#2d5a2d" opacity="0.5"/>
+      <line x1="100" y1="200" x2="60" y2="220" stroke="#3d2b1a" stroke-width="2.5" opacity="0.5"/>
+      <line x1="100" y1="200" x2="140" y2="220" stroke="#3d2b1a" stroke-width="2.5" opacity="0.5"/>
+      <line x1="100" y1="200" x2="100" y2="228" stroke="#3d2b1a" stroke-width="3" opacity="0.6"/>
+      <circle cx="88" cy="52" r="3" fill="#c8963c" opacity="0.9"/>
+      <circle cx="108" cy="38" r="2.5" fill="#c8963c" opacity="0.8"/>
+      <circle cx="100" cy="60" r="2" fill="#e8c078" opacity="0.7"/>
+      <circle cx="116" cy="55" r="2.5" fill="#c8963c" opacity="0.85"/>
+    </svg>
+    <div class="hero-wordmark">ThinkRoot <span>Young Leaders</span></div>
+    <div style="margin-top:2rem; display:flex; flex-direction:column; gap:0.8rem; width:100%;">
+      <a href="#resilience-lab-5day" class="hero-card">
+        <div class="hero-card-label">Program 1</div>
+        <div class="hero-card-title">Resilience Lab — 5-Day</div>
+        <div class="hero-card-sub">Five days · One hour a day · Mon–Fri<br>One complete resilience foundation.</div>
+      </a>
+      <a href="#resilience-lab-6week" class="hero-card">
+        <div class="hero-card-label">Program 2</div>
+        <div class="hero-card-title">Resilience Lab — 6-Week</div>
+        <div class="hero-card-sub">Once per week · One hour per session<br>Six weeks of spaced, deep learning.</div>
+      </a>
+      <div class="hero-card hero-card-coming">
+        <div class="coming-badge">Coming Soon</div>
+        <div class="hero-card-title" style="color:var(--gold-light);">Young Leaders</div>
+        <div class="hero-card-sub">Leadership and character development for the next generation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GOLD STRIP ── -->
+<div class="gold-strip">
+  <p>"Schools teach reading, writing, and arithmetic.<br>But who teaches kids how to manage their own mind?"</p>
+</div>
+
+<!-- ── THE GAP ── -->
+<section class="gap-section">
+  <div class="gap-inner">
+    <div class="gap-label">The Gap</div>
+    <h2 class="gap-h2">Your child is being taught everything except how to think.</h2>
+    <p class="gap-body">Every child carries a remarkable inner world — thoughts, emotions, self-beliefs — that shapes everything from their grades to their friendships to their confidence. Yet no one teaches them how it works.</p>
+    <div class="gap-bullets">
+      <div class="gap-bullet">Anxiety and self-doubt that no one has given them tools to address</div>
+      <div class="gap-bullet">No framework for handling tough situations — conflicts, pressure, big emotions</div>
+      <div class="gap-bullet">Freedom from overthinking and the negative loops that drain their energy</div>
+      <div class="gap-bullet">A growing sense that feelings are something they can work with — not just survive</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESILIENCE LAB 5-DAY ── -->
+<section class="program-section" id="resilience-lab-5day">
+  <div class="program-inner">
+    <div class="program-header">
+      <div class="program-label">Program 1 — Resilience Lab</div>
+      <h2 class="program-h2">Five days. One complete<br>resilience foundation.</h2>
+      <p class="program-subhead">One week. One hour a day. Monday through Friday.</p>
+      <div class="program-pills">
+        <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+        <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+        <span class="pill pill-mist">5 Days · 1 hr/day · Mon–Fri</span>
+        <span class="pill pill-gold">Small Groups</span>
+      </div>
+      <p class="program-body">Each session builds on the previous day — a complete arc from first noticing thoughts to actively transforming them. By Friday, your child has a working toolkit they can use any time.</p>
+    </div>
+
+    <div class="sessions-grid">
+      <div class="session-card">
+        <div class="session-num">01</div>
+        <div class="session-content">
+          <div class="session-title">Meet Your Brain</div>
+          <div class="session-quote">"You are not your thoughts. You are the one noticing them."</div>
+        </div>
+      </div>
+      <div class="session-card">
+        <div class="session-num">02</div>
+        <div class="session-content">
+          <div class="session-title">Thought Weather</div>
+          <div class="session-quote">"Thoughts come in two kinds — sunshine and storm. Both pass."</div>
+        </div>
+      </div>
+      <div class="session-card">
+        <div class="session-num">03</div>
+        <div class="session-content">
+          <div class="session-title">The Feeling Body</div>
+          <div class="session-quote">"Your body carries every feeling. Learn to read its signals."</div>
+        </div>
+      </div>
+      <div class="session-card">
+        <div class="session-num">04</div>
+        <div class="session-content">
+          <div class="session-title">Kindness is a Superpower</div>
+          <div class="session-quote">"One sunshine thought changes your brain chemistry."</div>
+        </div>
+      </div>
+      <div class="session-card" style="grid-column:span 2;">
+        <div class="session-num">05</div>
+        <div class="session-content">
+          <div class="session-title">I Am the Author</div>
+          <div class="session-quote">"You have more influence over your inner world than anyone told you."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="takeaways-label">What they take home</div>
+    <div class="takeaways-list">
+      <div class="takeaway-item">Personal Resilience Toolkit — built on Day 5</div>
+      <div class="takeaway-item">Daily Practice Cards — one per day</div>
+      <div class="takeaway-item">The Five Power Technique — memorized, usable any time</div>
+    </div>
+
+    <div class="program-cta">
+      <a href="#interest-list" class="btn-primary">Join the interest list →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESILIENCE LAB 6-WEEK ── -->
+<section class="program-section" id="resilience-lab-6week">
+  <div class="program-inner">
+    <div class="program-header">
+      <div class="program-label">Program 2 — Resilience Lab</div>
+      <h2 class="program-h2">Six weeks. One complete<br>inner science foundation.</h2>
+      <p class="program-subhead">Once per week, one hour per session. Home practice between sessions deepens the learning.</p>
+      <div class="program-pills">
+        <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+        <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+        <span class="pill pill-mist">6 Weeks · 1 hr/session</span>
+        <span class="pill pill-gold">Small Groups</span>
+      </div>
+      <p class="program-body">Each session builds on the last — and between sessions, children practice at home. By Session 6 they have six weeks of real-life evidence about what works.</p>
+    </div>
+
+    <div class="sessions-grid">
+      <div class="session-card">
+        <div class="session-num">01</div>
+        <div class="session-content">
+          <div class="session-title">Meet Your Brain</div>
+          <div class="session-quote">"You are not your thoughts. You are the one noticing them."</div>
+        </div>
+      </div>
+      <div class="session-card">
+        <div class="session-num">02</div>
+        <div class="session-content">
+          <div class="session-title">Thought Weather</div>
+          <div class="session-quote">"Thoughts come in two kinds — sunshine and storm. Both pass."</div>
+        </div>
+      </div>
+      <div class="session-card">
+        <div class="session-num">03</div>
+        <div class="session-content">
+          <div class="session-title">The Feeling Body</div>
+          <div class="session-quote">"Your body carries every feeling. Learn to read its signals."</div>
+        </div>
+      </div>
+      <div class="session-card">
+        <div class="session-num">04</div>
+        <div class="session-content">
+          <div class="session-title">Kindness is a Superpower</div>
+          <div class="session-quote">"One sunshine thought changes your brain chemistry."</div>
+        </div>
+      </div>
+      <div class="session-card">
+        <div class="session-num">05</div>
+        <div class="session-content">
+          <div class="session-title">I Am the Author</div>
+          <div class="session-quote">"You have more influence over your inner world than anyone told you."</div>
+        </div>
+      </div>
+      <div class="session-card">
+        <div class="session-num">06</div>
+        <div class="session-content">
+          <div class="session-title">I Am the Root</div>
+          <div class="session-quote">"The full tree model. A longer-term personal practice plan."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-box">
+      <div class="why-box-label">Why weekly works</div>
+      <div class="why-box-text">"Skills practiced with space between sessions show significantly stronger long-term retention." — spaced learning research</div>
+    </div>
+
+    <div class="takeaways-label">What they take home</div>
+    <div class="takeaways-list">
+      <div class="takeaway-item">Weekly Practice Cards — one per session, 6 total</div>
+      <div class="takeaway-item">Personal Resilience Toolkit</div>
+      <div class="takeaway-item">Personal Practice Plan — daily commitment, accountability partner</div>
+      <div class="takeaway-item">The Five Power Technique</div>
+    </div>
+
+    <div class="program-cta">
+      <a href="#interest-list" class="btn-primary">Join the interest list →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE SCIENCE ── -->
+<section class="science-section">
+  <div class="science-inner">
+    <div class="science-label">The Science</div>
+    <h2 class="science-h2">Backed by research.</h2>
+    <p class="science-sub">ThinkRoot programs are grounded in peer-reviewed research from leading universities in child development, neuroscience, and wellbeing.</p>
+    <div class="science-grid">
+      <div class="science-card">
+        <div class="science-card-uni">UC Berkeley</div>
+        <div class="science-card-topic">Greater Good Science Center — gratitude, compassion, awe</div>
+      </div>
+      <div class="science-card">
+        <div class="science-card-uni">Stanford University</div>
+        <div class="science-card-topic">Challenge Success — growth mindset and student wellbeing</div>
+      </div>
+      <div class="science-card">
+        <div class="science-card-uni">HeartMath Institute</div>
+        <div class="science-card-topic">Heart coherence and emotional regulation</div>
+      </div>
+      <div class="science-card">
+        <div class="science-card-uni">Harvard University</div>
+        <div class="science-card-topic">Neuroplasticity and visualization</div>
+      </div>
+      <div class="science-card">
+        <div class="science-card-uni">University of Michigan</div>
+        <div class="science-card-topic">Self-talk and emotional regulation — Ethan Kross</div>
+      </div>
+      <div class="science-card">
+        <div class="science-card-uni">University of Texas</div>
+        <div class="science-card-topic">Self-compassion research — Kristin Neff</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="about-label">Meet your facilitator</div>
+      <div class="about-name">Tina Puri</div>
+      <div class="about-title">Certified Wellness Educator<br>Senior Peer Counselor<br>Founder, ThinkRoot Young Leaders</div>
+    </div>
+    <div>
+      <p class="about-bio">Tina Puri is a Certified Wellness Educator and Senior Peer Counselor with more than a decade of experience working directly with children, adults, and seniors across all age groups and settings. She delivered yoga, mindfulness, and gratitude programs at the high school level — among the first programs of their kind on campus — and has taught values-based character development to elementary and middle school students.</p>
+      <br>
+      <p class="about-bio">She mentored students through HOSA chapters at both middle and high school levels, supporting their preparation for statewide and nationwide competitions. She served as a parent volunteer for Stanford University's Challenge Success program, accompanying students to conferences at Stanford with leading researchers in student wellbeing and resilience. She has also led wellness sessions for senior communities and adults.</p>
+      <br>
+      <p class="about-bio">A software professional with 20+ years of experience, she brings both scientific rigor and deep practical teaching experience to ThinkRoot programs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTEREST LIST ── -->
+<section class="interest-section" id="interest-list">
+  <div class="interest-inner">
+    <div class="interest-label">Interest List</div>
+    <h2 class="interest-h2">Be the first to know when a session forms near you.</h2>
+    <p class="interest-sub">Sessions are forming now. Tell us where you are — we'll be in touch as soon as a group is confirmed near you.</p>
+
+    <iframe name="gform_iframe" style="display:none;"></iframe>
+
+    <form class="interest-form"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSe9Ifki1J2dOprucDkhVAyaN1wIMJY-4eAG1Ed_-hJgSQhPZg/formResponse"
+      method="POST"
+      target="gform_iframe"
+      onsubmit="showConfirm()">
+
+      <div class="form-row">
+        <div>
+          <label class="form-label">Parent name *</label>
+          <input type="text" name="entry.410301422" class="form-input" placeholder="Your full name" required />
+        </div>
+        <div>
+          <label class="form-label">Email address *</label>
+          <input type="email" name="entry.859105480" class="form-input" placeholder="your@email.com" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label class="form-label">Phone number</label>
+          <input type="tel" name="entry.65744569" class="form-input" placeholder="(415) 000-0000" />
+        </div>
+        <div>
+          <label class="form-label">City / neighborhood</label>
+          <input type="text" name="entry.588300542" class="form-input" placeholder="e.g. Fremont, Milpitas, San Jose" />
+        </div>
+      </div>
+
+      <hr class="form-divider">
+
+      <div class="form-field">
+        <div class="form-section-title">Child's grade(s) — select all that apply</div>
+        <div class="check-group" style="margin-top:6px; gap:10px 16px;">
+          <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 2" /> Grade 2</label>
+          <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 3" /> Grade 3</label>
+          <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 4" /> Grade 4</label>
+          <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 5" /> Grade 5</label>
+          <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 6" /> Grade 6</label>
+          <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 7" /> Grade 7</label>
+          <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 8" /> Grade 8</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label class="form-label">Number of children</label>
+          <select name="entry.116349439" class="form-input">
+            <option value="">Select</option>
+            <option value="1">1 child</option>
+            <option value="2">2 children</option>
+            <option value="3">3 or more</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label">Preferred time of day</label>
+          <select name="entry.1581778277" class="form-input">
+            <option value="">Select</option>
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+            <option value="Flexible">Flexible</option>
+          </select>
+        </div>
+      </div>
+
+      <hr class="form-divider">
+
+      <div class="form-field">
+        <div class="form-section-title">Which program interests you?</div>
+        <div class="check-group column" style="margin-top:8px;">
+          <label class="check-label-block"><input type="radio" name="entry.852880699" value="Resilience Lab — 5-Day (Mon–Fri, one week, 1 hr/day)" /> Resilience Lab — 5-Day &nbsp;<span style="opacity:0.6; font-size:0.8rem;">Mon–Fri, one week, 1 hr/day</span></label>
+          <label class="check-label-block"><input type="radio" name="entry.852880699" value="Resilience Lab — 6-Week (once per week, 1 hr/session)" /> Resilience Lab — 6-Week &nbsp;<span style="opacity:0.6; font-size:0.8rem;">once per week, 1 hr/session</span></label>
+          <label class="check-label-block"><input type="radio" name="entry.852880699" value="Either works for us" /> Either works for us</label>
+          <label class="check-label-block"><input type="radio" name="entry.852880699" value="Tell me more first" /> Tell me more first</label>
+        </div>
+      </div>
+
+      <hr class="form-divider">
+
+      <div class="form-field">
+        <div class="form-section-title">Preferred day(s) — select all that apply</div>
+        <div class="check-group" style="margin-top:8px; gap:10px 16px;">
+          <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Monday" /> Monday</label>
+          <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Tuesday" /> Tuesday</label>
+          <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Wednesday" /> Wednesday</label>
+          <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Thursday" /> Thursday</label>
+          <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Friday" /> Friday</label>
+          <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Saturday" /> Saturday</label>
+          <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Sunday" /> Sunday</label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <div class="form-section-title">Timing</div>
+        <div class="check-group column" style="margin-top:8px;">
+          <label class="check-label-block"><input type="checkbox" name="entry.1900691399" value="Early summer (June)" /> Early summer (June)</label>
+          <label class="check-label-block"><input type="checkbox" name="entry.1900691399" value="Mid summer (July)" /> Mid summer (July)</label>
+          <label class="check-label-block"><input type="checkbox" name="entry.1900691399" value="Late summer (August)" /> Late summer (August)</label>
+          <label class="check-label-block"><input type="checkbox" name="entry.1900691399" value="During the school year" /> During the school year</label>
+          <label class="check-label-block"><input type="checkbox" name="entry.1900691399" value="Flexible — any time works" /> Flexible — any time works</label>
+        </div>
+      </div>
+
+      <hr class="form-divider">
+
+      <div class="form-field">
+        <label class="form-label">Would you be open to supporting a group in your area?</label>
+        <div class="check-group column" style="margin-top:8px;">
+          <label class="check-label-block"><input type="radio" name="entry.1581778277" value="Yes — I could host at my home if enough families sign up" /> Yes — I could host at my home if enough families sign up</label>
+          <label class="check-label-block"><input type="radio" name="entry.1581778277" value="Yes — I could help organize a group by reaching out in my own circles" /> Yes — I could help organize a group by reaching out in my own circles</label>
+          <label class="check-label-block"><input type="radio" name="entry.1581778277" value="No — I'd prefer to come to a confirmed location" /> No — I'd prefer to come to a confirmed location</label>
+          <label class="check-label-block"><input type="radio" name="entry.1581778277" value="Not sure yet" /> Not sure yet</label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label">Anything you'd like us to know? (optional)</label>
+        <textarea name="entry.1900691399" class="form-input" rows="3" placeholder="e.g. My child has anxiety and I'm hoping this will help. Or — I have friends in my neighborhood who'd also be interested."></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Join the interest list →</button>
+
+      <p class="form-confirm" id="form-confirm">
+        Thank you — you're on the list! We'll be in touch personally once a session is forming near you.
+      </p>
+      <p class="form-note">Joining the interest list does not commit you to enrollment. We reach out personally to confirm details.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">ThinkRoot <span>Young Leaders</span></div>
+  <div class="footer-tagline">Where Great Minds Take Root.</div>
+  <div class="footer-links">
+    <a href="mailto:thinkyoungleaders@gmail.com">thinkyoungleaders@gmail.com</a>
+    <a href="https://chat.whatsapp.com/JLoti26E0U1HyMjlsshTc0" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="footer-copy">© 2026 ThinkRoot Young Leaders</div>
+  <div class="footer-disclaimer">This program is educational in nature and is not a substitute for professional mental health support.</div>
+</footer>
+
+<script>
+  // Sticky nav shadow
+  window.addEventListener('scroll', function() {
+    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // Fade-in on scroll
+  const faders = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  faders.forEach(el => observer.observe(el));
+
+  // Form confirmation
+  function showConfirm() {
+    setTimeout(function() {
+      document.getElementById('form-confirm').style.display = 'block';
+    }, 500);
+  }
+</script>
+</body>
+</html>

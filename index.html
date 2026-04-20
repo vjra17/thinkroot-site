@@ -188,8 +188,9 @@
 
   /* ── ABOUT ── */
   .about-section { background: var(--bark); color: var(--cream); }
-  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: center; margin-top: 3rem; }
-  .about-avatar { width: 100%; aspect-ratio: 1; border-radius: 4px; background: var(--moss); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--mint); font-weight: 600; border: 1px solid rgba(168,213,168,0.2); max-width: 260px; }
+  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+  .about-avatar { width: 100%; aspect-ratio: 3/4; border-radius: 4px; background: var(--moss); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--mint); font-weight: 600; border: 1px solid rgba(168,213,168,0.2); max-width: 260px; overflow: hidden; }
+  .about-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
   .about-section .section-label { color: var(--fern); }
   .about-section .section-label::after { background: var(--sage); }
   .about-section .section-h2 { color: var(--gold-light); max-width: 100%; }
@@ -254,8 +255,7 @@
     .learn-grid { grid-template-columns: 1fr 1fr; }
     .tree-grid { grid-template-columns: 1fr 1fr; }
     .details-grid { grid-template-columns: 1fr 1fr; }
-    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .about-avatar { max-width: 140px; font-size: 2.5rem; }
+    .about-grid { gap: 2.5rem; }
     .week-item { grid-template-columns: 50px 1fr; gap: 1rem; }
     .thought-row { grid-template-columns: 1fr; }
     .observe-grid { grid-template-columns: 1fr; }
@@ -271,6 +271,8 @@
     .learn-grid { grid-template-columns: 1fr; }
     .tree-grid { grid-template-columns: 1fr; }
     .details-grid { grid-template-columns: 1fr 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .about-avatar { max-width: 140px; }
   }
 </style>
 </head>
@@ -577,15 +579,15 @@
       <div class="week-content">
         <div class="week-title">Meet Your Brain</div>
         <div class="week-theme">"You are not your thoughts. You are the one noticing them."</div>
-        <div class="week-desc">Information-Energy-Matter framework. Sunshine vs. storm thoughts. First learning of the AAA Method. The Five Power Technique — learned and practiced for the first time. Focus rock.</div>
+        <div class="week-desc">Information-Energy-Matter framework. Thoughts that build and thoughts that limit. First learning of the AAA Method. The Five Power Technique — learned and practiced for the first time. Focus rock.</div>
       </div>
     </div>
     <div class="week-item">
       <div class="week-num">02</div>
       <div class="week-content">
         <div class="week-title">Thought Weather</div>
-        <div class="week-theme">"Thoughts come in two kinds — sunshine and storm. Both pass. You can bring your umbrella."</div>
-        <div class="week-desc">Gratitude neuroscience. Weather Report pairs. Naming and accepting storm thoughts without being controlled by them. Five Power review.</div>
+        <div class="week-theme">"Thoughts come in two kinds — some build us up, some wear us down. Both pass. You can learn what to do with each."</div>
+        <div class="week-desc">Gratitude neuroscience. Weather Report pairs. Naming and accepting limiting thoughts without being controlled by them. Five Power review.</div>
       </div>
     </div>
     <div class="week-item">
@@ -600,7 +602,7 @@
       <div class="week-num">04</div>
       <div class="week-content">
         <div class="week-title">Kindness is a Superpower</div>
-        <div class="week-theme">"One sunshine thought changes your brain chemistry — and spreads to everyone around you."</div>
+        <div class="week-theme">"One kind thought — toward yourself or someone else — changes your brain chemistry and spreads to everyone around you."</div>
         <div class="week-desc">Self-compassion science — Kristin Neff. Emotional contagion. Service as inner practice. Water and food-colouring demonstration. Gratitude letter.</div>
       </div>
     </div>
@@ -642,14 +644,14 @@
       <div class="week-content">
         <div class="week-title">Meet Your Brain</div>
         <div class="week-theme">"You are not your thoughts. You are the one noticing them."</div>
-        <div class="week-desc">Information-Energy-Matter. Sunshine vs. storm thoughts. AAA Method. Five Power Technique — first learning. Home practice: Five Power once daily.</div>
+        <div class="week-desc">Information-Energy-Matter. Thoughts that build and thoughts that limit. AAA Method. Five Power Technique — first learning. Home practice: Five Power once daily.</div>
       </div>
     </div>
     <div class="week-item">
       <div class="week-num">02</div>
       <div class="week-content">
         <div class="week-title">Thought Weather</div>
-        <div class="week-theme">"Thoughts come in two kinds — sunshine and storm. Both pass."</div>
+        <div class="week-theme">"Thoughts come in two kinds — some build, some limit. Both pass. You can learn to work with each."</div>
         <div class="week-desc">Home Practice Review. Gratitude neuroscience. Weather Report practice. Home practice: morning gratitude — three specifics daily.</div>
       </div>
     </div>
@@ -665,7 +667,7 @@
       <div class="week-num">04</div>
       <div class="week-content">
         <div class="week-title">Kindness is a Superpower</div>
-        <div class="week-theme">"One sunshine thought changes your brain chemistry."</div>
+        <div class="week-theme">"One kind thought — toward yourself or someone else — changes your brain chemistry."</div>
         <div class="week-desc">Home Practice Review. Self-compassion. Emotional contagion. Service practice. Home practice: one intentional act of kindness daily, noticed in the body.</div>
       </div>
     </div>
@@ -699,19 +701,20 @@
 <!-- ── YOUNG LEADERS — COMING SOON ── -->
 <section class="coming-section">
   <div class="coming-badge">Coming Soon</div>
-  <div class="section-label">Program 3</div>
-  <h2 class="section-h2">Young Leaders</h2>
-  <p class="section-body">Leadership and character development for the next generation. In design — join the interest list to be notified when this program launches.</p>
+  <div class="section-label">The ThinkRoot Curriculum · Next</div>
+  <h2 class="section-h2">Leadership Lab</h2>
+  <p class="section-body">Leadership and character development for the next generation. Building on the resilience foundation — children learn to lead themselves before they lead others. In design — join the interest list to be notified when this program launches.</p>
   <div style="margin-top:2rem;"><a href="#interest" class="btn-primary-light">Join the interest list →</a></div>
 </section>
 
 <!-- ── ABOUT ── -->
 <section class="about-section" id="about">
-  <div class="section-label">Meet your facilitator</div>
+  <div class="section-label">Meet the founder</div>
   <h2 class="section-h2">Tina Puri</h2>
+  <div class="about-title-sub" style="font-size:0.85rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-top:-1rem; margin-bottom:0.5rem;">Founder &amp; Program Director</div>
   <div class="about-grid">
     <div>
-      <div class="about-avatar">TP</div>
+      <div class="about-avatar"><img src="tina.jpeg" alt="Tina Puri, Founder &amp; Program Director, ThinkRoot" /></div>
     </div>
     <div>
       <p class="section-body">Tina Puri is a Certified Wellness Educator and Senior Peer Counselor with more than a decade of experience working directly with children, adults, and seniors across all age groups and settings. She delivered yoga, mindfulness, and gratitude programs at the high school level — among the first programs of their kind on campus — and has taught values-based character development to elementary and middle school students.</p>

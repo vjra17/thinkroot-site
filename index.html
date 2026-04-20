@@ -86,11 +86,11 @@
 
   /* ── THE GAP ── */
   .two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .po-table-wrap { margin-top: 3rem; border-top: 2px solid var(--forest); }
+  .po-table-wrap { margin-top: 3rem; border: 1px solid var(--mint); border-top: 3px solid var(--forest); border-radius: 0 0 4px 4px; padding: 0 2rem 0.5rem; background: rgba(232,244,232,0.25); }
   .po-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 0.75rem 0; border-bottom: 1px solid var(--mint); }
   .po-col-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest); }
-  .po-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 1.25rem 0; border-bottom: 1px solid var(--mint); }
-  .po-row:last-child { border-bottom: 2px solid var(--forest); }
+  .po-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(168,213,168,0.4); }
+  .po-row:last-child { border-bottom: none; }
   .po-problem { font-size: 0.93rem; color: var(--text-mid); line-height: 1.65; font-weight: 400; }
   .po-outcome { font-size: 0.93rem; color: var(--text); line-height: 1.65; font-weight: 400; font-style: italic; }
   @media (max-width: 600px) { .po-header, .po-row { grid-template-columns: 1fr; gap: 0.25rem; } .po-col-label:last-child { display: none; } .po-outcome { font-style: italic; color: var(--sage); padding-left: 0.75rem; border-left: 2px solid var(--gold); margin-top: 0.35rem; } }
@@ -178,8 +178,29 @@
   .why-box { margin: 2rem 0; padding: 1.25rem 1.5rem; border-left: 3px solid var(--gold); max-width: 620px; }
   .why-box p { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-style: italic; color: var(--text-mid); line-height: 1.7; }
 
+  /* ── COMMUNITY ── */
+  .community-section { background: var(--cream); }
+  .community-intro { max-width: 700px; }
+  .community-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 3rem 0 3.5rem; }
+  .community-card { background: var(--white); border: 1px solid var(--mint); border-top: 3px solid var(--sage); border-radius: 0 0 4px 4px; padding: 2rem 2rem 2rem; }
+  .community-card-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
+  .community-card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: var(--forest); margin-bottom: 0.9rem; line-height: 1.35; }
+  .community-card-body { font-size: 0.92rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+  .whatsapp-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: #25D366; color: white; border: none; padding: 0.65rem 1.4rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; cursor: pointer; text-decoration: none; margin-top: 1.5rem; transition: background 0.2s; letter-spacing: 0.02em; }
+  .whatsapp-btn:hover { background: #1da851; }
+  .inter-block { background: var(--forest); color: var(--cream); border-radius: 4px; padding: 3rem; display: grid; grid-template-columns: 200px 1fr; gap: 3.5rem; align-items: start; }
+  .inter-stat { text-align: center; padding-top: 0.5rem; }
+  .inter-years { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 600; color: var(--gold-light); line-height: 1; }
+  .inter-years-label { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mint); margin-top: 0.25rem; }
+  .inter-divider { width: 40px; height: 2px; background: var(--gold); margin: 1.25rem auto; }
+  .inter-proof { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fern); margin-bottom: 0.75rem; }
+  .inter-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--gold-light); margin-bottom: 1rem; line-height: 1.3; }
+  .inter-body { font-size: 0.93rem; color: rgba(200,212,200,0.9); line-height: 1.75; font-weight: 300; margin-bottom: 1rem; }
+  .inter-quote { padding: 1rem 0 0 1.25rem; border-left: 2px solid var(--gold); font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: var(--gold-light); line-height: 1.65; }
+  @media (max-width: 900px) { .community-pillars { grid-template-columns: 1fr; } .inter-block { grid-template-columns: 1fr; gap: 1.5rem; } .inter-stat { text-align: left; } }
+
   /* ── COMING SOON ── */
-  .coming-section { background: var(--bark); }
+  .coming-section { background: var(--forest); }
   .coming-section .section-label { color: var(--fern); }
   .coming-section .section-label::after { background: var(--sage); }
   .coming-section .section-h2 { color: var(--gold-light); }
@@ -286,6 +307,7 @@
     <a href="#resilience-5day">5-Day</a>
     <a href="#resilience-6week">6-Week</a>
     <a href="#about">About Tina</a>
+    <a href="#community">Community</a>
     <a href="#interest">Interest List</a>
   </div>
   <a href="#interest" class="nav-cta">Join the interest list</a>
@@ -717,11 +739,53 @@
       <div class="about-avatar"><img src="tina.jpeg" alt="Tina Puri, Founder &amp; Program Director, ThinkRoot" /></div>
     </div>
     <div>
-      <p class="section-body">Tina Puri is a Certified Wellness Educator and Senior Peer Counselor with more than a decade of experience working directly with children, adults, and seniors across all age groups and settings. She delivered yoga, mindfulness, and gratitude programs at the high school level — among the first programs of their kind on campus — and has taught values-based character development to elementary and middle school students.</p>
+      <p class="section-body">Tina Puri is a Certified Wellness Educator and Senior Peer Counselor — certified by the cities of Fremont, Union City, and Newark — with more than a decade of experience working directly with children, adults, and seniors across all age groups and settings. She delivered yoga, mindfulness, and gratitude programs at the high school level — among the first programs of their kind on campus — and has taught values-based character development to elementary and middle school students.</p>
       <p class="section-body" style="margin-top:1rem;">She mentored students through HOSA chapters at both middle and high school levels, supporting their preparation for statewide and nationwide competitions. She served as a parent volunteer for Stanford University's Challenge Success program, accompanying students to conferences at Stanford with leading researchers in student wellbeing and resilience. She has also led wellness sessions for senior communities and adults. A software professional with 20+ years of experience, she brings both scientific rigor and deep practical teaching experience to ThinkRoot programs.</p>
       <div class="about-note">
         "I teach this because it changed my life. After more than twenty years in software, my body gave out — fibromyalgia, chronic fatigue, severe anxiety. Working at the root level, with the same practices I now teach children, resolved what traditional medicine could only manage. I am not teaching this because I read about it. I am teaching it because it is why I am standing here."
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE THINKROOT COMMUNITY ── -->
+<section class="community-section" id="community">
+  <div class="section-label">The ThinkRoot Community</div>
+  <h2 class="section-h2">Learning to lead themselves.<br>Then leading their world.</h2>
+  <p class="section-body community-intro">The ThinkRoot Curriculum builds the inner foundation. The ThinkRoot Community is where that foundation becomes something larger — real relationships, real contribution, and real impact in the world around them.</p>
+
+  <div class="community-pillars">
+    <div class="community-card">
+      <div class="community-card-label">For parents</div>
+      <div class="community-card-title">A community of parents who think differently about raising children.</div>
+      <div class="community-card-body">You are not doing this alone. The ThinkRoot parent community connects families who share the same belief — that inner skills matter as much as academic ones. A space to share what works, ask what doesn't, and raise children alongside others who genuinely get it.</div>
+      <a href="https://chat.whatsapp.com/YOURCOMMUNITYLINK" class="whatsapp-btn" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Join the parent community →
+      </a>
+    </div>
+
+    <div class="community-card">
+      <div class="community-card-label">For children · Forming now</div>
+      <div class="community-card-title">Inner skills become outer impact.</div>
+      <div class="community-card-body">Completing a ThinkRoot program is the beginning, not the end. Children who have built their inner foundation are ready for something more — real community involvement, genuine contribution, and leadership learned by doing.<br><br>Volunteering hours matter for college applications. But more than that, they build what no classroom can: a felt sense of purpose, connection, and responsibility for the world around them.</div>
+      <a href="#interest" class="btn-primary" style="display:inline-block; margin-top:1.5rem;">Join the interest list →</a>
+    </div>
+  </div>
+
+  <div class="inter-block">
+    <div class="inter-stat">
+      <div class="inter-years">4</div>
+      <div class="inter-years-label">years running</div>
+      <div class="inter-divider"></div>
+      <div style="font-size:0.8rem; color:var(--mint); line-height:1.5; font-weight:300;">Seniors &amp; children. Together.</div>
+    </div>
+    <div>
+      <div class="inter-proof">Proof of concept · In action since 2020</div>
+      <div class="inter-title">The Intergenerational Programme</div>
+      <div class="inter-body">For four years, Tina brought seniors and children together in a programme built on a simple belief: that the young and the old have something profound to offer each other. Children practiced presence, patience, and genuine empathy. Seniors experienced curiosity, energy, and connection. Both left changed.</div>
+      <div class="inter-body">This is what ThinkRoot community impact looks like — not charity, but real exchange. Not service hours on a form, but relationships that reshape how a child sees the people around them. The skills learned inside the classroom become real in the presence of someone whose life looks nothing like yours.</div>
+      <div class="inter-quote">"Leadership is not a title. It is the ability to show up — fully, generously — for someone else's world."</div>
     </div>
   </div>
 </section>

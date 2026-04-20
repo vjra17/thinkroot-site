@@ -86,11 +86,14 @@
 
   /* ── THE GAP ── */
   .two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .problem-box { background: #fff8f0; border: 1px solid #f0d8b8; border-radius: 4px; padding: 2rem; margin-top: 2rem; }
-  .problem-item { display: flex; gap: 12px; margin-bottom: 1.2rem; align-items: flex-start; }
-  .problem-item:last-child { margin-bottom: 0; }
-  .problem-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 8px; flex-shrink: 0; }
-  .problem-text { font-size: 0.95rem; color: var(--bark); line-height: 1.6; }
+  .po-table-wrap { margin-top: 3rem; border-top: 2px solid var(--forest); }
+  .po-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 0.75rem 0; border-bottom: 1px solid var(--mint); }
+  .po-col-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest); }
+  .po-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 1.25rem 0; border-bottom: 1px solid var(--mint); }
+  .po-row:last-child { border-bottom: 2px solid var(--forest); }
+  .po-problem { font-size: 0.93rem; color: var(--text-mid); line-height: 1.65; font-weight: 400; }
+  .po-outcome { font-size: 0.93rem; color: var(--text); line-height: 1.65; font-weight: 400; font-style: italic; }
+  @media (max-width: 600px) { .po-header, .po-row { grid-template-columns: 1fr; gap: 0.25rem; } .po-col-label:last-child { display: none; } .po-outcome { font-style: italic; color: var(--sage); padding-left: 0.75rem; border-left: 2px solid var(--gold); margin-top: 0.35rem; } }
 
   /* ── DARK SECTIONS (forest green) ── */
   .learn-section { background: var(--forest); color: var(--cream); }
@@ -343,12 +346,28 @@
     </div>
     <div>
       <p class="section-body" style="margin-top:3.5rem;">ThinkRoot fills that gap. Children in Grades 2–8 discover the science behind their own minds — and leave with a practical toolkit they'll use for life.</p>
-      <div class="problem-box">
-        <div class="problem-item"><div class="problem-dot"></div><div class="problem-text">Anxiety and self-doubt that no one has given them tools to address</div></div>
-        <div class="problem-item"><div class="problem-dot"></div><div class="problem-text">Negative thought loops that drain their energy and confidence</div></div>
-        <div class="problem-item"><div class="problem-dot"></div><div class="problem-text">No framework for handling hard emotions, conflicts, or pressure</div></div>
-        <div class="problem-item"><div class="problem-dot"></div><div class="problem-text">Believing their inner world is something that happens to them — when it can be worked with, and taught</div></div>
-      </div>
+    </div>
+  </div>
+  <div class="po-table-wrap">
+    <div class="po-header">
+      <div class="po-col-label">Problem</div>
+      <div class="po-col-label">Outcome</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">Anxiety and self-doubt that no one has given them tools to address</div>
+      <div class="po-outcome">Tools to recognize and work with anxiety — not just survive it</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">Negative thought loops that drain their energy and confidence</div>
+      <div class="po-outcome">The skill to notice, interrupt, and redirect unhelpful thinking</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">No framework for handling hard emotions, conflicts, or pressure</div>
+      <div class="po-outcome">A repeatable process for any difficult moment — any age, any situation</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">Believing their inner world is something that happens to them</div>
+      <div class="po-outcome">Understanding that their thoughts, feelings, and responses are workable — and teachable</div>
     </div>
   </div>
 </section>

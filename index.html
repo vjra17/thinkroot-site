@@ -86,11 +86,14 @@
 
   /* ── THE GAP ── */
   .two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .problem-box { background: #fff8f0; border: 1px solid #f0d8b8; border-radius: 4px; padding: 2rem; margin-top: 2rem; }
-  .problem-item { display: flex; gap: 12px; margin-bottom: 1.2rem; align-items: flex-start; }
-  .problem-item:last-child { margin-bottom: 0; }
-  .problem-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 8px; flex-shrink: 0; }
-  .problem-text { font-size: 0.95rem; color: var(--bark); line-height: 1.6; }
+  .po-table-wrap { margin-top: 3rem; border-top: 2px solid var(--forest); }
+  .po-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 0.75rem 0; border-bottom: 1px solid var(--mint); }
+  .po-col-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest); }
+  .po-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 1.25rem 0; border-bottom: 1px solid var(--mint); }
+  .po-row:last-child { border-bottom: 2px solid var(--forest); }
+  .po-problem { font-size: 0.93rem; color: var(--text-mid); line-height: 1.65; font-weight: 400; }
+  .po-outcome { font-size: 0.93rem; color: var(--text); line-height: 1.65; font-weight: 400; }
+  @media (max-width: 600px) { .po-header, .po-row { grid-template-columns: 1fr; gap: 0.4rem; } .po-col-label:last-child { display: none; } .po-outcome { color: var(--sage); padding-left: 0.5rem; border-left: 2px solid var(--gold); margin-top: 0.25rem; } }
 
   /* ── DARK SECTIONS (forest green) ── */
   .learn-section { background: var(--forest); color: var(--cream); }
@@ -289,9 +292,9 @@
 <!-- ── HERO ── -->
 <section class="hero" style="padding:0;">
   <div class="hero-left">
-    <div class="hero-eyebrow fade-up delay-1">Inner science for children</div>
+    <div class="hero-eyebrow fade-up delay-1">The skills schools don't teach</div>
     <h1 class="hero-h1 fade-up delay-2">Where great minds<br><em>take root.</em></h1>
-    <p class="hero-tagline fade-up delay-3">Inner science programs for children in Grades 2–8. Two programs — one foundation.</p>
+    <p class="hero-tagline fade-up delay-3">Every skill your child has performs better when they know how to manage their own mind. That's what we teach.</p>
     <div class="hero-meta fade-up delay-4">
       <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
       <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
@@ -342,13 +345,29 @@
       <p class="section-body">Every child carries a remarkable inner world — thoughts, emotions, self-beliefs — that shapes everything from their grades to their friendships to their confidence. Yet no one teaches them how it works.</p>
     </div>
     <div>
-      <p class="section-body" style="margin-top:3.5rem;">ThinkRoot fills that gap. Children in Grades 2–8 discover the science behind their own minds — and leave with a practical toolkit they'll use for life.</p>
-      <div class="problem-box">
-        <div class="problem-item"><div class="problem-dot"></div><div class="problem-text">Anxiety and self-doubt that no one has given them tools to address</div></div>
-        <div class="problem-item"><div class="problem-dot"></div><div class="problem-text">Freedom from overthinking and the negative loops that drain their energy</div></div>
-        <div class="problem-item"><div class="problem-dot"></div><div class="problem-text">No framework for handling tough situations — conflicts, pressure, big emotions</div></div>
-        <div class="problem-item"><div class="problem-dot"></div><div class="problem-text">A growing sense that feelings are something they can work with — not just survive</div></div>
-      </div>
+      <p class="section-body" style="margin-top:3.5rem;">ThinkRoot fills that gap. Through The ThinkRoot Curriculum, children in Grades 2–8 learn to understand and work with their own thinking — and leave with practical tools they'll use for life.</p>
+    </div>
+  </div>
+  <div class="po-table-wrap">
+    <div class="po-header">
+      <div class="po-col-label">Problem</div>
+      <div class="po-col-label">Outcome</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">Anxiety and self-doubt that no one has given them tools to address</div>
+      <div class="po-outcome">Tools to recognize and work with anxiety — not just survive it</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">Negative thought loops that drain their energy and confidence</div>
+      <div class="po-outcome">The skill to notice, interrupt, and redirect unhelpful thinking</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">No framework for handling hard emotions, conflicts, or pressure</div>
+      <div class="po-outcome">A repeatable process for any difficult moment — any age, any situation</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">Believing their inner world is something that happens to them</div>
+      <div class="po-outcome">Understanding that their thoughts, feelings, and responses are workable — and teachable</div>
     </div>
   </div>
 </section>
@@ -535,13 +554,13 @@
     <div class="observe-item"><div class="observe-check">✓</div>"I'm feeling stormy today" — a new language for inner life</div>
   </div>
   <div class="inner-science-note">
-    <strong>This is not therapy. This is not yoga. This is inner science</strong> — practical, evidence-based, and immediately useful in your child's daily life. Think of it as the equivalent of teaching children to brush their teeth: simple daily habits that prevent much larger problems from forming later.
+    <strong>This is not therapy. This is not yoga. This is skills training</strong> — practical, evidence-based, and immediately useful in your child's daily life. Think of it as the equivalent of teaching children to brush their teeth: simple daily habits that prevent much larger problems from forming later.
   </div>
 </section>
 
 <!-- ── RESILIENCE LAB 5-DAY ── -->
 <section id="resilience-5day">
-  <div class="section-label">Program 1 · Resilience Lab</div>
+  <div class="section-label">The ThinkRoot Curriculum · Resilience Lab</div>
   <h2 class="section-h2">Five days. One complete resilience foundation.</h2>
   <p class="section-body" style="margin-bottom:1.5rem;">One week. One hour a day. Monday through Friday. Each session builds on the previous day — a complete arc from first noticing thoughts to actively transforming them. By Friday, your child has a working toolkit they can use any time, anywhere.</p>
   <div class="hero-meta" style="margin-bottom:2rem;">
@@ -603,8 +622,8 @@
 
 <!-- ── RESILIENCE LAB 6-WEEK ── -->
 <section id="resilience-6week" class="details-section mist-program">
-  <div class="section-label">Program 2 · Resilience Lab</div>
-  <h2 class="section-h2">Six weeks. One complete inner science foundation.</h2>
+  <div class="section-label">The ThinkRoot Curriculum · Resilience Lab</div>
+  <h2 class="section-h2">Six weeks. One complete skills foundation.</h2>
   <p class="section-body" style="margin-bottom:1.5rem;">Once per week, one hour per session. Each session builds on the last — and between sessions, children practice at home. By Session 6 they have six weeks of real-life evidence about what works.</p>
   <div class="hero-meta" style="margin-bottom:1rem;">
     <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>

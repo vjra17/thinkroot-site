@@ -95,12 +95,17 @@
   .po-problem { font-size: 0.93rem; color: var(--text); line-height: 1.65; font-weight: 400; }
   .po-outcome { font-size: 0.93rem; color: var(--forest); line-height: 1.65; font-weight: 500; }
 
-  /* ── STUDENT STORIES ── */
-  .stories-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
-  .story-card { background: var(--white); border: 1px solid rgba(74,124,74,0.15); border-radius: 4px; padding: 2rem; border-top: 3px solid var(--gold); }
-  .story-headline { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--forest); line-height: 1.35; margin-bottom: 0.9rem; }
-  .story-body { font-size: 0.92rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
-  .story-context { display: inline-block; margin-top: 1rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); }
+  /* ── DARK SECTIONS (forest green) ── */
+  .learn-section { background: var(--forest); color: var(--cream); }
+  .learn-section .section-label { color: var(--fern); }
+  .learn-section .section-label::after { background: var(--sage); }
+  .learn-section .section-h2 { color: var(--mint); }
+  .learn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .learn-card { border: 1px solid rgba(106,170,106,0.25); border-radius: 4px; padding: 1.75rem; transition: border-color 0.2s, background 0.2s; }
+  .learn-card:hover { border-color: var(--fern); background: rgba(106,170,106,0.07); }
+  .learn-num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); font-weight: 600; margin-bottom: 0.75rem; line-height: 1; }
+  .learn-title { font-size: 0.95rem; font-weight: 500; color: var(--mint); margin-bottom: 0.5rem; }
+  .learn-desc { font-size: 0.88rem; color: var(--fern); line-height: 1.65; font-weight: 300; }
 
   /* ── MIST SECTIONS ── */
   .details-section { background: var(--mist); }
@@ -110,6 +115,38 @@
   .detail-value { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--forest); margin-bottom: 0.4rem; line-height: 1.2; }
   .detail-label { font-size: 0.82rem; color: var(--text-light); font-weight: 300; line-height: 1.5; }
 
+  /* ── OS CALLOUT ── */
+  .os-callout { border: 1px solid var(--gold); border-radius: 4px; padding: 1.5rem 1.75rem; margin: 2rem 0; max-width: 680px; background: rgba(200,150,60,0.06); }
+  .os-callout p { font-family: 'Playfair Display', serif; font-size: 1rem; font-style: italic; color: var(--mint); line-height: 1.7; }
+  .os-callout strong { font-style: normal; font-weight: 600; color: var(--gold-light); }
+
+  /* ── WHOLE TREE ── */
+  .tree-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .tree-card { background: var(--white); border: 1px solid rgba(74,124,74,0.18); border-radius: 4px; padding: 1.75rem; border-top: 3px solid var(--gold); }
+  .tree-layer { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--forest); margin-bottom: 0.4rem; }
+  .tree-science { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
+  .tree-desc { font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; font-weight: 300; }
+
+  /* ── SUNSHINE & STORM ── */
+  .thought-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+  .thought-box { border-radius: 4px; padding: 1.5rem 1.75rem; }
+  .thought-sun { background: #fffbec; border: 1px solid #e8c878; }
+  .thought-storm { background: #f0f8f0; border: 1px solid var(--mint); }
+  .thought-title { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: 0.02em; }
+  .thought-title-sun { color: #7a5a0a; }
+  .thought-title-storm { color: var(--moss); }
+  .thought-body { font-size: 0.88rem; line-height: 1.65; font-weight: 300; margin-bottom: 0.75rem; }
+  .thought-body-sun { color: #5a4008; }
+  .thought-body-storm { color: var(--text-mid); }
+  .thought-examples { font-size: 0.82rem; font-style: italic; line-height: 1.6; }
+  .thought-examples-sun { color: #7a5a0a; }
+  .thought-examples-storm { color: var(--text-mid); }
+
+  .ba-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin-bottom: 0.75rem; }
+  .ba-before { background: #f8f0f0; border-radius: 4px; padding: 0.75rem 1rem; font-size: 0.88rem; color: #7a3a3a; font-style: italic; line-height: 1.5; }
+  .ba-arrow { font-size: 1.1rem; color: var(--gold); font-weight: 600; text-align: center; }
+  .ba-after { background: #f0f8f0; border-radius: 4px; padding: 0.75rem 1rem; font-size: 0.88rem; color: var(--moss); font-weight: 500; line-height: 1.5; }
+
   /* ── WHAT PARENTS OBSERVE ── */
   .observe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 2rem; }
   .observe-item { background: var(--white); border: 1px solid var(--mist); border-radius: 4px; padding: 0.9rem 1.1rem; display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; color: var(--text-mid); line-height: 1.5; font-weight: 300; }
@@ -117,45 +154,29 @@
   .inner-science-note { margin-top: 2rem; padding: 1.25rem 1.5rem; border-left: 3px solid var(--sage); font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; max-width: 680px; }
   .inner-science-note strong { color: var(--forest); font-weight: 500; }
 
-  /* ── PROGRAMS ── */
-  .programs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3rem; }
-  .program-card { background: var(--white); border: 1px solid var(--mint); border-radius: 4px; padding: 2.5rem; border-top: 3px solid var(--forest); }
-  .program-type { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.6rem; }
-  .program-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--forest); margin-bottom: 0.25rem; line-height: 1.2; }
-  .program-duration { font-size: 0.95rem; color: var(--text-mid); font-weight: 300; margin-bottom: 1.25rem; line-height: 1.5; }
-  .program-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.75rem; }
-  .program-divider { height: 1px; background: var(--mist); margin: 1.5rem 0; }
-  .program-includes-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.85rem; }
-  .program-include { display: flex; gap: 8px; font-size: 0.9rem; color: var(--text-mid); line-height: 1.55; font-weight: 300; margin-bottom: 0.6rem; }
-  .program-include::before { content: '✓'; color: var(--sage); font-weight: 600; flex-shrink: 0; }
-  .program-price { margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--mist); display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-  .price-value { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--forest); }
-  .price-note { font-size: 0.75rem; color: var(--text-light); font-weight: 300; margin-top: 0.2rem; }
+  /* ── PROGRAM SESSIONS ── */
+  .weeks-list { margin-top: 2.5rem; display: grid; gap: 0; }
+  .week-item { display: grid; grid-template-columns: 80px 1fr; gap: 2rem; padding: 1.75rem 0; border-bottom: 1px solid var(--mist); align-items: start; }
+  .week-item:last-child { border-bottom: none; }
+  .week-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; color: var(--mint); line-height: 1; padding-top: 4px; }
+  .week-title { font-size: 1rem; font-weight: 500; color: var(--forest); margin-bottom: 0.3rem; }
+  .week-theme { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-style: italic; color: var(--gold); margin-bottom: 0.5rem; }
+  .week-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.65; font-weight: 300; }
 
-  /* ── DARK SECTIONS (forest green) ── */
-  .learn-section { background: var(--forest); color: var(--cream); }
-  .learn-section .section-label { color: var(--fern); }
-  .learn-section .section-label::after { background: var(--sage); }
-  .learn-section .section-h2 { color: var(--mint); }
+  /* Program on mist — darker num */
+  .mist-program .week-item { border-bottom-color: rgba(74,124,74,0.15); }
+  .mist-program .week-num { color: var(--sage); }
+  .mist-program .week-theme { color: var(--moss); }
 
-  /* ── COMING SOON ── */
-  .coming-section { background: var(--forest); }
-  .coming-section .section-label { color: var(--fern); }
-  .coming-section .section-label::after { background: var(--sage); }
-  .coming-section .section-h2 { color: var(--gold-light); }
-  .coming-section .section-body { color: #c8d4c8; max-width: 560px; }
-  .coming-badge { display: inline-block; background: rgba(200,150,60,0.15); border: 1px solid var(--gold); color: var(--gold-light); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 14px; border-radius: 2px; margin-bottom: 1.5rem; }
+  /* Takeaways */
+  .takeaways { margin-top: 2.5rem; }
+  .takeaways-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; }
+  .takeaway-item { display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; margin-bottom: 0.5rem; }
+  .takeaway-item::before { content: '✓'; color: var(--sage); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
 
-  /* ── ABOUT ── */
-  .about-section { background: var(--bark); color: var(--cream); }
-  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; margin-top: 3rem; }
-  .about-avatar { width: 100%; aspect-ratio: 3/4; border-radius: 4px; background: var(--moss); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--mint); font-weight: 600; border: 1px solid rgba(168,213,168,0.2); max-width: 260px; overflow: hidden; }
-  .about-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-  .about-section .section-label { color: var(--fern); }
-  .about-section .section-label::after { background: var(--sage); }
-  .about-section .section-h2 { color: var(--gold-light); max-width: 100%; }
-  .about-section .section-body { color: #c8d4c8; max-width: 100%; }
-  .about-note { margin-top: 1.5rem; padding: 1rem 1.25rem; border-left: 2px solid var(--gold); font-size: 0.88rem; color: var(--fern); line-height: 1.65; font-weight: 300; }
+  /* Why-weekly box */
+  .why-box { margin: 2rem 0; padding: 1.25rem 1.5rem; border-left: 3px solid var(--gold); max-width: 620px; }
+  .why-box p { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-style: italic; color: var(--text-mid); line-height: 1.7; }
 
   /* ── COMMUNITY ── */
   .community-section { background: var(--cream); }
@@ -185,6 +206,26 @@
   .inter-press-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fern); margin-bottom: 0.6rem; }
   .inter-press a { color: var(--gold-light); font-size: 0.85rem; text-decoration: none; display: block; margin-bottom: 0.35rem; transition: color 0.2s; }
   .inter-press a:hover { color: var(--gold); text-decoration: underline; }
+  @media (max-width: 900px) { .community-pillars { grid-template-columns: 1fr; } .inter-block { grid-template-columns: 1fr; gap: 1.5rem; } .inter-stat { text-align: left; } .inter-evidence { grid-template-columns: 1fr; } }
+
+  /* ── COMING SOON ── */
+  .coming-section { background: var(--forest); }
+  .coming-section .section-label { color: var(--fern); }
+  .coming-section .section-label::after { background: var(--sage); }
+  .coming-section .section-h2 { color: var(--gold-light); }
+  .coming-section .section-body { color: #c8d4c8; max-width: 560px; }
+  .coming-badge { display: inline-block; background: rgba(200,150,60,0.15); border: 1px solid var(--gold); color: var(--gold-light); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 14px; border-radius: 2px; margin-bottom: 1.5rem; }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--bark); color: var(--cream); }
+  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+  .about-avatar { width: 100%; aspect-ratio: 3/4; border-radius: 4px; background: var(--moss); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--mint); font-weight: 600; border: 1px solid rgba(168,213,168,0.2); max-width: 260px; overflow: hidden; }
+  .about-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .about-section .section-label { color: var(--fern); }
+  .about-section .section-label::after { background: var(--sage); }
+  .about-section .section-h2 { color: var(--gold-light); max-width: 100%; }
+  .about-section .section-body { color: #c8d4c8; max-width: 100%; }
+  .about-note { margin-top: 1.5rem; padding: 1rem 1.25rem; border-left: 2px solid var(--gold); font-size: 0.88rem; color: var(--fern); line-height: 1.65; font-weight: 300; }
 
   /* ── CTA / INTEREST LIST ── */
   .cta-section { background: var(--forest); text-align: center; padding: 7rem 3rem; }
@@ -241,15 +282,15 @@
     .hero-left { padding: 5rem 2rem 3rem; }
     section { padding: 4rem 2rem; }
     .two-col-section { grid-template-columns: 1fr; gap: 2rem; }
+    .learn-grid { grid-template-columns: 1fr 1fr; }
+    .tree-grid { grid-template-columns: 1fr 1fr; }
     .details-grid { grid-template-columns: 1fr 1fr; }
-    .stories-grid { grid-template-columns: 1fr; }
-    .programs-grid { grid-template-columns: 1fr; }
-    .observe-grid { grid-template-columns: 1fr; }
     .about-grid { gap: 2.5rem; }
-    .community-pillars { grid-template-columns: 1fr; }
-    .inter-block { grid-template-columns: 1fr; gap: 1.5rem; }
-    .inter-stat { text-align: left; }
-    .inter-evidence { grid-template-columns: 1fr; }
+    .week-item { grid-template-columns: 50px 1fr; gap: 1rem; }
+    .thought-row { grid-template-columns: 1fr; }
+    .observe-grid { grid-template-columns: 1fr; }
+    .ba-row { grid-template-columns: 1fr; }
+    .ba-arrow { display: none; }
     footer { padding: 1.5rem 2rem; }
     nav { padding: 1rem 1.5rem; }
     .form-row { grid-template-columns: 1fr; }
@@ -257,6 +298,8 @@
     .cta-section { padding: 5rem 2rem; }
   }
   @media (max-width: 600px) {
+    .learn-grid { grid-template-columns: 1fr; }
+    .tree-grid { grid-template-columns: 1fr; }
     .details-grid { grid-template-columns: 1fr 1fr; }
     .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .about-avatar { max-width: 140px; }
@@ -269,9 +312,9 @@
 <nav id="main-nav">
   <div class="nav-logo">ThinkRoot <span>Young Leaders</span></div>
   <div class="nav-links">
-    <a href="#program">The Problem</a>
-    <a href="#results">Real Stories</a>
-    <a href="#programs">The Programs</a>
+    <a href="#program">The Program</a>
+    <a href="#resilience-5day">5-Day</a>
+    <a href="#resilience-6week">6-Week</a>
     <a href="#about">About Tina</a>
     <a href="#community">Community</a>
     <a href="#interest">Interest List</a>
@@ -310,12 +353,13 @@
         <line x1="100" y1="200" x2="60" y2="220" stroke="#3d2b1a" stroke-width="2.5" opacity="0.5"/>
         <line x1="100" y1="200" x2="140" y2="220" stroke="#3d2b1a" stroke-width="2.5" opacity="0.5"/>
         <line x1="100" y1="200" x2="100" y2="228" stroke="#3d2b1a" stroke-width="3" opacity="0.6"/>
-        <circle cx="75" cy="55" r="4" fill="#c8963c" opacity="0.6"/>
-        <circle cx="125" cy="48" r="3" fill="#c8963c" opacity="0.5"/>
-        <circle cx="100" cy="25" r="3.5" fill="#c8963c" opacity="0.7"/>
+        <circle cx="88" cy="52" r="3" fill="#c8963c" opacity="0.9"/>
+        <circle cx="108" cy="38" r="2.5" fill="#c8963c" opacity="0.8"/>
+        <circle cx="100" cy="60" r="2" fill="#e8c078" opacity="0.7"/>
+        <circle cx="116" cy="55" r="2.5" fill="#c8963c" opacity="0.85"/>
       </svg>
-      <div class="hero-quote">"The mind is everything. What you think, you become."</div>
-      <div class="hero-quote-attr">— Buddhist proverb</div>
+      <div class="hero-quote">"Where Great Minds Take Root."</div>
+      <div class="hero-quote-attr">ThinkRoot Young Leaders</div>
     </div>
   </div>
 </section>
@@ -361,58 +405,59 @@
   </div>
 </section>
 
-<!-- ── REAL STORIES ── -->
-<section class="details-section" id="results">
-  <div class="section-label">Real stories</div>
-  <h2 class="section-h2">What actually happened — in their own lives.</h2>
-  <p class="section-body">These are not hypothetical outcomes. These are real children who completed ThinkRoot programs and what their parents and teachers noticed after.</p>
-  <div class="stories-grid">
-    <div class="story-card">
-      <div class="story-headline">From struggling in math to mentoring her classmates</div>
-      <div class="story-body">One student came in with a growing belief that she simply wasn't a math person. By learning to recognize the thoughts that were limiting her — and practice transforming them — her relationship with the subject shifted entirely. Her scores improved. Then something unexpected happened: she started helping other students who were struggling with the same thing.</div>
-      <span class="story-context">Upper elementary</span>
-    </div>
-    <div class="story-card">
-      <div class="story-headline">She became the person her classmates turned to in conflict</div>
-      <div class="story-body">When disagreements broke out among her peers, one student naturally started stepping in — not to take sides, but to help everyone feel heard. She wasn't assigned this role. She grew into it. Her parents noticed she wasn't just handling her own emotions better — she was genuinely helping others navigate theirs.</div>
-      <span class="story-context">Middle school</span>
-    </div>
-    <div class="story-card">
-      <div class="story-headline">She started a daily practice — without being asked</div>
-      <div class="story-body">The clearest sign that a skill has truly landed is when a child uses it outside of class, without prompting. One student began meditating on her own, every day. Her parents saw changes across every part of her life — how she handled stress, how she slept, how she showed up in her family. She chose this. No one told her to.</div>
-      <span class="story-context">Upper elementary</span>
-    </div>
-    <div class="story-card">
-      <div class="story-headline">She turned off the TV — and didn't look back</div>
-      <div class="story-body">One student had developed a habit of watching TV for hours each day — something that was quietly affecting her sleep, focus, and mood. After the program she reduced it significantly, on her own. Her academic performance improved. Her social confidence improved. Her emotional wellbeing improved. The change came from inside — not from being told.</div>
-      <span class="story-context">Middle school</span>
-    </div>
+<!-- ── THE INNER OS ── -->
+<section class="learn-section">
+  <div class="section-label">Why it matters</div>
+  <h2 class="section-h2">Every child is running software.<br>But no one has taught them about the operating system.</h2>
+  <p class="section-body" style="color:rgba(168,213,168,0.85); margin-bottom:1.5rem;">We invest in math tutors, coding camps, and sports coaches. We train every skill our children will need — except one. The skill of managing their own mind.</p>
+  <div class="os-callout">
+    <p><strong>Think of it this way:</strong> every app runs on an operating system. No matter how good the apps are — if the OS is buggy, everything underperforms. ThinkRoot teaches children the <strong>inner operating system</strong> that runs underneath every other skill they will ever learn.</p>
   </div>
+  <p class="section-body" style="color:rgba(168,213,168,0.85); margin-bottom:1rem;">Your child has up to 80,000 thoughts every day. Most are automatic. Many are negative — not because your child is negative, but because that is how the human brain is wired. And those thoughts are quietly shaping how they perform, relate to others, and feel about themselves.</p>
+  <p class="section-body" style="color:rgba(168,213,168,0.85);">The science is clear: unmanaged negative thought patterns in childhood don't disappear. They accumulate — shaping behavior, relationships, and health for decades.</p>
+  <p style="font-size:1.2rem; font-family:'Playfair Display',serif; font-style:italic; font-weight:400; color:var(--gold-light); margin:1.75rem 0; line-height:1.55; border-left:3px solid var(--gold); padding-left:1.25rem;">Most adults are still running on thought patterns formed before age ten.</p>
+  <p class="section-body" style="color:rgba(168,213,168,0.85);"><strong style="color:var(--gold-light);">The best time to build these skills is now — before the patterns harden. Before the pressure intensifies. Before the baggage gets heavy.</strong></p>
 </section>
 
-<!-- ── WHAT PARENTS OBSERVE ── -->
+<!-- ── THE WHOLE TREE ── -->
 <section>
-  <div class="section-label">After the program</div>
-  <h2 class="section-h2">What parents observe.</h2>
-  <p class="section-body">These are not abstract outcomes. These are specific, observable changes parents report within days of their child completing the program.</p>
-  <div class="observe-grid">
-    <div class="observe-item"><div class="observe-check">✓</div>A longer pause before reacting — catching themselves before things escalate</div>
-    <div class="observe-item"><div class="observe-check">✓</div>More willing to talk through difficulty instead of shutting down or exploding</div>
-    <div class="observe-item"><div class="observe-check">✓</div>Uses breathing independently — not when prompted, but on their own</div>
-    <div class="observe-item"><div class="observe-check">✓</div>Less reactive in conflict — more empathy and perspective toward others</div>
-    <div class="observe-item"><div class="observe-check">✓</div>Better sleep — tools to quiet an overactive mind at night</div>
-    <div class="observe-item"><div class="observe-check">✓</div>A new vocabulary for what's happening inside — naming states instead of acting them out</div>
-  </div>
-  <div class="inner-science-note">
-    <strong>This is not therapy. This is not yoga. This is skills training</strong> — practical, evidence-based, and immediately useful in your child's daily life. Think of it as teaching children to brush their teeth: simple daily habits that prevent much larger problems from forming later.
+  <div class="section-label">What makes ThinkRoot different</div>
+  <h2 class="section-h2">Most programs work on the branches.<br>ThinkRoot works on the whole tree.</h2>
+  <p class="section-body">Most social-emotional learning programs address behavior at the surface — how children act, how they respond, how they cope. ThinkRoot works on the inner patterns that produce the behavior in the first place. ThinkRoot uses a living tree as the image for the five layers of a child's inner life.</p>
+  <div class="tree-grid">
+    <div class="tree-card">
+      <div class="tree-layer">🌱 The Roots</div>
+      <div class="tree-science">Body intelligence · nervous system</div>
+      <div class="tree-desc">The invisible foundation. The body's nervous system holds patterns built from every experience — below the level of conscious thought. ThinkRoot gives children body-awareness tools before patterns harden into chronic stress.</div>
+    </div>
+    <div class="tree-card">
+      <div class="tree-layer">🪵 The Trunk</div>
+      <div class="tree-science">Heart coherence · HeartMath research</div>
+      <div class="tree-desc">The bridge between deep intelligence and outward expression. The heart has its own neural network of ~40,000 neurons and sends more signals to the brain than it receives. Heart practices work here.</div>
+    </div>
+    <div class="tree-card">
+      <div class="tree-layer">🌿 The Branches</div>
+      <div class="tree-science">Neuroplasticity · growth mindset · self-talk</div>
+      <div class="tree-desc">Conscious thought, attention, belief, intention. The most responsive layer to direct instruction. ThinkRoot's AAA method, gratitude, visualization, and self-talk tools all operate here.</div>
+    </div>
+    <div class="tree-card">
+      <div class="tree-layer">🍃 The Leaves</div>
+      <div class="tree-science">Emotional contagion · mirror neurons</div>
+      <div class="tree-desc">What a child's inner state contributes to the people and spaces around them. Emotional states are measurably contagious. A child who regulates their own inner state makes everyone nearby calmer.</div>
+    </div>
+    <div class="tree-card" style="grid-column: span 2;">
+      <div class="tree-layer">🌳 The Whole Tree</div>
+      <div class="tree-science">ACE studies · longitudinal positive psychology</div>
+      <div class="tree-desc">The physical body as the outer expression of every inner layer. A landmark study following people from their twenties into their sixties found that the inner story someone told themselves when they were young showed up in their health records decades later. A program that reaches these patterns in childhood is not enrichment. It is prevention.</div>
+    </div>
   </div>
 </section>
 
-<!-- ── WHY IT WORKS ── -->
+<!-- ── WHAT THE RESEARCH SHOWS ── -->
 <section class="details-section">
   <div class="section-label">The science</div>
-  <h2 class="section-h2">Measurable results. Decades of research.</h2>
-  <p class="section-body">ThinkRoot teaches children one practical skill: how to notice a thought before it takes over — and what to do next. Simple, repeatable, works anywhere. The outcomes are well established across decades of research in child development:</p>
+  <h2 class="section-h2">Measurable results from teaching children to manage their own minds.</h2>
+  <p class="section-body">Children who develop inner awareness and self-regulation skills show measurable improvements across every area of life. This is not opinion — it is what the research shows.</p>
   <div class="details-grid">
     <div class="detail-card">
       <span class="detail-icon">📚</span>
@@ -448,67 +493,243 @@
   <p style="font-size:0.78rem; color:var(--text-light); font-style:italic; margin-top:1.5rem; font-weight:300;">Sources: UC Berkeley Greater Good Science Center · Harvard University · Stanford University · Yale Center for Emotional Intelligence · HeartMath Institute · University of Michigan · University of Texas · peer-reviewed studies in child development</p>
 </section>
 
-<!-- ── THE PROGRAMS ── -->
-<section id="programs">
-  <div class="section-label">The programs</div>
-  <h2 class="section-h2">Two ways to build the foundation.</h2>
-  <p class="section-body">Both programs teach the same core skills. The difference is pace and depth. Choose the format that fits your child and your family's schedule.</p>
-  <div class="programs-grid">
+<!-- ── THE AAA FRAMEWORK ── -->
+<section class="learn-section">
+  <div class="section-label">The framework</div>
+  <h2 class="section-h2">AAA — three steps that change everything.</h2>
+  <p class="section-body" style="color:rgba(168,213,168,0.85); margin-bottom:1rem;">ThinkRoot programs are built on one powerful framework — AAA — that children learn across every session and carry for the rest of their life. Most adults were never taught any of these steps.</p>
+  <div class="learn-grid">
+    <div class="learn-card">
+      <div class="learn-num">A</div>
+      <div class="learn-title">Awareness</div>
+      <div class="learn-desc">Notice a thought or feeling as it arises — before it takes over. Simply seeing a thought clearly, before reacting, is a skill most adults were never taught. Children learn this by Day 2.</div>
+    </div>
+    <div class="learn-card">
+      <div class="learn-num">A</div>
+      <div class="learn-title">Accept</div>
+      <div class="learn-desc">See it clearly without being controlled by it. A thought is information — not truth, not command. Acknowledging a storm thought without suppressing it is the step that prevents it from taking over.</div>
+    </div>
+    <div class="learn-card">
+      <div class="learn-num">A</div>
+      <div class="learn-title">Action</div>
+      <div class="learn-desc">Consciously choose a response. Use the Five Power Technique to transform a storm thought into one that creates calm, clarity, and connection. Children own this by Day 5.</div>
+    </div>
+  </div>
 
-    <div class="program-card">
-      <div class="program-type">Intensive · 5 Days</div>
-      <div class="program-name">Resilience Lab</div>
-      <div class="program-duration">One week. One hour a day. Monday through Friday.</div>
-      <div class="program-meta">
-        <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
-        <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
-        <span class="pill pill-mist">Small Groups</span>
-        <span class="pill pill-gold">In-Person</span>
+  <div style="margin-top:4rem;">
+    <div class="section-label">The central practice</div>
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:600; color:var(--mint); margin-bottom:0.5rem; letter-spacing:-0.01em;">The Five Power Technique</h3>
+    <p class="section-body" style="color:rgba(168,213,168,0.85); margin-bottom:2rem;">One practice. Five steps. Under three minutes. Learned on Day 1. Used every single day. Children can use it independently by Day 5 — any time, anywhere, without any equipment.</p>
+    <div class="learn-grid" style="grid-template-columns:repeat(5,1fr);">
+      <div class="learn-card">
+        <div class="learn-num" style="font-size:1.3rem;">1</div>
+        <div class="learn-title">Body Power</div>
+        <div class="learn-desc">One hand on belly, one on heart. One breath. Arrive in your body. <em style="font-size:0.8rem; color:var(--mint); display:block; margin-top:0.5rem;">Polyvagal theory — Porges research</em></div>
       </div>
-      <p style="font-size:0.92rem; color:var(--text-mid); line-height:1.7; font-weight:300; margin-bottom:1rem;">Each session builds on the previous day — a complete arc from first noticing thoughts to actively working with them. By Friday, your child has a working toolkit they can use any time, anywhere.</p>
-      <div class="program-divider"></div>
-      <div class="program-includes-label">What your child takes home</div>
-      <div class="program-include">A daily practice they can use anywhere — independently, without prompting</div>
-      <div class="program-include">Personal Resilience Toolkit — built on the final day</div>
-      <div class="program-include">Daily Practice Cards with journal prompts and home practice</div>
-      <div class="program-price">
-        <div>
-          <div class="price-value">Groups forming now</div>
-          <div class="price-note">Pricing confirmed on enrollment</div>
-        </div>
-        <a href="#interest" class="btn-primary">Join the interest list →</a>
+      <div class="learn-card">
+        <div class="learn-num" style="font-size:1.3rem;">2</div>
+        <div class="learn-title">Inner Dialogue</div>
+        <div class="learn-desc">"I see you. I am here." Speak to the part holding the difficulty. <em style="font-size:0.8rem; color:var(--mint); display:block; margin-top:0.5rem;">Self-compassion research — Neff, Harvard</em></div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num" style="font-size:1.3rem;">3</div>
+        <div class="learn-title">Mind Power</div>
+        <div class="learn-desc">Visualize warm light filling the area of difficulty. Clearing. Calming. <em style="font-size:0.8rem; color:var(--mint); display:block; margin-top:0.5rem;">Guided imagery — Cleveland Clinic research</em></div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num" style="font-size:1.3rem;">4</div>
+        <div class="learn-title">Sound Power</div>
+        <div class="learn-desc">"[Name], you are calm." Three times. Using your name works better than "I am." <em style="font-size:0.8rem; color:var(--mint); display:block; margin-top:0.5rem;">Kross research, University of Michigan</em></div>
+      </div>
+      <div class="learn-card">
+        <div class="learn-num" style="font-size:1.3rem;">5</div>
+        <div class="learn-title">Breath Power</div>
+        <div class="learn-desc">Three slow sealing breaths. In through the nose, long out through the mouth. <em style="font-size:0.8rem; color:var(--mint); display:block; margin-top:0.5rem;">Physiological sigh — Huberman / Stanford research</em></div>
       </div>
     </div>
-
-    <div class="program-card">
-      <div class="program-type">Deep Work · 6 Weeks</div>
-      <div class="program-name">Resilience Lab</div>
-      <div class="program-duration">Six weeks. One hour per session. Once per week.</div>
-      <div class="program-meta">
-        <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
-        <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
-        <span class="pill pill-mist">Small Groups</span>
-        <span class="pill pill-gold">In-Person</span>
-      </div>
-      <p style="font-size:0.92rem; color:var(--text-mid); line-height:1.7; font-weight:300; margin-bottom:1rem;">Each session builds on the last — and between sessions, children practice in real life and bring that experience back the following week. By Session 6 they have six weeks of evidence from their own lives about what works.</p>
-      <div class="program-divider"></div>
-      <div class="program-includes-label">What your child takes home</div>
-      <div class="program-include">Six weeks of practiced skills — tested in real situations, not just in class</div>
-      <div class="program-include">Personal Practice Plan with an accountability partner</div>
-      <div class="program-include">Weekly Practice Cards and Personal Resilience Toolkit</div>
-      <div class="program-price">
-        <div>
-          <div class="price-value">Groups forming now</div>
-          <div class="price-note">Pricing confirmed on enrollment</div>
-        </div>
-        <a href="#interest" class="btn-primary">Join the interest list →</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- ── LEADERSHIP LAB — COMING SOON ── -->
+<!-- ── TWO KINDS OF THINKING ── -->
+<section>
+  <div class="section-label">What children actually learn to do</div>
+  <h2 class="section-h2">The difference between thoughts that help and thoughts that harm.</h2>
+  <p class="section-body">Children learn to recognize two kinds of thinking — and practice transforming one into the other. Not through wishful thinking, but through concrete, repeatable skills backed by neuroscience.</p>
+  <div class="thought-row">
+    <div class="thought-box thought-sun">
+      <div class="thought-title thought-title-sun">Thoughts that build</div>
+      <div class="thought-body thought-body-sun">Activate focus, calm, and resilience. These are the thoughts that help children perform, connect, and recover — and they can be deliberately practiced at any age.</div>
+      <div class="thought-examples thought-examples-sun">"I can figure this out." &nbsp;·&nbsp; "This is hard — I've handled hard before." &nbsp;·&nbsp; "I don't have to get it right the first time." &nbsp;·&nbsp; "Things will get better."</div>
+    </div>
+    <div class="thought-box thought-storm">
+      <div class="thought-title thought-title-storm">Thoughts that limit</div>
+      <div class="thought-body thought-body-storm">Trigger stress responses, drain energy, and erode confidence over time. Most children have never been taught to recognize them — let alone change them.</div>
+      <div class="thought-examples thought-examples-storm">"I'm not smart enough for this." &nbsp;·&nbsp; "Everyone noticed when I messed up." &nbsp;·&nbsp; "I don't fit in anywhere." &nbsp;·&nbsp; "What's the point of trying?"</div>
+    </div>
+  </div>
+  <p class="section-body" style="margin-bottom:1.5rem;">Both kinds of thinking are normal and human. The skill — which no school teaches — is knowing what to do when the limiting ones show up. Here is what that transformation looks like in real life:</p>
+  <div style="max-width:680px;">
+    <div class="ba-row"><div class="ba-before">"I'm not smart enough for this."</div><div class="ba-arrow">→</div><div class="ba-after">"I don't know this yet. That's what learning is."</div></div>
+    <div class="ba-row"><div class="ba-before">"Everyone is judging me."</div><div class="ba-arrow">→</div><div class="ba-after">"Most people are thinking about themselves, not me."</div></div>
+    <div class="ba-row"><div class="ba-before">"I always mess up."</div><div class="ba-arrow">→</div><div class="ba-after">"I made a mistake. That's not the same as being a mistake."</div></div>
+  </div>
+</section>
+
+<!-- ── WHAT PARENTS OBSERVE ── -->
+<section class="details-section">
+  <div class="section-label">After the program</div>
+  <h2 class="section-h2">What parents observe.</h2>
+  <p class="section-body">These are not abstract outcomes. These are specific, observable changes parents report within days of their child completing the program.</p>
+  <div class="observe-grid">
+    <div class="observe-item"><div class="observe-check">✓</div>A longer pause before reacting — catching themselves before things escalate</div>
+    <div class="observe-item"><div class="observe-check">✓</div>More willing to talk through difficulty instead of shutting down or exploding</div>
+    <div class="observe-item"><div class="observe-check">✓</div>Uses breathing independently — not when prompted, but on their own</div>
+    <div class="observe-item"><div class="observe-check">✓</div>Less reactive in conflict — more empathy and perspective toward others</div>
+    <div class="observe-item"><div class="observe-check">✓</div>Better sleep — tools to quiet an overactive mind at night</div>
+    <div class="observe-item"><div class="observe-check">✓</div>A new vocabulary for what's happening inside — naming states they previously couldn't articulate, or just acted out</div>
+  </div>
+  <div class="inner-science-note">
+    <strong>This is not therapy. This is not yoga. This is skills training</strong> — practical, evidence-based, and immediately useful in your child's daily life. Think of it as the equivalent of teaching children to brush their teeth: simple daily habits that prevent much larger problems from forming later.
+  </div>
+</section>
+
+<!-- ── RESILIENCE LAB 5-DAY ── -->
+<section id="resilience-5day">
+  <div class="section-label">The ThinkRoot Curriculum · Resilience Lab</div>
+  <h2 class="section-h2">Five days. One complete resilience foundation.</h2>
+  <p class="section-body" style="margin-bottom:1.5rem;">One week. One hour a day. Monday through Friday. Each session builds on the previous day — a complete arc from first noticing thoughts to actively transforming them. By Friday, your child has a working toolkit they can use any time, anywhere.</p>
+  <div class="hero-meta" style="margin-bottom:2rem;">
+    <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+    <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+    <span class="pill pill-mist">5 Days · 1 hr/day · Mon–Fri</span>
+    <span class="pill pill-gold">Small Groups</span>
+  </div>
+  <div class="weeks-list">
+    <div class="week-item">
+      <div class="week-num">01</div>
+      <div class="week-content">
+        <div class="week-title">Meet Your Brain</div>
+        <div class="week-theme">"You are not your thoughts. You are the one noticing them."</div>
+        <div class="week-desc">Information-Energy-Matter framework. Thoughts that build and thoughts that limit. First learning of the AAA Method. The Five Power Technique — learned and practiced for the first time. Focus rock.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">02</div>
+      <div class="week-content">
+        <div class="week-title">Thought Weather</div>
+        <div class="week-theme">"Thoughts come in two kinds — some build us up, some wear us down. Both pass. You can learn what to do with each."</div>
+        <div class="week-desc">Gratitude neuroscience. Weather Report pairs. Naming and accepting limiting thoughts without being controlled by them. Five Power review.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">03</div>
+      <div class="week-content">
+        <div class="week-title">The Feeling Body</div>
+        <div class="week-theme">"Your body carries every feeling. Learn to read its signals — and bring warmth to the ones that hurt."</div>
+        <div class="week-desc">Body scan. Heart coherence — HeartMath research. Wherever children feel something difficult, they learn to bring warmth to that part of the body. Body outline activity.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">04</div>
+      <div class="week-content">
+        <div class="week-title">Kindness is a Superpower</div>
+        <div class="week-theme">"One kind thought — toward yourself or someone else — changes your brain chemistry and spreads to everyone around you."</div>
+        <div class="week-desc">Self-compassion science — Kristin Neff. Emotional contagion. Service as inner practice. Water and food-colouring demonstration. Gratitude letter.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">05</div>
+      <div class="week-content">
+        <div class="week-title">I Am the Author</div>
+        <div class="week-theme">"You have more influence over your inner world than anyone ever told you."</div>
+        <div class="week-desc">Full AAA integration. Children teach the Five Power Technique to each other. Personal Resilience Toolkit built. Certificates. Five Power Technique — mastered, owned, portable.</div>
+      </div>
+    </div>
+  </div>
+  <div class="takeaways">
+    <div class="takeaways-label">What they take home</div>
+    <div class="takeaway-item">Personal Resilience Toolkit — built on Day 5</div>
+    <div class="takeaway-item">Daily Practice Cards — one per day, journal prompts and home practice</div>
+    <div class="takeaway-item">The Five Power Technique — memorized and usable any time, anywhere</div>
+  </div>
+  <div style="margin-top:2rem;"><a href="#interest" class="btn-primary">Join the interest list →</a></div>
+</section>
+
+<!-- ── RESILIENCE LAB 6-WEEK ── -->
+<section id="resilience-6week" class="details-section mist-program">
+  <div class="section-label">The ThinkRoot Curriculum · Resilience Lab</div>
+  <h2 class="section-h2">Six weeks. One complete skills foundation.</h2>
+  <p class="section-body" style="margin-bottom:1.5rem;">Once per week, one hour per session. Each session builds on the last — and between sessions, children practice at home. By Session 6 they have six weeks of real-life evidence about what works.</p>
+  <div class="hero-meta" style="margin-bottom:1rem;">
+    <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+    <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+    <span class="pill pill-mist">6 Weeks · 1 hr/session</span>
+    <span class="pill pill-gold">Small Groups</span>
+  </div>
+  <div class="why-box">
+    <p>"Skills practiced with space between sessions show significantly stronger long-term retention. Between each session, children practice at home, notice how it works in their real life, and bring that experience back the following week. By Session 6, they have six weeks of evidence from their own lives." — spaced learning research</p>
+  </div>
+  <div class="weeks-list">
+    <div class="week-item">
+      <div class="week-num">01</div>
+      <div class="week-content">
+        <div class="week-title">Meet Your Brain</div>
+        <div class="week-theme">"You are not your thoughts. You are the one noticing them."</div>
+        <div class="week-desc">Information-Energy-Matter. Thoughts that build and thoughts that limit. AAA Method. Five Power Technique — first learning. Home practice: Five Power once daily.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">02</div>
+      <div class="week-content">
+        <div class="week-title">Thought Weather</div>
+        <div class="week-theme">"Thoughts come in two kinds — some build, some limit. Both pass. You can learn to work with each."</div>
+        <div class="week-desc">Home Practice Review. Gratitude neuroscience. Weather Report practice. Home practice: morning gratitude — three specifics daily.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">03</div>
+      <div class="week-content">
+        <div class="week-title">The Feeling Body</div>
+        <div class="week-theme">"Your body carries every feeling. Learn to read its signals."</div>
+        <div class="week-desc">Home Practice Review. Body scan. Heart coherence. Warmth to difficulty. Home practice: body check-in before sleep.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">04</div>
+      <div class="week-content">
+        <div class="week-title">Kindness is a Superpower</div>
+        <div class="week-theme">"One kind thought — toward yourself or someone else — changes your brain chemistry."</div>
+        <div class="week-desc">Home Practice Review. Self-compassion. Emotional contagion. Service practice. Home practice: one intentional act of kindness daily, noticed in the body.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">05</div>
+      <div class="week-content">
+        <div class="week-title">I Am the Author</div>
+        <div class="week-theme">"You have more influence over your inner world than anyone told you."</div>
+        <div class="week-desc">Home Practice Review. Full AAA integration. Visualization and mind power. Home practice: choose one storm thought this week and work through it with the full AAA method.</div>
+      </div>
+    </div>
+    <div class="week-item">
+      <div class="week-num">06</div>
+      <div class="week-content">
+        <div class="week-title">I Am the Root</div>
+        <div class="week-theme">"You are not just the branches. You are the roots, the trunk, the leaves — and you are tending them now."</div>
+        <div class="week-desc">Home Practice Review. The full tree model. Children review six weeks of their own evidence — what worked, what they want to keep. Personal Practice Plan: a longer-term daily commitment with an accountability partner.</div>
+      </div>
+    </div>
+  </div>
+  <div class="takeaways">
+    <div class="takeaways-label">What they take home</div>
+    <div class="takeaway-item">Weekly Practice Cards — one per session, 6 total</div>
+    <div class="takeaway-item">Personal Resilience Toolkit</div>
+    <div class="takeaway-item">Personal Practice Plan — daily commitment, accountability partner</div>
+    <div class="takeaway-item">The Five Power Technique — owned and portable</div>
+  </div>
+  <div style="margin-top:2rem;"><a href="#interest" class="btn-primary">Join the interest list →</a></div>
+</section>
+
+<!-- ── YOUNG LEADERS — COMING SOON ── -->
 <section class="coming-section">
   <div class="coming-badge">Coming Soon</div>
   <div class="section-label">The ThinkRoot Curriculum · Next</div>

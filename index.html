@@ -86,6 +86,18 @@
 
   /* ── THE GAP ── */
   .two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .gap-stat-callout { margin-top: 2rem; padding: 1.25rem 1.5rem; background: rgba(200,150,60,0.07); border-left: 3px solid var(--gold); border-radius: 0 4px 4px 0; }
+  .gap-stat-number { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+  .gap-stat-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
+
+  /* ── PARENT TESTIMONIALS ── */
+  .testimonials-section { background: var(--cream); }
+  .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  .testimonial-card { background: var(--white); border: 1px solid var(--mint); border-radius: 4px; padding: 2rem; position: relative; }
+  .testimonial-card::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--mint); line-height: 0.5; display: block; margin-bottom: 1rem; }
+  .testimonial-quote { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; font-style: italic; margin-bottom: 1.25rem; }
+  .testimonial-attr { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage); }
+  @media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr; } .gap-stat-callout { margin-top: 1.5rem; } }
   /* ── PROBLEM / OUTCOME TABLE (cream + gold) ── */
   .po-table-wrap { margin-top: 3rem; border: 1px solid rgba(200,150,60,0.28); border-radius: 4px; overflow: hidden; background: rgba(250,248,242,0.7); }
   .po-header { display: grid; grid-template-columns: 1fr 1fr; background: rgba(200,150,60,0.08); border-bottom: 1px solid rgba(200,150,60,0.2); padding: 0.7rem 1.5rem; }
@@ -284,7 +296,7 @@
   <div class="hero-left">
     <div class="hero-eyebrow fade-up delay-1">The skills schools don't teach</div>
     <h1 class="hero-h1 fade-up delay-2">Where great minds<br><em>take root.</em></h1>
-    <p class="hero-tagline fade-up delay-3">Every skill your child has performs better when they know how to manage their own mind. That's what we teach.</p>
+    <p class="hero-tagline fade-up delay-3">Your child will leave knowing how to catch a negative thought before it spirals — and transform it. A skill that improves every part of their life. And one most adults were never taught.</p>
     <div class="hero-meta fade-up delay-4">
       <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
       <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
@@ -322,7 +334,7 @@
 
 <!-- ── GOLD STRIP ── -->
 <div class="problem-strip">
-  Schools teach reading, writing, and arithmetic. But who teaches kids how to manage their own mind?
+  Half of all lifelong mental health conditions begin by age 14 — and most go unaddressed. <em style="font-style:normal; font-weight:500;">— World Health Organization</em>
 </div>
 
 <!-- ── THE GAP ── -->
@@ -335,6 +347,10 @@
     </div>
     <div>
       <p class="section-body" style="margin-top:3.5rem;">ThinkRoot fills that gap. Children in Grades 2–8 discover the science behind their own minds — and leave with a practical toolkit they'll use for life.</p>
+      <div class="gap-stat-callout">
+        <div class="gap-stat-number">42%</div>
+        <div class="gap-stat-text">of high school students report persistent sadness or hopelessness — <em>CDC Youth Risk Behavior Survey</em></div>
+      </div>
     </div>
   </div>
   <div class="po-table-wrap">
@@ -386,6 +402,27 @@
       <div class="story-headline">She turned off the TV — and didn't look back</div>
       <div class="story-body">One student had developed a habit of watching TV for hours each day — something that was quietly affecting her sleep, focus, and mood. After the program she reduced it significantly, on her own. Her academic performance improved. Her social confidence improved. Her emotional wellbeing improved. The change came from inside — not from being told.</div>
       <span class="story-context">Middle school</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARENT TESTIMONIALS ── -->
+<section class="testimonials-section">
+  <div class="section-label">In their own words</div>
+  <h2 class="section-h2">What parents are saying.</h2>
+  <p class="section-body">Real feedback from parents whose children have completed a ThinkRoot program.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-quote">Testimonial coming soon — responses being collected from program graduates.</div>
+      <div class="testimonial-attr">Parent · Upper Elementary</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-quote">Testimonial coming soon — responses being collected from program graduates.</div>
+      <div class="testimonial-attr">Parent · Middle School</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-quote">Testimonial coming soon — responses being collected from program graduates.</div>
+      <div class="testimonial-attr">Parent · Upper Elementary</div>
     </div>
   </div>
 </section>
@@ -467,14 +504,19 @@
       </div>
       <p style="font-size:0.92rem; color:var(--text-mid); line-height:1.7; font-weight:300; margin-bottom:1rem;">Each session builds on the previous day — a complete arc from first noticing thoughts to actively working with them. By Friday, your child has a working toolkit they can use any time, anywhere.</p>
       <div class="program-divider"></div>
+      <div class="program-includes-label">Skills your child gains</div>
+      <div class="program-include">Catch a negative thought before it spirals — every time</div>
+      <div class="program-include">Transform a difficult thought on their own, anywhere, without prompting</div>
+      <div class="program-include">Handle academic pressure, friendship stress, and hard moments with confidence</div>
+      <div class="program-include">Lifelong inner skills most adults were never given</div>
+      <div class="program-divider"></div>
       <div class="program-includes-label">What your child takes home</div>
-      <div class="program-include">A daily practice they can use anywhere — independently, without prompting</div>
       <div class="program-include">Personal Resilience Toolkit — built on the final day</div>
       <div class="program-include">Daily Practice Cards with journal prompts and home practice</div>
       <div class="program-price">
         <div>
-          <div class="price-value">Groups forming now</div>
-          <div class="price-note">Pricing confirmed on enrollment</div>
+          <div class="price-value">$99 per child</div>
+          <div class="price-note">Small groups · In-person · 5 consecutive days</div>
         </div>
         <a href="#interest" class="btn-primary">Join the interest list →</a>
       </div>
@@ -492,14 +534,20 @@
       </div>
       <p style="font-size:0.92rem; color:var(--text-mid); line-height:1.7; font-weight:300; margin-bottom:1rem;">Each session builds on the last — and between sessions, children practice in real life and bring that experience back the following week. By Session 6 they have six weeks of evidence from their own lives about what works.</p>
       <div class="program-divider"></div>
+      <div class="program-includes-label">Skills your child gains</div>
+      <div class="program-include">Catch a negative thought before it spirals — every time</div>
+      <div class="program-include">Transform a difficult thought on their own, anywhere, without prompting</div>
+      <div class="program-include">Handle academic pressure, friendship stress, and hard moments with confidence</div>
+      <div class="program-include">Lifelong inner skills most adults were never given</div>
+      <div class="program-divider"></div>
       <div class="program-includes-label">What your child takes home</div>
       <div class="program-include">Six weeks of practiced skills — tested in real situations, not just in class</div>
       <div class="program-include">Personal Practice Plan with an accountability partner</div>
       <div class="program-include">Weekly Practice Cards and Personal Resilience Toolkit</div>
       <div class="program-price">
         <div>
-          <div class="price-value">Groups forming now</div>
-          <div class="price-note">Pricing confirmed on enrollment</div>
+          <div class="price-value">$120 per child</div>
+          <div class="price-note">Small groups · In-person · 6 weekly sessions</div>
         </div>
         <a href="#interest" class="btn-primary">Join the interest list →</a>
       </div>

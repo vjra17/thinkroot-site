@@ -197,7 +197,16 @@
   .inter-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--gold-light); margin-bottom: 1rem; line-height: 1.3; }
   .inter-body { font-size: 0.93rem; color: rgba(200,212,200,0.9); line-height: 1.75; font-weight: 300; margin-bottom: 1rem; }
   .inter-quote { padding: 1rem 0 0 1.25rem; border-left: 2px solid var(--gold); font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: var(--gold-light); line-height: 1.65; }
-  @media (max-width: 900px) { .community-pillars { grid-template-columns: 1fr; } .inter-block { grid-template-columns: 1fr; gap: 1.5rem; } .inter-stat { text-align: left; } }
+  .inter-evidence { grid-column: 1 / -1; display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(106,170,106,0.18); margin-top: 0.5rem; }
+  .inter-evidence-letter img { width: 100%; border-radius: 4px; border: 2px solid rgba(200,150,60,0.35); box-shadow: 0 4px 20px rgba(0,0,0,0.4); transform: rotate(-1.5deg); display: block; }
+  .inter-letter-caption { font-size: 0.68rem; color: var(--fern); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.75rem; text-align: center; line-height: 1.5; }
+  .inter-testimonial-block { padding: 0.75rem 0 1.25rem 1.25rem; border-left: 2px solid rgba(200,150,60,0.3); margin-bottom: 1.5rem; }
+  .inter-testimonial-text { font-size: 0.92rem; font-style: italic; color: rgba(200,212,200,0.92); line-height: 1.75; }
+  .inter-testimonial-attr { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fern); margin-top: 0.6rem; }
+  .inter-press-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fern); margin-bottom: 0.6rem; }
+  .inter-press a { color: var(--gold-light); font-size: 0.85rem; text-decoration: none; display: block; margin-bottom: 0.35rem; transition: color 0.2s; }
+  .inter-press a:hover { color: var(--gold); text-decoration: underline; }
+  @media (max-width: 900px) { .community-pillars { grid-template-columns: 1fr; } .inter-block { grid-template-columns: 1fr; gap: 1.5rem; } .inter-stat { text-align: left; } .inter-evidence { grid-template-columns: 1fr; } }
 
   /* ── COMING SOON ── */
   .coming-section { background: var(--forest); }
@@ -787,6 +796,24 @@
       <div class="inter-body">In 2016, Tina co-created <em>Rewired to Inspire</em> at Fremont Main Library — a program that brought high school students from Mission San Jose together with adults 55+ in a spirit of genuine connection, learning, and service. For four years it ran on a simple belief: when generations meet with purpose, everyone grows.</div>
       <div class="inter-body">Students brought curiosity and energy. Seniors brought wisdom and life experience. Neither left the same. The program was featured in <em>Tri-City Voice</em> and received a letter of recognition from Congressman Michael M. Honda — a moment that affirmed what everyone involved already knew: this work matters.</div>
       <div class="inter-quote">"Leadership is not a title. It is the ability to show up — fully, generously — for someone else's world."</div>
+    </div>
+
+    <div class="inter-evidence">
+      <div class="inter-evidence-letter">
+        <img src="honda-letter.jpg" alt="Letter from Congressman Michael M. Honda recognizing Rewired to Inspire, May 2016" />
+        <div class="inter-letter-caption">Letter from Congressman<br>Michael M. Honda · May 2016</div>
+      </div>
+      <div>
+        <div class="inter-testimonial-block">
+          <div class="inter-testimonial-text">"Human values is dying all around and people like you give life to this core value that everybody should possess. Senior/elders are getting ignored and neglected — only these meetups bring back the dying spirit in us."</div>
+          <div class="inter-testimonial-attr">— Venil, Rewired to Inspire participant</div>
+        </div>
+        <div class="inter-press-label">As featured in</div>
+        <div class="inter-press">
+          <a href="https://tricityvoice.com/archives/2016/TCV-161101.pdf" target="_blank" rel="noopener">Tri-City Voice · November 2016 ↗</a>
+          <a href="https://tricityvoice.com/archives/2016/TCV-160517.pdf" target="_blank" rel="noopener">Tri-City Voice · May 2016 ↗</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

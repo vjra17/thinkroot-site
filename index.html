@@ -86,14 +86,14 @@
 
   /* ── THE GAP ── */
   .two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .po-table-wrap { margin-top: 3rem; border: 1px solid var(--mint); border-top: 3px solid var(--forest); border-radius: 0 0 4px 4px; padding: 0 2rem 0.5rem; background: rgba(232,244,232,0.25); }
-  .po-header { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 0.75rem 0; border-bottom: 1px solid var(--mint); }
-  .po-col-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest); }
-  .po-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(168,213,168,0.4); }
+  /* ── PROBLEM / OUTCOME TABLE (cream + gold) ── */
+  .po-table-wrap { margin-top: 3rem; border: 1px solid rgba(200,150,60,0.28); border-radius: 4px; overflow: hidden; background: rgba(250,248,242,0.7); }
+  .po-header { display: grid; grid-template-columns: 1fr 1fr; background: rgba(200,150,60,0.08); border-bottom: 1px solid rgba(200,150,60,0.2); padding: 0.7rem 1.5rem; }
+  .po-col-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); }
+  .po-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(200,150,60,0.1); align-items: start; }
   .po-row:last-child { border-bottom: none; }
-  .po-problem { font-size: 0.93rem; color: var(--text-mid); line-height: 1.65; font-weight: 400; }
-  .po-outcome { font-size: 0.93rem; color: var(--text); line-height: 1.65; font-weight: 400; font-style: italic; }
-  @media (max-width: 600px) { .po-header, .po-row { grid-template-columns: 1fr; gap: 0.25rem; } .po-col-label:last-child { display: none; } .po-outcome { font-style: italic; color: var(--sage); padding-left: 0.75rem; border-left: 2px solid var(--gold); margin-top: 0.35rem; } }
+  .po-problem { font-size: 0.93rem; color: var(--text); line-height: 1.65; font-weight: 400; }
+  .po-outcome { font-size: 0.93rem; color: var(--forest); line-height: 1.65; font-weight: 500; }
 
   /* ── DARK SECTIONS (forest green) ── */
   .learn-section { background: var(--forest); color: var(--cream); }
@@ -759,7 +759,7 @@
       <div class="community-card-label">For parents</div>
       <div class="community-card-title">A community of parents who think differently about raising children.</div>
       <div class="community-card-body">You are not doing this alone. The ThinkRoot parent community connects families who share the same belief — that inner skills matter as much as academic ones. A space to share what works, ask what doesn't, and raise children alongside others who genuinely get it.</div>
-      <a href="https://chat.whatsapp.com/YOURCOMMUNITYLINK" class="whatsapp-btn" target="_blank" rel="noopener">
+      <a href="https://chat.whatsapp.com/JLoti26E0U1HyMjlsshTc0" class="whatsapp-btn" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Join the parent community →
       </a>
@@ -778,13 +778,14 @@
       <div class="inter-years">4</div>
       <div class="inter-years-label">years running</div>
       <div class="inter-divider"></div>
-      <div style="font-size:0.8rem; color:var(--mint); line-height:1.5; font-weight:300;">Seniors &amp; children. Together.</div>
+      <div style="font-size:0.78rem; color:var(--mint); line-height:1.6; font-weight:300;">Est. 2016<br>Fremont, CA</div>
+      <div style="margin-top:1.25rem; font-size:0.72rem; color:var(--fern); line-height:1.55; font-weight:300;">Recognized by<br><em style="color:var(--gold-light);">Tri-City Voice</em><br>&amp; U.S. Congress</div>
     </div>
     <div>
-      <div class="inter-proof">Proof of concept · In action since 2020</div>
-      <div class="inter-title">The Intergenerational Programme</div>
-      <div class="inter-body">For four years, Tina brought seniors and children together in a programme built on a simple belief: that the young and the old have something profound to offer each other. Children practiced presence, patience, and genuine empathy. Seniors experienced curiosity, energy, and connection. Both left changed.</div>
-      <div class="inter-body">This is what ThinkRoot community impact looks like — not charity, but real exchange. Not service hours on a form, but relationships that reshape how a child sees the people around them. The skills learned inside the classroom become real in the presence of someone whose life looks nothing like yours.</div>
+      <div class="inter-proof">Proof of concept · Est. 2016 · Fremont Main Library</div>
+      <div class="inter-title">Rewired to Inspire</div>
+      <div class="inter-body">In 2016, Tina co-created <em>Rewired to Inspire</em> at Fremont Main Library — a program that brought high school students from Mission San Jose together with adults 55+ in a spirit of genuine connection, learning, and service. For four years it ran on a simple belief: when generations meet with purpose, everyone grows.</div>
+      <div class="inter-body">Students brought curiosity and energy. Seniors brought wisdom and life experience. Neither left the same. The program was featured in <em>Tri-City Voice</em> and received a letter of recognition from Congressman Michael M. Honda — a moment that affirmed what everyone involved already knew: this work matters.</div>
       <div class="inter-quote">"Leadership is not a title. It is the ability to show up — fully, generously — for someone else's world."</div>
     </div>
   </div>

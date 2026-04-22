@@ -89,6 +89,13 @@
   .gap-stat-callout { margin-top: 2rem; padding: 1.25rem 1.5rem; background: rgba(200,150,60,0.07); border-left: 3px solid var(--gold); border-radius: 0 4px 4px 0; }
   .gap-stat-number { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
   .gap-stat-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
+  .gap-stats-row { margin-top: 2.5rem; }
+  .gap-stat-wide { background: var(--forest); border-radius: 4px; padding: 2rem 2.5rem; display: flex; align-items: center; gap: 2.5rem; }
+  .gap-stat-wide-number { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 600; color: var(--gold-light); line-height: 1; white-space: nowrap; flex-shrink: 0; }
+  .gap-stat-wide-text { font-size: 0.95rem; color: var(--mint); line-height: 1.7; font-weight: 300; flex: 1; }
+  .gap-stat-wide-text em { color: var(--gold-light); font-style: normal; font-weight: 500; }
+  .gap-stat-wide-source { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fern); white-space: nowrap; flex-shrink: 0; }
+  @media (max-width: 600px) { .gap-stat-wide { flex-direction: column; gap: 1rem; } .gap-stat-wide-number { font-size: 2rem; } }
 
   /* ── PARENT TESTIMONIALS ── */
   .testimonials-section { background: var(--cream); }
@@ -353,6 +360,15 @@
       </div>
     </div>
   </div>
+
+  <div class="gap-stats-row">
+    <div class="gap-stat-wide">
+      <div class="gap-stat-wide-number">4 of 5</div>
+      <div class="gap-stat-wide-text">of the top skills employers recruit for worldwide are self-intelligence skills — self-awareness, resilience, flexibility, and agility. <em>Yet no school teaches them directly.</em></div>
+      <div class="gap-stat-wide-source">Harvard Business Publishing · 2024</div>
+    </div>
+  </div>
+
   <div class="po-table-wrap">
     <div class="po-header">
       <div class="po-col-label">Problem</div>

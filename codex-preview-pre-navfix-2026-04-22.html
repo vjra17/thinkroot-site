@@ -36,7 +36,7 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(74,124,74,0.15);
   }
-  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: var(--forest); letter-spacing: -0.01em; white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: var(--forest); letter-spacing: -0.01em; white-space: nowrap; flex-shrink: 0; }
   .nav-logo span { color: var(--gold); }
   .nav-cta { background: var(--forest); color: var(--cream); border: none; padding: 0.6rem 1.4rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; cursor: pointer; letter-spacing: 0.03em; text-decoration: none; transition: background 0.2s; white-space: nowrap; flex-shrink: 0; }
   .nav-cta:hover { background: var(--moss); }
@@ -56,7 +56,6 @@
   .hero-tagline { font-size: 1.05rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 2rem; max-width: 420px; font-weight: 300; }
   .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; }
   .pill { font-size: 0.78rem; font-weight: 500; padding: 5px 14px; border-radius: 100px; letter-spacing: 0.02em; }
-  a.pill { text-decoration: none; display: inline-block; }
   .pill-forest { background: var(--forest); color: var(--mint); }
   .pill-mist { background: var(--mist); color: var(--moss); border: 1px solid var(--mint); }
   .pill-gold { background: #fdf3e3; color: var(--bark); border: 1px solid var(--gold-light); }
@@ -92,7 +91,7 @@
   .two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   /* ── PROBLEM / OUTCOME TABLE (cream + gold) ── */
   .po-table-wrap { margin-top: 3rem; border: 1px solid rgba(200,150,60,0.28); border-radius: 4px; overflow: hidden; background: rgba(250,248,242,0.7); }
-  .po-header { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background: rgba(200,150,60,0.08); border-bottom: 1px solid rgba(200,150,60,0.2); padding: 0.7rem 1.5rem; }
+  .po-header { display: grid; grid-template-columns: 1fr 1fr; background: rgba(200,150,60,0.08); border-bottom: 1px solid rgba(200,150,60,0.2); padding: 0.7rem 1.5rem; }
   .po-col-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); }
   .po-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(200,150,60,0.1); align-items: start; }
   .po-row:last-child { border-bottom: none; }
@@ -196,7 +195,7 @@
   .ba-after { background: #f0f8f0; border-radius: 4px; padding: 0.75rem 1rem; font-size: 0.88rem; color: var(--moss); font-weight: 500; line-height: 1.5; }
 
   /* ── REAL STORIES ── */
-  .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2rem; }
+  .stories-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
   .story-card { background: var(--white); border: 1px solid rgba(74,124,74,0.15); border-top: 3px solid var(--gold); border-radius: 4px; padding: 2rem; }
   .story-headline { font-family: 'Playfair Display', serif; font-size: 1.12rem; font-weight: 600; color: var(--forest); line-height: 1.35; margin-bottom: 0.8rem; }
   .story-body { font-size: 0.93rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
@@ -447,9 +446,9 @@
 
 <!-- ── NAV ── -->
 <nav id="main-nav">
-  <a href="index.html" class="nav-logo" aria-label="ThinkRoot Young Leaders home">ThinkRoot <span>Young Leaders</span></a>
+  <div class="nav-logo">ThinkRoot <span>Young Leaders</span></div>
   <div class="nav-links">
-    <a href="#program">Programs</a>
+    <a href="#program">Resilience Lab</a>
     <a href="#about">About Tina</a>
     <a href="#community">Community</a>
     <a href="#interest">Interest List</a>
@@ -460,18 +459,18 @@
 <!-- ── HERO ── -->
 <section class="hero" style="padding:0;">
   <div class="hero-left">
-    <div class="hero-eyebrow fade-up delay-1">The power skills schools don't teach</div>
+    <div class="hero-eyebrow fade-up delay-1">The skills schools don't teach</div>
     <h1 class="hero-h1 fade-up delay-2">Where great minds <br><em>take root.</em></h1>
     <p class="hero-tagline fade-up delay-3">In the age of AI, everything is changing fast. What will matter even more is a child who can handle pressure, recover from setbacks, and build the confidence, judgment, and self-management to thrive. That’s what ThinkRoot teaches.</p>
     <div class="hero-meta fade-up delay-4">
       <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
       <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
       <span class="pill pill-mist">Small Groups</span>
-      <a href="#program" class="pill pill-gold">5-Day or 6-Week Format</a>
+      <span class="pill pill-gold">5-Day or 6-Week Format</span>
     </div>
     <div class="hero-buttons fade-up delay-5">
       <a href="#interest" class="btn-primary">Join the Priority Interest List</a>
-      <a href="#gap" class="btn-secondary">How ThinkRoot Works</a>
+      <a href="#program" class="btn-secondary">How ThinkRoot Works</a>
     </div>
   </div>
   <div class="hero-right">
@@ -506,7 +505,7 @@
 </div>
 
 <!-- ── THE GAP ── -->
-<section id="gap">
+<section id="program">
   <div class="two-col-section">
     <div>
       <div class="section-label">The gap</div>
@@ -614,17 +613,14 @@
   <p class="section-body" style="color:rgba(168,213,168,0.85); margin-bottom:1rem;">ThinkRoot teaches a clear, repeatable process children can return to again and again. The goal is not more information. It is practical skills they can use across situations, relationships, and the everyday pressures of life.</p>
   <div class="learn-grid">
     <div class="learn-card">
-      <div class="detail-icon" style="margin-bottom:0.6rem;">🌱</div>
       <div class="learn-title">Build</div>
       <div class="learn-desc">Children develop greater confidence, steadiness, and resilience in how they respond to challenges.</div>
     </div>
     <div class="learn-card">
-      <div class="detail-icon" style="margin-bottom:0.6rem;">🔁</div>
       <div class="learn-title">Practice</div>
       <div class="learn-desc">They learn skills through guided exercises, reflection, and repetition so the work becomes natural over time.</div>
     </div>
     <div class="learn-card">
-      <div class="detail-icon" style="margin-bottom:0.6rem;">🚀</div>
       <div class="learn-title">Apply</div>
       <div class="learn-desc">They begin using those skills in real life at school, in sports, in friendships, and at home.</div>
     </div>
@@ -635,15 +631,23 @@
 <section class="details-section">
   <div class="section-label">What Students Reported</div>
   <h2 class="section-h2">What actually changed in students' lives.</h2>
-  <p class="section-body">Examples of the kinds of shifts students reported after learning and practicing these skills.</p>
+  <p class="section-body">These examples reflect the kinds of shifts students reported after learning and practicing these skills — in school, in relationships, in habits, and in daily life.</p>
   <div class="stories-grid">
     <div class="story-card">
       <div class="story-headline">MT, 8th grade</div>
       <div class="story-body">After learning how to work with limiting thoughts, MT approached math differently, improved her grades, and eventually began helping classmates who were struggling in the same way.</div>
     </div>
     <div class="story-card">
+      <div class="story-headline">AD, 7th grade</div>
+      <div class="story-body">AD shared that the practices she was learning helped her feel more peaceful and happy in everyday life.</div>
+    </div>
+    <div class="story-card">
       <div class="story-headline">AG, 5th grade</div>
       <div class="story-body">AG began using meditation when he felt angry or frustrated and turned to calming affirmations before bed.</div>
+    </div>
+    <div class="story-card">
+      <div class="story-headline">NR, 3rd grade</div>
+      <div class="story-body">After conflict, NR started using the practice on her own and then returning to apologize. The shift showed up in both self-regulation and relationships.</div>
     </div>
     <div class="story-card">
       <div class="story-headline">SM and VM, 9th and 7th grade</div>
@@ -667,7 +671,7 @@
   <p class="section-body">ThinkRoot Resilience Lab is currently offered in two formats. Both teach the same core resilience skills and practical tools. The difference is pacing.</p>
   <div class="program-outcomes">
     <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Recovering faster after mistakes, setbacks, and disappointment</div></div>
-    <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Building confidence, discipline, and stronger self-trust</div></div>
+    <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Building confidence, follow-through, and stronger self-belief</div></div>
     <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Staying steadier under academic, social, and sports pressure</div></div>
     <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Using practical tools independently in real-life situations</div></div>
   </div>
@@ -739,7 +743,7 @@
 <!-- ── YOUNG LEADERS — COMING SOON ── -->
 <section class="coming-section">
   <div class="coming-badge">Coming Soon</div>
-  <div class="section-label">Leadership Pathway</div>
+  <div class="section-label">The ThinkRoot Curriculum · Next</div>
   <h2 class="section-h2">Leadership Lab</h2>
   <p class="section-body">ThinkRoot begins by helping children build judgment, self-management, and confidence under pressure. Over time, those capacities support stronger self-leadership, wiser decisions, greater independence, and the ability to step into bigger opportunities with confidence. Additional programs will be introduced over time. Join the community below to hear about future offerings as they are released.</p>
   <div style="margin-top:2rem;">

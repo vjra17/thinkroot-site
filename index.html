@@ -374,7 +374,7 @@
   .form-divider { border: none; border-top: 1px solid rgba(168,213,168,0.12); margin: 1.2rem 0; }
   .form-section-title { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fern); margin-bottom: 0.6rem; }
   .check-group { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 6px; }
-  .check-group-col { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .check-group-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 8px; }
   .check-label { display: flex; align-items: center; gap: 8px; font-size: 0.87rem; color: var(--mint); cursor: pointer; line-height: 1.4; }
   .check-label input { accent-color: var(--fern); flex-shrink: 0; }
   .check-label-block { display: flex; align-items: flex-start; gap: 10px; font-size: 0.87rem; color: var(--mint); cursor: pointer; line-height: 1.4; }
@@ -432,6 +432,7 @@
     .form-row { grid-template-columns: 1fr; }
     .interest-form-wrap { padding: 1.5rem 1.2rem; }
     .cta-section { padding: 5rem 2rem; }
+    .check-group-col { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
     .learn-grid { grid-template-columns: 1fr; }
@@ -826,11 +827,137 @@
 <section class="cta-section" id="interest">
   <div class="section-label">Priority Interest List</div>
   <h2 class="cta-h2">Be the first to know when a session forms near you.</h2>
-  <p class="cta-sub">Sessions are forming now. Tell us where you are — we’ll be in touch as soon as a group is confirmed near you.</p>
+  <p class="cta-sub">Sessions are forming now. Tell us where you are, and we’ll be in touch as soon as a group is confirmed near you.</p>
 
-  <iframe class="interest-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSecF18JGHFmX9nbooS_EdTyAp93SDjAecSgL7zGdm3vLdw5gw/viewform?embedded=true">Loading…</iframe>
+  <iframe name="gform_iframe" style="display:none;"></iframe>
 
-  <p class="form-note">Joining the list does not commit you to enrollment. It gives you early access as groups begin to form.</p>
+  <form class="interest-form-wrap"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSecF18JGHFmX9nbooS_EdTyAp93SDjAecSgL7zGdm3vLdw5gw/formResponse"
+    method="POST" target="gform_iframe" onsubmit="showConfirm()">
+
+    <div class="form-row">
+      <div>
+        <label class="form-label">Parent name *</label>
+        <input type="text" name="entry.1081038987" class="form-input" placeholder="Your full name" required />
+      </div>
+      <div>
+        <label class="form-label">Email address *</label>
+        <input type="email" name="entry.1395419359" class="form-input" placeholder="your@email.com" required />
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-label">Phone number</label>
+      <input type="tel" name="entry.595796931" class="form-input" placeholder="(415) 000-0000" />
+    </div>
+
+    <div class="form-field">
+      <label class="form-label">City / neighborhood *</label>
+      <input type="text" name="entry.1013394097" class="form-input" placeholder="e.g. Fremont, Milpitas, San Jose" required />
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="form-row">
+      <div>
+        <label class="form-label">Child’s grade *</label>
+        <select name="entry.1356141416" class="form-input" required>
+          <option value="">Select</option>
+          <option value="Grade 2">Grade 2</option>
+          <option value="Grade 3">Grade 3</option>
+          <option value="Grade 4">Grade 4</option>
+          <option value="Grade 5">Grade 5</option>
+          <option value="Grade 6">Grade 6</option>
+          <option value="Grade 7">Grade 7</option>
+          <option value="Grade 8">Grade 8</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label">Program interest *</label>
+        <select name="entry.1131777472" class="form-input" required>
+          <option value="">Select</option>
+          <option value="5-Day Intensive (summer / school breaks)">5-Day Intensive (summer / school breaks)</option>
+          <option value="6-Week Series (school year or summer)">6-Week Series (school year or summer)</option>
+          <option value="Either">Either</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <div class="form-section-title">What would you most want this program to help with? *</div>
+      <div class="check-group-col">
+        <label class="check-label-block"><input type="checkbox" name="entry.1994071730" value="Stress or worry" /> Stress or worry</label>
+        <label class="check-label-block"><input type="checkbox" name="entry.1994071730" value="Confidence / self-doubt" /> Confidence / self-doubt</label>
+        <label class="check-label-block"><input type="checkbox" name="entry.1994071730" value="Emotional regulation" /> Emotional regulation</label>
+        <label class="check-label-block"><input type="checkbox" name="entry.1994071730" value="Focus / school pressure" /> Focus / school pressure</label>
+        <label class="check-label-block"><input type="checkbox" name="entry.1994071730" value="Friendships / conflict" /> Friendships / conflict</label>
+        <label class="check-label-block"><input type="checkbox" name="entry.1994071730" value="Habits / discipline" /> Habits / discipline</label>
+        <label class="check-label-block"><input type="checkbox" name="entry.1994071730" value="Other" /> Other</label>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="form-row">
+      <div>
+        <label class="form-label">Best timing *</label>
+        <select name="entry.822349712" class="form-input" required>
+          <option value="">Select</option>
+          <option value="After school weekday">After school weekday</option>
+          <option value="Weekday evening">Weekday evening</option>
+          <option value="Saturday morning">Saturday morning</option>
+          <option value="Saturday afternoon">Saturday afternoon</option>
+          <option value="Sunday">Sunday</option>
+          <option value="Flexible">Flexible</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label">When are you interested? *</label>
+        <select name="entry.1927220833" class="form-input" required>
+          <option value="">Select</option>
+          <option value="Summer / school breaks">Summer / school breaks</option>
+          <option value="During the school year">During the school year</option>
+          <option value="Either">Either</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="form-label">Preferred format *</label>
+        <select name="entry.278743118" class="form-input" required>
+          <option value="">Select</option>
+          <option value="In person">In person</option>
+          <option value="Online">Online</option>
+          <option value="Either">Either</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label">If a small group forms near you</label>
+        <select name="entry.1591716779" class="form-input">
+          <option value="">Select</option>
+          <option value="We may know other interested families">We may know other interested families</option>
+          <option value="We would be happy to invite others">We would be happy to invite others</option>
+          <option value="We would just join ourselves">We would just join ourselves</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-label">Anything else we should know? (optional)</label>
+      <p class="form-note" style="text-align:left; margin-top:0; margin-bottom:0.75rem; font-style:italic;">If you are interested for more than one child, please submit a separate form for each child so we can understand each one’s needs and place them appropriately. You can also let us know if you would prefer siblings to be together or in separate age groups.</p>
+      <textarea name="entry.2137149228" class="form-input" rows="3" placeholder="Anything else you’d like us to know"></textarea>
+    </div>
+
+    <button type="submit" class="form-submit">Request early access →</button>
+
+    <p class="form-confirm" id="form-confirm">
+      Thank you — you’re on the list. We’ll be in touch personally once a session is forming near you.
+    </p>
+    <p class="form-note">Joining the list does not commit you to enrollment. It gives you early access as groups begin to form.</p>
+  </form>
 
   <p class="cta-disclaimer">This program is educational in nature and is not a substitute for professional mental health support.</p>
 </section>

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThinkRoot Young Leaders — Where Great Minds Take Root</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1a3a1a;
+    --moss:   #2d5a2d;
+    --sage:   #4a7c4a;
+    --fern:   #6aaa6a;
+    --mint:   #a8d5a8;
+    --mist:   #e8f4e8;
+    --cream:  #faf8f2;
+    --bark:   #3d2b1a;
+    --gold:   #c8963c;
+    --gold-light: #e8c078;
+    --text:   #1e2820;
+    --text-mid: #3d4f3d;
+    --text-light: #6b7f6b;
+    --white:  #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.2rem 2.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(250,248,242,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(74,124,74,0.15);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: var(--forest); letter-spacing: -0.01em; white-space: nowrap; flex-shrink: 0; }
+  .nav-logo span { color: var(--gold); }
+  .nav-cta { background: var(--forest); color: var(--cream); border: none; padding: 0.6rem 1.4rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; cursor: pointer; letter-spacing: 0.03em; text-decoration: none; transition: background 0.2s; white-space: nowrap; flex-shrink: 0; }
+  .nav-cta:hover { background: var(--moss); }
+  .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+  .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--text-mid); text-decoration: none; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; padding-bottom: 2px; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .nav-links a:hover { color: var(--forest); border-bottom-color: var(--sage); }
+  @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { gap: 1rem; } }
+  @media (max-width: 768px) { .nav-links { display: none; } }
+
+  /* ── HERO ── */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; }
+  .hero-left { padding: 6rem 3rem 4rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.5rem; }
+  .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--sage); }
+  .hero-h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 600; line-height: 1.1; color: var(--forest); margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .hero-h1 em { font-style: italic; color: var(--gold); }
+  .hero-motto { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; color: var(--forest); line-height: 1.5; margin-bottom: 0.85rem; max-width: 420px; font-weight: 400; }
+  .hero-tagline { font-size: 1.05rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 2rem; max-width: 420px; font-weight: 300; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; }
+  .pill { font-size: 0.78rem; font-weight: 500; padding: 5px 14px; border-radius: 100px; letter-spacing: 0.02em; }
+  .pill-forest { background: var(--forest); color: var(--mint); }
+  .pill-mist { background: var(--mist); color: var(--moss); border: 1px solid var(--mint); }
+  .pill-gold { background: #fdf3e3; color: var(--bark); border: 1px solid var(--gold-light); }
+  .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary { background: var(--forest); color: var(--cream); padding: 0.9rem 2rem; border: none; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
+  .btn-primary:hover { background: var(--moss); transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--forest); padding: 0.9rem 2rem; border: 1.5px solid var(--forest); border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-block; }
+  .btn-secondary:hover { background: var(--mist); }
+  .hero-right { background: var(--forest); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; min-height: 600px; }
+  .hero-visual { position: relative; z-index: 2; text-align: center; padding: 3rem; }
+  .tree-svg { width: 220px; opacity: 0.92; margin-bottom: 2rem; }
+  .hero-quote { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: var(--mint); line-height: 1.5; max-width: 300px; }
+  .hero-quote-attr { font-size: 0.75rem; color: var(--fern); margin-top: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+  .circle-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(106,170,106,0.2); }
+  .c1 { width: 400px; height: 400px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .c2 { width: 580px; height: 580px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .c3 { width: 760px; height: 760px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+  /* ── PROBLEM STRIP ── */
+  .problem-strip { background: var(--gold); padding: 1.1rem 2rem; text-align: center; font-family: 'Playfair Display', serif; font-size: 1.05rem; font-style: italic; color: var(--bark); letter-spacing: 0.01em; }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 5rem; }
+  .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--mint); max-width: 60px; }
+  .section-h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 600; color: var(--forest); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1.5rem; max-width: 680px; }
+  .section-body { font-size: 1rem; color: var(--text-mid); line-height: 1.8; max-width: 620px; font-weight: 300; }
+
+  /* ── THE GAP ── */
+  .two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .gap-stat-callout { margin-top: 2rem; padding: 1.25rem 1.5rem; background: rgba(200,150,60,0.07); border-left: 3px solid var(--gold); border-radius: 0 4px 4px 0; }
+  .gap-stat-number { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
+  .gap-stat-text { font-size: 0.88rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
+  .gap-stats-row { margin-top: 2.5rem; }
+  .gap-stat-wide { background: var(--forest); border-radius: 4px; padding: 2rem 2.5rem; display: flex; align-items: center; gap: 2.5rem; }
+  .gap-stat-wide-number { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 600; color: var(--gold-light); line-height: 1; white-space: nowrap; flex-shrink: 0; }
+  .gap-stat-wide-text { font-size: 0.95rem; color: var(--mint); line-height: 1.7; font-weight: 300; flex: 1; }
+  .gap-stat-wide-text em { color: var(--gold-light); font-style: normal; font-weight: 500; }
+  .gap-stat-wide-source { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fern); white-space: nowrap; flex-shrink: 0; }
+  @media (max-width: 600px) { .gap-stat-wide { flex-direction: column; gap: 1rem; } .gap-stat-wide-number { font-size: 2rem; } }
+
+  /* ── PARENT TESTIMONIALS ── */
+  .testimonials-section { background: var(--cream); }
+  .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  .testimonial-card { background: var(--white); border: 1px solid var(--mint); border-radius: 4px; padding: 2rem; position: relative; }
+  .testimonial-card::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--mint); line-height: 0.5; display: block; margin-bottom: 1rem; }
+  .testimonial-quote { font-size: 0.95rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; font-style: italic; margin-bottom: 1.25rem; }
+  .testimonial-attr { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage); }
+  @media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr; } .gap-stat-callout { margin-top: 1.5rem; } }
+  /* ── PROBLEM / OUTCOME TABLE (cream + gold) ── */
+  .po-table-wrap { margin-top: 3rem; border: 1px solid rgba(200,150,60,0.28); border-radius: 4px; overflow: hidden; background: rgba(250,248,242,0.7); }
+  .po-header { display: grid; grid-template-columns: 1fr 1fr; background: rgba(200,150,60,0.08); border-bottom: 1px solid rgba(200,150,60,0.2); padding: 0.7rem 1.5rem; }
+  .po-col-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); }
+  .po-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(200,150,60,0.1); align-items: start; }
+  .po-row:last-child { border-bottom: none; }
+  .po-problem { font-size: 0.93rem; color: var(--text); line-height: 1.65; font-weight: 400; }
+  .po-outcome { font-size: 0.93rem; color: var(--forest); line-height: 1.65; font-weight: 500; }
+  .po-research { font-size: 0.73rem; color: var(--text-light); line-height: 1.5; font-weight: 300; font-style: italic; margin-top: 0.5rem; }
+
+  /* ── STUDENT STORIES ── */
+  .stories-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  .story-card { background: var(--white); border: 1px solid rgba(74,124,74,0.15); border-radius: 4px; padding: 2rem; border-top: 3px solid var(--gold); }
+  .story-headline { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--forest); line-height: 1.35; margin-bottom: 0.9rem; }
+  .story-body { font-size: 0.92rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+  .story-context { display: inline-block; margin-top: 1rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); }
+
+  /* ── MIST SECTIONS ── */
+  .details-section { background: var(--mist); }
+  .details-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .detail-card { background: var(--white); border: 1px solid var(--mint); border-radius: 4px; padding: 1.75rem 1.5rem; }
+  .detail-icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
+  .detail-value { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--forest); margin-bottom: 0.4rem; line-height: 1.2; }
+  .detail-label { font-size: 0.82rem; color: var(--text-light); font-weight: 300; line-height: 1.5; }
+
+  /* ── WHAT PARENTS OBSERVE ── */
+  .observe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 2rem; }
+  .observe-item { background: var(--white); border: 1px solid var(--mist); border-radius: 4px; padding: 0.9rem 1.1rem; display: flex; gap: 10px; align-items: flex-start; font-size: 0.9rem; color: var(--text-mid); line-height: 1.5; font-weight: 300; }
+  .observe-check { color: var(--sage); font-weight: 700; font-size: 0.85rem; flex-shrink: 0; margin-top: 2px; }
+  .inner-science-note { margin-top: 2rem; padding: 1.25rem 1.5rem; border-left: 3px solid var(--sage); font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; max-width: 680px; }
+  .inner-science-note strong { color: var(--forest); font-weight: 500; }
+
+  /* ── PROGRAMS ── */
+  .programs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3rem; }
+  .program-card { background: var(--white); border: 1px solid var(--mint); border-radius: 4px; padding: 2.5rem; border-top: 3px solid var(--forest); }
+  .program-type { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.6rem; }
+  .program-name { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--forest); margin-bottom: 0.25rem; line-height: 1.2; }
+  .program-duration { font-size: 0.95rem; color: var(--text-mid); font-weight: 300; margin-bottom: 1.25rem; line-height: 1.5; }
+  .program-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.75rem; }
+  .program-divider { height: 1px; background: var(--mist); margin: 1.5rem 0; }
+  .program-includes-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.85rem; }
+  .program-include { display: flex; gap: 8px; font-size: 0.9rem; color: var(--text-mid); line-height: 1.55; font-weight: 300; margin-bottom: 0.6rem; }
+  .program-include::before { content: '✓'; color: var(--sage); font-weight: 600; flex-shrink: 0; }
+  .program-price { margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--mist); display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .price-value { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--forest); }
+  .price-note { font-size: 0.75rem; color: var(--text-light); font-weight: 300; margin-top: 0.2rem; }
+
+  /* ── DARK SECTIONS (forest green) ── */
+  .learn-section { background: var(--forest); color: var(--cream); }
+  .learn-section .section-label { color: var(--fern); }
+  .learn-section .section-label::after { background: var(--sage); }
+  .learn-section .section-h2 { color: var(--mint); }
+
+  /* ── COMING SOON ── */
+  .coming-section { background: var(--forest); }
+  .coming-section .section-label { color: var(--fern); }
+  .coming-section .section-label::after { background: var(--sage); }
+  .coming-section .section-h2 { color: var(--gold-light); }
+  .coming-section .section-body { color: #c8d4c8; max-width: 560px; }
+  .coming-badge { display: inline-block; background: rgba(200,150,60,0.15); border: 1px solid var(--gold); color: var(--gold-light); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 14px; border-radius: 2px; margin-bottom: 1.5rem; }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--bark); color: var(--cream); }
+  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+  .about-avatar { width: 100%; aspect-ratio: 3/4; border-radius: 4px; background: var(--moss); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--mint); font-weight: 600; border: 1px solid rgba(168,213,168,0.2); max-width: 260px; overflow: hidden; }
+  .about-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .about-section .section-label { color: var(--fern); }
+  .about-section .section-label::after { background: var(--sage); }
+  .about-section .section-h2 { color: var(--gold-light); max-width: 100%; }
+  .about-section .section-body { color: #c8d4c8; max-width: 100%; }
+  .about-note { margin-top: 1.5rem; padding: 1rem 1.25rem; border-left: 2px solid var(--gold); font-size: 0.88rem; color: var(--fern); line-height: 1.65; font-weight: 300; }
+
+  /* ── COMMUNITY ── */
+  .community-section { background: var(--cream); }
+  .community-intro { max-width: 700px; }
+  .community-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 3rem 0 3.5rem; }
+  .community-card { background: var(--white); border: 1px solid var(--mint); border-top: 3px solid var(--sage); border-radius: 0 0 4px 4px; padding: 2rem 2rem 2rem; }
+  .community-card-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
+  .community-card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: var(--forest); margin-bottom: 0.9rem; line-height: 1.35; }
+  .community-card-body { font-size: 0.92rem; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
+  .whatsapp-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: #25D366; color: white; border: none; padding: 0.65rem 1.4rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; cursor: pointer; text-decoration: none; margin-top: 1.5rem; transition: background 0.2s; letter-spacing: 0.02em; }
+  .whatsapp-btn:hover { background: #1da851; }
+  .inter-block { background: var(--forest); color: var(--cream); border-radius: 4px; padding: 3rem; display: grid; grid-template-columns: 200px 1fr; gap: 3.5rem; align-items: start; }
+  .inter-stat { text-align: center; padding-top: 0.5rem; }
+  .inter-years { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 600; color: var(--gold-light); line-height: 1; }
+  .inter-years-label { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mint); margin-top: 0.25rem; }
+  .inter-divider { width: 40px; height: 2px; background: var(--gold); margin: 1.25rem auto; }
+  .inter-proof { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fern); margin-bottom: 0.75rem; }
+  .inter-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--gold-light); margin-bottom: 1rem; line-height: 1.3; }
+  .inter-body { font-size: 0.93rem; color: rgba(200,212,200,0.9); line-height: 1.75; font-weight: 300; margin-bottom: 1rem; }
+  .inter-quote { padding: 1rem 0 0 1.25rem; border-left: 2px solid var(--gold); font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; color: var(--gold-light); line-height: 1.65; }
+  .inter-evidence { grid-column: 1 / -1; display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(106,170,106,0.18); margin-top: 0.5rem; }
+  .inter-evidence-letter img { width: 100%; border-radius: 4px; border: 2px solid rgba(200,150,60,0.35); box-shadow: 0 4px 20px rgba(0,0,0,0.4); transform: rotate(-1.5deg); display: block; }
+  .inter-letter-caption { font-size: 0.68rem; color: var(--fern); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.75rem; text-align: center; line-height: 1.5; }
+  .inter-testimonial-block { padding: 0.75rem 0 1.25rem 1.25rem; border-left: 2px solid rgba(200,150,60,0.3); margin-bottom: 1.5rem; }
+  .inter-testimonial-text { font-size: 0.92rem; font-style: italic; color: rgba(200,212,200,0.92); line-height: 1.75; }
+  .inter-testimonial-attr { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fern); margin-top: 0.6rem; }
+  .inter-press-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fern); margin-bottom: 0.6rem; }
+  .inter-press a { color: var(--gold-light); font-size: 0.85rem; text-decoration: none; display: block; margin-bottom: 0.35rem; transition: color 0.2s; }
+  .inter-press a:hover { color: var(--gold); text-decoration: underline; }
+
+  /* ── CTA / INTEREST LIST ── */
+  .cta-section { background: var(--forest); text-align: center; padding: 7rem 3rem; }
+  .cta-section .section-label { justify-content: center; color: var(--fern); }
+  .cta-section .section-label::after { display: none; }
+  .cta-h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; color: var(--mint); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .cta-sub { font-size: 1rem; color: var(--fern); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.6; }
+  .btn-primary-light { background: var(--gold); color: var(--bark); padding: 1rem 2.5rem; border: none; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; letter-spacing: 0.01em; }
+  .btn-primary-light:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .cta-disclaimer { margin-top: 2.5rem; font-size: 0.75rem; color: var(--sage); line-height: 1.6; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+  /* Form */
+  .interest-form-wrap { background: rgba(255,255,255,0.06); border: 1px solid rgba(168,213,168,0.2); border-radius: 4px; max-width: 640px; margin: 0 auto 2.5rem; padding: 2rem 2.5rem; text-align: left; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-field { margin-bottom: 1rem; }
+  .form-label { display: block; font-size: 0.72rem; font-weight: 500; color: var(--fern); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  .form-input { width: 100%; padding: 0.65rem 0.9rem; border-radius: 2px; border: 1px solid rgba(168,213,168,0.3); background: rgba(255,255,255,0.08); color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+  .form-input:focus { border-color: rgba(168,213,168,0.6); }
+  .form-input::placeholder { color: rgba(168,213,168,0.4); }
+  select.form-input { background: rgba(26,58,26,0.95); cursor: pointer; }
+  textarea.form-input { resize: vertical; }
+  .form-divider { border: none; border-top: 1px solid rgba(168,213,168,0.12); margin: 1.2rem 0; }
+  .form-section-title { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fern); margin-bottom: 0.6rem; }
+  .check-group { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 6px; }
+  .check-group-col { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .check-label { display: flex; align-items: center; gap: 8px; font-size: 0.87rem; color: var(--mint); cursor: pointer; line-height: 1.4; }
+  .check-label input { accent-color: var(--fern); flex-shrink: 0; }
+  .check-label-block { display: flex; align-items: flex-start; gap: 10px; font-size: 0.87rem; color: var(--mint); cursor: pointer; line-height: 1.4; }
+  .check-label-block input { accent-color: var(--fern); flex-shrink: 0; margin-top: 2px; }
+  .form-submit { width: 100%; background: var(--gold); color: var(--bark); border: none; padding: 0.9rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer; letter-spacing: 0.01em; transition: background 0.2s; margin-top: 0.5rem; }
+  .form-submit:hover { background: var(--gold-light); }
+  .form-confirm { display: none; margin-top: 1rem; text-align: center; color: var(--mint); font-size: 0.92rem; line-height: 1.7; }
+  .form-note { font-size: 0.78rem; color: var(--sage); text-align: center; margin-top: 1rem; line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--text); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--mint); font-weight: 600; }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-size: 0.78rem; color: var(--text-light); font-weight: 300; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.25s; }
+  .delay-3 { animation-delay: 0.4s; }
+  .delay-4 { animation-delay: 0.55s; }
+  .delay-5 { animation-delay: 0.7s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 360px; }
+    .hero-left { padding: 5rem 2rem 3rem; }
+    section { padding: 4rem 2rem; }
+    .two-col-section { grid-template-columns: 1fr; gap: 2rem; }
+    .details-grid { grid-template-columns: 1fr 1fr; }
+    .stories-grid { grid-template-columns: 1fr; }
+    .programs-grid { grid-template-columns: 1fr; }
+    .observe-grid { grid-template-columns: 1fr; }
+    .about-grid { gap: 2.5rem; }
+    .community-pillars { grid-template-columns: 1fr; }
+    .inter-block { grid-template-columns: 1fr; gap: 1.5rem; }
+    .inter-stat { text-align: left; }
+    .inter-evidence { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem 2rem; }
+    nav { padding: 1rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .interest-form-wrap { padding: 1.5rem 1.2rem; }
+    .cta-section { padding: 5rem 2rem; }
+  }
+  @media (max-width: 600px) {
+    .details-grid { grid-template-columns: 1fr 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .about-avatar { max-width: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="main-nav">
+  <div class="nav-logo">ThinkRoot <span>Young Leaders</span></div>
+  <div class="nav-links">
+    <a href="#program">The Problem</a>
+    <a href="#results">Real Stories</a>
+    <a href="#programs">The Programs</a>
+    <a href="#about">About Tina</a>
+    <a href="#community">Community</a>
+    <a href="#interest">Interest List</a>
+  </div>
+  <a href="#interest" class="nav-cta">Join the interest list</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" style="padding:0;">
+  <div class="hero-left">
+    <div class="hero-eyebrow fade-up delay-1">In the age of AI, self-intelligence is the skill schools aren't teaching</div>
+    <h1 class="hero-h1 fade-up delay-2">Where great minds<br><em>take root.</em></h1>
+    <p class="hero-tagline fade-up delay-3">Everything your child does performs better when they know how to manage their own mind. That's what we teach.</p>
+    <div class="hero-meta fade-up delay-4">
+      <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+      <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+      <span class="pill pill-mist">Small Groups</span>
+    </div>
+    <div class="hero-buttons fade-up delay-5">
+      <a href="#interest" class="btn-primary">Join the interest list</a>
+      <a href="#program" class="btn-secondary">Learn more</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="circle-deco c1"></div>
+    <div class="circle-deco c2"></div>
+    <div class="circle-deco c3"></div>
+    <div class="hero-visual">
+      <svg class="tree-svg" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="100" cy="80" rx="60" ry="70" fill="#2d5a2d" opacity="0.7"/>
+        <ellipse cx="100" cy="60" rx="45" ry="55" fill="#3d7a3d" opacity="0.8"/>
+        <ellipse cx="100" cy="42" rx="32" ry="40" fill="#4a7c4a" opacity="0.9"/>
+        <rect x="92" y="145" width="16" height="55" rx="2" fill="#3d2b1a" opacity="0.8"/>
+        <ellipse cx="70" cy="100" rx="25" ry="28" fill="#2d5a2d" opacity="0.5"/>
+        <ellipse cx="130" cy="95" rx="28" ry="30" fill="#2d5a2d" opacity="0.5"/>
+        <line x1="100" y1="200" x2="60" y2="220" stroke="#3d2b1a" stroke-width="2.5" opacity="0.5"/>
+        <line x1="100" y1="200" x2="140" y2="220" stroke="#3d2b1a" stroke-width="2.5" opacity="0.5"/>
+        <line x1="100" y1="200" x2="100" y2="228" stroke="#3d2b1a" stroke-width="3" opacity="0.6"/>
+        <circle cx="75" cy="55" r="4" fill="#c8963c" opacity="0.6"/>
+        <circle cx="125" cy="48" r="3" fill="#c8963c" opacity="0.5"/>
+        <circle cx="100" cy="25" r="3.5" fill="#c8963c" opacity="0.7"/>
+      </svg>
+      <div class="hero-quote">"Every child deserves to build their self-intelligence early — before pressure, before struggle, before life asks them to need it."</div>
+      <div class="hero-quote-attr">— Tina Puri, Founder</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GOLD STRIP ── -->
+<div class="problem-strip">
+  You've noticed something. The way your child handles pressure, setbacks, hard moments. You wondered if something was missing. It is.
+</div>
+
+<!-- ── THE GAP ── -->
+<section id="program">
+  <div class="two-col-section">
+    <div>
+      <div class="section-label">The gap</div>
+      <h2 class="section-h2">Your child is taught how to achieve. Rarely how to manage what happens within.</h2>
+      <p class="section-body">Every child carries a remarkable inner world — thoughts, emotions, self-beliefs — that shapes everything from their grades to their friendships to their confidence. Yet no one teaches them how it works.</p>
+    </div>
+    <div>
+      <p class="section-body" style="margin-top:3.5rem;">ThinkRoot fills that gap. Children in Grades 2–8 discover the science behind their own minds — and leave with a practical toolkit they'll use for life.</p>
+      <div class="gap-stat-callout">
+        <div class="gap-stat-number">42%</div>
+        <div class="gap-stat-text">of high school students report persistent sadness or hopelessness — <em>CDC Youth Risk Behavior Survey</em></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gap-stats-row">
+    <div class="gap-stat-wide">
+      <div class="gap-stat-wide-number">4 of 5</div>
+      <div class="gap-stat-wide-text">of the top skills employers recruit for worldwide are self-intelligence skills — self-awareness, resilience, flexibility, and agility. <em>Yet no school teaches them directly.</em></div>
+      <div class="gap-stat-wide-source">Harvard Business Publishing · 2024</div>
+    </div>
+  </div>
+
+  <div class="po-table-wrap">
+    <div class="po-header">
+      <div class="po-col-label">Problem</div>
+      <div class="po-col-label">Outcome</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">Anxiety and self-doubt that no one has given them tools to address</div>
+      <div class="po-outcome">Tools to recognize and work with anxiety — not just survive it</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">Negative thought loops that drain their energy and confidence</div>
+      <div class="po-outcome">The skill to notice, interrupt, and redirect unhelpful thinking</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">No framework for handling hard emotions, conflicts, or pressure</div>
+      <div class="po-outcome">A repeatable process for any difficult moment — any age, any situation</div>
+    </div>
+    <div class="po-row">
+      <div class="po-problem">Believing their inner world is something that happens to them</div>
+      <div class="po-outcome">Understanding that their thoughts, feelings, and responses are workable — and teachable</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REAL STORIES ── -->
+<section class="details-section" id="results">
+  <div class="section-label">Real stories</div>
+  <h2 class="section-h2">What actually happened — in their own lives.</h2>
+  <p class="section-body">These are not hypothetical outcomes. These are real children who completed ThinkRoot programs and what their parents and teachers noticed after.</p>
+  <div class="stories-grid">
+    <div class="story-card">
+      <div class="story-headline">From struggling in math to mentoring her classmates</div>
+      <div class="story-body">One student came in with a growing belief that she simply wasn't a math person. By learning to recognize the thoughts that were limiting her — and practice transforming them — her relationship with the subject shifted entirely. Her scores improved. Then something unexpected happened: she started helping other students who were struggling with the same thing.</div>
+      <span class="story-context">Upper elementary</span>
+    </div>
+    <div class="story-card">
+      <div class="story-headline">She became the person her classmates turned to in conflict</div>
+      <div class="story-body">When disagreements broke out among her peers, one student naturally started stepping in — not to take sides, but to help everyone feel heard. She wasn't assigned this role. She grew into it. Her parents noticed she wasn't just handling her own emotions better — she was genuinely helping others navigate theirs.</div>
+      <span class="story-context">Middle school</span>
+    </div>
+    <div class="story-card">
+      <div class="story-headline">She started a daily practice — without being asked</div>
+      <div class="story-body">The clearest sign that a skill has truly landed is when a child uses it outside of class, without prompting. One student began meditating on her own, every day. Her parents saw changes across every part of her life — how she handled stress, how she slept, how she showed up in her family. She chose this. No one told her to.</div>
+      <span class="story-context">Upper elementary</span>
+    </div>
+    <div class="story-card">
+      <div class="story-headline">She turned off the TV — and didn't look back</div>
+      <div class="story-body">One student had developed a habit of watching TV for hours each day — something that was quietly affecting her sleep, focus, and mood. After the program she reduced it significantly, on her own. Her academic performance improved. Her social confidence improved. Her emotional wellbeing improved. The change came from inside — not from being told.</div>
+      <span class="story-context">Middle school</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARENT TESTIMONIALS ── -->
+<section class="testimonials-section">
+  <div class="section-label">In their own words</div>
+  <h2 class="section-h2">What parents are saying.</h2>
+  <p class="section-body">Real feedback from parents whose children have completed a ThinkRoot program.</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-quote">Testimonial coming soon — responses being collected from program graduates.</div>
+      <div class="testimonial-attr">Parent · Upper Elementary</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-quote">Testimonial coming soon — responses being collected from program graduates.</div>
+      <div class="testimonial-attr">Parent · Middle School</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-quote">Testimonial coming soon — responses being collected from program graduates.</div>
+      <div class="testimonial-attr">Parent · Upper Elementary</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT PARENTS OBSERVE ── -->
+<section>
+  <div class="section-label">After the program</div>
+  <h2 class="section-h2">What parents observe.</h2>
+  <p class="section-body">These are not abstract outcomes. These are specific, observable changes parents report within days of their child completing the program.</p>
+  <div class="observe-grid">
+    <div class="observe-item"><div class="observe-check">✓</div>A longer pause before reacting — catching themselves before things escalate</div>
+    <div class="observe-item"><div class="observe-check">✓</div>More willing to talk through difficulty instead of shutting down or exploding</div>
+    <div class="observe-item"><div class="observe-check">✓</div>Uses breathing independently — not when prompted, but on their own</div>
+    <div class="observe-item"><div class="observe-check">✓</div>Less reactive in conflict — more empathy and perspective toward others</div>
+    <div class="observe-item"><div class="observe-check">✓</div>Better sleep — tools to quiet an overactive mind at night</div>
+    <div class="observe-item"><div class="observe-check">✓</div>A new vocabulary for what's happening inside — naming states instead of acting them out</div>
+  </div>
+  <div class="inner-science-note">
+    <strong>This is not therapy. This is not yoga. This is skills training</strong> — practical, evidence-based, and immediately useful in your child's daily life. Think of it as teaching children to brush their teeth: simple daily habits that prevent much larger problems from forming later.
+  </div>
+</section>
+
+<!-- ── WHY IT WORKS ── -->
+<section class="details-section">
+  <div class="section-label">The science</div>
+  <h2 class="section-h2">Measurable results. Decades of research.</h2>
+  <p class="section-body">ThinkRoot teaches children one practical skill: how to notice a thought before it takes over — and what to do next. Simple, repeatable, works anywhere. The outcomes are well established across decades of research in child development:</p>
+  <div class="details-grid">
+    <div class="detail-card">
+      <span class="detail-icon">📚</span>
+      <div class="detail-value">Academic focus and performance</div>
+      <div class="detail-label">Improved attention, reduced distraction, better academic outcomes at school</div>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">💪</span>
+      <div class="detail-value">Emotional resilience under pressure</div>
+      <div class="detail-label">Reduced anxiety, stress, and rumination. Greater optimism and overall wellbeing</div>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">🤝</span>
+      <div class="detail-value">Quality of friendships and relationships</div>
+      <div class="detail-label">Greater empathy, kindness, perspective-taking, and prosocial behavior</div>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">😴</span>
+      <div class="detail-value">Physical health and sleep quality</div>
+      <div class="detail-label">Less hyperactivity, better self-control, improved physical regulation</div>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">🧠</span>
+      <div class="detail-value">Self-awareness and inner confidence</div>
+      <div class="detail-label">Stronger self-concept and growing capacity for self-compassion</div>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">🌱</span>
+      <div class="detail-value">Long-term career and life outcomes</div>
+      <div class="detail-label">EQ predicts adult success more reliably than IQ alone — Harvard and Stanford research</div>
+    </div>
+  </div>
+  <p style="font-size:0.78rem; color:var(--text-light); font-style:italic; margin-top:1.5rem; font-weight:300;">Sources: UC Berkeley Greater Good Science Center · Harvard University · Stanford University · Yale Center for Emotional Intelligence · HeartMath Institute · University of Michigan · University of Texas · peer-reviewed studies in child development</p>
+</section>
+
+<!-- ── THE PROGRAMS ── -->
+<section id="programs">
+  <div class="section-label">The programs</div>
+  <h2 class="section-h2">Two ways to build the foundation.</h2>
+  <p class="section-body">Both programs teach the same core skills. The difference is pace and depth. Choose the format that fits your child and your family's schedule.</p>
+  <div class="programs-grid">
+
+    <div class="program-card">
+      <div class="program-type">Intensive · 5 Days</div>
+      <div class="program-name">Resilience Lab</div>
+      <div class="program-duration">One week. One hour a day. Monday through Friday.</div>
+      <div class="program-meta">
+        <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+        <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+        <span class="pill pill-mist">Small Groups</span>
+        <span class="pill pill-gold">In-Person</span>
+      </div>
+      <p style="font-size:0.92rem; color:var(--text-mid); line-height:1.7; font-weight:300; margin-bottom:1rem;">Each session builds on the previous day — a complete arc from first noticing thoughts to actively working with them. By Friday, your child has a working toolkit they can use any time, anywhere.</p>
+      <div class="program-divider"></div>
+      <div class="program-includes-label">Skills your child gains</div>
+      <div class="program-include">Catch a negative thought before it spirals — every time</div>
+      <div class="program-include">Transform a difficult thought on their own, anywhere, without prompting</div>
+      <div class="program-include">Handle academic pressure, friendship stress, and hard moments with confidence</div>
+      <div class="program-include">Lifelong inner skills most adults were never given</div>
+      <div class="program-divider"></div>
+      <div class="program-includes-label">What your child takes home</div>
+      <div class="program-include">Personal Resilience Toolkit — built on the final day</div>
+      <div class="program-include">Daily Practice Cards with journal prompts and home practice</div>
+      <div class="program-price">
+        <div>
+          <div class="price-value">$99 per child</div>
+          <div class="price-note">Small groups · In-person · 5 consecutive days</div>
+        </div>
+        <a href="#interest" class="btn-primary">Join the interest list →</a>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <div class="program-type">Deep Work · 6 Weeks</div>
+      <div class="program-name">Resilience Lab</div>
+      <div class="program-duration">Six weeks. One hour per session. Once per week.</div>
+      <div class="program-meta">
+        <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+        <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+        <span class="pill pill-mist">Small Groups</span>
+        <span class="pill pill-gold">In-Person</span>
+      </div>
+      <p style="font-size:0.92rem; color:var(--text-mid); line-height:1.7; font-weight:300; margin-bottom:1rem;">Each session builds on the last — and between sessions, children practice in real life and bring that experience back the following week. By Session 6 they have six weeks of evidence from their own lives about what works.</p>
+      <div class="program-divider"></div>
+      <div class="program-includes-label">Skills your child gains</div>
+      <div class="program-include">Catch a negative thought before it spirals — every time</div>
+      <div class="program-include">Transform a difficult thought on their own, anywhere, without prompting</div>
+      <div class="program-include">Handle academic pressure, friendship stress, and hard moments with confidence</div>
+      <div class="program-include">Lifelong inner skills most adults were never given</div>
+      <div class="program-divider"></div>
+      <div class="program-includes-label">What your child takes home</div>
+      <div class="program-include">Six weeks of practiced skills — tested in real situations, not just in class</div>
+      <div class="program-include">Personal Practice Plan with an accountability partner</div>
+      <div class="program-include">Weekly Practice Cards and Personal Resilience Toolkit</div>
+      <div class="program-price">
+        <div>
+          <div class="price-value">$120 per child</div>
+          <div class="price-note">Small groups · In-person · 6 weekly sessions</div>
+        </div>
+        <a href="#interest" class="btn-primary">Join the interest list →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── LEADERSHIP LAB — COMING SOON ── -->
+<section class="coming-section">
+  <div class="coming-badge">Coming Soon</div>
+  <div class="section-label">The ThinkRoot Curriculum · Next</div>
+  <h2 class="section-h2">Leadership Lab</h2>
+  <p class="section-body">Leadership and character development for the next generation. Building on the resilience foundation — children learn to lead themselves before they lead others. In design — join the interest list to be notified when this program launches.</p>
+  <div style="margin-top:2rem;"><a href="#interest" class="btn-primary-light">Join the interest list →</a></div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about-section" id="about">
+  <div class="section-label">Meet the founder</div>
+  <h2 class="section-h2">Tina Puri</h2>
+  <div class="about-title-sub" style="font-size:0.85rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-top:-1rem; margin-bottom:0.5rem;">Founder &amp; Program Director</div>
+  <div class="about-grid">
+    <div>
+      <div class="about-avatar"><img src="tina.jpeg" alt="Tina Puri, Founder &amp; Program Director, ThinkRoot" /></div>
+    </div>
+    <div>
+      <p class="section-body">Tina Puri is a Certified Wellness Educator and Senior Peer Counselor — certified by the cities of Fremont, Union City, and Newark. With more than a decade working directly with children, adults, and seniors, she has delivered mindfulness and gratitude programs at the high school level, mentored HOSA students through statewide competitions, and served as a Stanford Challenge Success volunteer. A software professional for 20+ years, she brings both scientific rigor and deep practical teaching experience to ThinkRoot.</p>
+      <p class="section-body" style="margin-top:1rem;">She and her son co-founded <em>Rewired to Inspire</em> (2016–2020), a free intergenerational community program at Fremont Main Library. Together they mentored student volunteers from Mission San Jose and Irvington High Schools to design and deliver sessions connecting youth with adults 55+. The program ran for four years, was featured in <em>Tri-City Voice</em>, and received a letter of recognition from Congressman Michael M. Honda.</p>
+      <div class="about-note">
+        "I teach this because it changed my life. After more than twenty years in software, my body gave out — fibromyalgia, chronic fatigue, severe anxiety. Working at the root level, with the same practices I now teach children, resolved what traditional medicine could only manage. I am not teaching this because I read about it. I am teaching it because it is why I am standing here."
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THE THINKROOT COMMUNITY ── -->
+<section class="community-section" id="community">
+  <div class="section-label">The ThinkRoot Community</div>
+  <h2 class="section-h2">Learning to lead themselves.<br>Then leading their world.</h2>
+  <p class="section-body community-intro">The ThinkRoot Curriculum builds the inner foundation. The ThinkRoot Community is where that foundation becomes something larger — real relationships, real contribution, and real impact in the world around them.</p>
+
+  <div class="community-pillars">
+    <div class="community-card">
+      <div class="community-card-label">For parents</div>
+      <div class="community-card-title">A community of parents who think differently about raising children.</div>
+      <div class="community-card-body">You are not doing this alone. The ThinkRoot parent community connects families who share the same belief — that inner skills matter as much as academic ones. A space to share what works, ask what doesn't, and raise children alongside others who genuinely get it.</div>
+      <a href="https://chat.whatsapp.com/JLoti26E0U1HyMjlsshTc0" class="whatsapp-btn" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Join the parent community →
+      </a>
+    </div>
+
+    <div class="community-card">
+      <div class="community-card-label">For children · Forming now</div>
+      <div class="community-card-title">Inner skills become outer impact.</div>
+      <div class="community-card-body">Completing a ThinkRoot program is the beginning, not the end. Children who have built their inner foundation are ready for something more — real community involvement, genuine contribution, and leadership learned by doing. What no classroom can teach: a felt sense of purpose, connection, and responsibility for the world around them.</div>
+      <a href="#interest" class="btn-primary" style="display:inline-block; margin-top:1.5rem;">Join the interest list →</a>
+    </div>
+  </div>
+
+  <div class="inter-block">
+    <div class="inter-stat">
+      <div class="inter-years">4</div>
+      <div class="inter-years-label">years running</div>
+      <div class="inter-divider"></div>
+      <div style="font-size:0.78rem; color:var(--mint); line-height:1.6; font-weight:300;">Est. 2016<br>Fremont, CA</div>
+      <div style="margin-top:1.25rem; font-size:0.72rem; color:var(--fern); line-height:1.55; font-weight:300;">Recognized by<br><em style="color:var(--gold-light);">Tri-City Voice</em><br>&amp; U.S. Congress</div>
+    </div>
+    <div>
+      <div class="inter-proof">Proof of concept · Est. 2016 · Fremont Main Library</div>
+      <div class="inter-title">Rewired to Inspire</div>
+      <div class="inter-body">In 2016, Tina and her son co-founded <em>Rewired to Inspire</em> at Fremont Main Library — mentoring student volunteers from Mission San Jose and Irvington High Schools to design and deliver sessions connecting youth with adults 55+. Students brought curiosity and energy. Seniors brought wisdom. Neither left the same. The program ran for four years, was featured in <em>Tri-City Voice</em>, and received a letter of recognition from Congressman Michael M. Honda.</div>
+      <div class="inter-quote">"Leadership is not a title. It is the ability to show up — fully, generously — for someone else's world."</div>
+    </div>
+
+    <div class="inter-evidence">
+      <div class="inter-evidence-letter">
+        <img src="honda-letter.jpg" alt="Letter from Congressman Michael M. Honda recognizing Rewired to Inspire, May 2016" />
+        <div class="inter-letter-caption">Letter from Congressman<br>Michael M. Honda · May 2016</div>
+      </div>
+      <div>
+        <div class="inter-testimonial-block">
+          <div class="inter-testimonial-text">"Human values is dying all around and people like you give life to this core value that everybody should possess. Senior/elders are getting ignored and neglected — only these meetups bring back the dying spirit in us."</div>
+          <div class="inter-testimonial-attr">— Venil, Rewired to Inspire participant</div>
+        </div>
+        <div class="inter-press-label">As featured in</div>
+        <div class="inter-press">
+          <a href="https://tricityvoice.com/archives/2016/TCV-161101.pdf" target="_blank" rel="noopener">Tri-City Voice · November 2016 ↗</a>
+          <a href="https://tricityvoice.com/archives/2016/TCV-160517.pdf" target="_blank" rel="noopener">Tri-City Voice · May 2016 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTEREST LIST ── -->
+<section class="cta-section" id="interest">
+  <div class="section-label">Interest list</div>
+  <h2 class="cta-h2">Be the first to know when a session forms near you.</h2>
+  <p class="cta-sub">Sessions are forming now. Tell us where you are — we'll be in touch as soon as a group is confirmed near you.</p>
+
+  <iframe name="gform_iframe" style="display:none;"></iframe>
+
+  <form class="interest-form-wrap"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSe9Ifki1J2dOprucDkhVAyaN1wIMJY-4eAG1Ed_-hJgSQhPZg/formResponse"
+    method="POST" target="gform_iframe" onsubmit="showConfirm()">
+
+    <div class="form-row">
+      <div>
+        <label class="form-label">Parent name *</label>
+        <input type="text" name="entry.410301422" class="form-input" placeholder="Your full name" required />
+      </div>
+      <div>
+        <label class="form-label">Email address *</label>
+        <input type="email" name="entry.859105480" class="form-input" placeholder="your@email.com" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label class="form-label">Phone number</label>
+        <input type="tel" name="entry.65744569" class="form-input" placeholder="(415) 000-0000" />
+      </div>
+      <div>
+        <label class="form-label">City / neighborhood</label>
+        <input type="text" name="entry.588300542" class="form-input" placeholder="e.g. Fremont, Milpitas, San Jose" />
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="form-field">
+      <div class="form-section-title">Child's grade(s) — select all that apply</div>
+      <div class="check-group">
+        <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 2" /> Grade 2</label>
+        <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 3" /> Grade 3</label>
+        <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 4" /> Grade 4</label>
+        <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 5" /> Grade 5</label>
+        <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 6" /> Grade 6</label>
+        <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 7" /> Grade 7</label>
+        <label class="check-label"><input type="checkbox" name="entry.1422687686" value="Grade 8" /> Grade 8</label>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div>
+        <label class="form-label">Number of children</label>
+        <select name="entry.116349439" class="form-input">
+          <option value="">Select</option>
+          <option value="1">1 child</option>
+          <option value="2">2 children</option>
+          <option value="3">3 or more</option>
+        </select>
+      </div>
+      <div>
+        <label class="form-label">Preferred time of day</label>
+        <select name="entry.1581778277" class="form-input">
+          <option value="">Select</option>
+          <option value="Morning">Morning</option>
+          <option value="Afternoon">Afternoon</option>
+          <option value="Evening">Evening</option>
+          <option value="Flexible">Flexible</option>
+        </select>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="form-field">
+      <div class="form-section-title">Which program interests you?</div>
+      <div class="check-group-col">
+        <label class="check-label-block"><input type="radio" name="entry.852880699" value="Resilience Lab — 5-Day" /> Resilience Lab — 5-Day &nbsp;<span style="opacity:0.55; font-size:0.8rem;">Mon–Fri, one week, 1 hr/day</span></label>
+        <label class="check-label-block"><input type="radio" name="entry.852880699" value="Resilience Lab — 6-Week" /> Resilience Lab — 6-Week &nbsp;<span style="opacity:0.55; font-size:0.8rem;">once per week, 1 hr/session</span></label>
+        <label class="check-label-block"><input type="radio" name="entry.852880699" value="Either works for us" /> Either works for us</label>
+        <label class="check-label-block"><input type="radio" name="entry.852880699" value="Tell me more first" /> Tell me more first</label>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="form-field">
+      <div class="form-section-title">Preferred day(s) — select all that apply</div>
+      <div class="check-group">
+        <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Monday" /> Monday</label>
+        <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Tuesday" /> Tuesday</label>
+        <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Wednesday" /> Wednesday</label>
+        <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Thursday" /> Thursday</label>
+        <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Friday" /> Friday</label>
+        <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Saturday" /> Saturday</label>
+        <label class="check-label"><input type="checkbox" name="entry.1234450610" value="Sunday" /> Sunday</label>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <div class="form-section-title">Timing</div>
+      <div class="check-group-col">
+        <label class="check-label-block"><input type="checkbox" name="entry.1900691399" value="Early summer (June)" /> Early summer (June)</label>
+        <label class="check-label-block"><input type="checkbox" name="entry.1900691399" value="Mid summer (July)" /> Mid summer (July)</label>
+        <label class="check-label-block"><input type="checkbox" name="entry.1900691399" value="Late summer (August)" /> Late summer (August)</label>
+        <label class="check-label-block"><input type="checkbox" name="entry.1900691399" value="During the school year" /> During the school year</label>
+        <label class="check-label-block"><input type="checkbox" name="entry.1900691399" value="Flexible — any time works" /> Flexible — any time works</label>
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <div class="form-field">
+      <label class="form-label">Would you be open to supporting a group in your area?</label>
+      <div class="check-group-col">
+        <label class="check-label-block"><input type="radio" name="entry.1234450610" value="Yes — I could host at my home" /> Yes — I could host at my home if enough families sign up</label>
+        <label class="check-label-block"><input type="radio" name="entry.1234450610" value="Yes — I could help organize" /> Yes — I could help organize a group by reaching out in my own circles</label>
+        <label class="check-label-block"><input type="radio" name="entry.1234450610" value="No — I'd prefer a confirmed location" /> No — I'd prefer to come to a confirmed location</label>
+        <label class="check-label-block"><input type="radio" name="entry.1234450610" value="Not sure yet" /> Not sure yet</label>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label class="form-label">Anything you'd like us to know? (optional)</label>
+      <textarea name="entry.1900691399" class="form-input" rows="3" placeholder="e.g. My child has anxiety and I'm hoping this will help. Or — I have friends in my neighborhood who'd also be interested."></textarea>
+    </div>
+
+    <button type="submit" class="form-submit">Join the interest list →</button>
+
+    <p class="form-confirm" id="form-confirm">
+      Thank you — you're on the list! We'll be in touch personally once a session is forming near you.
+    </p>
+    <p class="form-note">Joining the interest list does not commit you to enrollment. We reach out personally to confirm details.</p>
+  </form>
+
+  <p class="cta-disclaimer">This program is educational in nature and is not a substitute for professional mental health support.</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">ThinkRoot <span>Young Leaders</span></div>
+  <div class="footer-copy">thinkyoungleaders@gmail.com &nbsp;·&nbsp; <a href="https://chat.whatsapp.com/JLoti26E0U1HyMjlsshTc0" style="color:var(--text-light);text-decoration:none;">WhatsApp Community</a> &nbsp;·&nbsp; © 2026 ThinkRoot Young Leaders</div>
+</footer>
+
+<script>
+  // Nav scroll shadow
+  window.addEventListener('scroll', function() {
+    document.getElementById('main-nav').style.borderBottomColor =
+      window.scrollY > 10 ? 'rgba(74,124,74,0.3)' : 'rgba(74,124,74,0.15)';
+  });
+  // Form confirmation
+  function showConfirm() {
+    setTimeout(function() {
+      document.getElementById('form-confirm').style.display = 'block';
+    }, 500);
+  }
+</script>
+</body>
+</html>

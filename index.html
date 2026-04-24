@@ -78,6 +78,22 @@
   /* ── PROBLEM STRIP ── */
   .problem-strip { background: var(--gold); padding: 1.1rem 2rem; text-align: center; font-family: 'Playfair Display', serif; font-size: 1.05rem; font-style: italic; color: var(--bark); letter-spacing: 0.01em; }
 
+  /* ── SPOTLIGHT ── */
+  .spotlight-strip { background: var(--white); padding: 1.6rem 5rem; border-bottom: 1px solid rgba(74,124,74,0.08); }
+  .spotlight-wrap { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
+  .spotlight-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.45rem; }
+  .spotlight-title { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 600; color: var(--forest); line-height: 1.15; margin-bottom: 0.4rem; }
+  .spotlight-body { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; max-width: 700px; }
+  .spotlight-split { background: var(--cream); border: 1px solid rgba(74,124,74,0.12); border-radius: 4px; overflow: hidden; }
+  .spotlight-split .spotlight-wrap { grid-template-columns: 1.2fr 0.8fr; gap: 0; }
+  .spotlight-split-copy { background: linear-gradient(180deg, rgba(26,58,26,0.96) 0%, rgba(45,90,45,0.98) 100%); padding: 1.7rem 1.9rem; }
+  .spotlight-split-copy .spotlight-label { color: var(--gold-light); }
+  .spotlight-split-copy .spotlight-title { color: var(--mint); }
+  .spotlight-split-copy .spotlight-body { color: rgba(232,244,232,0.82); }
+  .spotlight-split-side { padding: 1.7rem 1.9rem; display: flex; flex-direction: column; justify-content: center; }
+  .spotlight-split-side .spotlight-kicker { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .spotlight-split-side p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; margin-bottom: 1rem; }
+
   /* ── SECTIONS ── */
   section { padding: 6rem 5rem; }
   .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
@@ -238,8 +254,8 @@
   .program-outcome { background: var(--white); border: 1px solid rgba(74,124,74,0.12); border-radius: 4px; padding: 1.1rem 1.15rem; display: flex; gap: 10px; align-items: flex-start; }
   .program-outcome-mark { color: var(--sage); font-weight: 700; font-size: 0.85rem; flex-shrink: 0; margin-top: 2px; }
   .program-outcome-text { font-size: 0.9rem; color: var(--text-mid); line-height: 1.55; font-weight: 300; }
-  .programs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-  .program-card { background: var(--white); border: 1px solid rgba(74,124,74,0.15); border-radius: 4px; padding: 2.25rem; border-top: 3px solid var(--forest); }
+  .programs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; align-items: stretch; }
+  .program-card { background: var(--white); border: 1px solid rgba(74,124,74,0.15); border-radius: 4px; padding: 2.25rem; border-top: 3px solid var(--forest); display:flex; flex-direction:column; height:100%; }
   .program-type { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.6rem; }
   .program-name { font-family: 'Playfair Display', serif; font-size: 1.55rem; font-weight: 600; color: var(--forest); margin-bottom: 0.35rem; line-height: 1.2; }
   .program-duration { font-size: 0.95rem; color: var(--text-mid); font-weight: 300; margin-bottom: 1.25rem; line-height: 1.65; }
@@ -248,9 +264,21 @@
   .program-includes-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.8rem; }
   .program-include { display: flex; gap: 8px; font-size: 0.9rem; color: var(--text-mid); line-height: 1.55; font-weight: 300; margin-bottom: 0.65rem; }
   .program-include::before { content: '✓'; color: var(--sage); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
-  .program-price { margin-top: 1.6rem; padding-top: 1.35rem; border-top: 1px solid rgba(74,124,74,0.12); display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .program-price { margin-top: auto; padding-top: 1.35rem; border-top: 1px solid rgba(74,124,74,0.12); display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
   .price-value { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--forest); }
   .price-note { font-size: 0.78rem; color: var(--text-light); font-weight: 300; margin-top: 0.25rem; line-height: 1.5; }
+  .program-price .btn-secondary { white-space: nowrap; }
+  .program-price .btn-secondary,
+  .program-cta-row .btn-secondary {
+    border-color: rgba(200,150,60,0.7);
+    color: var(--moss);
+    background: rgba(200,150,60,0.08);
+  }
+  .program-price .btn-secondary:hover,
+  .program-cta-row .btn-secondary:hover {
+    background: rgba(200,150,60,0.16);
+    border-color: rgba(200,150,60,0.9);
+  }
   .program-callout {
     margin: 1.4rem 0 1.35rem;
     padding: 1.15rem 1.25rem;
@@ -297,6 +325,15 @@
   .program-cta-row {
     margin-top: 2rem;
     display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .program-cta-row .btn-primary,
+  .program-cta-row .btn-secondary {
+    min-width: 270px;
+    text-align: center;
     justify-content: center;
   }
 
@@ -357,6 +394,8 @@
   .cta-section .section-label::after { display: none; }
   .cta-h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; color: var(--mint); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
   .cta-sub { font-size: 1rem; color: var(--fern); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.6; }
+  .cta-info { max-width: 760px; margin: 0 auto 1.5rem; font-size: 0.92rem; color: rgba(232,244,232,0.88); line-height: 1.75; font-weight: 300; }
+  .cta-update { max-width: 620px; margin: 1rem auto 0; font-size: 0.85rem; color: var(--fern); line-height: 1.65; }
   .btn-primary-light { background: var(--gold); color: var(--bark); padding: 1rem 2.5rem; border: none; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; letter-spacing: 0.01em; }
   .btn-primary-light:hover { background: var(--gold-light); transform: translateY(-1px); }
   .cta-disclaimer { margin-top: 2.5rem; font-size: 0.75rem; color: var(--sage); line-height: 1.6; max-width: 480px; margin-left: auto; margin-right: auto; }
@@ -419,9 +458,9 @@
     .tree-grid { grid-template-columns: 1fr 1fr; }
     .details-grid { grid-template-columns: 1fr 1fr; }
     .stories-grid { grid-template-columns: 1fr; }
-    .program-outcomes { grid-template-columns: 1fr 1fr; }
-    .programs-grid { grid-template-columns: 1fr; }
-    .about-grid { gap: 2.5rem; }
+  .program-outcomes { grid-template-columns: 1fr 1fr; }
+  .programs-grid { grid-template-columns: 1fr; }
+  .about-grid { gap: 2.5rem; }
     .week-item { grid-template-columns: 50px 1fr; gap: 1rem; }
     .thought-row { grid-template-columns: 1fr; }
     .observe-grid { grid-template-columns: 1fr; }
@@ -429,6 +468,9 @@
     .ba-arrow { display: none; }
     footer { padding: 1.5rem 2rem; }
     nav { padding: 1rem 1.5rem; }
+    .spotlight-strip { padding: 1.5rem 2rem; }
+    .spotlight-wrap { grid-template-columns: 1fr; }
+    .spotlight-split .spotlight-wrap { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .interest-form-wrap { padding: 1.5rem 1.2rem; }
     .cta-section { padding: 5rem 2rem; }
@@ -450,12 +492,13 @@
 <nav id="main-nav">
   <a href="index.html" class="nav-logo" aria-label="ThinkRoot Young Leaders home">ThinkRoot <span>Young Leaders</span></a>
   <div class="nav-links">
-    <a href="#program">Programs</a>
+    <a href="#program">Resilience Lab</a>
     <a href="#about">About Tina</a>
+    <a href="#real-stories">Real Stories</a>
     <a href="#community">Community</a>
     <a href="#interest">Interest List</a>
   </div>
-  <a href="#interest" class="nav-cta">Join the Priority Interest List</a>
+  <a href="#interest" class="nav-cta">Get Priority Access</a>
 </nav>
 
 <!-- ── HERO ── -->
@@ -468,10 +511,10 @@
       <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
       <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
       <span class="pill pill-mist">Small Groups</span>
-      <a href="#program" class="pill pill-gold">5-Day or 6-Week Format</a>
+      <a href="#program" class="pill pill-gold">Resilience Lab</a>
     </div>
     <div class="hero-buttons fade-up delay-5">
-      <a href="#interest" class="btn-primary">Join the Priority Interest List</a>
+      <a href="#interest" class="btn-primary">Get Priority Access</a>
       <a href="#gap" class="btn-secondary">How ThinkRoot Works</a>
     </div>
   </div>
@@ -503,16 +546,33 @@
 
 <!-- ── GOLD STRIP ── -->
 <div class="problem-strip">
-  You've noticed something. The way your child handles pressure, setbacks, hard moments. You wondered if something was missing. It is.
+  Grades and goals are only half the story. You’ve seen your child struggle with the other half — pressure, distraction, and self-doubt. You wondered if there was a missing toolkit for the modern world. There is.
 </div>
+
+<section class="spotlight-strip">
+  <div class="spotlight-split">
+    <div class="spotlight-wrap">
+      <div class="spotlight-split-copy">
+        <div class="spotlight-label">Summer Spotlight</div>
+        <div class="spotlight-title">Resilience Lab</div>
+        <p class="spotlight-body">Our current featured program for Grades 2–8. A small-group program designed to help students build stronger habits, steadier responses under pressure, and practical tools they can use in everyday life.</p>
+      </div>
+      <div class="spotlight-split-side">
+        <div class="spotlight-kicker">Featured Now</div>
+        <p>Explore both formats and see what students build through the 5-Day Intensive and 6-Week Series.</p>
+        <a href="resilience-lab.html" class="btn-secondary">View Full Program Page</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ── THE GAP ── -->
 <section id="gap">
   <div class="two-col-section">
     <div>
       <div class="section-label">The gap</div>
-      <h2 class="section-h2">Your child is taught how to achieve. Rarely how to handle pressure, setbacks, and what happens inside.</h2>
-      <p class="section-body">A child’s patterns of thinking, emotional response, and self-belief shape everything from grades to friendships to confidence. Yet almost no one teaches them how those patterns work.</p>
+      <h2 class="section-h2">Your child is being taught everything except how to think.</h2>
+      <p class="section-body">Every child carries a remarkable mental world — attention, self-talk, emotional responses, and self-belief — that shapes everything from school performance to confidence to decision-making. Yet almost no one teaches them how it works.</p>
     </div>
     <div>
       <p class="section-body" style="margin-top:3.5rem;">ThinkRoot fills that gap. Children in Grades 2–8 discover the science behind their own minds — and leave with practical tools they can use for life.</p>
@@ -632,45 +692,16 @@
   </div>
 </section>
 
-<!-- ── WHAT STUDENTS REPORTED ── -->
-<section class="details-section">
-  <div class="section-label">What Students Reported</div>
-  <h2 class="section-h2">What actually changed in students' lives.</h2>
-  <p class="section-body">Examples of the kinds of shifts students reported after learning and practicing these skills.</p>
-  <div class="stories-grid">
-    <div class="story-card">
-      <div class="story-headline">MT, 8th grade</div>
-      <div class="story-body">After learning how to work with limiting thoughts, MT approached math differently, improved her grades, and eventually began helping classmates who were struggling in the same way.</div>
-    </div>
-    <div class="story-card">
-      <div class="story-headline">AG, 5th grade</div>
-      <div class="story-body">AG began using meditation when he felt angry or frustrated and turned to calming affirmations before bed.</div>
-    </div>
-    <div class="story-card">
-      <div class="story-headline">SM and VM, 9th and 7th grade</div>
-      <div class="story-body">Both students began using meditation during exams to relax and steady themselves under pressure.</div>
-    </div>
-    <div class="story-card">
-      <div class="story-headline">SK, 9th grade</div>
-      <div class="story-body">SK reported feeling more peaceful and mentally relaxed, finishing homework faster, improving her science grades, and sharing the practice with friends at school.</div>
-    </div>
-    <div class="story-card">
-      <div class="story-headline">AP, 7th grade</div>
-      <div class="story-body">AP significantly reduced daily screen time on his own. As that habit changed, his academic performance, social confidence, and emotional steadiness improved.</div>
-    </div>
-  </div>
-</section>
-
 <!-- ── THE PROGRAM ── -->
 <section id="program">
-  <div class="section-label">The Program</div>
+  <div class="section-label">Resilience Lab</div>
   <h2 class="section-h2">Two ways to build resilience.</h2>
   <p class="section-body">ThinkRoot Resilience Lab is currently offered in two formats. Both teach the same core resilience skills and practical tools. The difference is pacing.</p>
   <div class="program-outcomes">
-    <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Recovering faster after mistakes, setbacks, and disappointment</div></div>
-    <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Building confidence, discipline, and stronger self-trust</div></div>
-    <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Staying steadier under academic, social, and sports pressure</div></div>
-    <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Using practical tools independently in real-life situations</div></div>
+    <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Building confidence, discipline, and calmer responses under pressure</div></div>
+    <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Recovering faster from mistakes, frustration, and self-doubt</div></div>
+    <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Stronger daily habits of reflection, regulation, and follow-through</div></div>
+    <div class="program-outcome"><div class="program-outcome-mark">✓</div><div class="program-outcome-text">Using a repeatable technique independently in school, sports, and daily life</div></div>
   </div>
   <div class="programs-grid">
     <div class="program-card">
@@ -698,6 +729,7 @@
           <div class="price-value">Grades 2–4 and Grades 5–8</div>
           <div class="price-note">One hour a day, Monday through Friday</div>
         </div>
+        <a href="resilience-lab.html" class="btn-secondary">View Full Program Page</a>
       </div>
     </div>
     <div class="program-card">
@@ -715,13 +747,12 @@
       <div class="program-include">Children who benefit from time to practice in real life</div>
       <div class="program-include">Returning each week with more confidence and evidence from their own experience</div>
       <div class="program-callout">
-        <p>"Skills practiced with space between sessions show significantly stronger long-term retention. Between each session, children practice at home, notice how it works in their real life, and bring that experience back the following week. By Session 6, they have six weeks of evidence from their own lives." — spaced learning research</p>
+        <p>"Skills practiced with space between sessions show stronger long-term retention. Between sessions, children practice at home, notice how it works in real life, and return the following week with their own evidence." — spaced learning research</p>
       </div>
       <div class="program-takeaways">
         <div class="program-takeaways-label">What they take home</div>
         <div class="program-takeaway">Weekly Practice Cards — one per session, 6 total</div>
-        <div class="program-takeaway">Personal Resilience Toolkit</div>
-        <div class="program-takeaway">Personal Practice Plan — daily commitment and accountability support</div>
+        <div class="program-takeaway">Personal Resilience Toolkit and Practice Plan — daily commitment and accountability support</div>
         <div class="program-takeaway">The ThinkRoot Framework practice — owned and portable</div>
       </div>
       <div class="program-price">
@@ -729,11 +760,47 @@
           <div class="price-value">Grades 2–4 and Grades 5–8</div>
           <div class="price-note">One hour per week for six weeks</div>
         </div>
+        <a href="resilience-lab.html" class="btn-secondary">View Full Program Page</a>
       </div>
     </div>
   </div>
   <div class="program-cta-row">
-    <a href="#interest" class="btn-primary">Join the Priority Interest List</a>
+    <a href="#interest" class="btn-primary">Get Priority Access</a>
+    <a href="resilience-lab.html" class="btn-secondary">View Full Program Page</a>
+  </div>
+</section>
+
+<!-- ── WHAT STUDENTS REPORTED ── -->
+<section class="details-section" id="real-stories">
+  <div class="section-label">Real Stories</div>
+  <h2 class="section-h2">What actually changed in students' lives.</h2>
+  <p class="section-body">Examples of the kinds of shifts students reported after learning and practicing these skills.</p>
+  <div class="stories-grid">
+    <div class="story-card">
+      <div class="story-headline">Transformed anger and became less reactive</div>
+      <div class="story-body">She learned to pause before reacting, which helped her become more patient, calmer in daily life, and better able to respond thoughtfully instead of getting pulled into unnecessary conflict.</div>
+      <div class="story-context">HM, middle school</div>
+    </div>
+    <div class="story-card">
+      <div class="story-headline">Started waking up in a better mood</div>
+      <div class="story-body">Using the practices before bed helped him sleep better, wake up in a better mood, feel more motivated and focused at school, work more efficiently, and improve his grades.</div>
+      <div class="story-context">RR, middle school</div>
+    </div>
+    <div class="story-card">
+      <div class="story-headline">Went from struggling in math to helping others</div>
+      <div class="story-body">One student went from failing in math to improving her grades significantly and eventually helping classmates who were struggling in the same subject.</div>
+      <div class="story-context">MT, elementary school</div>
+    </div>
+    <div class="story-card">
+      <div class="story-headline">Reduced screen time and became more steady</div>
+      <div class="story-body">A student significantly reduced daily screen time on his own. As that habit changed, academic performance, social confidence, and emotional steadiness improved.</div>
+      <div class="story-context">AP, elementary school</div>
+    </div>
+    <div class="story-card">
+      <div class="story-headline">Used the practice to stay composed during exams</div>
+      <div class="story-body">Two students began using the technique during exams to relax, regulate themselves, and perform with more composure under pressure.</div>
+      <div class="story-context">SM and VM, high school and middle school</div>
+    </div>
   </div>
 </section>
 
@@ -813,7 +880,7 @@
     <div>
       <div class="inter-proof">Proof of concept</div>
       <div class="inter-title">Rewired to Inspire</div>
-      <div class="inter-body">Before ThinkRoot, Tina co-founded <em>Rewired to Inspire</em> with her son and Fremont high schoolers, a four-year intergenerational community program in Fremont recognized by <em>Tri-City Voice</em> and Congressman Michael M. Honda.</div>
+      <div class="inter-body">Before ThinkRoot, Tina co-founded <em>Rewired to Inspire</em> with Fremont high schoolers, a four-year intergenerational community program in Fremont recognized by <em>Tri-City Voice</em> and Congressman Michael M. Honda.</div>
       <div class="inter-quote">"Leadership is not a title. It is the ability to show up — fully, generously — for someone else's world."</div>
       <div class="inter-testimonial-block" style="margin-top:1.5rem; margin-bottom:0;">
         <div class="inter-testimonial-text">"Human values is dying all around and people like you give life to this core value that everybody should possess. Senior/elders are getting ignored and neglected — only these meetups bring back the dying spirit in us."</div>
@@ -827,7 +894,8 @@
 <section class="cta-section" id="interest">
   <div class="section-label">Priority Interest List</div>
   <h2 class="cta-h2">Be the first to know when a session forms near you.</h2>
-  <p class="cta-sub">Sessions are forming now. Tell us where you are, and we’ll be in touch as soon as a group is confirmed near you.</p>
+  <p class="cta-sub">Sessions are forming now. Tell us what would work best for your family, and we’ll be in touch as groups begin to form.</p>
+  <p class="cta-info">You are joining the priority interest list for <strong>Resilience Lab</strong>. We are currently gathering interest for the 5-Day Intensive and 6-Week Series so we can form the right small groups by grade, location, and schedule.</p>
 
   <iframe name="gform_iframe" style="display:none;"></iframe>
 
@@ -956,8 +1024,10 @@
     <p class="form-confirm" id="form-confirm">
       Thank you — you’re on the list. We’ll be in touch personally once a session is forming near you.
     </p>
-    <p class="form-note">Joining the list does not commit you to enrollment. It gives you early access as groups begin to form.</p>
   </form>
+  <p class="form-note">Joining the list does not commit you to enroll. Once a group begins to form, we will reach out with details.</p>
+  <p class="cta-update">For the latest updates on new group openings and future programs, join the WhatsApp community.</p>
+  <a href="https://chat.whatsapp.com/JLoti26E0U1HyMjlsshTc0" class="btn-primary-light" style="margin-top:1rem;" target="_blank" rel="noopener">Join the WhatsApp Community</a>
 
   <p class="cta-disclaimer">This program is educational in nature and is not a substitute for professional mental health support.</p>
 </section>

@@ -11,7 +11,7 @@ Support line:
 5-Day Intensive or 6-Week Series
 
 CTA:
-Join the Priority Interest List
+Get Priority Access
 
 Link:
 [https://vjra17.github.io/thinkroot-site/](https://vjra17.github.io/thinkroot-site/)

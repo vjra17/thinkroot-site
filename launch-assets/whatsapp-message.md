@@ -1,8 +1,11 @@
-ThinkRoot Young Leaders is now open for summer interest.
+Hi [Name], I wanted to share something close to my heart. I’ve just launched ThinkRoot Young Leaders and opened interest for this summer’s Resilience Lab, a small-group program for children in Grades 2–8. It is designed to help students build stronger habits, steadier responses under pressure, and practical tools they can use in school and everyday life.
 
-I’ve launched **Resilience Lab**, a small-group summer program for students in Grades 2–8 focused on the power skills schools usually don’t teach directly: how to handle pressure, recover from setbacks, build confidence, strengthen discipline, and use practical tools in real life.
-
-If this sounds relevant for your child, here’s the link:
+You can learn more here:
 [https://vjra17.github.io/thinkroot-site/](https://vjra17.github.io/thinkroot-site/)
 
-We’re currently gathering interest for summer groups and will share details as groups begin to form. If helpful, please feel free to share with other parents as well.
+For updates on new groups and future programs, you can also join the WhatsApp community:
+[WhatsApp Community](https://chat.whatsapp.com/JLoti26E0U1HyMjlsshTc0)
+
+Warmly,
+Tina Puri
+Founder, ThinkRoot Young Leaders

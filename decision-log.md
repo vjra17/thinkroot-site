@@ -31,3 +31,72 @@
 - Added visible spacing between the homepage program CTA buttons.
 - Reduced the 6-week takeaways from four items to three by combining the toolkit and practice-plan line.
 - Made the two homepage program cards equal-height so their bottom summary areas align more cleanly.
+
+## 2026-04-24 20:45 PDT
+- Imported recovery context from `/Users/tina/Documents/code/thinkroot-site/Analyze website messaging - Chat in Codex.docx` after the original Codex thread became unusable due to an image payload error.
+- Confirmed the transcript preserves the main homepage messaging strategy:
+  - technical Bay Area parents as the primary audience
+  - homepage should sell practical outcomes before method depth
+  - AAA and Five Power stay as proof of method, but not as full early-page teaching
+  - interest-capture positioning is the right launch model for the current stage
+- Confirmed that key transcript-era homepage changes are already present in the current repo, so this document plus git history can serve as the recovered memory baseline going forward.
+
+## 2026-04-24 20:49 PDT
+- Added `project-memory.md` to the live website repo as a concise restart file summarizing audience, homepage strategy, launch model, implemented work, important files, and next-step guidance.
+- Going forward, `project-memory.md` should be kept current alongside `decision-log.md` whenever strategy or project status materially changes.
+
+## 2026-04-24 20:55 PDT
+- Audited the current homepage against `project-memory.md`.
+- Main remaining gaps identified:
+  - some mid-page copy is still denser and more claim-heavy than ideal for a fast-reading technical-parent audience
+  - the founder/community sections still compete somewhat with the core Resilience Lab conversion path
+  - the interest form likely asks for more than is necessary for a first-touch conversion
+  - CTA language is directionally correct but currently split between `Get Priority Access`, `Priority Interest List`, and `Request early access`, which weakens message consistency
+
+## 2026-04-24 21:00 PDT
+- Confirmed that the public site URL and live filenames should remain unchanged because the website link is already being circulated to parents.
+- Created safe comparison files for the next iteration:
+  - `/Users/tina/Documents/code/thinkroot-site/index-v3-working-2026-04-24.html`
+  - `/Users/tina/Documents/code/thinkroot-site/resilience-lab-v3-working-2026-04-24.html`
+- Agreed workflow for this project:
+  - iterate in versioned working-copy files first
+  - compare before replacing the live site files
+  - do not create git commits without explicit user approval first
+
+## 2026-04-24 21:09 PDT
+- Completed first homepage-only V3 pass in `/Users/tina/Documents/code/thinkroot-site/index-v3-working-2026-04-24.html`.
+- Changes in V3 focused on conversion clarity without touching the live homepage:
+  - standardized main CTA language around `Join the Priority Interest List`
+  - tightened the gold-strip, gap, and mid-page explanatory copy
+  - reduced claim-heavy / theory-heavy language in `Why It Matters` and `What makes ThinkRoot different`
+  - renamed the framework section to `How It Works` and simplified its intro
+  - compressed the founder story so it reads more practical and less like a second narrative arc
+  - compressed community copy
+  - shortened the interest form by removing optional phone capture and the local-group invitation question
+- Refined V3 wording from `Attention` to `Focus` in the gap section for clearer parent-facing language.
+- Completed a second V3 pass focused on persuading achievement-oriented parents without sounding too conceptual.
+- Reduced `inner world / inner foundation / what happens within` phrasing in favor of more practical language about pressure, setbacks, self-doubt, reactions, and the missing skill layer underneath performance.
+- Formalized the homepage section framework and anti-repetition vocabulary rule in `project-memory.md`.
+- Revised V3 copy to better match that framework, including headline variation across sections.
+- Simplified the `ThinkRoot Community` section in V3 from two overlapping boxes to one clearer future-pathway box because the prior two-card structure was doing nearly the same job and diluted the message.
+- Restored the `root cause` differentiator in the `What makes ThinkRoot different` section because it is a core brand distinction and should remain visible there.
+- Restored the fuller founder credibility wording `certified by the cities of Fremont, Union City, and Newark` because the user wants that specificity preserved for authenticity and trust.
+- Clarified the purpose of the Community pathway copy in V3: after completing a ThinkRoot program, students may later have opportunities to participate in real community projects that can also count toward volunteering hours, while contributing meaningful service and building leadership through action.
+- Completed one final V3 cleanup pass:
+  - reduced a few remaining repeated `pressure` phrases
+  - smoothed one awkward sentence in the gap section
+  - tightened the wake-line wording
+  - adjusted the Community section layout to fit the new single-card structure
+- Saved a new set of more direct homepage top-section ideas in `/Users/tina/Documents/code/thinkroot-site/top-section-ideas-2026-04-24.md`, including headline directions focused on the gap between academic success and real-life capability.
+- Updated only the V3 homepage top section with the current approved direction:
+  - eyebrow: `The skills schools don’t teach`
+  - headline: `Strong kids aren’t built by academics alone.`
+  - tagline: `A structured, practical approach to helping children grow more resilient, independent, and capable when life becomes demanding, disappointing, or uncertain.`
+  - gold strip: `Grades and goals are only half the story. ThinkRoot helps children build the judgment, responsibility, and emotional steadiness that shape how they handle everything else.`
+- Confirmed that this was a top-section-only revision; earlier V3 structural and copy refinements remain intact.
+- Refined the V3 eyebrow to `The real-world skills schools don’t teach`.
+- Simplified the V3 tagline ending from `when life becomes demanding, disappointing, or uncertain` to `when life gets challenging` because the earlier phrasing felt too adult-coded for a Grades 2–8 program.
+- Updated the V3 headline styling so `academics alone` is emphasized in gold for stronger contrast, mirroring the earlier `take root` treatment.
+- Left the gold strip unchanged by user request.
+- Replaced the prior `ThinkRoot teaches that missing layer early` line in V3 with a stronger science-oriented statement about early patterns shaping later behavior, relationships, and well-being.
+- Renamed the V3 community section to `The ThinkRoot Community Projects` and clarified that the goal is real community contribution plus opportunities that may also count toward volunteering hours.

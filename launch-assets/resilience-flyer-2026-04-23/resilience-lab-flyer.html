@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThinkRoot Young Leaders — Resilience Lab Flyer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #1f4b23;
+      --forest-deep: #17371a;
+      --moss: #315f36;
+      --sage: #6a8e63;
+      --mint: #dfeadb;
+      --cream: #f8f4ea;
+      --gold: #c8963c;
+      --gold-soft: #e4c98d;
+      --text: #2e3a2f;
+      --text-soft: #5f6f60;
+      --white: #ffffff;
+      --shadow: 0 20px 50px rgba(16, 36, 18, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 32px;
+      background:
+        radial-gradient(circle at top left, rgba(200,150,60,0.14), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(49,95,54,0.12), transparent 30%),
+        linear-gradient(180deg, #fbf8f1 0%, #f4efe3 100%);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+    }
+
+    .flyer {
+      width: 1080px;
+      min-height: 1350px;
+      margin: 0 auto;
+      background: var(--cream);
+      border: 1px solid rgba(31,75,35,0.08);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .flyer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(200,150,60,0.10), transparent 18%),
+        radial-gradient(circle at 92% 86%, rgba(49,95,54,0.08), transparent 16%);
+      pointer-events: none;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 44px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--forest);
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .summer-pill {
+      background: rgba(200,150,60,0.12);
+      color: var(--moss);
+      border: 1px solid rgba(200,150,60,0.45);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      padding: 34px 44px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy {
+      padding: 24px 0 10px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--sage);
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 84px;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--forest);
+      margin: 0 0 18px;
+      max-width: 560px;
+    }
+
+    .hero-sub {
+      font-size: 22px;
+      line-height: 1.62;
+      color: var(--text-soft);
+      max-width: 560px;
+      margin-bottom: 26px;
+    }
+
+    .hero-metrics {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .metric {
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid rgba(31,75,35,0.14);
+      background: var(--white);
+      color: var(--moss);
+    }
+
+    .hero-visual {
+      background: linear-gradient(180deg, var(--forest) 0%, var(--forest-deep) 100%);
+      border-radius: 24px 24px 0 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 530px;
+      position: relative;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: auto auto -70px -30px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,150,60,0.18), transparent 65%);
+    }
+
+    .hero-portrait {
+      padding: 18px 18px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-portrait img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 18px;
+      display: block;
+    }
+
+    .hero-card {
+      padding: 24px 26px 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card-label {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold-soft);
+      margin-bottom: 12px;
+    }
+
+    .hero-card p {
+      margin: 0;
+      color: rgba(232,244,232,0.94);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .problem-strip {
+      margin: 10px 44px 0;
+      background: linear-gradient(90deg, rgba(200,150,60,0.12), rgba(200,150,60,0.04));
+      border-left: 4px solid var(--gold);
+      padding: 18px 22px;
+      font-size: 21px;
+      line-height: 1.55;
+      color: var(--forest);
+      position: relative;
+      z-index: 1;
+    }
+
+    .mid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      padding: 28px 44px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid rgba(31,75,35,0.09);
+      border-top: 4px solid var(--sage);
+      padding: 24px 24px 26px;
+      border-radius: 0 0 14px 14px;
+      min-height: 100%;
+    }
+
+    .panel-label {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--sage);
+      margin-bottom: 12px;
+    }
+
+    .panel h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      line-height: 1.1;
+      color: var(--forest);
+      margin: 0 0 14px;
+    }
+
+    .panel-copy {
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .bullet {
+      display: flex;
+      gap: 10px;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    .bullet::before {
+      content: "✓";
+      color: var(--sage);
+      font-weight: 700;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 0 44px 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(31,75,35,0.08);
+      border-top: 4px solid var(--gold);
+      border-radius: 0 0 14px 14px;
+      padding: 18px 18px 20px;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 54px;
+      line-height: 1;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .stat-copy {
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .formats {
+      padding: 0 44px 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .formats-wrap {
+      background: linear-gradient(180deg, #eef5ea 0%, #e7f0e2 100%);
+      border: 1px solid rgba(49,95,54,0.12);
+      padding: 24px 24px 28px;
+      border-radius: 20px;
+    }
+
+    .formats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .format {
+      background: var(--white);
+      border: 1px solid rgba(31,75,35,0.09);
+      border-top: 4px solid var(--forest);
+      padding: 22px;
+      border-radius: 0 0 14px 14px;
+    }
+
+    .format-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--forest);
+      margin: 0 0 10px;
+    }
+
+    .format-copy {
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .format-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .format-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--moss);
+      background: #f7faf6;
+      border: 1px solid rgba(49,95,54,0.18);
+    }
+
+    .footer-cta {
+      margin: 0 44px 44px;
+      background: linear-gradient(135deg, var(--forest) 0%, var(--moss) 100%);
+      color: var(--white);
+      border-radius: 22px;
+      padding: 26px 28px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      line-height: 1.1;
+      color: var(--gold-soft);
+      margin: 0 0 12px;
+    }
+
+    .footer-cta p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(232,244,232,0.93);
+    }
+
+    .cta-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(232,244,232,0.14);
+      border-radius: 18px;
+      padding: 20px 22px;
+    }
+
+    .cta-label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .cta-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .cta-link {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .cta-link.primary {
+      background: var(--gold);
+      color: var(--forest-deep);
+    }
+
+    .cta-link.secondary {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(232,244,232,0.18);
+      color: var(--white);
+    }
+
+    .mini-note {
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(232,244,232,0.82);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="flyer">
+    <div class="topbar">
+      <div class="brand">ThinkRoot <span>Young Leaders</span></div>
+      <div class="summer-pill">Summer 2026 Enrollment</div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Resilience Lab · Grades 2–8</div>
+        <h1>The power skills schools don’t teach.</h1>
+        <p class="hero-sub">
+          A small-group summer program designed to help students build stronger habits, steadier responses under pressure, and practical tools they can use in school and everyday life.
+        </p>
+        <div class="hero-metrics">
+          <div class="metric">5-Day Intensive</div>
+          <div class="metric">6-Week Series</div>
+          <div class="metric">Small Groups</div>
+          <div class="metric">Summer 2026</div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-portrait">
+          <img src="../../tina.jpeg" alt="Tina Puri, founder of ThinkRoot Young Leaders" />
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-label">Why this matters</div>
+          <p>
+            Today’s students are growing up in a more demanding world: rising academic pressure, social comparison, digital overload, and faster-changing expectations. Resilience Lab gives them a practical way to respond better in the moments that matter most.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="problem-strip">
+      Grades and goals are only half the story. The other half is how a child handles pressure, distraction, self-doubt, and everyday setbacks.
+    </div>
+
+    <section class="mid">
+      <div class="panel">
+        <div class="panel-label">What students build</div>
+        <h2>Practical skills they can actually use.</h2>
+        <p class="panel-copy">
+          Resilience Lab helps students notice unhelpful patterns earlier, recover faster, and use a repeatable technique independently in real-life situations.
+        </p>
+        <div class="bullet-list">
+          <div class="bullet">Building confidence, discipline, and calmer responses under pressure</div>
+          <div class="bullet">Recovering faster from mistakes, frustration, and self-doubt</div>
+          <div class="bullet">Using a repeatable technique in school, sports, and daily life</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-label">What parents notice</div>
+        <h2>Changes that show up in real life.</h2>
+        <p class="panel-copy">
+          Students and families reported better mood, calmer reactions, stronger focus, more organized work habits, improved follow-through, and more confidence under pressure.
+        </p>
+        <div class="bullet-list">
+          <div class="bullet">Sleeping better and waking up in a better mood</div>
+          <div class="bullet">Becoming more patient and less reactive</div>
+          <div class="bullet">Finishing schoolwork faster with less overwhelm</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <div class="stat-number">4 in 10</div>
+        <div class="stat-copy">U.S. high school students reported persistent sadness or hopelessness in 2023, according to the CDC.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">95%</div>
+        <div class="stat-copy">of teens use social media, and more than 3 hours a day is associated with double the risk of anxiety and depression symptoms.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">NIH</div>
+        <div class="stat-copy">funded research links irregular sleep and late bedtimes with worse grades, more school behavior problems, and poorer mood and thinking.</div>
+      </div>
+    </section>
+
+    <section class="formats">
+      <div class="formats-wrap">
+        <div class="panel-label">Two summer formats</div>
+        <h2 style="margin:0; font-family:'Playfair Display',serif; font-size:44px; color:var(--forest);">Two ways to experience Resilience Lab.</h2>
+        <div class="formats-grid">
+          <div class="format">
+            <h3 class="format-title">5-Day Intensive</h3>
+            <p class="format-copy">A focused one-week experience for students who benefit from immersion, repetition, and momentum.</p>
+            <div class="format-pills">
+              <span class="format-pill">Grades 2–4</span>
+              <span class="format-pill">Grades 5–8</span>
+              <span class="format-pill">1 hr/day</span>
+            </div>
+            <div class="bullet-list">
+              <div class="bullet">Strong start in a short window</div>
+              <div class="bullet">Daily repetition and momentum</div>
+              <div class="bullet">Practical toolkit students can start using right away</div>
+            </div>
+          </div>
+
+          <div class="format">
+            <h3 class="format-title">6-Week Series</h3>
+            <p class="format-copy">A steadier format for students who benefit from practice, reflection, and applying the work between sessions.</p>
+            <div class="format-pills">
+              <span class="format-pill">Grades 2–4</span>
+              <span class="format-pill">Grades 5–8</span>
+              <span class="format-pill">1 hr/week</span>
+            </div>
+            <div class="bullet-list">
+              <div class="bullet">More space for real-life practice</div>
+              <div class="bullet">Stronger long-term retention</div>
+              <div class="bullet">Returning each week with more clarity and evidence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-cta">
+      <div>
+        <div class="panel-label" style="color:var(--gold-soft); margin-bottom:12px;">Now forming</div>
+        <h3>Summer groups are now taking shape.</h3>
+        <p>
+          If this feels like the kind of support your child would benefit from, get priority access and we’ll keep you posted as groups begin to form.
+        </p>
+      </div>
+      <div class="cta-box">
+        <div class="cta-label">Learn more</div>
+        <div class="cta-links">
+          <a class="cta-link primary" href="https://vjra17.github.io/thinkroot-site/" target="_blank" rel="noopener">Get Priority Access</a>
+          <a class="cta-link secondary" href="https://chat.whatsapp.com/JLoti26E0U1HyMjlsshTc0" target="_blank" rel="noopener">Join WhatsApp Updates</a>
+        </div>
+        <div class="mini-note">Website: vjra17.github.io/thinkroot-site</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

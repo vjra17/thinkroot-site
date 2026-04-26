@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resilience Lab WhatsApp Poster v2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #18324a;
+      --teal: #0e887a;
+      --sun: #ffd44d;
+      --orange: #ff9b43;
+      --cream: #fffaf2;
+      --text: #274159;
+      --soft: #5c7084;
+      --deep: #0d5f56;
+      --pink: #ffcad4;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px 0 64px;
+      background:
+        radial-gradient(circle at top left, rgba(255,212,77,0.30), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(14,136,122,0.14), transparent 30%),
+        linear-gradient(180deg, #fff8ea 0%, #fff0db 100%);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .poster {
+      width: 1080px;
+      height: 1520px;
+      margin: 0 auto;
+      padding: 46px 46px 64px;
+      background: linear-gradient(180deg, #fffdf8 0%, #fff7eb 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .blob1,.blob2,.blob3 { position:absolute; border-radius:999px; opacity:.9; }
+    .blob1 { width:220px; height:220px; top:-36px; right:-36px; background:rgba(255,155,67,.18); }
+    .blob2 { width:180px; height:180px; bottom:-40px; left:-40px; background:rgba(14,136,122,.12); }
+    .blob3 { width:120px; height:120px; right:78px; top:370px; background:rgba(255,202,212,.45); }
+    .content { position:relative; z-index:1; height:100%; display:flex; flex-direction:column; }
+    .brand { font-family:'Playfair Display',serif; font-size:38px; color:var(--navy); margin-bottom:24px; }
+    .brand span { color:var(--orange); }
+    .eyebrow { font-size:18px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--teal); margin-bottom:14px; }
+    h1 { margin:0; font-family:'Playfair Display',serif; font-size:104px; line-height:.94; letter-spacing:-.05em; color:var(--navy); max-width:860px; }
+    .sub { margin:22px 0 18px; font-size:28px; line-height:1.3; color:var(--soft); max-width:760px; font-weight:600; }
+    .program-line { display:inline-block; align-self:flex-start; padding:14px 20px; border-radius:999px; background:rgba(255,255,255,.95); border:1px solid rgba(24,50,74,.08); font-size:24px; font-weight:800; color:var(--navy); margin-bottom:30px; box-shadow:0 10px 28px rgba(24,50,74,.06); }
+    .stack { display:grid; gap:16px; }
+    .statement-band { margin: 24px 0 18px; background: rgba(255,255,255,0.9); border: 1px solid rgba(24,50,74,0.08); border-radius: 22px; padding: 18px 22px; text-align: center; box-shadow: 0 8px 24px rgba(24,50,74,0.05); }
+    .statement-band strong { font-size: 28px; line-height: 1.2; color: var(--navy); letter-spacing: -0.02em; }
+    .point { background:rgba(255,255,255,.96); border:1px solid rgba(24,50,74,.08); border-left:8px solid var(--teal); border-radius:22px; padding:22px 22px 18px; }
+    .point-title { font-size:38px; line-height:1.04; font-weight:800; color:var(--navy); margin-bottom:6px; }
+    .point-copy { font-size:24px; line-height:1.24; color:var(--text); font-weight:600; }
+    .bottom { margin-top:auto; background:linear-gradient(145deg,var(--navy) 0%,var(--deep) 100%); color:white; border-radius:30px; padding:28px 30px; display:grid; grid-template-columns:1fr auto; gap:26px; align-items:center; }
+    .bottom h2 { margin:0 0 10px; font-family:'Playfair Display',serif; font-size:56px; line-height:.98; color:var(--sun); }
+    .bottom p { margin:0; font-size:22px; line-height:1.32; color:rgba(255,255,255,.9); max-width:520px; font-weight:600; }
+    .cta-wrap { display:flex; justify-content:flex-end; align-items:center; }
+    .cta { background:var(--sun); color:var(--navy); padding:18px 24px; border-radius:18px; font-size:24px; font-weight:800; text-decoration:none; white-space:nowrap; display:inline-block; }
+    .site-line { font-size:15px; line-height:1.35; color:rgba(255,255,255,.9); font-weight:700; text-align:right; }
+  </style>
+</head>
+<body>
+  <main class="poster">
+
+    <div class="blob1"></div><div class="blob2"></div><div class="blob3"></div>
+    <div class="content">
+      <div class="brand">ThinkRoot <span>Young Leaders</span></div>
+      <div class="eyebrow">Resilience Lab · Grades 2–8</div>
+      <h1>Build the power skills schools don’t teach.</h1>
+      <p class="sub">A small-group summer program for Grades 2–8.</p>
+      <div class="program-line">5-Day Intensive or 6-Week Series</div>
+
+      <div class="stack">
+        <div class="point">
+          <div class="point-title">From overwhelm to steadiness</div>
+          <div class="point-copy">When pressure starts to rise.</div>
+        </div>
+        <div class="point">
+          <div class="point-title">From self-doubt to confidence</div>
+          <div class="point-copy">After mistakes and setbacks.</div>
+        </div>
+        <div class="point">
+          <div class="point-title">From inconsistency to discipline</div>
+          <div class="point-copy">In school and daily life.</div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div>
+          <h2>Get Priority Access</h2>
+          
+        </div>
+        <div class="cta-wrap">
+          <a class="cta" href="https://vjra17.github.io/thinkroot-site/" target="_blank" rel="noopener">Get Priority Access</a>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

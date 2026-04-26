@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThinkRoot Resilience Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest:#1a3a1a;
+    --moss:#2d5a2d;
+    --sage:#4a7c4a;
+    --fern:#6aaa6a;
+    --mint:#a8d5a8;
+    --mist:#e8f4e8;
+    --cream:#faf8f2;
+    --gold:#c8963c;
+    --gold-light:#e8c078;
+    --bark:#3d2b1a;
+    --text:#1e2820;
+    --text-mid:#3d4f3d;
+    --text-light:#6b7f6b;
+    --white:#ffffff;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text); }
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:1.1rem 2.2rem; display:flex; justify-content:space-between; align-items:center;
+    background:rgba(250,248,242,0.92); backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(74,124,74,0.15);
+  }
+  .nav-logo { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:600; color:var(--forest); text-decoration:none; }
+  .nav-logo span { color:var(--gold); }
+  .nav-links { display:flex; gap:1.4rem; align-items:center; }
+  .nav-links a, .nav-cta { text-decoration:none; }
+  .nav-links a { font-size:0.72rem; font-weight:500; color:var(--text-mid); letter-spacing:0.07em; text-transform:uppercase; }
+  .nav-cta { background:var(--forest); color:var(--cream); padding:0.6rem 1.2rem; border-radius:2px; font-size:0.84rem; font-weight:500; }
+
+  .hero { padding:8rem 5rem 4rem; display:grid; grid-template-columns:1.1fr 0.9fr; gap:3rem; align-items:center; }
+  .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:0.75rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--sage); margin-bottom:1.4rem; }
+  .eyebrow::before { content:''; width:24px; height:1px; background:var(--sage); }
+  h1 { font-family:'Playfair Display',serif; font-size:clamp(2.8rem,5vw,4.2rem); line-height:1.08; color:var(--forest); margin-bottom:1rem; letter-spacing:-0.02em; }
+  h1 em { color:var(--gold); font-style:italic; }
+  .hero-copy { font-size:1.02rem; color:var(--text-mid); line-height:1.8; max-width:580px; font-weight:300; }
+  .pill-row { display:flex; flex-wrap:wrap; gap:8px; margin:1.8rem 0 2rem; }
+  .pill { font-size:0.78rem; font-weight:500; padding:5px 14px; border-radius:100px; letter-spacing:0.02em; }
+  .pill-forest { background:var(--forest); color:var(--mint); }
+  .pill-mist { background:var(--mist); color:var(--moss); border:1px solid var(--mint); }
+  .pill-gold { background:#fdf3e3; color:var(--bark); border:1px solid var(--gold-light); }
+  .hero-actions { display:flex; flex-wrap:wrap; gap:12px; }
+  .btn-primary, .btn-primary-light, .btn-secondary { display:inline-block; text-decoration:none; border-radius:2px; padding:0.95rem 1.8rem; font-size:0.95rem; font-weight:500; }
+  .btn-primary { background:var(--forest); color:var(--cream); }
+  .btn-primary-light { background:var(--gold); color:var(--bark); }
+  .btn-secondary { border:1.5px solid var(--forest); color:var(--forest); background:transparent; }
+  .hero-panel {
+    background:var(--forest); color:var(--mint); border-radius:8px; padding:2rem 2rem 2.2rem;
+  }
+  .hero-panel-label { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--fern); margin-bottom:0.7rem; }
+  .hero-panel h2 { font-family:'Playfair Display',serif; font-size:1.8rem; line-height:1.15; color:var(--gold-light); margin-bottom:0.8rem; }
+  .hero-panel p { font-size:0.92rem; line-height:1.75; color:rgba(232,244,232,0.94); font-weight:300; }
+
+  section { padding:4.5rem 5rem; }
+  .section-label { font-size:0.72rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--sage); margin-bottom:1rem; display:flex; align-items:center; gap:10px; }
+  .section-label::after { content:''; flex:1; height:1px; background:var(--mint); max-width:60px; }
+  .section-h2 { font-family:'Playfair Display',serif; font-size:clamp(2rem,3.5vw,2.8rem); font-weight:600; color:var(--forest); line-height:1.2; margin-bottom:1rem; max-width:760px; }
+  .section-body { font-size:1rem; color:var(--text-mid); line-height:1.8; font-weight:300; max-width:740px; }
+  .section-body strong { color:var(--text); font-weight:600; }
+
+  .proof-grid, .value-grid, .format-grid, .session-grid, .story-grid { display:grid; gap:1.25rem; margin-top:2rem; }
+  .proof-grid { grid-template-columns:repeat(3,1fr); }
+  .value-grid { grid-template-columns:repeat(4,1fr); }
+  .format-grid { grid-template-columns:1fr 1fr; }
+  .session-grid { grid-template-columns:repeat(3,1fr); }
+  .story-grid { grid-template-columns:repeat(3,1fr); }
+  .card, .proof-card, .format-card, .session-card, .story-card { background:var(--white); border:1px solid var(--mint); border-top:3px solid var(--sage); border-radius:0 0 6px 6px; }
+  .card { padding:1.15rem 1.1rem; }
+  .proof-card { padding:1.35rem 1.2rem; }
+  .card-title, .format-title, .session-title { font-size:0.95rem; font-weight:600; color:var(--forest); line-height:1.45; margin-bottom:0.45rem; }
+  .card-body, .format-body, .session-body, .story-body { font-size:0.9rem; color:var(--text-mid); line-height:1.7; font-weight:300; }
+  .card-mark { color:var(--sage); font-weight:700; margin-right:0.35rem; }
+  .proof-stat { font-family:'Playfair Display',serif; font-size:2.5rem; line-height:1; color:var(--gold); margin-bottom:0.7rem; }
+  .proof-body { font-size:0.92rem; color:var(--text-mid); line-height:1.7; font-weight:300; }
+  .source-note { margin-top:1rem; font-size:0.76rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-light); }
+
+  .format-card { padding:1.5rem; }
+  .format-type { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); margin-bottom:0.55rem; }
+  .format-title { font-family:'Playfair Display',serif; font-size:1.7rem; margin-bottom:0.6rem; }
+  .format-pills { display:flex; flex-wrap:wrap; gap:8px; margin:1rem 0 1.2rem; }
+  .format-list { margin-top:1rem; display:grid; gap:0.65rem; }
+  .format-item { font-size:0.9rem; color:var(--text-mid); line-height:1.65; font-weight:300; padding-left:1rem; position:relative; }
+  .format-item::before { content:'•'; position:absolute; left:0; color:var(--gold); }
+  .format-callout { margin-top:1.2rem; border-left:3px solid var(--gold); padding-left:1rem; font-family:'Playfair Display',serif; font-style:italic; color:var(--bark); line-height:1.65; font-size:0.95rem; }
+
+  .section-dark { background:var(--forest); }
+  .section-dark .section-label { color:var(--fern); }
+  .section-dark .section-label::after { background:var(--sage); }
+  .section-dark .section-h2 { color:var(--mint); }
+  .section-dark .section-body { color:rgba(232,244,232,0.94); }
+  .session-card, .story-card { padding:1.25rem; background:var(--white); border:1px solid var(--mint); border-top:3px solid var(--sage); border-radius:0 0 6px 6px; }
+  .session-icon { font-size:1.1rem; margin-bottom:0.55rem; }
+  .session-title { color:var(--forest); }
+  .session-body, .story-body { color:var(--text-mid); }
+  .story-head { font-size:0.98rem; font-weight:600; color:var(--forest); margin-bottom:0.55rem; line-height:1.45; }
+  .story-attribution { display:inline-block; margin-top:1rem; font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--sage); }
+  .section-dark .story-card { background:rgba(255,255,255,0.05); border:1px solid rgba(168,213,168,0.16); }
+  .section-dark .story-head { color:var(--mint); }
+  .section-dark .story-body { color:rgba(232,244,232,0.92); }
+  .next-step-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:2rem; }
+  .next-step-card { background:rgba(255,255,255,0.05); border:1px solid rgba(168,213,168,0.24); border-top:3px solid rgba(232,192,120,0.55); border-radius:0 0 6px 6px; padding:1.3rem; }
+  .next-step-card-title { font-size:0.8rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-light); margin-bottom:0.65rem; }
+  .next-step-card-body { font-size:0.92rem; color:rgba(232,244,232,0.92); line-height:1.7; font-weight:300; }
+
+  .cta-band { background:var(--gold); padding:1rem 5rem; text-align:center; font-family:'Playfair Display',serif; font-style:italic; color:var(--bark); font-size:1rem; }
+
+  footer { background:var(--text); padding:2rem 5rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; }
+  .footer-logo { font-family:'Playfair Display',serif; font-size:1rem; color:var(--mint); font-weight:600; }
+  .footer-logo span { color:var(--gold); }
+  .footer-copy { font-size:0.78rem; color:var(--text-light); font-weight:300; }
+
+  @media (max-width: 1024px) {
+    .hero, .proof-grid, .value-grid, .format-grid, .session-grid, .story-grid, .next-step-grid { grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding:1rem 1.2rem; }
+    .nav-links { display:none; }
+    .hero, .proof-grid, .value-grid, .format-grid, .session-grid, .story-grid, .next-step-grid { grid-template-columns:1fr; }
+    .hero, section, .cta-band, footer { padding-left:2rem; padding-right:2rem; }
+    .hero { padding-top:7rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">ThinkRoot <span>Young Leaders</span></a>
+  <div class="nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#formats">Formats</a>
+    <a href="#sessions">Sessions</a>
+    <a href="#next-step">Interest List</a>
+  </div>
+  <a href="index.html#interest" class="nav-cta">Get Priority Access</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Summer Spotlight</div>
+    <h1>ThinkRoot <em>Resilience Lab</em></h1>
+    <p class="hero-copy">Our current featured program for Grades 2–8. A small-group program designed to help students build stronger habits, steadier responses under pressure, and practical tools they can use in everyday life.</p>
+    <div class="pill-row">
+      <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+      <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+      <span class="pill pill-mist">Small Groups</span>
+      <span class="pill pill-gold">Summer 2026</span>
+    </div>
+    <div class="hero-actions">
+      <a href="index.html#interest" class="btn-primary">Get Priority Access</a>
+      <a href="#formats" class="btn-secondary">See the Two Formats</a>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <div class="hero-panel-label">What Parents Can Expect</div>
+    <h2>One program. Two pacing options.</h2>
+    <p>Both formats teach the same core skills. The 5-Day Intensive gives students an immersive start and daily repetition. The 6-Week Series gives them time to practice between sessions, return with real-life examples, and build stronger long-term retention.</p>
+  </div>
+</section>
+
+<div class="cta-band">Designed to give children practical tools they can use now — and skills they can carry for life.</div>
+
+<section id="overview">
+  <div class="section-label">Why This Matters Now</div>
+  <h2 class="section-h2">What children carry internally does not stay invisible.</h2>
+  <p class="section-body">Middle schoolers today are growing up in a far more demanding environment: rising academic pressure, social comparison, digital overload, and rapid developmental change.</p>
+  <p class="section-body" style="margin-top:1rem;">When children are not taught how to work with what happens internally, the effects do not stay hidden. They show up in attention, sleep, behavior, confidence, and performance — often at the very stage when school, social pressure, and self-doubt are all intensifying.</p>
+  <p class="section-body" style="margin-top:1rem;">Summer creates the space to slow down, build new habits, and practice these skills before the next school year begins.</p>
+  <div class="proof-grid">
+    <div class="proof-card"><div class="proof-stat">4 in 10</div><div class="proof-body">U.S. high school students reported persistent sadness or hopelessness in 2023, according to the CDC.</div></div>
+    <div class="proof-card"><div class="proof-stat">95%</div><div class="proof-body">of teens use social media, and more than 3 hours a day is associated with double the risk of depression and anxiety symptoms, according to the U.S. Surgeon General’s advisory.</div></div>
+    <div class="proof-card"><div class="proof-stat">NIH</div><div class="proof-body">funded research links irregular sleep and late bedtimes with worse grades, more school behavior problems, and poorer mood and thinking.</div></div>
+  </div>
+  <div class="source-note">Sources: CDC · U.S. Surgeon General · NIH</div>
+</section>
+
+<section>
+  <div class="section-label">What Students Build</div>
+  <h2 class="section-h2">What Resilience Lab helps students build</h2>
+  <p class="section-body">This is not more advice, and it is not vague wellness. Resilience Lab gives students a practical, repeatable way to respond better in the moments that matter most.</p>
+  <div class="value-grid">
+    <div class="card"><div class="card-title"><span class="card-mark">✓</span>Recognizing unhelpful thoughts earlier</div><div class="card-body">Students learn how to catch limiting thinking sooner and know what to do next instead of being run by it.</div></div>
+    <div class="card"><div class="card-title"><span class="card-mark">✓</span>Confidence, discipline, and calmer responses</div><div class="card-body">They begin responding to pressure, mistakes, and frustration with more steadiness and stronger self-trust.</div></div>
+    <div class="card"><div class="card-title"><span class="card-mark">✓</span>Recovery after setbacks</div><div class="card-body">They build the ability to recover faster from self-doubt, disappointment, and everyday pressure.</div></div>
+    <div class="card"><div class="card-title"><span class="card-mark">✓</span>A repeatable technique they can use on their own</div><div class="card-body">The work is designed to be used independently at school, at home, before competition, after setbacks, and in daily life.</div></div>
+  </div>
+</section>
+
+<section id="formats" class="section-dark">
+  <div class="section-label">Formats</div>
+  <h2 class="section-h2">Two ways to experience Resilience Lab</h2>
+  <p class="section-body">Both formats are being offered as summer options. The content is aligned across them. The difference is pace, repetition, and how much time students have to practice between sessions and apply the work in real life.</p>
+  <div class="format-grid">
+    <div class="format-card">
+      <div class="format-type">Format One</div>
+      <div class="format-title">5-Day Intensive</div>
+      <p class="format-body">A focused one-week experience for students who benefit from immersion, repetition, and momentum.</p>
+      <div class="format-pills">
+        <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+        <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+        <span class="pill pill-forest">5 Days</span>
+        <span class="pill pill-mist">1 hour/day</span>
+        <span class="pill pill-gold">Summer 2026</span>
+      </div>
+      <div class="format-list">
+        <div class="format-item">Students learn the core process quickly and practice it every day for one focused week.</div>
+        <div class="format-item">The structure creates momentum, repetition, and a strong first shift in how they respond to stress and self-doubt.</div>
+        <div class="format-item">Best for families who want a clear starting point in a short window.</div>
+      </div>
+      <div class="format-callout">By the end of the week, students leave with a personal toolkit, daily practice cards, and a technique they can begin using immediately.</div>
+    </div>
+    <div class="format-card">
+      <div class="format-type">Format Two</div>
+      <div class="format-title">6-Week Series</div>
+      <p class="format-body">A steadier format for students who benefit from reflection, practice, and applying the skills between sessions.</p>
+      <div class="format-pills">
+        <span class="pill pill-forest">Grades 2–4 · Ages 7–10</span>
+        <span class="pill pill-forest">Grades 5–8 · Ages 11–14</span>
+        <span class="pill pill-forest">6 Weeks</span>
+        <span class="pill pill-mist">1 hour/session</span>
+        <span class="pill pill-gold">Summer 2026</span>
+      </div>
+      <div class="format-list">
+        <div class="format-item">Students practice at home between sessions and bring real-life experience back the following week.</div>
+        <div class="format-item">The weekly rhythm gives concepts more time to settle, deepen, and become part of daily life.</div>
+        <div class="format-item">Best for families who want more reinforcement and stronger long-term retention.</div>
+      </div>
+      <div class="format-callout">"Skills practiced with space between sessions show significantly stronger long-term retention. Between each session, children practice at home, notice how it works in their real life, and bring that experience back the following week. By Session 6, they have six weeks of evidence from their own lives." — spaced learning research</div>
+    </div>
+  </div>
+</section>
+
+<section id="sessions">
+  <div class="section-label">What To Expect</div>
+  <h2 class="section-h2">What students actually do</h2>
+  <p class="section-body">Parents do not need a curriculum download. They need to know what their child will actually experience. Resilience Lab keeps the work simple, structured, interactive, and usable from the first session, with guided activities, discussion, reflection, journaling, and home practice built into the experience.</p>
+  <div class="session-grid">
+    <div class="session-card">
+      <div class="session-icon">🧠</div>
+      <div class="session-title">Understand the pattern</div>
+      <div class="session-body">Students learn how attention, self-talk, and stress patterns affect confidence, behavior, and performance.</div>
+    </div>
+    <div class="session-card">
+      <div class="session-icon">🔁</div>
+      <div class="session-title">Practice the skill</div>
+      <div class="session-body">They build the technique through guided exercises, discussion, reflection, journaling, and age-appropriate activities that make it stick.</div>
+    </div>
+    <div class="session-card">
+      <div class="session-icon">🚀</div>
+      <div class="session-title">Use it in real life</div>
+      <div class="session-body">Students begin applying the work in school, sports, family life, and moments of real frustration, self-doubt, and challenge.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Reported Outcomes</div>
+  <h2 class="section-h2">The kinds of changes students reported</h2>
+  <p class="section-body">These are examples of the kinds of shifts students reported after practicing this work in daily life, at school, and in situations that used to feel more difficult to manage.</p>
+  <div class="story-grid">
+    <div class="story-card"><div class="story-head">Calmed an overthinking mind</div><div class="story-body">Breathing practices and reading something positive before bed helped one student settle an overactive mind, sleep better, and feel more focused the next day.</div><div class="story-attribution">Middle school student</div></div>
+    <div class="story-card"><div class="story-head">Became more organized and efficient</div><div class="story-body">One student began breaking bigger assignments into smaller chunks, which helped her finish schoolwork faster, feel less overwhelmed, and have more free time.</div><div class="story-attribution">Middle school student</div></div>
+    <div class="story-card"><div class="story-head">Learned with more depth and understanding</div><div class="story-body">One student said the program helped her move beyond surface-level memorization and understand context and meaning more deeply, which she now applies in school.</div><div class="story-attribution">Middle school student</div></div>
+    <div class="story-card"><div class="story-head">Became more disciplined and consistent</div><div class="story-body">One student became highly consistent with the practices because he saw the difference they made in his mood, focus, and daily life.</div><div class="story-attribution">Elementary school student</div></div>
+    <div class="story-card"><div class="story-head">Handled difficult situations with more maturity</div><div class="story-body">One student shared that he now handles difficult situations with much more calm and maturity instead of reacting quickly in anger.</div><div class="story-attribution">Middle school student</div></div>
+    <div class="story-card"><div class="story-head">Grew as a leader</div><div class="story-body">As vice captain of his cricket team, one student said becoming calmer helped him lead more effectively, earn respect from peers, and grow in leadership.</div><div class="story-attribution">Middle school student</div></div>
+    <div class="story-card"><div class="story-head">Stopped giving up when work felt difficult</div><div class="story-body">One student said the program helped him break big tasks into smaller steps and keep trying when he did not understand something right away.</div><div class="story-attribution">Middle school student</div></div>
+    <div class="story-card"><div class="story-head">Became more peaceful, focused, and productive</div><div class="story-body">One student reported feeling more peaceful and mentally relaxed, finishing homework faster, improving grades, and sharing the practice with friends at school.</div><div class="story-attribution">Elementary school student</div></div>
+  </div>
+</section>
+
+<section class="section-dark" id="next-step">
+  <div class="section-label">Next Step</div>
+  <h2 class="section-h2">Get Priority Access</h2>
+  <p class="section-body">If Resilience Lab sounds like the right fit for your child, join the interest list and tell us what would work best for your family.</p>
+  <div class="next-step-grid">
+    <div class="next-step-card">
+      <div class="next-step-card-title">What you’re signing up for</div>
+      <div class="next-step-card-body">You are joining the priority interest list for Resilience Lab. We are currently gathering interest for the 5-Day Intensive and 6-Week Series so we can form the right small groups by grade, location, and schedule.</div>
+    </div>
+    <div class="next-step-card">
+      <div class="next-step-card-title">What happens next</div>
+      <div class="next-step-card-body">Joining the list does not commit you to enroll. As summer groups begin to form, we will reach out with details. For the latest updates on new groups and future programs, you can also join the WhatsApp community from the homepage.</div>
+    </div>
+  </div>
+  <p class="section-body" style="margin-top:1.25rem;">Pricing will be shared when summer groups are scheduled.</p>
+  <div class="hero-actions" style="margin-top:2rem; align-items:center;">
+    <a href="index.html#interest" class="btn-primary-light">Get Priority Access</a>
+    <a href="https://chat.whatsapp.com/JLoti26E0U1HyMjlsshTc0" class="btn-primary-light" target="_blank" rel="noopener">Join the WhatsApp Community</a>
+    <a href="index.html" class="btn-secondary">Back to Homepage</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">ThinkRoot <span>Young Leaders</span></div>
+  <div class="footer-copy">thinkyoungleaders@gmail.com · <a href="https://chat.whatsapp.com/JLoti26E0U1HyMjlsshTc0" style="color:var(--text-light); text-decoration:none;" target="_blank" rel="noopener">WhatsApp Community</a> · © 2026 ThinkRoot Young Leaders</div>
+</footer>
+</body>
+</html>

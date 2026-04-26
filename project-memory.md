@@ -1,6 +1,6 @@
 # ThinkRoot Site Project Memory
 
-Updated: 2026-04-24 21:18 PDT
+Updated: 2026-04-26 PDT
 
 ## Project Purpose
 
@@ -111,19 +111,26 @@ Preferred CTA direction:
 
 ## Work Already Implemented
 
-The current repo already includes major homepage messaging work from the recovered prior chat, including:
+**V3 is currently live** as of 2026-04-26. Key elements in the live site:
 
-- updated homepage framing for technical Bay Area parents
-- proof card section with `42%` and `4 of 5`
-- `What Parents Notice` / `What ThinkRoot Builds` table
-- homepage and Resilience Lab page refinements
-- launch assets under `launch-assets/`
-- repo-level decision logging
+- New hero: eyebrow "The real-world skills schools don't teach", H1 "Strong kids aren't built by academics alone.", founder quote on right panel
+- Gold strip: parent-mirror statement about judgment, responsibility, emotional steadiness
+- Gap section: CDC 42% callout, Harvard "4 of 5" full-width dark bar, Problem/Outcome table
+- 6 outcome cards with UC Berkeley / Harvard / Stanford / Yale / HeartMath research citation line
+- How It Works: Build / Practice / Apply
+- Resilience Lab: 5-Day Intensive + 6-Week Series with full detail (Best For, What They Take Home, grade/schedule info)
+- Real Stories: 5 real student outcome cards with school-level attribution
+- Leadership Lab: Coming Soon section
+- About Tina: photo (`tina.jpeg`), 2-paragraph bio, founder quote
+- Rewired to Inspire: 4 years, Fremont CA, Tri-City Voice + U.S. Congress, Venil testimonial
+- Interest form: Parent name, email, child grade, program interest, 6 need checkboxes, timing, format
+- Footer: thinkyoungleaders@gmail.com, WhatsApp Community, © 2026
 
 Recent relevant commits:
+- `990b76e` `Add CLAUDE.md, project-memory, decision-log, and launch assets to repo`
+- `01cad25` `Launch V3 homepage — new hero, real stories, research-backed outcomes`
 - `8994264` `Polish launch outreach assets`
 - `8e4d375` `Finalize homepage and Resilience Lab launch pages`
-- `120c07a` `Restore custom homepage interest form`
 
 ## Important Files
 

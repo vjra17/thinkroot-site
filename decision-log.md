@@ -100,3 +100,22 @@
 - Left the gold strip unchanged by user request.
 - Replaced the prior `ThinkRoot teaches that missing layer early` line in V3 with a stronger science-oriented statement about early patterns shaping later behavior, relationships, and well-being.
 - Renamed the V3 community section to `The ThinkRoot Community Projects` and clarified that the goal is real community contribution plus opportunities that may also count toward volunteering hours.
+
+## 2026-04-26
+
+- Reviewed V3 homepage in full via local preview (http://localhost:3000) — all sections confirmed correct including real student stories, program cards, About Tina photo, and Rewired to Inspire content.
+- Confirmed `tina.jpeg` (1600px, already tracked in git) loads correctly in the About section.
+- Confirmed Rewired to Inspire content is fully present: 4 years running, Fremont CA, Tri-City Voice + U.S. Congress recognition, leadership quote, Venil testimonial.
+- Created V2 backups before going live:
+  - `index-v2-live-2026-04-23.html` (homepage backup)
+  - `resilience-lab-v2-live-2026-04-23.html` (Resilience Lab backup)
+- Promoted V3 to production: copied `index-v3-working-2026-04-24.html` → `index.html` and `resilience-lab-v3-working-2026-04-24.html` → `resilience-lab.html`.
+- `resilience-lab.html` was unchanged by the swap (Codex V3 was identical to the previously committed version).
+- Committed and pushed V3 live to GitHub Pages (commit `01cad25`).
+- Committed all previously untracked Codex files to GitHub (commit `990b76e`):
+  - `project-memory.md`
+  - `decision-log.md` (updated with all Codex entries)
+  - `top-section-ideas-2026-04-24.md`
+  - `launch-assets/resilience-flyer-2026-04-23/` (WhatsApp cards, flyers, posters)
+- Created `CLAUDE.md` — Claude’s session memory file, auto-read at session start to restore full project context without needing to re-explain anything.
+- Agreed workflow: Tina says "update" at any milestone and Claude will update `decision-log.md`, `CLAUDE.md`, and commit to GitHub.

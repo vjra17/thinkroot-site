@@ -129,6 +129,16 @@
     .hero, section, .cta-band, footer { padding-left:2rem; padding-right:2rem; }
     .hero { padding-top:7rem; }
   }
+  /* ── FAQ ── */
+  .faq-section { background: var(--mist); }
+  .faq-list { margin-top: 3rem; max-width: 760px; }
+  .faq-item { border-bottom: 1px solid rgba(26,58,26,0.12); }
+  .faq-item:first-child { border-top: 1px solid rgba(26,58,26,0.12); }
+  .faq-item summary { list-style: none; padding: 1.4rem 0; font-weight: 500; color: var(--forest); font-size: 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; font-size: 1.5rem; color: var(--gold); font-weight: 300; flex-shrink: 0; line-height: 1; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-answer { padding: 0 2rem 1.5rem 0; color: var(--text-mid); line-height: 1.8; font-weight: 300; font-size: 0.97rem; max-width: 680px; }
 </style>
 </head>
 <body>
@@ -274,6 +284,40 @@
     <div class="story-card"><div class="story-head">Grew as a leader</div><div class="story-body">As vice captain of his cricket team, one student said becoming calmer helped him lead more effectively, earn respect from peers, and grow in leadership.</div><div class="story-attribution">Middle school student</div></div>
     <div class="story-card"><div class="story-head">Stopped giving up when work felt difficult</div><div class="story-body">One student said the program helped him break big tasks into smaller steps and keep trying when he did not understand something right away.</div><div class="story-attribution">Middle school student</div></div>
     <div class="story-card"><div class="story-head">Became more peaceful, focused, and productive</div><div class="story-body">One student reported feeling more peaceful and mentally relaxed, finishing homework faster, improving grades, and sharing the practice with friends at school.</div><div class="story-attribution">Elementary school student</div></div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-section" id="faq">
+  <div class="section-label">Common Questions</div>
+  <h2 class="section-h2">Questions parents ask.</h2>
+  <div class="faq-list">
+
+    <details class="faq-item">
+      <summary>Who is this program for?</summary>
+      <div class="faq-answer">Resilience Lab is designed for children in Grades 2–8 (ages 7–14). It is for any child — not just those who are struggling. Many families join because their child is capable and performing well, but handles pressure, setbacks, or frustration in ways that hold them back. Small groups are formed by grade so the content and conversations are age-appropriate.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>My child is already doing well in school. Do they still need this?</summary>
+      <div class="faq-answer">Academic performance and inner resilience are two different things. A child can have strong grades and still shut down under pressure, give up after a mistake, or struggle with self-doubt and anxiety. ThinkRoot builds the layer underneath performance — so everything your child already does works better, and holds up when things get hard.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What will my child actually do in sessions?</summary>
+      <div class="faq-answer">Sessions are interactive and practical — not lectures. Children work through guided activities, reflection exercises, and discussion to build skills they can use immediately. Each session ends with a simple practice they can apply on their own between meetings.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Where are sessions held?</summary>
+      <div class="faq-answer">Our primary location is in the Mission San Jose area of Fremont. If your group is located elsewhere in the Bay Area and a minimum number of families are interested, we can bring the program to your community. Online options may also be available depending on demand — you can indicate your preference on the interest form.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What happens after I join the interest list?</summary>
+      <div class="faq-answer">Joining the list does not commit you to enrol. Once enough families express interest for a particular grade level, location, and schedule, we will reach out with details and next steps. You are not charged anything at this stage.</div>
+    </details>
+
   </div>
 </section>
 

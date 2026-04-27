@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThinkRoot Parent Presentation — Slide Content</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --forest: #1a3a1a;
+    --gold: #c8963c;
+    --gold-light: #e8c078;
+    --bark: #3d2b1a;
+    --mint: #a8d5a8;
+    --mist: #e8f4e8;
+    --cream: #faf8f2;
+    --sage: #4a7c4a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    background: #f0f0ec;
+    color: #2a2a2a;
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 2rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cream);
+  }
+  .site-header h1 span { color: var(--gold); }
+  .meta { font-size: 0.78rem; color: var(--mint); font-weight: 300; text-align: right; line-height: 1.6; }
+
+  /* ── INTRO BAR ── */
+  .intro-bar {
+    background: var(--gold);
+    color: var(--forest);
+    padding: 0.9rem 3rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .intro-bar span::before { content: '• '; }
+
+  /* ── NAV PILLS ── */
+  .slide-nav {
+    background: var(--cream);
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(26,58,26,0.1);
+    position: sticky;
+    top: 73px;
+    z-index: 99;
+  }
+  .slide-nav a {
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: var(--mist);
+    color: var(--forest);
+    border: 1px solid rgba(26,58,26,0.15);
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .slide-nav a:hover { background: var(--forest); color: var(--cream); }
+
+  /* ── MAIN ── */
+  main { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+
+  /* ── SLIDE CARD ── */
+  .slide-card {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+
+  .slide-header {
+    background: var(--forest);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .slide-number {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mint);
+    white-space: nowrap;
+  }
+  .slide-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    flex: 1;
+  }
+
+  .slide-body { padding: 2rem; }
+
+  /* ── HEADLINE BOX ── */
+  .headline-box {
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1.5rem;
+    background: rgba(200,150,60,0.05);
+    border-radius: 0 4px 4px 0;
+  }
+  .headline-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .headline-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--forest);
+    line-height: 1.3;
+  }
+
+  /* ── SLIDE CONTENT AREA ── */
+  .content-section { margin-bottom: 1.5rem; }
+  .content-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--mist);
+  }
+  .content-body {
+    font-size: 0.95rem;
+    color: #3a3a3a;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+  .content-body strong { font-weight: 500; color: var(--forest); }
+  .content-body em { color: var(--sage); font-style: italic; }
+
+  /* ── TWO COLUMNS ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .col-box {
+    background: var(--mist);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+  }
+  .col-box.dark {
+    background: var(--forest);
+    color: var(--cream);
+  }
+  .col-box h4 {
+    font-weight: 500;
+    font-size: 0.88rem;
+    margin-bottom: 0.75rem;
+    color: var(--forest);
+    letter-spacing: 0.04em;
+  }
+  .col-box.dark h4 { color: var(--gold-light); }
+  .col-box ul { list-style: none; padding: 0; }
+  .col-box ul li {
+    font-size: 0.88rem;
+    padding: 0.25rem 0;
+    padding-left: 1rem;
+    position: relative;
+    color: #3a3a3a;
+    font-weight: 300;
+  }
+  .col-box.dark ul li { color: rgba(232,244,232,0.9); }
+  .col-box ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.8rem; }
+
+  /* ── CHECKLIST ── */
+  .checklist { list-style: none; padding: 0; margin-bottom: 1rem; }
+  .checklist li {
+    padding: 0.4rem 0 0.4rem 1.75rem;
+    position: relative;
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: #3a3a3a;
+    border-bottom: 1px solid rgba(26,58,26,0.06);
+  }
+  .checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+    font-weight: 500;
+  }
+
+  /* ── SCENARIO CARDS ── */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .scenario-card {
+    background: var(--mist);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: #3a3a3a;
+    font-weight: 300;
+    line-height: 1.6;
+    border-left: 3px solid var(--mint);
+  }
+  .scenario-card::before { content: '📌 '; }
+
+  /* ── RESEARCH BLOCKS ── */
+  .research-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .research-block {
+    background: var(--forest);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    color: var(--cream);
+  }
+  .research-source {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+  }
+  .research-stat {
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: rgba(232,244,232,0.95);
+    line-height: 1.65;
+    margin-bottom: 0.5rem;
+  }
+  .research-note {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--mint);
+  }
+
+  /* ── THREE STEPS ── */
+  .steps { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.25rem; }
+  .step {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: var(--mist);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+  }
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2rem;
+    text-align: center;
+  }
+  .step-content h4 { font-weight: 500; color: var(--forest); margin-bottom: 0.3rem; font-size: 0.95rem; }
+  .step-content p { font-size: 0.88rem; font-weight: 300; color: #3a3a3a; line-height: 1.6; }
+  .step-content em { color: var(--sage); font-style: italic; }
+
+  /* ── SESSION ITEMS ── */
+  .session-list { list-style: none; padding: 0; margin-bottom: 1.25rem; }
+  .session-list li {
+    padding: 0.6rem 0 0.6rem 0;
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: #3a3a3a;
+    border-bottom: 1px solid rgba(26,58,26,0.08);
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  .session-list li .icon { flex-shrink: 0; }
+  .session-list li strong { font-weight: 500; color: var(--forest); }
+
+  /* ── STORY CARDS ── */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .story-card {
+    background: var(--mist);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    border-top: 3px solid var(--gold);
+  }
+  .story-quote {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: #3a3a3a;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+  }
+  .story-attr {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--sage);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── FORMAT CARDS ── */
+  .format-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .format-card {
+    background: var(--forest);
+    border-radius: 6px;
+    padding: 1.5rem;
+    color: var(--cream);
+  }
+  .format-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    margin-bottom: 0.75rem;
+  }
+  .format-detail {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(232,244,232,0.9);
+    line-height: 1.65;
+  }
+  .format-detail strong { color: var(--mint); font-weight: 500; }
+
+  /* ── BOTTOM LINE ── */
+  .bottom-line {
+    background: var(--forest);
+    color: var(--gold-light);
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-style: italic;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  /* ── CLOSING SLIDE ── */
+  .closing-lines { margin-bottom: 1.25rem; }
+  .closing-pair {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(26,58,26,0.08);
+  }
+  .closing-pair .question { font-size: 0.95rem; font-weight: 300; color: #555; margin-bottom: 0.2rem; }
+  .closing-pair .answer { font-size: 1rem; font-weight: 500; color: var(--forest); }
+
+  /* ── SPEAKER NOTES ── */
+  .speaker-notes {
+    background: #fffdf5;
+    border-top: 2px dashed rgba(200,150,60,0.3);
+    padding: 1.5rem 2rem;
+  }
+  .notes-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .notes-label::before { content: '🎤'; }
+  .notes-text {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.8;
+    white-space: pre-line;
+  }
+  .notes-text em { color: var(--sage); }
+
+  /* ── QA SECTION ── */
+  .qa-section {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    margin-bottom: 2.5rem;
+  }
+  .qa-header {
+    background: var(--bark);
+    padding: 1.2rem 2rem;
+  }
+  .qa-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--gold-light);
+  }
+  .qa-body { padding: 2rem; }
+  .qa-item { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(26,58,26,0.08); }
+  .qa-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .qa-q { font-weight: 500; color: var(--forest); font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .qa-q::before { content: 'Q: '; color: var(--gold); }
+  .qa-a { font-size: 0.9rem; font-weight: 300; color: #3a3a3a; line-height: 1.75; }
+  .qa-a::before { content: 'A: '; font-weight: 500; color: var(--sage); }
+
+  /* ── DESIGN NOTES ── */
+  .design-section {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    margin-bottom: 2.5rem;
+  }
+  .design-header {
+    background: var(--sage);
+    padding: 1.2rem 2rem;
+  }
+  .design-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: white;
+  }
+  .design-body { padding: 2rem; }
+  .design-item {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #3a3a3a;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(26,58,26,0.06);
+    line-height: 1.6;
+  }
+  .design-item:last-child { border-bottom: none; }
+  .design-item strong { font-weight: 500; color: var(--forest); }
+
+  /* ── COLOUR SWATCHES ── */
+  .swatches { display: flex; gap: 0.75rem; margin-top: 0.75rem; flex-wrap: wrap; }
+  .swatch {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.1);
+    display: inline-block;
+  }
+
+  @media (max-width: 700px) {
+    .two-col, .scenario-grid, .research-grid, .story-grid, .format-grid { grid-template-columns: 1fr; }
+    .site-header { padding: 1.25rem 1.5rem; }
+    .slide-nav { padding: 1rem 1.5rem; top: 65px; }
+    main { padding: 1.5rem 1rem 4rem; }
+    .slide-body, .speaker-notes { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>ThinkRoot <span>Young Leaders</span></h1>
+  <div class="meta">Parent Presentation — Slide Content<br>15 slides · ~25 min + Q&A</div>
+</header>
+
+<div class="intro-bar">
+  <span>Audience: Software professional &amp; highly educated Indian parents, Bay Area</span>
+  <span>Duration: 25 min + 5 min Q&amp;A</span>
+  <span>Format: Google Slides</span>
+</div>
+
+<nav class="slide-nav">
+  <a href="#s1">1 · Title</a>
+  <a href="#s2">2 · Wolf &amp; Cage</a>
+  <a href="#s3">3 · Invisible Cage</a>
+  <a href="#s4">4 · Everything</a>
+  <a href="#s5">5 · Parents See</a>
+  <a href="#s6">6 · The Gap</a>
+  <a href="#s7">7 · Research</a>
+  <a href="#s8">8 · Why Now</a>
+  <a href="#s9">9 · What ThinkRoot Does</a>
+  <a href="#s10">10 · Sessions</a>
+  <a href="#s11">11 · Results</a>
+  <a href="#s12">12 · Programme</a>
+  <a href="#s13">13 · About Tina</a>
+  <a href="#s14">14 · Closing</a>
+  <a href="#s15">15 · Next Step</a>
+  <a href="#qa">Q&amp;A</a>
+  <a href="#design">Design Notes</a>
+</nav>
+
+<main>
+
+<!-- SLIDE 1 -->
+<div class="slide-card" id="s1">
+  <div class="slide-header">
+    <span class="slide-number">Slide 1 of 15</span>
+    <span class="slide-title">Title Slide</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">Building Children Who Can Handle Life</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">Subhead</div>
+      <div class="content-body">An introduction to ThinkRoot Young Leaders — Resilience Lab</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">Bottom line</div>
+      <div class="content-body">Tina Puri | Founder &amp; Program Director | thinkyoungleaders@gmail.com</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">Suggested visual</div>
+      <div class="content-body">Dark forest green background, ThinkRoot logo/wordmark, minimal and clean.</div>
+    </div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">Welcome everyone and thank you for being here. I know your time is valuable, so I'll keep this focused, practical, and — I hope — something that stays with you long after today.</div>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide-card" id="s2">
+  <div class="slide-header">
+    <span class="slide-number">Slide 2 of 15</span>
+    <span class="slide-title">The Opening Hook: The Wolf and The Cage</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">Two animals. Two very different minds.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide — two columns</div>
+      <div class="two-col">
+        <div class="col-box">
+          <h4>🐺 The Wolf</h4>
+          <ul>
+            <li>Lives in the wild. No guarantees.</li>
+            <li>Stays sharp. Reads the environment.</li>
+            <li>Adapts. Recovers. Persists.</li>
+            <li>Reaches its full potential — because it has to.</li>
+          </ul>
+        </div>
+        <div class="col-box dark">
+          <h4>🐕 The Dog in the Cage</h4>
+          <ul>
+            <li>Comfortable. Safe. Fed on schedule.</li>
+            <li>Never has to hunt. Never has to adapt.</li>
+            <li>Over time — loses its instincts.</li>
+            <li>Forgets how to read the environment.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">I want to start with something Warren Buffett once said about people in the workforce. He described two kinds of people — the wolf, who is always sharp because survival depends on it. And the dog in a golden cage — comfortable, provided for, but slowly losing the instincts it was born with.
+
+He was talking about financial independence. But today I want to borrow that image for something different.
+
+Because I believe our children's minds work exactly the same way.
+
+A mind that is trained to handle pressure, setbacks, difficulty and uncertainty — that mind becomes sharp. It grows. It reaches its potential.
+
+A mind that is never challenged to work with what happens inside — that mind becomes dependent. Fragile. It shuts down when things get hard.
+
+The question I want to ask today is: which kind of mind are we building in our children?</div>
+  </div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide-card" id="s3">
+  <div class="slide-header">
+    <span class="slide-number">Slide 3 of 15</span>
+    <span class="slide-title">The Cage No One Talks About</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">The cage is invisible. But your child may already be living in one.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide</div>
+      <div class="content-body" style="margin-bottom:1rem;">The cage is not made of bars. It is made of:</div>
+      <ul class="checklist">
+        <li><em>"I can't do this."</em></li>
+        <li>Shutting down after one wrong answer</li>
+        <li>Anxiety that rises before an exam — even when they are prepared</li>
+        <li>Giving up when something feels too hard</li>
+        <li>Reacting big to small setbacks</li>
+        <li>Confidence that only works when everything is going well</li>
+      </ul>
+    </div>
+    <div class="bottom-line">These are not personality traits. They are patterns. And patterns can be changed.</div>
+    <div class="content-section">
+      <div class="content-label">Suggested visual</div>
+      <div class="content-body">A single lit bulb inside a dark glass jar — symbolising potential trapped inside.</div>
+    </div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">The cage I'm talking about today is not made of poverty, or lack of opportunity, or lack of intelligence.
+
+Your children have all of those things. They have loving parents who have sacrificed enormously. They have tutors, activities, the best schools, every resource.
+
+And yet — many of them are struggling in ways that all of that cannot fix.
+
+Because the cage is internal. It is the pattern of thought, the emotional habit, the automatic response that kicks in when life gets hard. And most children — most adults — have never been taught to work with it.</div>
+  </div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide-card" id="s4">
+  <div class="slide-header">
+    <span class="slide-number">Slide 4 of 15</span>
+    <span class="slide-title">You Have Given Your Child Everything</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">You have invested in everything that goes in.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide — checklist</div>
+      <ul class="checklist">
+        <li>The best academic preparation</li>
+        <li>Tutoring and test prep</li>
+        <li>Sports, music, extracurriculars</li>
+        <li>Enrichment programs and experiences</li>
+        <li>Every tool and resource they need</li>
+      </ul>
+    </div>
+    <div class="bottom-line">But no one has taught them what to do when their own mind works against them.</div>
+    <div class="content-section">
+      <div class="content-label">Suggested visual</div>
+      <div class="content-body">Clean, minimal — checklist items in forest green, the final line in gold.</div>
+    </div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">I want to be clear — I am not here to question your parenting. Everything on this list matters. You are doing everything right by those standards.
+
+But there is a layer that is missing. Not from your efforts — from the entire system. From schools. From the way we were raised. From the culture we grew up in.
+
+No one taught most of us what to do when anxiety rises before a big moment. No one taught us how to recover from failure with our self-belief intact. No one taught us how to interrupt the voice that says "I'm not good enough."
+
+We figured it out — or we didn't. And the patterns we didn't resolve, we carry today.
+
+Our children deserve better than that.</div>
+  </div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide-card" id="s5">
+  <div class="slide-header">
+    <span class="slide-number">Slide 5 of 15</span>
+    <span class="slide-title">What Parents in This Room Are Already Seeing</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">You have probably already seen one of these.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide — scenario cards</div>
+      <div class="scenario-grid">
+        <div class="scenario-card">"She studies hard but panics during the exam and goes blank."</div>
+        <div class="scenario-card">"He gets one bad grade and says he's stupid and wants to quit."</div>
+        <div class="scenario-card">"She starts crying the moment something doesn't go her way."</div>
+        <div class="scenario-card">"He never tries anything new because he's afraid of failing."</div>
+        <div class="scenario-card">"She seems anxious all the time — I don't know why."</div>
+        <div class="scenario-card">"He compares himself to his classmates constantly and it's affecting his confidence."</div>
+      </div>
+    </div>
+    <div class="bottom-line">This is not a discipline problem. It is a skills gap.</div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">I want to ask for a show of hands — but feel free to just note this privately.
+
+How many of you have seen your child shut down after a setback? Panic before an exam they were prepared for? Give up when something got hard?
+
+[Pause.]
+
+Almost every hand in the room. I have seen this every time I present to parents.
+
+This is not about a child being weak or sensitive or dramatic. This is about a child who was never given a tool for that moment. They were taught the subject. But no one taught them what to do with the fear, the frustration, the self-doubt that shows up right alongside it.</div>
+  </div>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide-card" id="s6">
+  <div class="slide-header">
+    <span class="slide-number">Slide 6 of 15</span>
+    <span class="slide-title">The Gap Schools Don't Fill</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">Schools teach children what to think. Rarely how to manage what happens within.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide — two columns</div>
+      <div class="two-col">
+        <div class="col-box">
+          <h4>What schools teach</h4>
+          <ul>
+            <li>Content, formulas, facts</li>
+            <li>How to perform and achieve</li>
+            <li>How to compete</li>
+            <li>How to follow a system</li>
+          </ul>
+        </div>
+        <div class="col-box dark">
+          <h4>What no school teaches</h4>
+          <ul>
+            <li>How to recover after a mistake</li>
+            <li>How to stay steady when pressure rises</li>
+            <li>How to interrupt a negative thought spiral</li>
+            <li>How to believe in yourself when results say otherwise</li>
+            <li>How to regulate the emotional state that determines whether any of the above works</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-line">There is no subject called: <em>"What to do when your mind works against you."</em></div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">Think about your own education. Think about what you were taught.
+
+Math, science, history, language. Study hard, work harder, perform better. The formula for achievement is very clear.
+
+But was there a single class — a single lesson — that taught you how to handle the moment right before a big interview when your anxiety is rising? Or how to recover your confidence after a public failure? Or how to stop a thought spiral at 2am?
+
+For most of us — no. We figured it out over decades. Many of us are still figuring it out.
+
+Our children are entering one of the most competitive, unpredictable, high-pressure environments in history. And we are sending them in with half the toolkit.</div>
+  </div>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide-card" id="s7">
+  <div class="slide-header">
+    <span class="slide-number">Slide 7 of 15</span>
+    <span class="slide-title">What the Research Says</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">This is not a theory. The science is clear.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide — 4 research blocks</div>
+      <div class="research-grid">
+        <div class="research-block">
+          <div class="research-source">📊 CDC Youth Risk Behavior Survey</div>
+          <div class="research-stat">42% of high school students report persistent sadness or hopelessness.</div>
+          <div class="research-note">This is not a fringe statistic. Nearly half.</div>
+        </div>
+        <div class="research-block">
+          <div class="research-source">📊 Harvard Business Publishing, 2024</div>
+          <div class="research-stat">4 of the 5 most in-demand workplace skills are human skills — self-awareness, resilience, flexibility, and agility.</div>
+          <div class="research-note">Yet schools rarely teach them directly.</div>
+        </div>
+        <div class="research-block">
+          <div class="research-source">📊 Albert Bandura, Stanford University</div>
+          <div class="research-stat">Self-efficacy — belief in your own ability — is a stronger predictor of success than actual ability.</div>
+          <div class="research-note">What your child believes about themselves matters more than what they know.</div>
+        </div>
+        <div class="research-block">
+          <div class="research-source">📊 Yale Center for Emotional Intelligence</div>
+          <div class="research-stat">EQ predicts adult career success more reliably than IQ alone.</div>
+          <div class="research-note">The skills we are dismissing as "soft" are the ones that determine outcomes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">I know this audience. You are engineers, product managers, scientists. You want data before you decide.
+
+So let me give you the data.
+
+[Walk through each stat briefly.]
+
+The Stanford finding is the one I want to highlight for a moment. Self-efficacy. It means: what does your child believe about their own ability to handle challenges?
+
+A child with high self-efficacy tries harder, recovers faster, and achieves more — independent of their actual ability. A child with low self-efficacy gives up before they even begin.
+
+Self-efficacy is not fixed. It is built. And it is built through exactly the kind of practice we are talking about today.</div>
+  </div>
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide-card" id="s8">
+  <div class="slide-header">
+    <span class="slide-number">Slide 8 of 15</span>
+    <span class="slide-title">Why Childhood Is The Window</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">The best time to build these skills is now — before the patterns harden.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">🧠</div>
+          <div class="step-content">
+            <h4>The brain is most malleable in childhood.</h4>
+            <p>Neuroplasticity research shows that habits, patterns, and responses formed early are the ones that persist. The longer they go unaddressed, the harder they are to change.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">⚡</div>
+          <div class="step-content">
+            <h4>Stress physically reduces cognitive function.</h4>
+            <p>Research from the HeartMath Institute shows that negative emotional states measurably impair memory, focus, and decision-making. <em>Your child cannot think clearly when they are in a stress response — no matter how well they were prepared.</em></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">🌱</div>
+          <div class="step-content">
+            <h4>Emotion regulation is a learnable skill.</h4>
+            <p>UC Berkeley's Greater Good Science Center confirms: children who learn to regulate their emotional responses perform better academically, socially, and in long-term well-being.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-line">This is not a crisis intervention. It is an investment at exactly the right time.</div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">As engineers and scientists, you understand the concept of technical debt.
+
+When you skip foundational work early in a project, you pay for it later — at much higher cost.
+
+Emotional patterns work the same way. The anxious response, the shutdown, the self-doubt — if they are not addressed in childhood, they compound. They become the way this child responds to pressure at 16, at 25, at 40.
+
+We are not here to fix a crisis. We are here to do the foundational work while it is easiest, most effective, and most lasting.</div>
+  </div>
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide-card" id="s9">
+  <div class="slide-header">
+    <span class="slide-number">Slide 9 of 15</span>
+    <span class="slide-title">What ThinkRoot Actually Does</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">Not therapy. Not tutoring. Not more content. A practical method.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide — three steps</div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Awareness</h4>
+            <p>How to recognise what is happening in their mind and body — before it escalates. <em>Catching the pattern early is everything.</em></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Interruption</h4>
+            <p>How to pause, redirect, and choose a different response. <em>This is a skill. It can be taught. It can be practised.</em></p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Rebuilding</h4>
+            <p>How to build new habits — steadiness, recovery, self-belief — that work automatically over time. <em>This is what resilience actually looks like from the inside.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-line">We call this <strong>self-intelligence</strong> — knowing how to work with your own mind.</div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">So what does ThinkRoot actually do?
+
+It is not therapy. We are not diagnosing or treating. It is an educational program — practical, structured, and grounded in research.
+
+Think of it as building the operating system that runs underneath everything else your child does.
+
+Academics, sports, relationships, performance — all of these run better when the underlying system is stable.
+
+We teach children a repeatable process. Something they can use at 10, at 15, at 30. Not a single technique, but a way of working with their own mind that becomes second nature.</div>
+  </div>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide-card" id="s10">
+  <div class="slide-header">
+    <span class="slide-number">Slide 10 of 15</span>
+    <span class="slide-title">What A Session Looks Like</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">Practical. Interactive. Not a lecture.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide</div>
+      <ul class="session-list">
+        <li><span class="icon">🗣</span><span><strong>Guided discussion</strong> — children talk about real situations they face</span></li>
+        <li><span class="icon">✍️</span><span><strong>Reflection exercises</strong> — structured prompts to build self-awareness</span></li>
+        <li><span class="icon">🎯</span><span><strong>Skill practice</strong> — specific techniques they can use immediately</span></li>
+        <li><span class="icon">📋</span><span><strong>Home practice</strong> — one simple thing to try before the next session</span></li>
+      </ul>
+      <ul class="checklist" style="margin-top:1rem;">
+        <li>Small groups by grade — content is age-appropriate</li>
+        <li>1 hour per session</li>
+        <li>Children leave with something practical every single time</li>
+      </ul>
+    </div>
+    <div class="bottom-line">This is not a classroom. It is a practice.</div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">Parents often ask me: what will my child actually do?
+
+The answer is: they will practice. Not memorise. Not sit and listen. Practice.
+
+The sessions are interactive. There is discussion, reflection, guided activities. And every session ends with one concrete tool they can use in real life — in school, in sports, at home — before we meet again.
+
+The small group format is deliberate. Children hear each other's experiences. They realise they are not alone. That itself is powerful.</div>
+  </div>
+</div>
+
+<!-- SLIDE 11 -->
+<div class="slide-card" id="s11">
+  <div class="slide-header">
+    <span class="slide-number">Slide 11 of 15</span>
+    <span class="slide-title">Real Results</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">From real children. In real situations.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide — story cards</div>
+      <div class="story-grid">
+        <div class="story-card">
+          <div class="story-quote">"She learned to pause before reacting. Her daily life became calmer. Her teachers noticed. Her relationships improved."</div>
+          <div class="story-attr">HM · Middle School</div>
+        </div>
+        <div class="story-card">
+          <div class="story-quote">"He used the technique during exams to relax, regulate, and stay composed. His performance improved."</div>
+          <div class="story-attr">RR · Middle School</div>
+        </div>
+        <div class="story-card">
+          <div class="story-quote">"She went from giving up when work felt difficult to breaking problems into steps and persisting."</div>
+          <div class="story-attr">Elementary school student</div>
+        </div>
+        <div class="story-card">
+          <div class="story-quote">"One student went from failing in math to improving his grades — and eventually helping his classmates who were struggling in the same subject."</div>
+          <div class="story-attr">MT · Elementary School</div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-line">These are not exceptional children. They are ordinary children who were given a tool they did not have before.</div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">I want to share a few real stories. These are children from this area — the same schools, the same communities your children are in.
+
+[Read 2–3 of the stories naturally, don't rush.]
+
+What strikes me about these outcomes is that none of them are about a dramatic transformation overnight. They are about a child who, in a difficult moment, now has something to reach for. A process. A skill.
+
+That is all we are building. But that is everything.</div>
+  </div>
+</div>
+
+<!-- SLIDE 12 -->
+<div class="slide-card" id="s12">
+  <div class="slide-header">
+    <span class="slide-number">Slide 12 of 15</span>
+    <span class="slide-title">The Programme: Resilience Lab</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">Two formats. One goal. Right for Grades 2–8.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide</div>
+      <div class="format-grid">
+        <div class="format-card">
+          <div class="format-name">5-Day Intensive</div>
+          <div class="format-detail">
+            <strong>One focused week</strong><br>
+            1 hour per day, Monday–Friday<br>
+            Small groups<br><br>
+            Best for: children who benefit from immersion and momentum
+          </div>
+        </div>
+        <div class="format-card">
+          <div class="format-name">6-Week Series</div>
+          <div class="format-detail">
+            <strong>One session per week, 6 weeks</strong><br>
+            1 hour per session<br>
+            Small groups<br><br>
+            Best for: children who benefit from reflection time between sessions
+          </div>
+        </div>
+      </div>
+      <ul class="checklist">
+        <li>Grades 2–4 and Grades 5–8 (separated by age)</li>
+        <li>Mission San Jose, Fremont — or we come to your community if a group forms</li>
+        <li>Online option available based on interest</li>
+        <li>Summer 2026</li>
+        <li><em>Pricing will be confirmed when groups are scheduled</em></li>
+      </ul>
+    </div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">We offer two formats to match different children and different schedules.
+
+The content is the same. The difference is pace and how much time there is between sessions to practice.
+
+Groups are small and formed by grade — so the conversations are appropriate and relevant to where each child actually is.
+
+We are currently based in the Mission San Jose area of Fremont. If enough families in another part of the Bay Area are interested, we bring the programme to you.</div>
+  </div>
+</div>
+
+<!-- SLIDE 13 -->
+<div class="slide-card" id="s13">
+  <div class="slide-header">
+    <span class="slide-number">Slide 13 of 15</span>
+    <span class="slide-title">About Tina</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">I come from your world.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide</div>
+      <ul class="checklist">
+        <li>Certified Wellness Educator</li>
+        <li>Senior Peer Counselor — certified by the cities of Fremont, Union City, and Newark</li>
+        <li>Former software professional — 20+ years in the industry</li>
+        <li>Has worked with children, teens, adults, and seniors across schools and community settings</li>
+        <li>Co-founded <em>Rewired to Inspire</em> — a four-year intergenerational community programme recognised by <em>Tri-City Voice</em> and Congressman Michael M. Honda</li>
+      </ul>
+      <div class="bottom-line" style="margin-top:1.25rem;">"I teach this because I have seen how deeply these skills can change a life. ThinkRoot is the result of years of personal practice, scientific study, and direct work with real students and families."</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">Suggested visual</div>
+      <div class="content-body">Your photo on the left, credentials on the right, warm dark background.</div>
+    </div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">I want to take one minute to tell you why I built this.
+
+I come from the same world many of you come from. I spent over two decades in software. I understand the environment your children are growing up in — the pressure, the competition, the expectation.
+
+And I also know, from personal experience, that the skills I teach today — the ability to work with your own mind under pressure — are the ones that determine how everything else lands.
+
+I built ThinkRoot because I looked around and saw that the children in this community had every advantage — except this one. And I knew what it could mean for them to have it early.</div>
+  </div>
+</div>
+
+<!-- SLIDE 14 -->
+<div class="slide-card" id="s14">
+  <div class="slide-header">
+    <span class="slide-number">Slide 14 of 15</span>
+    <span class="slide-title">The Question To Leave With</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">You have invested in everything that goes in.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide</div>
+      <div class="closing-lines">
+        <div class="closing-pair">
+          <div class="question">Your child has knowledge.</div>
+          <div class="answer">But can they use it when the pressure is real?</div>
+        </div>
+        <div class="closing-pair">
+          <div class="question">Your child has ability.</div>
+          <div class="answer">But can they recover when they fall?</div>
+        </div>
+        <div class="closing-pair">
+          <div class="question">Your child has opportunity.</div>
+          <div class="answer">But can they believe in themselves when doubt rises?</div>
+        </div>
+      </div>
+      <div class="bottom-line">The skills that answer yes to those questions — they are not born. They are built.<br>And the window to build them well is now.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">Suggested visual</div>
+      <div class="content-body">Dark background. White text. Quiet and impactful. No icons. Let the words land.</div>
+    </div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">I want to leave you with a thought.
+
+We measure our investment in our children by what we give them — the tutoring, the programmes, the schools, the opportunities.
+
+But what holds all of that together? What is the foundation on which everything else is built?
+
+It is a child who knows how to handle difficulty. Who can recover. Who believes they are capable even when the evidence is not yet there.
+
+That is not built by more content. It is built by practice. And it is built early.</div>
+  </div>
+</div>
+
+<!-- SLIDE 15 -->
+<div class="slide-card" id="s15">
+  <div class="slide-header">
+    <span class="slide-number">Slide 15 of 15</span>
+    <span class="slide-title">Next Step</span>
+  </div>
+  <div class="slide-body">
+    <div class="headline-box">
+      <div class="headline-label">Main Headline</div>
+      <div class="headline-text">No commitment. Just tell us you're interested.</div>
+    </div>
+    <div class="content-section">
+      <div class="content-label">On slide</div>
+      <ul class="checklist" style="margin-bottom:1.5rem;">
+        <li>Visit the website and join the interest list</li>
+        <li>We will reach out when a group is forming near you</li>
+        <li>No payment. No obligation. Just priority access.</li>
+      </ul>
+      <div class="two-col">
+        <div class="col-box">
+          <h4>Contact</h4>
+          <ul>
+            <li>🌐 vjra17.github.io/thinkroot-site</li>
+            <li>💬 WhatsApp Community [link]</li>
+            <li>📧 thinkyoungleaders@gmail.com</li>
+          </ul>
+        </div>
+        <div class="col-box dark">
+          <h4>QR Code</h4>
+          <ul>
+            <li>Add QR code linking to the website</li>
+            <li>Makes it easy for in-person parents to join on the spot</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-line">"The earlier you express interest, the better we can match your child to the right group."</div>
+  </div>
+  <div class="speaker-notes">
+    <div class="notes-label">Speaker Notes</div>
+    <div class="notes-text">The next step is simple and risk-free.
+
+All I am asking today is that if this resonated — if you recognise your child in anything we talked about — you join the interest list. That is it. No payment. No commitment. Just your name and a few basics so we can match your child to the right group when it forms.
+
+Groups are small by design. That is what makes the work effective. And because of that, they fill based on interest and timing.
+
+I am happy to answer any questions now. And please feel free to reach out directly after today.
+
+Thank you for your time and for caring enough to be here.</div>
+  </div>
+</div>
+
+<!-- Q&A -->
+<div class="qa-section" id="qa">
+  <div class="qa-header"><h2>Q&amp;A — Likely Parent Questions &amp; Suggested Answers</h2></div>
+  <div class="qa-body">
+    <div class="qa-item">
+      <div class="qa-q">How is this different from what schools already do?</div>
+      <div class="qa-a">Schools may cover some SEL content, but it is typically curriculum-based, not practice-based. ThinkRoot teaches a specific, repeatable method children can actually use in real moments — not just understand conceptually.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q">My child is young — Grade 2 or 3. Is this too early?</div>
+      <div class="qa-a">Research is clear that earlier is better. Patterns form early. A 7-year-old who learns to pause and redirect a frustration response is building a habit that will serve them at 17. We keep the content age-appropriate and practical for younger children.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q">What if my child resists or doesn't engage?</div>
+      <div class="qa-a">The small group format helps significantly — children engage differently with peers than with adults. The sessions are activity-based, not lecture-based. Resistance usually softens within the first session.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q">How do I know if it's working?</div>
+      <div class="qa-a">Parents typically notice changes in how their child handles difficult moments at home — less reactivity, faster recovery, more willingness to try again after setbacks. We also share what was practiced each session so you know what to look for.</div>
+    </div>
+    <div class="qa-item">
+      <div class="qa-q">Do you have any openings for this summer?</div>
+      <div class="qa-a">We are currently building the interest list. Once enough families in the same grade range and area express interest, we confirm the group. Join the list tonight and I will be in touch directly.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DESIGN NOTES -->
+<div class="design-section" id="design">
+  <div class="design-header"><h2>Presentation Design Notes</h2></div>
+  <div class="design-body">
+    <div class="design-item"><strong>Colour palette:</strong> Forest green #1a3a1a · Gold #c8963c · Cream #faf8f2 — matches the ThinkRoot website
+      <div class="swatches">
+        <span class="swatch" style="background:#1a3a1a;" title="#1a3a1a"></span>
+        <span class="swatch" style="background:#c8963c;" title="#c8963c"></span>
+        <span class="swatch" style="background:#faf8f2; border-color:#ccc;" title="#faf8f2"></span>
+        <span class="swatch" style="background:#3d2b1a;" title="#3d2b1a"></span>
+        <span class="swatch" style="background:#a8d5a8;" title="#a8d5a8"></span>
+      </div>
+    </div>
+    <div class="design-item"><strong>Font suggestion:</strong> Playfair Display for headlines · DM Sans or Inter for body text</div>
+    <div class="design-item"><strong>Slide count:</strong> 15 slides · Estimated time: 25 minutes at a comfortable pace + 5 min Q&amp;A</div>
+    <div class="design-item"><strong>Tone:</strong> Confident, warm, scientific, practical — never alarmist, never preachy</div>
+    <div class="design-item"><strong>One slide per idea</strong> — resist the urge to add more. White space is your friend with this audience.</div>
+    <div class="design-item"><strong>Add a QR code to Slide 15</strong> — use qr.io or canva.com/qr-code-generator linking to vjra17.github.io/thinkroot-site</div>
+    <div class="design-item"><strong>Slide 14 (closing)</strong> — dark background, minimal text, let the words land. No charts, no icons.</div>
+  </div>
+</div>
+
+</main>
+</body>
+</html>

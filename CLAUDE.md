@@ -82,6 +82,20 @@ Never repeat the same headline word across consecutive sections. Avoid overusing
 
 Repeat the strategic *idea*, not the exact wording.
 
+**Language rules — apply to all parent, child, and school-facing material:**
+Never use: `soul`, `chanting`, `vibration`, `sacred`, `spiritual`, `quantum` (as metaphor)
+Preferred alternatives: `inner intelligence`, `structured repetition`, `root cause prevention`, `information field`, `self-efficacy`, `explanatory style`
+
+## Core Framework
+
+**AAA = Awareness / Accept / Action**
+- Awareness: notice what is happening in mind and body before it escalates
+- Accept: receive the thought or feeling without judgment or suppression — do not fight it
+- Action: use a specific technique (e.g. Five Power) to redirect and choose a different response
+- All three steps are essential. Accept is what separates this from suppression or reaction.
+
+**Five Power Technique:** the concrete Action step. Under 3 minutes. No equipment. Memorised and usable independently in any situation.
+
 ---
 
 ## Current Programs

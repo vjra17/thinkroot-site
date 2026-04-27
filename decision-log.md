@@ -131,3 +131,16 @@
   - Background: var(--mist); sits between Community/Rewired section and the dark forest interest form.
 - Committed both changes as commit `c34871b`.
 - Added same FAQ accordion section to `resilience-lab.html` just above the Next Step CTA section (commit `80e3c58`). Same 5 questions, identical styling — so parents who click through to read the full program page also see FAQs before being asked to sign up.
+
+## 2026-04-27
+
+- Created parent presentation content: `launch-assets/presentation-content-2026-04-26.md` (15 slides + speaker notes + Q&A).
+- Created HTML reader for presentation: `launch-assets/presentation-preview.html` — uses ThinkRoot colour palette, sticky nav, slide cards with speaker notes.
+- Generated PowerPoint file: `launch-assets/presentation-2026-04-27.pptx` (15 slides, ThinkRoot branding, all speaker notes in notes panel). Import into Google Slides via Google Drive.
+- Corrected Slide 9: AAA framework is Awareness / Accept / Action (not Awareness/Interruption/Rebuilding — that was an error). Accept step is distinct and important — it prevents suppression.
+- Rebuilt Slide 10 with actual 5-day curriculum content: Day 1 Brain Web, Day 2 Brain Weather, Day 3 Feeling Body, Day 4 Upgrade the Thought, Day 5 I Am the Author. Parents can now see exactly what children do each day.
+- Read all curriculum source files from `ThinkRoot Programs` folder: 5-day curriculum, 6-week curriculum, AAA insert, program proposal, scenario repository, facilitator bio, parent letters, practice cards, Codex parent pitch.
+- Read both Codex chat exports (downloaded from Google Drive): confirmed all major Codex decisions are already reflected in current `thinkroot-site` files. No strategic decisions were overwritten.
+- Added to CLAUDE.md: correct AAA definition (Awareness/Accept/Action), language rules (never use soul/chanting/vibration/sacred/spiritual/quantum as metaphor), Five Power Technique description.
+- Confirmed: Ishil Puri not named in public-facing materials — focus stays on Tina. Current CLAUDE.md already correct on this.
+- Confirmed: tree metaphor not used in 5-day curriculum or website. Appears only in 6-week Session 6 as one activity. Not parent-facing.

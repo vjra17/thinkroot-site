@@ -119,3 +119,14 @@
   - `launch-assets/resilience-flyer-2026-04-23/` (WhatsApp cards, flyers, posters)
 - Created `CLAUDE.md` — Claude’s session memory file, auto-read at session start to restore full project context without needing to re-explain anything.
 - Agreed workflow: Tina says "update" at any milestone and Claude will update `decision-log.md`, `CLAUDE.md`, and commit to GitHub.
+
+## 2026-04-26 (session continued)
+
+- Fixed CTA button consistency on `resilience-lab.html`: replaced all 4 instances of "Get Priority Access" with "Join the Priority Interest List" to match homepage language.
+- Added FAQ accordion section to homepage just above the interest form (id="faq").
+  - 5 questions: who it's for, academic performance vs resilience, what sessions look like, where sessions are held, what happens after joining the list.
+  - Location answer: primary location Mission San Jose, Fremont. Can bring program to other Bay Area communities if a group forms. Online option based on demand.
+  - Deliberately excluded therapy/counselling question (disclaimer already on site) and pricing (not yet decided).
+  - Uses native HTML details/summary accordion — no JavaScript, works on all devices.
+  - Background: var(--mist); sits between Community/Rewired section and the dark forest interest form.
+- Committed both changes as commit `c34871b`.

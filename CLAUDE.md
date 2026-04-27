@@ -132,14 +132,15 @@ See `decision-log.md` for full chronological log. Key points:
 
 ## Pending / Next Steps
 
-- [ ] Commit `project-memory.md`, `decision-log.md`, `launch-assets/resilience-flyer-2026-04-23/` to GitHub ✅ Done 2026-04-26
+- [x] Commit `project-memory.md`, `decision-log.md`, `launch-assets/resilience-flyer-2026-04-23/` to GitHub ✅ Done 2026-04-26
+- [x] FAQ section added to homepage above interest form ✅ Done 2026-04-26
+- [x] CTA button consistency fixed on resilience-lab.html ✅ Done 2026-04-26
 - [ ] Send launch outreach — WhatsApp messages, email, social tiles are ready in `launch-assets/`
 - [ ] Collect parent testimonials (WhatsApp survey sent to students — awaiting replies)
-- [ ] Review interest form for friction — may be asking too much for first-touch cold parent
-- [ ] Preview `resilience-lab.html` (V3) to confirm consistency with new homepage
 - [ ] Test homepage on mobile (check photo, form, program cards)
+- [ ] Review interest form for friction — may be asking too much for first-touch cold parent
 - [ ] Future: add parent testimonials once collected
-- [ ] Future: pricing page or FAQ if interest list generates questions
+- [ ] Future: set and add pricing once decided
 
 ---
 

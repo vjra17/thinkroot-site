@@ -130,3 +130,4 @@
   - Uses native HTML details/summary accordion — no JavaScript, works on all devices.
   - Background: var(--mist); sits between Community/Rewired section and the dark forest interest form.
 - Committed both changes as commit `c34871b`.
+- Added same FAQ accordion section to `resilience-lab.html` just above the Next Step CTA section (commit `80e3c58`). Same 5 questions, identical styling — so parents who click through to read the full program page also see FAQs before being asked to sign up.

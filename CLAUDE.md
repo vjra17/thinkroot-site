@@ -134,6 +134,7 @@ See `decision-log.md` for full chronological log. Key points:
 
 - [x] Commit `project-memory.md`, `decision-log.md`, `launch-assets/resilience-flyer-2026-04-23/` to GitHub ✅ Done 2026-04-26
 - [x] FAQ section added to homepage above interest form ✅ Done 2026-04-26
+- [x] FAQ section added to resilience-lab.html above Next Step CTA ✅ Done 2026-04-26
 - [x] CTA button consistency fixed on resilience-lab.html ✅ Done 2026-04-26
 - [ ] Send launch outreach — WhatsApp messages, email, social tiles are ready in `launch-assets/`
 - [ ] Collect parent testimonials (WhatsApp survey sent to students — awaiting replies)

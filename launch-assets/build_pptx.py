@@ -602,6 +602,7 @@ creds = [
     "✦  Certified Wellness Educator",
     "✦  Senior Peer Counselor — certified by the cities of Fremont, Union City, and Newark",
     "✦  Former software professional — 20+ years in the industry",
+    "✦  Parent volunteer — Stanford University Challenge Success programme (Dr. Denise Pope)",
     "✦  Has worked with children, teens, adults, and seniors across schools and community settings",
     '✦  Co-founded Rewired to Inspire — four-year intergenerational community programme recognised\n    by Tri-City Voice and Congressman Michael M. Honda',
 ]
@@ -698,7 +699,7 @@ for i, (num, txt) in enumerate(steps_list):
                 txt, font_size=14, color=FOREST)
 add_rect(s, Inches(0.45), Inches(5.85), W - Inches(0.9), Inches(0.001), GOLD)
 contact_paras = [
-    ("🌐  vjra17.github.io/thinkroot-site", False, 13, FOREST, PP_ALIGN.LEFT),
+    ("🌐  vjra.net", False, 13, FOREST, PP_ALIGN.LEFT),
     ("📧  thinkyoungleaders@gmail.com", False, 13, FOREST, PP_ALIGN.LEFT),
 ]
 add_textbox_paras(s, Inches(2.0), Inches(5.95), Inches(9), Inches(0.75), contact_paras)

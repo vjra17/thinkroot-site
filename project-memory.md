@@ -1,6 +1,6 @@
 # ThinkRoot Site Project Memory
 
-Updated: 2026-04-26 PDT
+Updated: 2026-04-27 PDT
 
 ## Project Purpose
 
@@ -109,28 +109,37 @@ Preferred CTA direction:
 - `Join the Priority Interest List`
 - or comparable early-access / priority-access language
 
-## Work Already Implemented
+## Current Live Site State
 
-**V3 is currently live** as of 2026-04-26. Key elements in the live site:
+The current live site is based on the V3 direction, with additional post-launch changes now present in the live files.
 
-- New hero: eyebrow "The real-world skills schools don't teach", H1 "Strong kids aren't built by academics alone.", founder quote on right panel
-- Gold strip: parent-mirror statement about judgment, responsibility, emotional steadiness
-- Gap section: CDC 42% callout, Harvard "4 of 5" full-width dark bar, Problem/Outcome table
-- 6 outcome cards with UC Berkeley / Harvard / Stanford / Yale / HeartMath research citation line
-- How It Works: Build / Practice / Apply
-- Resilience Lab: 5-Day Intensive + 6-Week Series with full detail (Best For, What They Take Home, grade/schedule info)
-- Real Stories: 5 real student outcome cards with school-level attribution
-- Leadership Lab: Coming Soon section
-- About Tina: photo (`tina.jpeg`), 2-paragraph bio, founder quote
-- Rewired to Inspire: 4 years, Fremont CA, Tri-City Voice + U.S. Congress, Venil testimonial
-- Interest form: Parent name, email, child grade, program interest, 6 need checkboxes, timing, format
-- Footer: thinkyoungleaders@gmail.com, WhatsApp Community, © 2026
+Homepage live state in [index.html](/Users/tina/Documents/code/thinkroot-site/index.html:1):
+- Hero uses:
+  - eyebrow: `The real-world skills schools don’t teach`
+  - headline: `Strong kids aren’t built by academics alone.`
+  - tagline: `A structured, practical approach to helping children grow more resilient, independent, and capable when life gets challenging.`
+- Gold strip uses:
+  - `Grades and goals are only half the story. ThinkRoot helps children build the judgment, responsibility, and emotional steadiness that shape how they handle everything else.`
+- `What makes ThinkRoot different` includes bolded `ThinkRoot goes deeper — to the root cause.`
+- Homepage includes:
+  - FAQ section above the interest form
+  - `The ThinkRoot Community Projects` section
+  - updated Community Projects wording around service and volunteering-hour opportunities
 
-Recent relevant commits:
-- `990b76e` `Add CLAUDE.md, project-memory, decision-log, and launch assets to repo`
+Resilience Lab live state in [resilience-lab.html](/Users/tina/Documents/code/thinkroot-site/resilience-lab.html:1):
+- CTA wording is aligned to `Join the Priority Interest List`
+- FAQ section is present above the Next Step CTA
+- Program page remains the detailed offer page under the broader ThinkRoot umbrella homepage
+
+## Recent Relevant Commits
+
+- `0b85d11` `Fix Slide 13 and Slide 15 in parent presentation`
+- `240ccef` `Add parent presentation, fix AAA framework, update memory files`
+- `135f346` `Update memory files with FAQ and CTA consistency changes`
+- `80e3c58` `Add FAQ section to Resilience Lab page`
+- `6f1124e` `Update CLAUDE.md and decision-log with Apr 26 session changes`
+- `c34871b` homepage FAQ + CTA consistency work
 - `01cad25` `Launch V3 homepage — new hero, real stories, research-backed outcomes`
-- `8994264` `Polish launch outreach assets`
-- `8e4d375` `Finalize homepage and Resilience Lab launch pages`
 
 ## Important Files
 
@@ -140,9 +149,14 @@ Primary working files:
 - [decision-log.md](/Users/tina/Documents/code/thinkroot-site/decision-log.md:1)
 - [project-memory.md](/Users/tina/Documents/code/thinkroot-site/project-memory.md:1)
 
-Current safe comparison files:
+Older comparison snapshots:
 - [index-v3-working-2026-04-24.html](/Users/tina/Documents/code/thinkroot-site/index-v3-working-2026-04-24.html:1)
 - [resilience-lab-v3-working-2026-04-24.html](/Users/tina/Documents/code/thinkroot-site/resilience-lab-v3-working-2026-04-24.html:1)
+
+Important:
+- These older V3 snapshot files are no longer exact mirrors of the current live site.
+- They should be treated as historical comparison files, not as fresh working copies.
+- Before any future website iteration, create a new working copy from the current live files rather than reusing these older V3 snapshots blindly.
 
 Supporting files:
 - [codex-resilience-lab-2026-04-23.html](/Users/tina/Documents/code/thinkroot-site/codex-resilience-lab-2026-04-23.html:1)
@@ -157,11 +171,10 @@ Recovered prior-chat context:
 
 Recommended next steps:
 
-1. Review the current homepage top-to-bottom and identify what still feels too long, unclear, or low-conversion.
-2. Decide whether the hero / CTA language should stay as currently implemented or be tightened further.
-3. Review the interest form for friction and decide whether it should be shortened.
-4. Decide whether deeper methodology content should move further down, be shortened, or live on a separate page.
-5. Commit stable improvements to git early and often.
+1. Clean up repo state around presentation assets so the working tree reflects the actual intended presentation files.
+2. If website work resumes, create fresh working copies from current live `index.html` and `resilience-lab.html`.
+3. Keep `decision-log.md` and this file updated whenever the live site or the presentation state changes materially.
+4. Ask for approval before any git commit.
 
 ## Safety Rules For Future Work
 

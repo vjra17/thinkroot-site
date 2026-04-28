@@ -144,3 +144,27 @@
 - Added to CLAUDE.md: correct AAA definition (Awareness/Accept/Action), language rules (never use soul/chanting/vibration/sacred/spiritual/quantum as metaphor), Five Power Technique description.
 - Confirmed: Ishil Puri not named in public-facing materials — focus stays on Tina. Current CLAUDE.md already correct on this.
 - Confirmed: tree metaphor not used in 5-day curriculum or website. Appears only in 6-week Session 6 as one activity. Not parent-facing.
+
+## 2026-04-27 (memory refresh)
+
+- Refreshed `project-memory.md` to match the actual current live site state rather than the older intermediate V3 description.
+- Confirmed that the live homepage includes the updated hero, gold strip, Community Projects wording, FAQ section, and bolded `root cause` differentiator.
+- Confirmed that the live `resilience-lab.html` includes the FAQ section and aligned `Join the Priority Interest List` CTA wording.
+- Marked `index-v3-working-2026-04-24.html` and `resilience-lab-v3-working-2026-04-24.html` as historical comparison snapshots only.
+- Future rule: before any new website pass, create fresh working copies from the current live files instead of reusing the older V3 snapshots.
+
+## 2026-04-27 (folder roles)
+
+- Verified that `/Users/tina/Documents/code/thinkroot-site` is the freshest active website repo and should remain the source of truth for the live website and launch assets.
+- Verified that `/Users/tina/Documents/code/thinkroot` is a separate broader context / repository workspace, not the live website repo.
+- Verified that `/Users/tina/Documents/code/Old-thinkroot` is an archive-style folder with older versions and no active git repo at its top level.
+- Confirmed that `/Users/tina/Documents/code/ThinkRoot Programs` is reasonable as a separate curriculum-source folder and does not need to be merged into the website repo.
+- Main cleanup need is now organizational clarity: mark current canonical folders clearly and archive older versions more explicitly so future work does not start from stale copies by accident.
+
+## 2026-04-27 (program folder cleanup)
+
+- Cleaned `/Users/tina/Documents/code/ThinkRoot Programs` into a clearer current-vs-archive structure.
+- Moved older top-level program folders into `/Users/tina/Documents/code/ThinkRoot Programs/ARCHIVE`.
+- Moved `Apr19V1-ThinkRoot-ALL-Programs-April2026` into `/Users/tina/Documents/code/ThinkRoot Programs/FINAL VERSION of ThinkRootResLab 5 Day & 6 Week Programs/ARCHIVE`.
+- Added `/Users/tina/Documents/code/ThinkRoot Programs/CURRENT-START-HERE.md` to point to the current canonical program folder.
+- Added `/Users/tina/Documents/code/THINKROOT-CURRENT-WORKSPACES.md` to map the current website, program, context, and archive workspaces across `/Users/tina/Documents/code`.

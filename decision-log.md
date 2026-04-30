@@ -168,3 +168,18 @@
 - Moved `Apr19V1-ThinkRoot-ALL-Programs-April2026` into `/Users/tina/Documents/code/ThinkRoot Programs/FINAL VERSION of ThinkRootResLab 5 Day & 6 Week Programs/ARCHIVE`.
 - Added `/Users/tina/Documents/code/ThinkRoot Programs/CURRENT-START-HERE.md` to point to the current canonical program folder.
 - Added `/Users/tina/Documents/code/THINKROOT-CURRENT-WORKSPACES.md` to map the current website, program, context, and archive workspaces across `/Users/tina/Documents/code`.
+
+## 2026-04-27 (parent presentation rebuild)
+
+- Started a fresh parent-presentation rebuild in `/Users/tina/Documents/code/thinkroot-site/launch-assets/parent-presentation-rebuild-2026-04-27/` with its own project-specific `decision-log.md`.
+- Existing Claude presentation files in `launch-assets/` are reference only and not the source of truth for the rebuilt deck.
+- Presentation audience confirmed as highly educated Bay Area parents, many of them Indian and in software or other technical professions.
+- Presentation goal confirmed: introduce ThinkRoot and the current programs in a scientific, practical, easy-to-understand way that addresses parent pain points and motivates sign-up.
+- Presentation should remain under 30 minutes and include strong speaker notes for both in-person and online delivery.
+- Presentation framing updated so the 6-week program is shown as the fuller developmental pathway and the 5-day program is presented as the shorter entry-point subset.
+- Presentation language rule clarified: the main parent deck should avoid younger-child framing like `storm` / `sunshine` because the primary audience focus is middle school.
+- Presentation structure updated again:
+  - the 6-week slide should be shown as a toolkit students build over time, ideally in a table-like format
+  - the weaker standalone `What students actually do` slide should be folded into the 6-week explanation rather than standing alone as a separate scientific claim
+  - real stories / testimonial-style evidence should appear in the main content before sign-up
+  - common parent questions should be prepared as a presenter resource and can remain outside the main deck if that keeps the live presentation tighter

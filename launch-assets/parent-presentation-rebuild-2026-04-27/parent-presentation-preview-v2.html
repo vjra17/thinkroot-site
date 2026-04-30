@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThinkRoot Parent Presentation Preview V2</title>
+  <style>
+    :root {
+      --forest: #183c33;
+      --forest-2: #224d42;
+      --cream: #f6f1e7;
+      --gold: #caa85e;
+      --mist: #e8efe9;
+      --ink: #1e2a26;
+      --soft: #5c6b65;
+      --white: #ffffff;
+      --line: rgba(24, 60, 51, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Aptos", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(202, 168, 94, 0.16), transparent 28%),
+        linear-gradient(180deg, #fbf8f1 0%, #f1ece1 100%);
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 60px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246, 241, 231, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 14px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--forest);
+      letter-spacing: 0.02em;
+    }
+
+    .meta {
+      color: var(--soft);
+      font-size: 0.94rem;
+    }
+
+    .hero {
+      padding: 26px 0 18px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(202, 168, 94, 0.18);
+      color: var(--forest);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 16px 0 10px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      color: var(--forest);
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 860px;
+      color: var(--soft);
+      font-size: 1.04rem;
+      line-height: 1.6;
+    }
+
+    .deck-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .slide {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 14px 40px rgba(24, 60, 51, 0.07);
+      overflow: hidden;
+    }
+
+    .slide-head {
+      background: linear-gradient(135deg, var(--forest) 0%, var(--forest-2) 100%);
+      color: var(--white);
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+    }
+
+    .slide-num {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.76);
+    }
+
+    .slide-title {
+      margin-top: 6px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .slide-body {
+      padding: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .section-label {
+      font-size: 0.83rem;
+      letter-spacing: 0.04em;
+      color: var(--soft);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .content-block {
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--cream);
+      border: 1px solid rgba(24, 60, 51, 0.08);
+    }
+
+    .content-block p {
+      margin: 0;
+      line-height: 1.62;
+    }
+
+    .headline {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat {
+      background: var(--mist);
+      border: 1px solid rgba(24, 60, 51, 0.08);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--forest);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .standout {
+      padding: 14px 16px;
+      border-left: 4px solid var(--gold);
+      background: rgba(202, 168, 94, 0.12);
+      border-radius: 10px;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.55;
+    }
+
+    details {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--forest);
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .notes {
+      margin-top: 12px;
+      color: var(--soft);
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .footer-space {
+      height: 24px;
+    }
+
+    @media (max-width: 760px) {
+      .two-col,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .slide-head {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">ThinkRoot Parent Presentation Preview</div>
+      <div class="meta">Draft V2 · 15 slides · ~22–25 minutes + Q&amp;A</div>
+    </div>
+  </div>
+
+  <div class="shell">
+    <section class="hero">
+      <div class="eyebrow">Fresh Rebuild</div>
+      <h1>Scientific, practical, parent-facing presentation draft</h1>
+      <p>This preview is for content review only. It is built fresh from the current website, current program structure, and the messaging decisions we finalized together. The existing older PowerPoint files are not the source of truth.</p>
+    </section>
+
+    <div class="deck-grid">
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 1</div>
+            <div class="slide-title">Building Children Who Can Handle Life</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="section-label">Subhead</div>
+            <div class="headline">An introduction to ThinkRoot Young Leaders and Resilience Lab</div>
+            <p>Tina Puri | Founder, ThinkRoot Young Leaders</p>
+          </div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">Thank you for being here. I know most parents in this room are already doing a great deal for their children. You are investing in academics, activities, enrichment, and opportunity. My goal today is not to add pressure. It is to show you a missing layer that many children still need, even when they are doing well on paper.
+
+This presentation is about the skills that shape how children handle pressure, setbacks, emotions, responsibility, and real life. It is also an introduction to ThinkRoot Young Leaders and to the programs we are building, especially Resilience Lab.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 2</div>
+            <div class="slide-title">Your child may be doing well in school. But what happens when life does not go according to plan?</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <div class="section-label">On Slide</div>
+            <ul>
+              <li>A disappointing result</li>
+              <li>A difficult friendship</li>
+              <li>A mistake they did not expect</li>
+              <li>A moment of pressure</li>
+              <li>A challenge they cannot solve right away</li>
+            </ul>
+          </div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">This is the real question I want to begin with.
+
+Many children are doing well in school. They are bright. They are capable. They are active. They may even look confident from the outside.
+
+But what happens when life does not go according to plan?
+
+What happens when they fail, when they compare themselves, when they feel overwhelmed, when they do not get the result they expected, or when they face a social or emotional challenge they cannot think their way out of?
+
+Because that is where a different set of abilities begins to matter.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 3</div>
+            <div class="slide-title">What parents are already seeing</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <ul>
+              <li>Panic before exams, even when prepared</li>
+              <li>Shutting down after one mistake</li>
+              <li>Avoiding challenge for fear of failure</li>
+              <li>Comparing constantly with others</li>
+              <li>Getting overwhelmed more quickly than expected</li>
+              <li>Confidence that disappears when things go wrong</li>
+            </ul>
+          </div>
+          <div class="standout">These are not isolated moments. They point to a missing skill set.</div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">Many parents are already seeing some version of this at home.
+
+The child who studies but goes blank under pressure. The child who gives up quickly after one setback. The child who is doing well externally, but is internally much less steady than they appear.
+
+These moments are easy to dismiss as part of growing up. But when they repeat, they usually point to something deeper: a child who has never been taught what to do in those moments.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 4</div>
+            <div class="slide-title">This is not a personality problem. It is a skills gap.</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <ul>
+              <li>Not lack of intelligence</li>
+              <li>Not weakness</li>
+              <li>Not a fixed personality trait</li>
+              <li>Not something children simply “grow out of”</li>
+            </ul>
+          </div>
+          <div class="standout">It is a missing toolkit, and toolkits can be built.</div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">This is one of the most important shifts in the entire presentation.
+
+When a child shuts down, spirals, avoids, or overreacts, we often interpret it as personality. We think they are sensitive, not confident, not mature enough, or simply not ready.
+
+But very often, the issue is not personality. The issue is that no one has taught them how to work with what happens when life gets hard.
+
+That is why I see this as a skills gap, not a character flaw.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 5</div>
+            <div class="slide-title">The gap schools do not fill</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="two-col">
+            <div class="content-block">
+              <div class="section-label">What children are taught</div>
+              <ul>
+                <li>Content</li>
+                <li>Performance</li>
+                <li>Competition</li>
+                <li>Achievement</li>
+                <li>Following systems</li>
+              </ul>
+            </div>
+            <div class="content-block">
+              <div class="section-label">What children are rarely taught</div>
+              <ul>
+                <li>How to recover after a mistake</li>
+                <li>How to stay steady under pressure</li>
+                <li>How to respond to frustration constructively</li>
+                <li>How to work with self-doubt</li>
+                <li>How to keep going when confidence drops</li>
+              </ul>
+            </div>
+          </div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">Schools teach many important things. This is not an argument against academics.
+
+But schools are not designed to teach children what to do when fear rises before an exam, when frustration takes over, when comparison affects confidence, or when a setback starts turning into a story about who they are.
+
+So children are often left to figure this out on their own. Some do. Many do not. And that affects far more than feelings. It affects performance, relationships, judgment, and how they meet life.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 6</div>
+            <div class="slide-title">Why this matters so much now</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <ul>
+              <li>Pressure starts early</li>
+              <li>Comparison is constant</li>
+              <li>External success can hide internal fragility</li>
+              <li>Low frustration tolerance shows up sooner</li>
+              <li>Children are expected to handle more without being shown how</li>
+            </ul>
+          </div>
+          <div class="standout">The need is growing earlier, not later.</div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">Parents today are raising children in a more competitive, more stimulating, and more comparison-driven environment than ever before.
+
+Pressure starts early. Children notice rankings, outcomes, and peer comparison much sooner. At the same time, many of them have less practice with frustration, uncertainty, and delayed gratification.
+
+So the need for these skills is not theoretical. It is immediate.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 7</div>
+            <div class="slide-title">This is not a theory. The science is clear.</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="stat-grid">
+            <div class="stat"><strong>CDC Youth Risk Behavior Survey</strong><span>42% of high school students report persistent sadness or hopelessness.</span></div>
+            <div class="stat"><strong>Harvard Business Publishing, 2024</strong><span>4 of the 5 most in-demand workplace skills are human skills — self-awareness, resilience, flexibility, and agility.</span></div>
+            <div class="stat"><strong>Albert Bandura, Stanford University</strong><span>Self-efficacy — belief in your own ability — is a stronger predictor of success than actual ability.</span></div>
+            <div class="stat"><strong>Yale Center for Emotional Intelligence</strong><span>EQ predicts adult career success more reliably than IQ alone.</span></div>
+          </div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">I know this audience. You are analytical. You want data before you decide.
+
+So let me ground this in a few key findings.
+
+The CDC data shows that emotional struggle is not a fringe issue. The Harvard Business Publishing finding shows that the world our children are entering values human skills deeply, even though schools rarely teach them directly. Bandura’s work on self-efficacy matters because what a child believes about their ability changes how they approach challenge. And Yale’s work reminds us that emotional intelligence is not separate from success. It helps shape it.
+
+This is why I see this as foundational, not optional.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 8</div>
+            <div class="slide-title">Patterns that are not addressed early do not simply disappear</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="stat-grid">
+            <div class="stat"><strong>Childhood is the easier window</strong><span>Early patterns become easier to repeat over time.</span></div>
+            <div class="stat"><strong>Stress affects cognition</strong><span>Negative emotional states impair focus, memory, and decision-making.</span></div>
+            <div class="stat"><strong>Emotional regulation is learnable</strong><span>Children can build better responses with practice.</span></div>
+          </div>
+          <div class="standout">This is not crisis intervention. It is early strength-building.</div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">As engineers and builders, you understand technical debt. If foundational issues are ignored early, the cost shows up later.
+
+Emotional patterns work the same way. The anxious response, the shutdown, the self-doubt — if they are not addressed in childhood, they compound. They become the way this child responds to pressure at 16, at 25, and beyond.
+
+That is why I care so much about timing. Childhood is the easier window for helping children recognize patterns, understand them, and build healthier responses before they harden.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 9</div>
+            <div class="slide-title">What makes ThinkRoot different</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <ul>
+              <li>Not just behavior correction</li>
+              <li>Not just motivation</li>
+              <li>Not just “be positive”</li>
+              <li>A structured, practical approach to what drives behavior underneath</li>
+            </ul>
+          </div>
+          <div class="standout">ThinkRoot goes deeper — to the root cause.</div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">Many programs try to correct behavior at the surface. Some try to boost confidence through encouragement alone. Others offer tools, but without a deeper framework.
+
+ThinkRoot is different because it focuses on what is happening underneath behavior: the pattern, the interpretation, the emotional response, and the practiced habit that drives what the child does next.
+
+That is why I say ThinkRoot goes deeper, to the root cause.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 10</div>
+            <div class="slide-title">What children build through ThinkRoot</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <ul>
+              <li>Better judgment</li>
+              <li>More responsibility</li>
+              <li>Greater emotional steadiness</li>
+              <li>Stronger recovery after setbacks</li>
+              <li>More confidence under challenge</li>
+            </ul>
+          </div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">Parents do not invest in a program because it sounds thoughtful. They invest because they want to see a difference in how their child handles life.
+
+The outcomes we care about are not vague. We want children who can pause before reacting, recover more quickly, take more ownership, handle disappointment more steadily, and face challenge with more confidence and maturity.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 11</div>
+            <div class="slide-title">The 6-week program: the fuller developmental path</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <ul>
+              <li><strong>Session 1 — Meet Your Brain:</strong> learning to notice thoughts rather than be run by them</li>
+              <li><strong>Session 2 — Thought Weather:</strong> recognizing storm thoughts and accepting that they pass</li>
+              <li><strong>Session 3 — The Feeling Body:</strong> learning to read the body’s signals and respond with care</li>
+              <li><strong>Session 4 — Kindness Is a Superpower:</strong> practicing healthier thought patterns and how they affect behavior</li>
+              <li><strong>Session 5 — I Am the Author:</strong> building influence over the story a child tells themselves</li>
+              <li><strong>Session 6 — I Am the Root:</strong> integrating the full model, self-compassion, and longer-term practice</li>
+            </ul>
+          </div>
+          <div class="standout">This is the fuller architecture of the work.</div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">For parents who want to know what the fuller program actually looks like, this is the high-level path.
+
+It is designed as a developmental sequence, not a collection of disconnected activities.
+
+The 6-week format gives children time to practice at home between sessions, return with real-life experience, and deepen the work week by week. That is what makes it the fuller pathway.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 12</div>
+            <div class="slide-title">The 5-day Resilience Lab: a shorter, powerful entry point</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <ul>
+              <li>Built from the same core philosophy</li>
+              <li>Covers the same core concepts as Sessions 1–5</li>
+              <li>More compact and introductory</li>
+              <li>A strong first step for families who want to begin now</li>
+            </ul>
+          </div>
+          <div class="standout">The 5-day format is the entry point. The 6-week format is the deeper build.</div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">The 5-day Resilience Lab is not a separate idea. It is the shorter entry point into the same work.
+
+It gives children a practical introduction to the core concepts and tools in a compact format. For some families, that is exactly the right place to begin. For others, the longer six-week format may be the better fit because it allows more reinforcement, reflection, and between-session practice.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 13</div>
+            <div class="slide-title">What students actually do in the program</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <ul>
+              <li>Guided reflection</li>
+              <li>Discussion</li>
+              <li>Practical tools</li>
+              <li>Structured exercises</li>
+              <li>Journaling and drawing</li>
+              <li>Home practice and carryover</li>
+            </ul>
+          </div>
+          <div class="standout">This is active skill-building, not passive listening.</div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">Parents often ask whether this is just talking, or whether children are actually doing something concrete.
+
+The program is active. Children reflect, discuss, practice tools, work through examples, and begin applying what they learn to everyday situations. The goal is not just understanding. The goal is use.
+
+In the 6-week format especially, each session includes home practice review and a new home practice assignment, because real life between sessions is part of the learning.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 14</div>
+            <div class="slide-title">What parents actually notice</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <ul>
+              <li>A longer pause before a meltdown</li>
+              <li>Children naming feelings instead of acting them out</li>
+              <li>Using breathing or a calming tool independently</li>
+              <li>Greater empathy and patience toward siblings and classmates</li>
+              <li>Better sleep and less mental overactivity at night</li>
+              <li>More ownership of thoughts, reactions, and choices</li>
+            </ul>
+          </div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">These are the kinds of changes parents tend to notice first. Not abstract transformation. Observable shifts.
+
+Often it looks like a child pausing a little longer before reacting. Naming what they are feeling more clearly. Using a tool on their own. Recovering faster. Sleeping better. Showing more empathy. Taking more ownership.
+
+That is important, because this work should not stay theoretical. Parents should be able to notice it in daily life.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="slide">
+        <div class="slide-head">
+          <div>
+            <div class="slide-num">Slide 15</div>
+            <div class="slide-title">A thoughtful next step for families who want to begin</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="content-block">
+            <ul>
+              <li>Join the priority interest list</li>
+              <li>Express interest in the 5-day or 6-week format</li>
+              <li>Bring the program to your school or community if enough families are interested</li>
+            </ul>
+          </div>
+          <details>
+            <summary>Speaker Notes</summary>
+            <div class="notes">My goal today is not to pressure anyone. It is to help you see a gap that matters, and to show you a thoughtful first step.
+
+If this resonates with you, the next step is simple. Join the interest list, let me know which format you are interested in, and stay connected as we build the next phase of the program.
+
+If enough families or a school community are interested, we can also bring the program to that community directly.</div>
+          </details>
+        </div>
+      </article>
+    </div>
+
+    <div class="footer-space"></div>
+  </div>
+</body>
+</html>

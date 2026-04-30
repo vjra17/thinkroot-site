@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThinkRoot Parent Presentation Preview V4</title>
+  <style>
+    :root {
+      --forest: #183c33;
+      --forest-2: #21473d;
+      --cream: #f6f1e7;
+      --gold: #caa85e;
+      --mist: #e8efe9;
+      --ink: #1f2a26;
+      --soft: #5b6964;
+      --line: rgba(24,60,51,0.12);
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Aptos", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(202,168,94,0.16), transparent 28%),
+        linear-gradient(180deg, #fbf8f1, #f1ece1);
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246,241,231,0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner, .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .topbar-inner {
+      padding: 14px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+    .brand {
+      font-weight: 700;
+      color: var(--forest);
+      letter-spacing: 0.02em;
+    }
+    .meta {
+      color: var(--soft);
+      font-size: 0.94rem;
+    }
+    .shell {
+      padding: 28px 0 60px;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(202,168,94,0.18);
+      color: var(--forest);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 16px 0 10px;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      line-height: 1.08;
+      color: var(--forest);
+    }
+    .intro {
+      max-width: 920px;
+      color: var(--soft);
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+    .hint {
+      margin-bottom: 24px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--gold);
+      background: rgba(202,168,94,0.12);
+      border-radius: 10px;
+      color: var(--forest);
+      font-weight: 700;
+    }
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+    .slide {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 14px 40px rgba(24,60,51,0.07);
+      overflow: hidden;
+    }
+    .slide-head {
+      background: linear-gradient(135deg, var(--forest), var(--forest-2));
+      color: var(--white);
+      padding: 18px 22px;
+    }
+    .slide-num {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.76);
+    }
+    .slide-title {
+      margin-top: 6px;
+      font-size: 1.48rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    .slide-body {
+      padding: 22px;
+      display: grid;
+      gap: 18px;
+    }
+    .card {
+      padding: 18px;
+      background: var(--cream);
+      border: 1px solid rgba(24,60,51,0.08);
+      border-radius: 18px;
+    }
+    .card p {
+      margin: 0;
+      line-height: 1.65;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .stat {
+      background: var(--mist);
+      border: 1px solid rgba(24,60,51,0.08);
+      border-radius: 18px;
+      padding: 16px;
+      line-height: 1.55;
+    }
+    .stat strong {
+      display: block;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .standout {
+      padding: 14px 16px;
+      border-left: 4px solid var(--gold);
+      background: rgba(202,168,94,0.12);
+      border-radius: 10px;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.55;
+    }
+    ul {
+      margin: 0 0 0 18px;
+      padding: 0;
+      line-height: 1.7;
+    }
+    li + li {
+      margin-top: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.96rem;
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+    th {
+      background: var(--mist);
+      color: var(--forest);
+      font-weight: 700;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    details {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--forest);
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    .notes {
+      margin-top: 12px;
+      color: var(--soft);
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+    .footer-space { height: 24px; }
+    @media (max-width: 780px) {
+      .topbar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+      table, thead, tbody, tr, th, td {
+        display: block;
+      }
+      th { border-bottom: none; }
+      td { padding-top: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">ThinkRoot Parent Presentation Preview</div>
+      <div class="meta">Draft V4 · stronger science + sharper hook</div>
+    </div>
+  </div>
+
+  <div class="shell">
+    <div class="eyebrow">Fresh Rebuild</div>
+    <h1>Sharper opening, clearer science, stronger logic</h1>
+    <p class="intro">This version separates research evidence from the high-level science behind why the program works. It also reshapes your Buffett-inspired idea into a tighter opening that can wake parents up without putting a long metaphor block directly on the slide.</p>
+    <div class="hint">Presenter prep remains separate: `presenter-questions-preview.html`</div>
+
+    <div class="grid">
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 1</div><div class="slide-title">Building Children Who Can Handle Life</div></div><div class="slide-body"><div class="card"><p><strong>An introduction to ThinkRoot Young Leaders and Resilience Lab</strong><br>Tina Puri | Founder, ThinkRoot Young Leaders</p></div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 2</div><div class="slide-title">Many children today have strong hardware: intelligence, opportunity, and support. But under pressure, the internal patterns underneath often take over.</div></div><div class="slide-body"><div class="card"><p>Success, structure, and opportunity matter. But they do not automatically build resilience, judgment, or inner strength.</p></div><details><summary>Speaker Notes</summary><div class="notes">I want to start with an image I once heard Warren Buffett use in a different context.
+
+He spoke about the difference between the wolf and the dog in a golden cage. One survives by staying sharp, adaptive, and alert. The other is protected, provided for, and comfortable, but over time loses some of the instincts it was born with.
+
+He was talking about work and independence. But I want to borrow that image for something else.
+
+Because I believe our children's minds can develop in a similar way.
+
+A mind that learns how to handle pressure, setbacks, uncertainty, and disappointment becomes stronger. It becomes steadier. It grows in capacity.
+
+A mind that is never taught what to do when life gets hard can remain outwardly successful, but inwardly fragile.
+
+So the real question is not only: Is my child doing well?
+
+It is: What kind of mind are we building underneath that success?</div></details></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 3</div><div class="slide-title">The real limitation is often invisible.</div></div><div class="slide-body"><div class="card"><ul><li>not lack of intelligence</li><li>not lack of opportunity</li><li>not lack of resources</li><li>repeated thought patterns</li><li>emotional habits</li><li>automatic reactions under stress</li></ul></div><div class="standout">Many children have every advantage, yet still struggle in ways those advantages cannot solve on their own.</div><details><summary>Speaker Notes</summary><div class="notes">What limits many children is not poverty, lack of opportunity, or lack of intelligence.
+
+Your children have loving parents who have sacrificed enormously. They have tutors, activities, good schools, and resources.
+
+And yet many of them are still struggling in ways all of that cannot fully fix.
+
+Because the issue is internal. It is the thought pattern, the emotional habit, the automatic reaction that takes over when life gets hard. And most children, and most adults, are never directly taught how to work with that.</div></details></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 4</div><div class="slide-title">What parents are already seeing</div></div><div class="slide-body"><div class="card"><ul><li>Panic before exams, even when prepared</li><li>Shutting down after one mistake</li><li>Avoiding challenge for fear of failure</li><li>Comparing constantly with others</li><li>Getting overwhelmed more quickly than expected</li><li>Confidence that disappears when things go wrong</li></ul></div><div class="standout">These are not isolated moments. They point to a missing skill set.</div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 5</div><div class="slide-title">This is not a personality problem. It is a skills gap.</div></div><div class="slide-body"><div class="card"><ul><li>Not lack of intelligence</li><li>Not weakness</li><li>Not a fixed personality trait</li><li>Not something children simply “grow out of”</li></ul></div><div class="standout">It is a missing toolkit, and toolkits can be built.</div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 6</div><div class="slide-title">The gap schools do not fill</div></div><div class="slide-body"><div class="card"><ul><li>What children are taught: content, performance, competition, achievement</li><li>What children are rarely taught: recovery, steadiness under pressure, constructive response, self-doubt management, persistence after setbacks</li></ul></div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 7</div><div class="slide-title">Why this matters so much now</div></div><div class="slide-body"><div class="card"><ul><li>Pressure starts early</li><li>Comparison is constant</li><li>External success can hide internal fragility</li><li>Low frustration tolerance shows up sooner</li><li>Children are expected to handle more without being shown how</li></ul></div><div class="standout">The need is growing earlier, not later.</div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 8</div><div class="slide-title">This is not a theory. The science is clear.</div></div><div class="slide-body"><div class="stat-grid"><div class="stat"><strong>CDC Youth Risk Behavior Survey</strong>42% of high school students report persistent sadness or hopelessness.</div><div class="stat"><strong>Harvard Business Publishing, 2024</strong>4 of the 5 most in-demand workplace skills are human skills — self-awareness, resilience, flexibility, and agility.</div><div class="stat"><strong>Albert Bandura, Stanford University</strong>Self-efficacy — belief in your own ability — is a stronger predictor of success than actual ability.</div><div class="stat"><strong>Yale Center for Emotional Intelligence</strong>EQ predicts adult career success more reliably than IQ alone.</div></div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 9</div><div class="slide-title">Why this kind of training works</div></div><div class="slide-body"><div class="stat-grid"><div class="stat"><strong>Belief shapes performance</strong>When children believe they can handle difficulty, they try longer, recover faster, and stay engaged.</div><div class="stat"><strong>Stress changes cognition</strong>Under pressure, focus, memory, and decision-making all become less reliable.</div><div class="stat"><strong>Patterns become habits</strong>Repeated reactions become more automatic over time.</div><div class="stat"><strong>Practice rewires response</strong>Repeated, guided practice builds more useful responses into daily life.</div></div><div class="standout">ThinkRoot is not based on motivation alone. It is based on how patterns, stress, practice, and belief shape behavior.</div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 10</div><div class="slide-title">Patterns that are not addressed early do not simply disappear</div></div><div class="slide-body"><div class="stat-grid"><div class="stat"><strong>Childhood is the easier window</strong>Early patterns become easier to repeat over time.</div><div class="stat"><strong>Stress affects cognition</strong>Negative emotional states impair focus, memory, and decision-making.</div><div class="stat"><strong>Emotional regulation is learnable</strong>Children can build better responses with practice.</div></div><div class="standout">This is not crisis intervention. It is early strength-building.</div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 11</div><div class="slide-title">AAA — the structured method behind ThinkRoot</div></div><div class="slide-body"><table><thead><tr><th>Step</th><th>What it means</th><th>Why it matters</th></tr></thead><tbody><tr><td><strong>A — Awareness</strong></td><td>Notice what is happening in the mind and body before it escalates. Catch the thought, feeling, or physical signal early.</td><td>This is the step most children have never been taught.</td></tr><tr><td><strong>A — Accept</strong></td><td>Acknowledge the thought or feeling without fighting it, suppressing it, or pushing it away.</td><td>Suppression often strengthens patterns. Acceptance makes change possible. This is one of the places ThinkRoot differs from generic coping advice.</td></tr><tr><td><strong>A — Action</strong></td><td>Use a specific, practised technique to redirect and choose a steadier response.</td><td>The Five Power Technique is the concrete Action tool: under 3 minutes, no equipment, memorised and usable before a test, after a mistake, or at bedtime.</td></tr></tbody></table><div class="standout">ThinkRoot goes deeper — to the root cause.</div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 12</div><div class="slide-title">What children build through ThinkRoot</div></div><div class="slide-body"><div class="card"><ul><li>Better judgment</li><li>More responsibility</li><li>Greater emotional steadiness</li><li>Stronger recovery after setbacks</li><li>More confidence under challenge</li></ul></div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 13</div><div class="slide-title">The 6-week program: the toolkit students build over time</div></div><div class="slide-body"><div class="card"><ul><li>Spaced repetition improves retention</li><li>Retrieval and review strengthen recall</li><li>Between-session application improves transfer into real life</li><li>Repeated guided practice helps healthier responses become more automatic</li></ul></div><table><thead><tr><th>Session</th><th>Topic and explanation</th><th>Research anchor</th><th>Toolkit students build</th></tr></thead><tbody><tr><td>1</td><td><strong>Meet Your Brain</strong> — how thoughts, attention, and stress patterns work</td><td>attention and metacognition; learning science</td><td>recognizing thoughts earlier</td></tr><tr><td>2</td><td><strong>Thought Patterns</strong> — catching limiting interpretations before they take over</td><td><strong>Stanford / Bandura:</strong> self-efficacy and appraisal</td><td>catching patterns before they escalate</td></tr><tr><td>3</td><td><strong>The Feeling Body</strong> — recognizing what stress feels like in the body</td><td><strong>Yale + UC Berkeley Greater Good:</strong> emotion regulation and mind-body awareness</td><td>noticing physical signals earlier</td></tr><tr><td>4</td><td><strong>Response and Redirection</strong> — practising steadier responses in real time</td><td><strong>Harvard stress and cognition research</strong></td><td>using tools to interrupt and redirect reactions</td></tr><tr><td>5</td><td><strong>I Am the Author</strong> — building agency over self-talk, choices, and meaning</td><td><strong>Stanford / self-efficacy research</strong></td><td>taking ownership of the story they tell themselves</td></tr><tr><td>6</td><td><strong>I Am the Root</strong> — integrating self-compassion, reflection, and a practice plan</td><td><strong>Greater Good / self-compassion and habit formation</strong></td><td>a fuller personal resilience toolkit and practice plan</td></tr></tbody></table><div class="standout">Research anchors used across this sequence: Stanford, Yale Center for Emotional Intelligence, UC Berkeley Greater Good Science Center, Harvard learning/stress research.</div><div class="standout">This is the fuller architecture of the work — and the toolkit students take with them.</div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 14</div><div class="slide-title">The 5-day Resilience Lab: a shorter entry point into the same work</div></div><div class="slide-body"><div class="card"><ul><li>Built from the same core philosophy</li><li>Covers the same core concepts in a more compact format</li><li>Strong for families who want a focused starting point</li><li>Best understood as the beginning, not the whole pathway</li></ul></div><div class="standout">The 5-day format introduces the work. The 6-week format deepens and reinforces it.</div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 15</div><div class="slide-title">What actually changed in students' lives</div></div><div class="slide-body"><div class="stat-grid"><div class="stat"><strong>Less reactive under stress</strong>One middle school student learned to pause before reacting and became calmer in daily life.</div><div class="stat"><strong>Better sleep and focus</strong>One middle school student used the practices before bed, slept better, woke up in a better mood, and became more focused at school.</div><div class="stat"><strong>More academic confidence</strong>One student improved significantly in math and later began helping classmates.</div><div class="stat"><strong>Less screen dependence, more steadiness</strong>One student reduced screen time and became more emotionally steady and socially confident.</div><div class="stat"><strong>More composure in exams</strong>Students began using the technique during exams to regulate themselves and perform with greater calm.</div></div><div class="standout">These are observable shifts in real life, not abstract promises.</div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 16</div><div class="slide-title">Why parents respond to this work</div></div><div class="slide-body"><div class="card"><ul><li>It is practical</li><li>It is structured</li><li>It addresses what parents are already seeing</li><li>It gives children something they can actually use</li><li>It supports academics, relationships, and daily life rather than competing with them</li></ul></div></div></article>
+
+      <article class="slide"><div class="slide-head"><div class="slide-num">Slide 17</div><div class="slide-title">A thoughtful next step for families who want to begin</div></div><div class="slide-body"><div class="card"><ul><li>Join the priority interest list</li><li>Express interest in the 5-day or 6-week format</li><li>Bring the program to your school or community if enough families are interested</li></ul></div></div></article>
+    </div>
+    <div class="footer-space"></div>
+  </div>
+</body>
+</html>

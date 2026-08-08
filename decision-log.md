@@ -1,5 +1,12 @@
 ## Decision Log
 
+## 2026-08-08 12:00 PDT - Fall 2026 Release Candidate Prepared
+
+- Created this release branch from the exact GitHub `main` commit currently serving `vjra.net`.
+- Preserved that version as the `vjra-net-before-fall-2026` tag and `backup/vjra-net-before-fall-2026` branch before preparing any new public pages.
+- Added the approved homepage, Resilience Lab Hub, Fall Enrollment page, Vibe Check page, and founder image from the isolated August rebuild.
+- This commit is a reviewable release candidate only; no live website change has been published from this branch.
+
 - 2026-04-23: Added repo-level decision log for the live `thinkroot-site` project so homepage and publishing decisions are tracked in the actual deployment source.
 - 2026-04-23: Planned homepage clarity pass for cold audiences: rename nav item and hero pill to `Resilience Lab`, add a featured-program bridge near the top, and create a separate `resilience-lab.html` page that explains both formats at a higher level without turning the homepage into a curriculum document.
 - 2026-04-23: Implemented the homepage clarity pass in preview: nav item and hero pill now point to `Resilience Lab`, added a `Summer Spotlight` bridge near the top of the homepage, relabeled the homepage program section to `Resilience Lab`, and created `resilience-lab.html` as a separate higher-level detail page covering both the 5-Day Intensive and 6-Week Series.

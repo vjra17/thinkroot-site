@@ -1,185 +1,132 @@
-## Decision Log
+# Fall 2026 Website Preview Decision Log
 
-- 2026-04-23: Added repo-level decision log for the live `thinkroot-site` project so homepage and publishing decisions are tracked in the actual deployment source.
-- 2026-04-23: Planned homepage clarity pass for cold audiences: rename nav item and hero pill to `Resilience Lab`, add a featured-program bridge near the top, and create a separate `resilience-lab.html` page that explains both formats at a higher level without turning the homepage into a curriculum document.
-- 2026-04-23: Implemented the homepage clarity pass in preview: nav item and hero pill now point to `Resilience Lab`, added a `Summer Spotlight` bridge near the top of the homepage, relabeled the homepage program section to `Resilience Lab`, and created `resilience-lab.html` as a separate higher-level detail page covering both the 5-Day Intensive and 6-Week Series.
-- 2026-04-23: Updated the `resilience-lab.html` Next Step section so its primary CTA uses the same gold styling as the homepage interest-list button for consistency across the funnel.
-- 2026-04-23: Created `resilience-lab-v2.html` as a separate comparison version built around a cleaner decision-focused narrative: a wake-up section with science-backed proof, a sharper `What Students Build` section, concise summer format cards, a simpler `What Students Actually Do` section, and the existing next-step CTA.
-- 2026-04-23: Refined `resilience-lab-v2.html` by removing the video placeholder, making card borders more consistent with the homepage system, and clarifying that sessions are interactive with reflection, discussion, journaling, guided activities, and home practice.
-- 2026-04-23: Added a WhatsApp CTA to the `resilience-lab-v2.html` Next Step section and changed the footer secondary contact link from the interest list to the WhatsApp community.
-- 2026-04-23: Updated `resilience-lab-v2.html` so the nav Interest List item jumps to the page’s own next-step section, added a summer pricing note, and rewrote the opening/context paragraphs and session copy to use more middle-school-specific language and the preferred order for interactive activities.
-- 2026-04-23: Fixed the `resilience-lab-v2.html` Next Step action row so the WhatsApp CTA renders visibly beside the priority-interest button.
-- 2026-04-23: Promoted `resilience-lab-v2.html` into the active `resilience-lab.html`, preserved the previous version as `codex-resilience-lab-2026-04-23.html`, and created `launch-assets/` with ready-to-share WhatsApp, email, and social-tile copy.
-- 2026-04-23: Confirmed the Resilience Lab comparison page Interest List area includes both the priority-interest CTA and a WhatsApp community CTA so parents can either sign up or follow updates there.
-## 2026-04-23 17:45 PDT
-- Replaced homepage `What Students Reported` cards with a curated mix of new and existing proof: Haswitha, Rishi, MT, AP, and exam-composure stories.
-- Replaced Resilience Lab `Reported Outcomes` cards with a more detailed student-reported set built from Haswitha and Rishi interview material.
-- Kept the proof split intentional:
-  - homepage = fewer, broader, more persuasive real-story cards
-  - Resilience Lab page = more granular student-reported shifts aligned to the program experience
+## 2026-08-07 PT - Safe preview workspace created
 
-## 2026-04-23 17:58 PDT
-- Broadened the Resilience Lab proof section so it no longer looks concentrated around only two students.
-- Mixed HM/RR cards with prior student initials (MT, AP, SK, SM and VM) and corrected MT/AP/SK to elementary-level labels.
+- Created this isolated website preview workspace on the branch `codex/fall-2026-site-refresh`.
+- The current live ThinkRoot website and its `main` branch are not modified by work in this workspace.
+- Copied the approved working Fall landing page into this workspace as `fall-2026.html` for safe review and future integration.
+- Planned website information architecture:
+  - Homepage: current Fall enrollment, free Vibe Check meditation, ThinkRoot approach, and a general `Stay Connected with ThinkRoot` route.
+  - Fall page: detailed paid-program information and the active registration form.
+  - Resilience Lab community: invite-only for confirmed participants; no public invite link on the site.
+  - Vibe Check community: public link, clearly identified as a free meditation community.
+  - Five-day and six-week program formats: retained as reusable format history and future options, not presented as current enrollment choices on the homepage.
 
-## 2026-04-23 18:08 PDT
-- Reworked proof cards on both pages to use a stronger structure: outcome title first, story second, attribution at the bottom.
-- Homepage keeps initials for a more personal feel; Resilience Lab uses school-level attribution so the deeper proof section feels broader and less repetitive.
+## 2026-08-07 PT - Preview homepage refreshed for the Fall 2026 offer
 
-## 2026-04-23 20:33 PDT
-- Polished the homepage `Real Stories` section label and refined the exam-composure card language to avoid repeated wording.
-- Added visible spacing between the homepage program CTA buttons.
-- Reduced the 6-week takeaways from four items to three by combining the toolkit and practice-plan line.
-- Made the two homepage program cards equal-height so their bottom summary areas align more cleanly.
+- Updated only this protected preview workspace; the live ThinkRoot site and its `main` branch remain unchanged.
+- Replaced stale summer enrollment language, the old Grades 2-8 framing, and the obsolete interest-list form with the current Fall 2026 Resilience Lab offer for Grades 4-9.
+- Made the active Fall series the homepage lead, with clear links to the existing Fall registration page and Google Form.
+- Added Vibe Check as a distinct public, free meditation community with its approved WhatsApp link. The Resilience Lab WhatsApp community remains private for enrolled families and is not linked publicly.
+- Replaced the old public contact details and legacy WhatsApp link with `thinkrootyoungleaders@gmail.com` and the approved Vibe Check community link.
+- Updated public founder references in this preview to Tina Puri.
 
-## 2026-04-24 20:45 PDT
-- Imported recovery context from `/Users/tina/Documents/code/thinkroot-site/Analyze website messaging - Chat in Codex.docx` after the original Codex thread became unusable due to an image payload error.
-- Confirmed the transcript preserves the main homepage messaging strategy:
-  - technical Bay Area parents as the primary audience
-  - homepage should sell practical outcomes before method depth
-  - AAA and Five Power stay as proof of method, but not as full early-page teaching
-  - interest-capture positioning is the right launch model for the current stage
-- Confirmed that key transcript-era homepage changes are already present in the current repo, so this document plus git history can serve as the recovered memory baseline going forward.
+## 2026-08-07 PT - Founder name confirmed
 
-## 2026-04-24 20:49 PDT
-- Added `project-memory.md` to the live website repo as a concise restart file summarizing audience, homepage strategy, launch model, implemented work, important files, and next-step guidance.
-- Going forward, `project-memory.md` should be kept current alongside `decision-log.md` whenever strategy or project status materially changes.
+- The correct public founder name is Tina Puri. All active preview references have been corrected accordingly.
 
-## 2026-04-24 20:55 PDT
-- Audited the current homepage against `project-memory.md`.
-- Main remaining gaps identified:
-  - some mid-page copy is still denser and more claim-heavy than ideal for a fast-reading technical-parent audience
-  - the founder/community sections still compete somewhat with the core Resilience Lab conversion path
-  - the interest form likely asks for more than is necessary for a first-touch conversion
-  - CTA language is directionally correct but currently split between `Get Priority Access`, `Priority Interest List`, and `Request early access`, which weakens message consistency
+## 2026-08-07 PT - Live-site comparison and formats-hub cleanup
 
-## 2026-04-24 21:00 PDT
-- Confirmed that the public site URL and live filenames should remain unchanged because the website link is already being circulated to parents.
-- Created safe comparison files for the next iteration:
-  - `/Users/tina/Documents/code/thinkroot-site/index-v3-working-2026-04-24.html`
-  - `/Users/tina/Documents/code/thinkroot-site/resilience-lab-v3-working-2026-04-24.html`
-- Agreed workflow for this project:
-  - iterate in versioned working-copy files first
-  - compare before replacing the live site files
-  - do not create git commits without explicit user approval first
+- Compared the live `vjra.net` homepage with this preview and documented the content transfer in `Website Comparison and Completeness Audit.md`.
+- Confirmed that the core ThinkRoot explanation, parent outcomes, founder credibility, stories, and leadership/community vision remain present in the preview.
+- Reframed `resilience-lab.html` as the durable Resilience Lab formats library so detailed 5-Day Intensive and 6-Week Series material remains available without being presented as the active Fall offer.
+- Archived source and backup pages were intentionally left unchanged and unlinked; no historical material was deleted.
 
-## 2026-04-24 21:09 PDT
-- Completed first homepage-only V3 pass in `/Users/tina/Documents/code/thinkroot-site/index-v3-working-2026-04-24.html`.
-- Changes in V3 focused on conversion clarity without touching the live homepage:
-  - standardized main CTA language around `Join the Priority Interest List`
-  - tightened the gold-strip, gap, and mid-page explanatory copy
-  - reduced claim-heavy / theory-heavy language in `Why It Matters` and `What makes ThinkRoot different`
-  - renamed the framework section to `How It Works` and simplified its intro
-  - compressed the founder story so it reads more practical and less like a second narrative arc
-  - compressed community copy
-  - shortened the interest form by removing optional phone capture and the local-group invitation question
-- Refined V3 wording from `Attention` to `Focus` in the gap section for clearer parent-facing language.
-- Completed a second V3 pass focused on persuading achievement-oriented parents without sounding too conceptual.
-- Reduced `inner world / inner foundation / what happens within` phrasing in favor of more practical language about pressure, setbacks, self-doubt, reactions, and the missing skill layer underneath performance.
-- Formalized the homepage section framework and anti-repetition vocabulary rule in `project-memory.md`.
-- Revised V3 copy to better match that framework, including headline variation across sections.
-- Simplified the `ThinkRoot Community` section in V3 from two overlapping boxes to one clearer future-pathway box because the prior two-card structure was doing nearly the same job and diluted the message.
-- Restored the `root cause` differentiator in the `What makes ThinkRoot different` section because it is a core brand distinction and should remain visible there.
-- Restored the fuller founder credibility wording `certified by the cities of Fremont, Union City, and Newark` because the user wants that specificity preserved for authenticity and trust.
-- Clarified the purpose of the Community pathway copy in V3: after completing a ThinkRoot program, students may later have opportunities to participate in real community projects that can also count toward volunteering hours, while contributing meaningful service and building leadership through action.
-- Completed one final V3 cleanup pass:
-  - reduced a few remaining repeated `pressure` phrases
-  - smoothed one awkward sentence in the gap section
-  - tightened the wake-line wording
-  - adjusted the Community section layout to fit the new single-card structure
-- Saved a new set of more direct homepage top-section ideas in `/Users/tina/Documents/code/thinkroot-site/top-section-ideas-2026-04-24.md`, including headline directions focused on the gap between academic success and real-life capability.
-- Updated only the V3 homepage top section with the current approved direction:
-  - eyebrow: `The skills schools don’t teach`
-  - headline: `Strong kids aren’t built by academics alone.`
-  - tagline: `A structured, practical approach to helping children grow more resilient, independent, and capable when life becomes demanding, disappointing, or uncertain.`
-  - gold strip: `Grades and goals are only half the story. ThinkRoot helps children build the judgment, responsibility, and emotional steadiness that shape how they handle everything else.`
-- Confirmed that this was a top-section-only revision; earlier V3 structural and copy refinements remain intact.
-- Refined the V3 eyebrow to `The real-world skills schools don’t teach`.
-- Simplified the V3 tagline ending from `when life becomes demanding, disappointing, or uncertain` to `when life gets challenging` because the earlier phrasing felt too adult-coded for a Grades 2–8 program.
-- Updated the V3 headline styling so `academics alone` is emphasized in gold for stronger contrast, mirroring the earlier `take root` treatment.
-- Left the gold strip unchanged by user request.
-- Replaced the prior `ThinkRoot teaches that missing layer early` line in V3 with a stronger science-oriented statement about early patterns shaping later behavior, relationships, and well-being.
-- Renamed the V3 community section to `The ThinkRoot Community Projects` and clarified that the goal is real community contribution plus opportunities that may also count toward volunteering hours.
+## 2026-08-07 PT - Vibe Check public page added to the preview
 
-## 2026-04-26
+- Added `vibe-check.html` as a standalone public page so families can understand the free meditation community before joining WhatsApp.
+- Kept Vibe Check distinct from paid Resilience Lab enrollment. Its page links to the public Vibe Check community only; the Resilience Lab participant community remains private.
 
-- Reviewed V3 homepage in full via local preview (http://localhost:3000) — all sections confirmed correct including real student stories, program cards, About Tina photo, and Rewired to Inspire content.
-- Confirmed `tina.jpeg` (1600px, already tracked in git) loads correctly in the About section.
-- Confirmed Rewired to Inspire content is fully present: 4 years running, Fremont CA, Tri-City Voice + U.S. Congress recognition, leadership quote, Venil testimonial.
-- Created V2 backups before going live:
-  - `index-v2-live-2026-04-23.html` (homepage backup)
-  - `resilience-lab-v2-live-2026-04-23.html` (Resilience Lab backup)
-- Promoted V3 to production: copied `index-v3-working-2026-04-24.html` → `index.html` and `resilience-lab-v3-working-2026-04-24.html` → `resilience-lab.html`.
-- `resilience-lab.html` was unchanged by the swap (Codex V3 was identical to the previously committed version).
-- Committed and pushed V3 live to GitHub Pages (commit `01cad25`).
-- Committed all previously untracked Codex files to GitHub (commit `990b76e`):
-  - `project-memory.md`
-  - `decision-log.md` (updated with all Codex entries)
-  - `top-section-ideas-2026-04-24.md`
-  - `launch-assets/resilience-flyer-2026-04-23/` (WhatsApp cards, flyers, posters)
-- Created `CLAUDE.md` — Claude’s session memory file, auto-read at session start to restore full project context without needing to re-explain anything.
-- Agreed workflow: Tina says "update" at any milestone and Claude will update `decision-log.md`, `CLAUDE.md`, and commit to GitHub.
+## 2026-08-07 09:49 PDT - Final active-page verification
 
-## 2026-04-26 (session continued)
+- Confirmed that the active preview pages contain no references to Iru, the old priority-interest list, the former public WhatsApp link, the former Grades 2-8 current offer, or Summer 2026 enrollment.
+- Confirmed that active public founder references use Tina Puri and the active public contact routes use `thinkrootyoungleaders@gmail.com` and the approved Vibe Check community link.
 
-- Fixed CTA button consistency on `resilience-lab.html`: replaced all 4 instances of "Get Priority Access" with "Join the Priority Interest List" to match homepage language.
-- Added FAQ accordion section to homepage just above the interest form (id="faq").
-  - 5 questions: who it's for, academic performance vs resilience, what sessions look like, where sessions are held, what happens after joining the list.
-  - Location answer: primary location Mission San Jose, Fremont. Can bring program to other Bay Area communities if a group forms. Online option based on demand.
-  - Deliberately excluded therapy/counselling question (disclaimer already on site) and pricing (not yet decided).
-  - Uses native HTML details/summary accordion — no JavaScript, works on all devices.
-  - Background: var(--mist); sits between Community/Rewired section and the dark forest interest form.
-- Committed both changes as commit `c34871b`.
-- Added same FAQ accordion section to `resilience-lab.html` just above the Next Step CTA section (commit `80e3c58`). Same 5 questions, identical styling — so parents who click through to read the full program page also see FAQs before being asked to sign up.
+## 2026-08-07 10:05 PDT - Homepage and community-message refinement
 
-## 2026-04-27
+- Restored the homepage as the broad ThinkRoot Young Leaders front door. The dedicated Fall page remains the detailed enrollment destination, avoiding a duplicate Fall-program hero on both pages.
+- Strengthened the current Fall enrollment language with `View the Full Fall Program` and removed messaging that could make families hesitate to enroll in Series One.
+- Replaced vague `inner world` language in Series One with specific parent-relevant outcomes: focus, managing pressure, and self-control.
+- Removed the early `Leadership Pathway` coming-soon section.
+- Reframed the community section around student-led mindfulness: students may share simple practices in schools, teams, scouting groups, cultural organizations, and other local gatherings. These community offerings are intended to be open and free when offered.
+- Matched the Fall page’s series language to the homepage: removed the Series Two orientation and flexible-entry emphasis, and replaced vague `inner world` language with focus, pressure-management, and self-control outcomes.
 
-- Created parent presentation content: `launch-assets/presentation-content-2026-04-26.md` (15 slides + speaker notes + Q&A).
-- Created HTML reader for presentation: `launch-assets/presentation-preview.html` — uses ThinkRoot colour palette, sticky nav, slide cards with speaker notes.
-- Generated PowerPoint file: `launch-assets/presentation-2026-04-27.pptx` (15 slides, ThinkRoot branding, all speaker notes in notes panel). Import into Google Slides via Google Drive.
-- Corrected Slide 9: AAA framework is Awareness / Accept / Action (not Awareness/Interruption/Rebuilding — that was an error). Accept step is distinct and important — it prevents suppression.
-- Rebuilt Slide 10 with actual 5-day curriculum content: Day 1 Brain Web, Day 2 Brain Weather, Day 3 Feeling Body, Day 4 Upgrade the Thought, Day 5 I Am the Author. Parents can now see exactly what children do each day.
-- Read all curriculum source files from `ThinkRoot Programs` folder: 5-day curriculum, 6-week curriculum, AAA insert, program proposal, scenario repository, facilitator bio, parent letters, practice cards, Codex parent pitch.
-- Read both Codex chat exports (downloaded from Google Drive): confirmed all major Codex decisions are already reflected in current `thinkroot-site` files. No strategic decisions were overwritten.
-- Added to CLAUDE.md: correct AAA definition (Awareness/Accept/Action), language rules (never use soul/chanting/vibration/sacred/spiritual/quantum as metaphor), Five Power Technique description.
-- Confirmed: Ishil Puri not named in public-facing materials — focus stays on Tina. Current CLAUDE.md already correct on this.
-- Confirmed: tree metaphor not used in 5-day curriculum or website. Appears only in 6-week Session 6 as one activity. Not parent-facing.
+## 2026-08-07 10:20 PDT - Hero-positioning review
 
-## 2026-04-27 (memory refresh)
+- No hero copy was finalized in this review.
+- The homepage hero must remain ThinkRoot-level rather than Fall-program-specific, and must lead with tangible parent outcomes rather than the phrase `inner skills` or other abstract method language.
+- The shared ThinkRoot External Communications Standard now records this as a mandatory parent-outcome-first rule for future public work.
 
-- Refreshed `project-memory.md` to match the actual current live site state rather than the older intermediate V3 description.
-- Confirmed that the live homepage includes the updated hero, gold strip, Community Projects wording, FAQ section, and bolded `root cause` differentiator.
-- Confirmed that the live `resilience-lab.html` includes the FAQ section and aligned `Join the Priority Interest List` CTA wording.
-- Marked `index-v3-working-2026-04-24.html` and `resilience-lab-v3-working-2026-04-24.html` as historical comparison snapshots only.
-- Future rule: before any new website pass, create fresh working copies from the current live files instead of reusing the older V3 snapshots.
+## 2026-08-07 10:30 PDT - Approved ThinkRoot homepage hero
 
-## 2026-04-27 (folder roles)
+- Approved homepage headline: **Help Your Child Build the Focus, Confidence, and Judgment to Thrive in a Changing World.**
+- Approved supporting copy: **ThinkRoot gives children and teens practical tools to manage pressure, build emotional steadiness, stay focused, develop healthy habits, and make wiser everyday choices.**
+- The hero is now fully ThinkRoot-level: it does not contain current Fall dates, grade band, pricing, or program-specific labels. Fall enrollment remains immediately below the hero as the current opportunity.
 
-- Verified that `/Users/tina/Documents/code/thinkroot-site` is the freshest active website repo and should remain the source of truth for the live website and launch assets.
-- Verified that `/Users/tina/Documents/code/thinkroot` is a separate broader context / repository workspace, not the live website repo.
-- Verified that `/Users/tina/Documents/code/Old-thinkroot` is an archive-style folder with older versions and no active git repo at its top level.
-- Confirmed that `/Users/tina/Documents/code/ThinkRoot Programs` is reasonable as a separate curriculum-source folder and does not need to be merged into the website repo.
-- Main cleanup need is now organizational clarity: mark current canonical folders clearly and archive older versions more explicitly so future work does not start from stale copies by accident.
+## 2026-08-07 10:45 PDT - Homepage opportunity section simplified
 
-## 2026-04-27 (program folder cleanup)
+- Replaced the duplicated detailed Fall curriculum, pricing, and two-series cards on the homepage with a concise `Current Learning Opportunities` section.
+- The homepage now introduces two clear choices: the paid Fall 2026 Resilience Lab and the free Vibe Check meditation community. Both link to their dedicated detail pages.
+- Retained the full Fall offer, dates, curriculum, family support, and registration on `fall-2026.html`.
+- Retained the former summer program formats as a library on `resilience-lab.html`: `5-Day Intensive` and `6-Week Series`. No summer-format content was deleted.
 
-- Cleaned `/Users/tina/Documents/code/ThinkRoot Programs` into a clearer current-vs-archive structure.
-- Moved older top-level program folders into `/Users/tina/Documents/code/ThinkRoot Programs/ARCHIVE`.
-- Moved `Apr19V1-ThinkRoot-ALL-Programs-April2026` into `/Users/tina/Documents/code/ThinkRoot Programs/FINAL VERSION of ThinkRootResLab 5 Day & 6 Week Programs/ARCHIVE`.
-- Added `/Users/tina/Documents/code/ThinkRoot Programs/CURRENT-START-HERE.md` to point to the current canonical program folder.
-- Added `/Users/tina/Documents/code/THINKROOT-CURRENT-WORKSPACES.md` to map the current website, program, context, and archive workspaces across `/Users/tina/Documents/code`.
+## 2026-08-07 11:00 PDT - Resilience Lab library made visible
 
-## 2026-04-27 (parent presentation rebuild)
+- Updated the homepage navigation to link to the Resilience Lab format library, while the main navigation call-to-action continues to lead families to current Fall enrollment.
+- Updated the library page to identify the retained `5-Day Intensive` and `6-Week Series` clearly as established ThinkRoot formats rather than a current seasonal offering.
+- Recorded future website work separately: approved student testimonials and the Vibe Check flyer will be considered after the homepage structure is finalized.
 
-- Started a fresh parent-presentation rebuild in `/Users/tina/Documents/code/thinkroot-site/launch-assets/parent-presentation-rebuild-2026-04-27/` with its own project-specific `decision-log.md`.
-- Existing Claude presentation files in `launch-assets/` are reference only and not the source of truth for the rebuilt deck.
-- Presentation audience confirmed as highly educated Bay Area parents, many of them Indian and in software or other technical professions.
-- Presentation goal confirmed: introduce ThinkRoot and the current programs in a scientific, practical, easy-to-understand way that addresses parent pain points and motivates sign-up.
-- Presentation should remain under 30 minutes and include strong speaker notes for both in-person and online delivery.
-- Presentation framing updated so the 6-week program is shown as the fuller developmental pathway and the 5-day program is presented as the shorter entry-point subset.
-- Presentation language rule clarified: the main parent deck should avoid younger-child framing like `storm` / `sunshine` because the primary audience focus is middle school.
-- Presentation structure updated again:
-  - the 6-week slide should be shown as a toolkit students build over time, ideally in a table-like format
-  - the weaker standalone `What students actually do` slide should be folded into the 6-week explanation rather than standing alone as a separate scientific claim
-  - real stories / testimonial-style evidence should appear in the main content before sign-up
-  - common parent questions should be prepared as a presenter resource and can remain outside the main deck if that keeps the live presentation tighter
+## 2026-08-07 11:25 PDT - Writing standard recorded before website refinement
+
+- No website copy was changed in this review. The shared `ThinkRoot External Communications Standard.md` now carries the mandatory Core Writing Principle for all ThinkRoot work: no fluff or filler; every word must be intentional, meaningful, clear, elevated, and purposeful.
+- The next homepage and Vibe Check updates will be made only after the hero, enrollment visibility, terminology, CTA, and Vibe Check language decisions are confirmed.
+
+## 2026-08-07 11:35 PDT - Core Writing Principle activated
+
+- The Core Writing Principle is now mandatory for every new website artifact and future revision in this preview, as well as all other ThinkRoot work.
+
+## 2026-08-07 11:50 PDT - Approved homepage and Vibe Check refinements
+
+- Homepage hero now leads with the approved parent-facing eyebrow, **The real-world skills schools don’t teach**, while retaining the approved focus, confidence, judgment, and changing-world headline.
+- Homepage language now consistently uses `students` or `school-aged students` where appropriate. It names resilience, emotional steadiness, healthy habits, and thoughtful decisions that support goals and well-being.
+- Added a compact, visible Fall 2026 enrollment line in the homepage hero: Grades 4–9, begins September 9, live on Zoom Wednesdays.
+- Updated the strongest Fall CTA to **Explore the Fall Experience**. The detailed Fall page remains the enrollment destination.
+- Restored the original ThinkRoot Community Projects framing and separated it from the Vibe Check WhatsApp community.
+- Clarified that the two local, in-person Bay Area group experiences are for students able to participate locally; avoided the word `field trip` until operational details are confirmed.
+- The standalone Vibe Check page is now meditation-only. It no longer presents Pause, Breathe, Choose as its four-step teaching sequence or uses the phrase in its page copy.
+- The homepage Vibe Check card retains the approved student-facing slogan: **Pause. Breathe. Choose Your Next Move.**
+
+## 2026-08-07 12:05 PDT - Vibe Check page simplified
+
+- Removed the overlapping `The Experience`, `Meditation Practice`, and `For Families` framing that repeated similar benefits without distinct purpose.
+- The page now has a deliberate sequence: the invitation; `Inside Each Session`; `A Practice for Real Life`; and the community invitation.
+- Retained the organization tagline, `Grow from the Inside Out.`, only in the footer. Retained `Calm Inside. Strong Outside.` as the Vibe Check program promise.
+- The student-facing slogan, `Pause. Breathe. Choose Your Next Move.`, remains limited to the homepage Vibe Check card and is not used on the standalone meditation page.
+
+## 2026-08-07 12:20 PDT - Planned schedules communicated clearly
+
+- Vibe Check is publicly presented as a planned Monday/Tuesday schedule: 4:00–4:20 PM PT | 7:00–7:20 PM ET. The final session time will be confirmed with the community before the Fall cycle begins.
+- Resilience Lab is publicly presented as a planned Wednesday schedule: 3:30–4:30 PM PT | 6:30–7:30 PM ET. The final session time will be confirmed with enrolled families before the series begins.
+- This wording keeps expected logistics visible while allowing the final schedule to respond to actual participant availability.
+
+## 2026-08-07 12:30 PDT - Vibe Check schedule confirmed
+
+- Vibe Check has operated since summer at 4:00–4:20 PM PT | 7:00–7:20 PM ET on Mondays and Tuesdays. Its public pages now state this schedule directly, without tentative or confirmation language.
+- The enrollment-based final-time note remains only for the new Fall 2026 Resilience Lab series.
+
+## 2026-08-07 12:40 PDT - Stronger homepage outcomes and Vibe Check availability
+
+- Replaced the homepage hero pills with focused parent-recognized outcomes: `Focus & Follow-Through`, `Confidence Under Pressure`, and `Self-Control & Sound Judgment`.
+- Vibe Check now states `Ongoing community · Join anytime` above its established live schedule, making immediate access clear to new families.
+
+## 2026-08-07 12:50 PDT - Opportunity-card clarity
+
+- Updated the Vibe Check opportunity card label to `Ongoing Community · Join Anytime`.
+- Restructured the Stay Connected Resilience Lab card into distinct program-value and schedule paragraphs, including the clear final day/time confirmation note for enrolled families.
+- The Stay Connected Vibe Check card now explicitly states that it is an ongoing, free community and that students may join anytime.
+
+## 2026-08-07 13:15 PDT - Fall enrollment and ongoing meditation clarity
+
+- All Fall registration links now open the Google Form in a new tab with safe external-link handling, allowing families to keep the program page open while they register.
+- Replaced the vague phrase `A stronger weekly rhythm` with `Practice that supports real life`.
+- Vibe Check is now named `Ongoing Vibe Check meditation`, explicitly states that students may join anytime, and shows its current 20-minute Monday/Tuesday schedule.

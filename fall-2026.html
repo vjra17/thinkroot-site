@@ -48,7 +48,9 @@
     .card-title { color:var(--forest); font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:600; line-height:1.15; margin:0 0 18px; }
     .offer-line { display:flex; gap:12px; padding:11px 0; border-top:1px solid var(--border); color:var(--text); font-size:.91rem; }
     .offer-line:first-of-type { border-top:0; }
-.offer-line strong { color:var(--forest); min-width:92px; font-weight:600; }
+.offer-line strong { color:var(--forest); flex:0 0 112px; font-weight:600; }
+.offer-line span { flex:1; min-width:0; }
+.family-line { padding:8px 0; font-size:.82rem; line-height:1.5; }
 .offer-note { color:var(--text); font-size:.78rem; font-style:italic; line-height:1.45; margin:2px 0 16px; }
 .card-inclusions { color:var(--forest); font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin:20px 0 1px; }
 .price { color:var(--forest); font-family:'Playfair Display',serif; font-size:2.3rem; font-weight:600; margin:23px 0 0; line-height:1; }
@@ -98,7 +100,7 @@
     footer { background:#102713; color:rgba(255,255,255,.7); padding:28px 0; font-size:.78rem; }
     footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; }
     @media (max-width:1120px) { .nav-inner > .btn { display:none; } }
-    @media (max-width:1000px) { .nav-links { display:none; } .nav-inner > .btn { display:inline-flex; } }
+    @media (max-width:1000px) { .nav-links { display:none; } .nav-inner > .btn { display:inline-flex; } .hero-grid { grid-template-columns:1fr; } .offer-card { width:100%; max-width:620px; justify-self:center; } }
     @media (max-width:850px) { .hero-grid,.practice-grid { grid-template-columns:1fr; } .outcome-grid { grid-template-columns:1fr 1fr; } .hero { padding-top:75px; } }
     @media (max-width:580px) { .wrap { width:min(100% - 32px,1120px); } .nav-inner { min-height:65px; gap:8px; } .brand { font-size:1rem; } .nav-inner > .btn { padding:10px 11px; font-size:.61rem; white-space:nowrap; } .hero { padding:62px 0; } .section { padding:64px 0; } .parts,.included { grid-template-columns:1fr; } .outcome-grid { grid-template-columns:1fr; } .pathway { display:block; } .path-step + .path-step { border-left:1px solid rgba(255,255,255,.25); border-top:0; } .offer-line { display:block; } .offer-line strong { display:block; margin-bottom:2px; } }
   </style>
@@ -127,6 +129,10 @@
       <div class="offer-line"><strong>Format</strong><span>Live online · 60 minutes per session</span></div>
       <div class="offer-line"><strong>Both series</strong><span>10 sessions + 2 parent consultations + 2 local group experiences</span></div>
       <div class="offer-line"><strong>One series</strong><span>5 sessions + 1 parent consultation + 1 local group experience</span></div>
+      <p class="card-inclusions">What Families Receive</p>
+      <div class="offer-line family-line"><strong>Parent support</strong><span>One 20-minute parent consultation with each enrolled series</span></div>
+      <div class="offer-line family-line"><strong>Bay Area learning</strong><span>One local group experience with each enrolled series</span></div>
+      <div class="offer-line family-line"><strong>Free Vibe Check</strong><span>Free live online meditation available to all school-aged students, whether or not they enroll in Resilience Lab</span></div>
       <p class="price">$150 <small>complete Fall experience</small></p>
       <p class="price" style="font-size:1.65rem; margin-top:14px;">$100 <small>either five-session series</small></p>
     </aside>

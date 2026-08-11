@@ -116,14 +116,16 @@
   /* ── THE GAP ── */
   #program { background: var(--cream); }
   .two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  /* ── PROBLEM / OUTCOME TABLE (cream + gold) ── */
-  .po-table-wrap { margin-top: 3rem; border: 1px solid rgba(200,150,60,0.28); border-radius: 4px; overflow: hidden; background: rgba(250,248,242,0.7); }
-  .po-header { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; background: rgba(200,150,60,0.08); border-bottom: 1px solid rgba(200,150,60,0.2); padding: 0.7rem 1.5rem; }
-  .po-col-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); }
-  .po-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(200,150,60,0.1); align-items: start; }
-  .po-row:last-child { border-bottom: none; }
-  .po-problem { font-size: 0.93rem; color: var(--text); line-height: 1.65; font-weight: 400; }
-  .po-outcome { font-size: 0.93rem; color: var(--forest); line-height: 1.65; font-weight: 500; }
+  /* ── PROBLEM / OUTCOME CARDS ── */
+  .po-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; max-width: 1120px; margin: 3rem auto 0; align-items: stretch; }
+  .po-card { background: var(--white); border: 1px solid rgba(74,124,74,0.15); border-radius: 4px; padding: 2rem; }
+  .po-theme { font-family: 'Playfair Display', serif; font-size: 1.32rem; font-weight: 600; color: var(--forest); line-height: 1.25; margin-bottom: 1.5rem; }
+  .po-pair + .po-pair { border-top: 1px solid rgba(74,124,74,0.14); margin-top: 1.25rem; padding-top: 1.25rem; }
+  .po-pair-label { font-size: 0.64rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .po-notice-label { color: var(--gold); }
+  .po-builds-label { color: var(--sage); margin-top: 1rem; }
+  .po-problem { font-size: 0.9rem; color: var(--text); line-height: 1.65; font-weight: 400; }
+  .po-outcome { font-size: 0.9rem; color: var(--forest); line-height: 1.65; font-weight: 500; }
   .gap-intro { margin-top: 3rem; max-width: 760px; }
   .gap-stat-card { background: #fdf3e3; border-left: 4px solid var(--gold); border-radius: 4px; padding: 1.6rem 1.75rem; margin-top: 2rem; }
   .gap-stat-num { font-family: 'Playfair Display', serif; font-size: 3.2rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 0.75rem; }
@@ -496,6 +498,8 @@
     .tree-grid { grid-template-columns: 1fr 1fr; }
     .details-grid { grid-template-columns: 1fr 1fr; }
     .stories-track { grid-auto-columns: 100%; }
+    .po-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .po-card:last-child { grid-column: 1 / -1; width: calc(50% - 0.625rem); justify-self: center; }
   .program-outcomes { grid-template-columns: 1fr 1fr; }
   .programs-grid { grid-template-columns: 1fr; }
   .about-grid { gap: 2.5rem; }
@@ -520,6 +524,8 @@
     .details-grid { grid-template-columns: 1fr 1fr; }
     .details-grid.centered-offerings { grid-template-columns: 1fr; }
     .program-outcomes { grid-template-columns: 1fr; }
+    .po-cards { grid-template-columns: 1fr; }
+    .po-card:last-child { grid-column: auto; width: auto; }
     .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .about-avatar { max-width: 140px; }
   }
@@ -583,7 +589,7 @@
         <circle cx="100" cy="60" r="2" fill="#e8c078" opacity="0.7"/>
         <circle cx="116" cy="55" r="2.5" fill="#c8963c" opacity="0.85"/>
       </svg>
-      <div class="hero-quote">"Teach young people to understand themselves early, and you change how they meet the rest of their lives."</div>
+      <div class="hero-quote">“We cannot prepare young people for every outcome. We can prepare them to meet whatever comes with inner steadiness, clear judgment, and the courage to choose wisely.”</div>
       <div class="hero-quote-attr">— Tina Puri, Founder</div>
     </div>
   </div>
@@ -624,17 +630,52 @@
       <p class="section-body" style="margin-top:3.5rem;">A student can be capable, motivated, and well supported—and still struggle to use what they know when a test feels overwhelming, an assignment becomes difficult, a mistake shakes their confidence, or emotions take over. <strong>ThinkRoot fills that gap.</strong></p>
     </div>
   </div>
-  <div class="po-table-wrap">
-    <div class="po-header">
-      <div class="po-col-label">What Parents Notice</div>
-      <div class="po-col-label">What ThinkRoot Builds</div>
-    </div>
-    <div class="po-row"><div class="po-problem">Pressure before a test, performance, or unfamiliar challenge makes it difficult to use what they know</div><div class="po-outcome">Tools for regulating stress and returning attention to the task in front of them</div></div>
-    <div class="po-row"><div class="po-problem">A mistake shakes confidence or turns one difficult moment into a larger setback</div><div class="po-outcome">The ability to recover, learn from the moment, and continue with purpose</div></div>
-    <div class="po-row"><div class="po-problem">Difficult work leads to avoidance, shutdown, or giving up too quickly</div><div class="po-outcome">A practical way to identify the next step and sustain effort when progress is slow</div></div>
-    <div class="po-row"><div class="po-problem">Frustration rises quickly and takes over the next reaction</div><div class="po-outcome">The capacity to pause, understand what is happening, and choose a more effective response</div></div>
-    <div class="po-row"><div class="po-problem">Screens, notifications, and digital habits repeatedly pull attention away from priorities</div><div class="po-outcome">More intentional technology habits that protect focus, rest, and follow-through</div></div>
-    <div class="po-row"><div class="po-problem">Overthinking and unhelpful self-talk drain energy, confidence, and concentration</div><div class="po-outcome">The skill to examine a thought and choose one that is more accurate, constructive, and useful</div></div>
+  <div class="po-cards" aria-label="What parents notice and what ThinkRoot builds">
+    <article class="po-card">
+      <h3 class="po-theme">Pressure &amp; Recovery</h3>
+      <div class="po-pair">
+        <div class="po-pair-label po-notice-label">What Parents Notice</div>
+        <p class="po-problem">Pressure before a test, performance, or unfamiliar challenge makes it difficult to use what they know</p>
+        <div class="po-pair-label po-builds-label">What ThinkRoot Builds</div>
+        <p class="po-outcome">Tools for regulating stress and returning attention to the task in front of them</p>
+      </div>
+      <div class="po-pair">
+        <div class="po-pair-label po-notice-label">What Parents Notice</div>
+        <p class="po-problem">A mistake shakes confidence or turns one difficult moment into a larger setback</p>
+        <div class="po-pair-label po-builds-label">What ThinkRoot Builds</div>
+        <p class="po-outcome">The ability to recover, learn from the moment, and continue with purpose</p>
+      </div>
+    </article>
+    <article class="po-card">
+      <h3 class="po-theme">Focus &amp; Follow-Through</h3>
+      <div class="po-pair">
+        <div class="po-pair-label po-notice-label">What Parents Notice</div>
+        <p class="po-problem">Difficult work leads to avoidance, shutdown, or giving up too quickly</p>
+        <div class="po-pair-label po-builds-label">What ThinkRoot Builds</div>
+        <p class="po-outcome">A practical way to identify the next step and sustain effort when progress is slow</p>
+      </div>
+      <div class="po-pair">
+        <div class="po-pair-label po-notice-label">What Parents Notice</div>
+        <p class="po-problem">Screens, notifications, and digital habits repeatedly pull attention away from priorities</p>
+        <div class="po-pair-label po-builds-label">What ThinkRoot Builds</div>
+        <p class="po-outcome">More intentional technology habits that protect focus, rest, and follow-through</p>
+      </div>
+    </article>
+    <article class="po-card">
+      <h3 class="po-theme">Self-Regulation &amp; Thinking</h3>
+      <div class="po-pair">
+        <div class="po-pair-label po-notice-label">What Parents Notice</div>
+        <p class="po-problem">Frustration rises quickly and takes over the next reaction</p>
+        <div class="po-pair-label po-builds-label">What ThinkRoot Builds</div>
+        <p class="po-outcome">The capacity to pause, understand what is happening, and choose a more effective response</p>
+      </div>
+      <div class="po-pair">
+        <div class="po-pair-label po-notice-label">What Parents Notice</div>
+        <p class="po-problem">Overthinking and unhelpful self-talk drain energy, confidence, and concentration</p>
+        <div class="po-pair-label po-builds-label">What ThinkRoot Builds</div>
+        <p class="po-outcome">The skill to examine a thought and choose one that is more accurate, constructive, and useful</p>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -809,13 +850,14 @@
       <div class="about-avatar"><img src="assets/tina.jpeg" alt="Tina Puri, Founder &amp; Program Director, ThinkRoot" /></div>
     </div>
     <div>
-      <p class="section-body">Tina Puri is the Founder and Program Director of ThinkRoot Young Leaders, a Certified Wellness Educator, and a Senior Peer Counselor for the cities of Fremont, Union City, and Newark. She brings more than 22 years of professional experience in technology together with extensive experience in youth development, wellness, and community-based programs.</p>
-      <p class="section-body" style="margin-top:1rem;">Her work with young people began through years of volunteering in schools and community programs while her children were growing up. About 15 years ago, a personal health challenge led her to a deeper study of wellness, mindfulness, and the mind-body connection, and that experience gradually reshaped the direction of her work.</p>
-      <p class="section-body" style="margin-top:1rem;">Since then, Tina has founded and led student well-being initiatives across elementary, middle, and high-school settings, including stress-management, yoga, and gratitude programs. She has also mentored students through HOSA, speech and debate programs across Fremont Unified School District, and Stanford Challenge Success.</p>
-      <p class="section-body" style="margin-top:1rem;">Tina co-founded Rewired to Inspire with Fremont high-school students, a four-year intergenerational service initiative recognized by Tri-City Voice and Congressman Michael M. Honda.</p>
-      <p class="section-body" style="margin-top:1rem;">ThinkRoot brings together her systems-thinking background, wellness education, and years of direct work with young people to help students build the skills to meet school, relationships, pressure, and life with greater awareness, resilience, and sound judgment.</p>
+      <p class="section-body">Tina Puri is the Founder and Program Director of ThinkRoot Young Leaders, a Wellness Educator and Coach, and a Senior Peer Counselor for the cities of Fremont, Union City, and Newark. She brings more than 22 years of experience as a software professional together with extensive work in wellness education, youth development, and community leadership.</p>
+      <p class="section-body" style="margin-top:1rem;">Her work with young people began through years of involvement in schools and community programs while her children were growing up. About 15 years ago, a personal health challenge led her into a deeper exploration of wellness, mindfulness, and the mind-body connection, gradually reshaping the direction of her work.</p>
+      <p class="section-body" style="margin-top:1rem;">Since then, Tina has founded and led student well-being initiatives across elementary, middle, and high-school settings, including stress-management, yoga, and gratitude programs. She has mentored students through HOSA – Future Health Professionals, speech and debate across Fremont Unified School District, Stanford Challenge Success, and Scout programs.</p>
+      <p class="section-body" style="margin-top:1rem;">Since 2019, Tina has also worked with adults and seniors through group programs, online sessions, and individual wellness coaching, including a weekly wellness group serving 40–45 seniors.</p>
+      <p class="section-body" style="margin-top:1rem;">She co-founded Rewired to Inspire with Fremont high-school students, a four-year intergenerational initiative recognized by Tri-City Voice and Congressman Michael M. Honda.</p>
+      <p class="section-body" style="margin-top:1rem;">ThinkRoot brings together her systems-thinking background, wellness education, and experience working across generations to help young people build the awareness, resilience, and judgment to meet life well.</p>
       <div class="about-note">
-        <p>"I teach this because I have seen how deeply these skills can change a life. ThinkRoot grew from years of study, practice, and direct work with students and families — turning what I have learned into practical tools young people can use in real life."</p>
+        <p>“Life taught me that the skills we need most are often the ones we learn too late — how to know ourselves, master our minds, and live with purpose. ThinkRoot grew from a desire to give young people those tools earlier, while they are still becoming who they will be.”</p>
       </div>
     </div>
   </div>

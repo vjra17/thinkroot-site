@@ -43,8 +43,9 @@
   .nav-links { display: flex; gap: 1rem; align-items: center; }
   .nav-links a { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; font-weight: 500; color: var(--text-mid); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; padding-bottom: 2px; border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s; }
   .nav-links a:hover { color: var(--forest); border-bottom-color: var(--sage); }
-  @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { gap: 0.65rem; } .nav-links a { font-size:0.63rem; } }
-  @media (max-width: 768px) { .nav-links { display: none; } }
+  @media (max-width: 1100px) { nav { padding: 0.85rem 1rem; gap: 0.75rem; } .nav-logo { font-size: 1rem; } .nav-links { gap: 0.55rem; } .nav-links a { font-size: 0.56rem; letter-spacing: 0.04em; } .nav-cta { display: none; } }
+  @media (max-width: 900px) { nav { padding: 1rem 1.5rem; } .nav-links { gap: 0.65rem; } .nav-links a { font-size: 0.63rem; } }
+  @media (max-width: 768px) { .nav-links { display: none; } .nav-cta { display: inline-block; } }
 
   /* ── HERO ── */
   .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; }
@@ -179,6 +180,12 @@
   /* ── MIST SECTIONS ── */
   .details-section { background: var(--mist); }
   .details-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .details-grid.centered-offerings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .detail-card { background: var(--white); border: 1px solid var(--mint); border-radius: 4px; padding: 1.75rem 1.5rem; }
   .detail-icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
   .detail-value { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--forest); margin-bottom: 0.4rem; line-height: 1.2; }
@@ -281,6 +288,8 @@
   .program-includes-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.8rem; }
   .program-include { display: flex; gap: 8px; font-size: 0.9rem; color: var(--text-mid); line-height: 1.55; font-weight: 300; margin-bottom: 0.65rem; }
   .program-include::before { content: '✓'; color: var(--sage); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
+  .program-include-detail { display: grid; grid-template-columns: 18px minmax(108px, 0.38fr) minmax(0, 1fr); column-gap: 8px; align-items: start; }
+  .program-include-detail strong { color: var(--text-mid); font-weight: 500; }
   .program-price { margin-top: auto; padding-top: 1.35rem; border-top: 1px solid rgba(74,124,74,0.12); display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
   .price-value { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--forest); }
   .price-note { font-size: 0.78rem; color: var(--text-light); font-weight: 300; margin-top: 0.25rem; line-height: 1.5; }
@@ -505,9 +514,14 @@
     .check-group-col { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
+    nav { gap: 0.6rem; padding: 0.8rem 1rem; }
+    .nav-logo { font-size: 0.98rem; }
+    .nav-cta { padding: 0.5rem 0.7rem; font-size: 0.68rem; white-space: nowrap; }
+    .program-include-detail { grid-template-columns: 18px minmax(92px, 0.36fr) minmax(0, 1fr); column-gap: 6px; }
     .learn-grid { grid-template-columns: 1fr; }
     .tree-grid { grid-template-columns: 1fr; }
     .details-grid { grid-template-columns: 1fr 1fr; }
+    .details-grid.centered-offerings { grid-template-columns: 1fr; }
     .program-outcomes { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .about-avatar { max-width: 140px; }
@@ -524,8 +538,8 @@
     <a href="resilience-lab.html">Resilience Lab</a>
     <a href="vibe-check.html">Free Meditation</a>
     <a href="#community">Leadership &amp; Service</a>
-    <a href="#about">About Tina</a>
-    <a href="#connect">Stay Connected</a>
+    <a href="#about">About</a>
+    <a href="#connect">Contact</a>
   </div>
   <a href="fall-2026.html" class="nav-cta">Begin Fall Enrollment</a>
 </nav>
@@ -535,7 +549,7 @@
   <div class="hero-left">
     <div class="hero-eyebrow fade-up delay-1">The real-world skills schools don’t teach</div>
     <h1 class="hero-h1 fade-up delay-2">Help Your Child Build the Focus, Confidence, and Judgment to <em>Thrive in a Changing World.</em></h1>
-    <p class="hero-tagline fade-up delay-3">ThinkRoot equips students to become more resilient: to manage pressure, build emotional steadiness, stay focused, develop healthy habits, and make thoughtful decisions that support their goals and well-being.</p>
+    <p class="hero-tagline fade-up delay-3">ThinkRoot develops the skills behind academic performance, extracurricular success, healthy relationships, and thoughtful decision-making — so students can stay steady under pressure, adapt to challenges, and move forward with confidence.</p>
     <div class="hero-meta fade-up delay-4">
       <span class="pill pill-forest">Focus &amp; Follow-Through</span>
       <span class="pill pill-forest">Confidence Under Pressure</span>
@@ -571,7 +585,7 @@
         <circle cx="100" cy="60" r="2" fill="#e8c078" opacity="0.7"/>
         <circle cx="116" cy="55" r="2.5" fill="#c8963c" opacity="0.85"/>
       </svg>
-      <div class="hero-quote">"Teach a young person to understand themselves early, and you change the way they meet life."</div>
+      <div class="hero-quote">"Teach young people to understand themselves early, and you change how they meet the rest of their lives."</div>
       <div class="hero-quote-attr">— Tina Puri, Founder</div>
     </div>
   </div>
@@ -579,7 +593,7 @@
 
 <!-- ── GOLD STRIP ── -->
   <div class="problem-strip">
-  Grades and goals are only half the story. ThinkRoot helps students build the judgment, responsibility, and emotional steadiness that shape how they handle everything else.
+  Grades and goals are only part of the story. Students also need the skills to stay focused, recover, adapt, and make sound decisions when life gets hard.
 </div>
 
 <section class="spotlight-strip">
@@ -606,43 +620,23 @@
     <div>
       <div class="section-label">The gap</div>
       <h2 class="section-h2">Students are taught how to perform. Rarely how to stay steady when things get hard.</h2>
-      <p class="section-body">Focus, self-talk, emotional responses, and self-belief shape everything from school performance to confidence and decision-making. Yet almost no one teaches students what to do when those patterns start working against them.</p>
+      <p class="section-body">School teaches knowledge. Sports, music, robotics, tutoring, and other activities develop specific abilities. Students are rarely taught how to manage the attention, pressure, frustration, self-talk, impulses, and recovery they bring into all of them.</p>
     </div>
     <div>
-      <p class="section-body" style="margin-top:3.5rem;">ThinkRoot fills that gap. Students learn practical skills for handling stressful moments, thoughts, emotions, and reactions in school, sports, friendships, and everyday life.</p>
-      <div class="gap-stat-card">
-        <div class="gap-stat-num">42%</div>
-        <div class="gap-stat-body">of high school students report persistent sadness or hopelessness.</div>
-        <div class="gap-stat-source"><em>CDC Youth Risk Behavior Survey</em></div>
-      </div>
+      <p class="section-body" style="margin-top:3.5rem;">A student can be capable, motivated, and well supported—and still struggle to use what they know when a test feels overwhelming, an assignment becomes difficult, a mistake shakes their confidence, or emotions take over. <strong>ThinkRoot fills that gap.</strong></p>
     </div>
-  </div>
-  <div class="gap-proof-band">
-    <div class="gap-proof-num">4 of 5</div>
-    <div class="gap-proof-body">of the most in-demand workplace skills are human skills like self-awareness, resilience, flexibility, and agility. <strong>Yet schools rarely teach them directly.</strong></div>
-    <div class="gap-proof-source">Harvard Business Publishing · 2024</div>
   </div>
   <div class="po-table-wrap">
     <div class="po-header">
       <div class="po-col-label">What Parents Notice</div>
       <div class="po-col-label">What ThinkRoot Builds</div>
     </div>
-    <div class="po-row">
-      <div class="po-problem">Anxiety, self-doubt, or pressure rises quickly and no one has shown them what to do</div>
-      <div class="po-outcome">The ability to recognize it early and know exactly how to respond</div>
-    </div>
-    <div class="po-row">
-      <div class="po-problem">Negative thought loops quietly drain energy, focus, and confidence</div>
-      <div class="po-outcome">The skill to notice, interrupt, and redirect a limiting thought on their own</div>
-    </div>
-    <div class="po-row">
-      <div class="po-problem">Hard moments quickly become frustration, shutdown, or overreaction</div>
-      <div class="po-outcome">A repeatable process they can use any time, anywhere — without relying on an adult</div>
-    </div>
-    <div class="po-row">
-      <div class="po-problem">Believing their reactions are something that just happen to them</div>
-      <div class="po-outcome">Understanding that thoughts, feelings, and responses are not fixed — they can be worked with and changed.</div>
-    </div>
+    <div class="po-row"><div class="po-problem">Pressure before a test, performance, or unfamiliar challenge makes it difficult to use what they know</div><div class="po-outcome">Tools for regulating stress and returning attention to the task in front of them</div></div>
+    <div class="po-row"><div class="po-problem">A mistake shakes confidence or turns one difficult moment into a larger setback</div><div class="po-outcome">The ability to recover, learn from the moment, and continue with purpose</div></div>
+    <div class="po-row"><div class="po-problem">Difficult work leads to avoidance, shutdown, or giving up too quickly</div><div class="po-outcome">A practical way to identify the next step and sustain effort when progress is slow</div></div>
+    <div class="po-row"><div class="po-problem">Frustration rises quickly and takes over the next reaction</div><div class="po-outcome">The capacity to pause, understand what is happening, and choose a more effective response</div></div>
+    <div class="po-row"><div class="po-problem">Screens, notifications, and digital habits repeatedly pull attention away from priorities</div><div class="po-outcome">More intentional technology habits that protect focus, rest, and follow-through</div></div>
+    <div class="po-row"><div class="po-problem">Overthinking and unhelpful self-talk drain energy, confidence, and concentration</div><div class="po-outcome">The skill to examine a thought and choose one that is more accurate, constructive, and useful</div></div>
   </div>
 </section>
 
@@ -650,12 +644,11 @@
 <section class="learn-section">
   <div class="section-label">Why It Matters</div>
   <h2 class="section-h2">The missing layer behind academics, sports, and confidence.</h2>
-  <p class="section-body" style="color:rgba(168,213,168,0.85); margin-bottom:1rem;">Families invest in tutors, sports, enrichment, and opportunity. But students are rarely taught how to recover after mistakes, redirect negative thinking, or regulate themselves in hard moments.</p>
-  <p class="section-body" style="color:rgba(168,213,168,0.85); margin-bottom:1rem;">Those patterns shape focus, confidence, relationships, sleep, and the way students respond when expectations rise. If they are never taught, students are left to learn by trial and error.</p>
-  <p class="section-body" style="color:rgba(168,213,168,0.85); margin-bottom:1rem;"><strong style="color:var(--gold-light);">The science is clear: patterns students are not taught to work with early do not simply disappear.</strong> Over time, they shape behavior, relationships, and well-being.</p>
+  <p class="section-body" style="color:rgba(168,213,168,0.85); margin-bottom:1rem;">Families invest deeply in education, tutoring, sports, technology, music, and enrichment. Those opportunities matter. A student’s ability to benefit from them also depends on how they manage attention, discouragement, impulses, mistakes, and strong emotions.</p>
+  <p class="section-body" style="color:rgba(168,213,168,0.85); margin-bottom:1rem;">ThinkRoot does not compete with academics, sports, robotics, music, or other enrichment. It strengthens the skills students use across all of them.</p>
   <div class="wake-box">
-    <div class="wake-quote">Most adults are still running on thought patterns formed before age ten.</div>
-    <p class="wake-line">The best time to build these skills is now — before the patterns harden, before the stakes get higher, and before the baggage gets heavy.</p>
+    <div class="wake-quote">Knowledge matters. So does the ability to use it when the moment is difficult.</div>
+    <p class="wake-line">ThinkRoot helps students build that capacity through clear teaching, guided practice, reflection, and real-life application.</p>
   </div>
 </section>
 
@@ -663,41 +656,8 @@
 <section>
   <div class="section-label">What makes ThinkRoot different</div>
   <h2 class="section-h2">Not just coping skills. A practical system students can build on.</h2>
-  <p class="section-body">ThinkRoot does not stop at behavior correction. <strong>ThinkRoot goes deeper — to the root cause.</strong> It teaches students what to do with stress responses, self-talk, emotional habits, and the stories they tell themselves about difficulty.</p>
-  <p class="section-body" style="margin-top:1.25rem;">That is why the gains show up beyond one hard moment. Students recover faster, respond with more clarity, and build practical skills that support school, relationships, confidence, and resilience.</p>
-  <div class="details-grid" style="margin-top:2rem;">
-    <div class="detail-card">
-      <span class="detail-icon">📚</span>
-      <div class="detail-value">Academic focus and performance</div>
-      <div class="detail-label">Improved focus, reduced distraction, and stronger follow-through in school and other areas that require concentration.</div>
-    </div>
-    <div class="detail-card">
-      <span class="detail-icon">💪</span>
-      <div class="detail-value">Emotional resilience in hard moments</div>
-      <div class="detail-label">Reduced stress, less rumination, and more steadiness when challenges arise.</div>
-    </div>
-    <div class="detail-card">
-      <span class="detail-icon">🤝</span>
-      <div class="detail-value">Quality of friendships and relationships</div>
-      <div class="detail-label">Greater empathy, kindness, perspective-taking, and prosocial behavior.</div>
-    </div>
-    <div class="detail-card">
-      <span class="detail-icon">😴</span>
-      <div class="detail-value">Physical health and sleep quality</div>
-      <div class="detail-label">Less hyperactivity, better self-control, and improved physical regulation.</div>
-    </div>
-    <div class="detail-card">
-      <span class="detail-icon">🧠</span>
-      <div class="detail-value">Self-awareness and confidence</div>
-      <div class="detail-label">Stronger self-awareness, healthier self-talk, and more grounded confidence.</div>
-    </div>
-    <div class="detail-card">
-      <span class="detail-icon">🌱</span>
-      <div class="detail-value">Long-term career and life outcomes</div>
-      <div class="detail-label">EQ predicts adult success more reliably than IQ alone — Harvard and Stanford research.</div>
-    </div>
-  </div>
-  <p style="font-size:0.78rem; color:var(--text-light); font-style:italic; margin-top:1.5rem; font-weight:300;">Research grounding includes work from UC Berkeley Greater Good Science Center, Harvard, Stanford, Yale, HeartMath, and child-development studies.</p>
+  <p class="section-body">Students learn to recognize what may be shaping behavior—attention, self-talk, emotion, body signals, habits, interpretation, and impulse—and practice a more effective response.</p>
+  <p class="section-body" style="margin-top:1.25rem;">The goal is not simply to get through one hard moment. It is to build a practical system students can use across school, activities, relationships, and daily decisions.</p>
 </section>
 
 <!-- ── THE AAA FRAMEWORK ── -->
@@ -708,72 +668,18 @@
   <div class="learn-grid">
     <div class="learn-card">
       <div class="detail-icon" style="margin-bottom:0.6rem;">🌱</div>
-      <div class="learn-title">Build</div>
-      <div class="learn-desc">Students develop greater confidence, steadiness, and resilience in how they respond to challenges.</div>
+      <div class="learn-title">Understand</div>
+      <div class="learn-desc">Students learn how attention, thoughts, emotions, body signals, habits, and impulses influence performance and behavior.</div>
     </div>
     <div class="learn-card">
       <div class="detail-icon" style="margin-bottom:0.6rem;">🔁</div>
       <div class="learn-title">Practice</div>
-      <div class="learn-desc">They learn skills through guided exercises, reflection, and repetition so the work becomes natural over time.</div>
+      <div class="learn-desc">They work with concrete tools through guided exercises, discussion, reflection, and repetition.</div>
     </div>
     <div class="learn-card">
       <div class="detail-icon" style="margin-bottom:0.6rem;">🚀</div>
       <div class="learn-title">Apply</div>
-      <div class="learn-desc">They begin using those skills in real life at school, in sports, in friendships, and at home.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CURRENT LEARNING OPPORTUNITIES ── -->
-<section id="program">
-  <div class="section-label">Current Learning Opportunities</div>
-  <h2 class="section-h2">Practical support for where your school-aged student is right now.</h2>
-  <p class="section-body">Choose a deeper guided experience through Resilience Lab, free twice-weekly live online meditations with <strong>Vibe Check: Mindful Moment</strong>, or both. Each offering helps young people practice skills that matter in everyday life.</p>
-  <div class="programs-grid">
-    <div class="program-card">
-      <div class="program-type">Enrollment Open · Begins September 9</div>
-      <div class="program-name">Resilience Lab</div>
-      <div class="program-includes-label" style="margin-top:0.75rem;">ThinkRoot's guided skills program</div>
-      <div class="program-duration">A live, ten-session online pathway for students who are ready to strengthen focus, confidence under pressure, self-control, healthy habits, and everyday decision-making.</div>
-      <div class="program-meta">
-        <span class="pill pill-forest">Grades 4–9</span>
-        <span class="pill pill-mist">Planned Wednesdays on Zoom</span>
-      </div>
-      <div class="program-divider"></div>
-      <div class="program-includes-label">A complete family experience</div>
-      <div class="program-include">Two five-session series with practical learning, discussion, reflection, and guided practice</div>
-      <div class="program-include">Two parent consultations and two local Bay Area group experiences</div>
-      <div class="program-include">A clear pathway for building skills that support school, relationships, and daily life</div>
-      <div class="program-price">
-        <div>
-          <div class="price-value">Explore the complete program</div>
-          <div class="price-note">Dates, curriculum, family support, and registration</div>
-        </div>
-        <a href="fall-2026.html" class="btn-secondary">Explore Fall Enrollment</a>
-      </div>
-    </div>
-    <div class="program-card">
-      <div class="program-type">Ongoing Free Meditation · Join Now</div>
-      <div class="program-name">Vibe Check: Mindful Moment</div>
-      <div class="program-duration">A welcoming online meditation community where all school-aged students practice calm attention, reflect on everyday life, and return to what matters.</div>
-      <div class="program-meta">
-        <span class="pill pill-forest">Who: All School-Aged Students</span>
-        <span class="pill pill-mist">Mondays and Tuesdays · 20 Minutes</span>
-      </div>
-      <div class="program-divider"></div>
-      <div class="program-includes-label">Meditation students can use in real life</div>
-      <div class="program-include"><strong>Format:</strong> Live online group meditations.</div>
-      <div class="program-include"><strong>When:</strong> 4:00–4:20 PM PT | 7:00–7:20 PM ET.</div>
-      <div class="program-include"><strong>Focus and Calm:</strong> Simple guided mindfulness practices for better attention.</div>
-      <div class="program-include"><strong>Daily Tools:</strong> Short, relevant ideas students can carry into school and home.</div>
-      <div class="program-include"><strong>Open Access:</strong> Welcome to all students, whether or not they join Resilience Lab.</div>
-      <div class="program-price">
-        <div>
-          <div class="price-value">Pause. Breathe. Choose Your Next Move.</div>
-          <div class="price-note">A free community for mindful moments</div>
-        </div>
-        <a href="vibe-check.html" class="btn-secondary">Join Free Meditation</a>
-      </div>
+      <div class="learn-desc">They use those tools in real situations at school, in activities, in friendships, and at home.</div>
     </div>
   </div>
 </section>
@@ -841,6 +747,60 @@
   </div>
 </section>
 
+<!-- ── CURRENT LEARNING OPPORTUNITIES ── -->
+<section id="program">
+  <div class="section-label">Current Learning Opportunities</div>
+  <h2 class="section-h2">Practical support for where your school-aged student is right now.</h2>
+  <p class="section-body">Choose a deeper guided experience through Resilience Lab, free twice-weekly live online meditations with <strong>Vibe Check: Mindful Moment</strong>, or both. Each offering helps young people practice skills that matter in everyday life.</p>
+  <div class="programs-grid">
+    <div class="program-card">
+      <div class="program-type">Enrollment Open · Begins September 9</div>
+      <div class="program-name">Resilience Lab</div>
+      <div class="program-includes-label" style="margin-top:0.75rem;">ThinkRoot's guided skills program</div>
+      <div class="program-duration">A live, ten-session online pathway for students who are ready to strengthen focus, confidence under pressure, self-control, healthy habits, and everyday decision-making.</div>
+      <div class="program-meta">
+        <span class="pill pill-forest">Grades 4–9</span>
+        <span class="pill pill-mist">Planned Wednesdays on Zoom</span>
+      </div>
+      <div class="program-divider"></div>
+      <div class="program-includes-label">A complete family experience</div>
+      <div class="program-include">Two five-session series with practical learning, discussion, reflection, and guided practice</div>
+      <div class="program-include">One parent consultation and one local Bay Area group experience for each enrolled series</div>
+      <div class="program-include">A clear pathway for building skills that support school, relationships, and daily life</div>
+      <div class="program-price">
+        <div>
+          <div class="price-value">$150 complete · $100 either series</div>
+          <div class="price-note">Dates, curriculum, family support, and enrollment</div>
+        </div>
+        <a href="fall-2026.html" class="btn-secondary">Explore Fall Enrollment</a>
+      </div>
+    </div>
+    <div class="program-card">
+      <div class="program-type">Ongoing Free Meditation · Join Now</div>
+      <div class="program-name">Vibe Check: Mindful Moment</div>
+      <div class="program-duration">A welcoming online meditation community where all school-aged students practice calm attention, reflect on everyday life, and return to what matters.</div>
+      <div class="program-meta">
+        <span class="pill pill-forest">Who: All School-Aged Students</span>
+        <span class="pill pill-mist">Mondays and Tuesdays · 20 Minutes</span>
+      </div>
+      <div class="program-divider"></div>
+      <div class="program-includes-label">Meditation students can use in real life</div>
+      <div class="program-include program-include-detail"><strong>Format:</strong><span>Live online group meditations.</span></div>
+      <div class="program-include program-include-detail"><strong>When:</strong><span>4:00–4:20 PM PT | 7:00–7:20 PM ET.</span></div>
+      <div class="program-include program-include-detail"><strong>Focus and Calm:</strong><span>Simple guided mindfulness practices for better attention.</span></div>
+      <div class="program-include program-include-detail"><strong>Daily Tools:</strong><span>Short, relevant ideas students can carry into school and home.</span></div>
+      <div class="program-include program-include-detail"><strong>Open Access:</strong><span>Welcome to all students, whether or not they join Resilience Lab.</span></div>
+      <div class="program-price">
+        <div>
+          <div class="price-value">Pause. Breathe. Choose Your Next Move.</div>
+          <div class="price-note">A free community for mindful moments</div>
+        </div>
+        <a href="vibe-check.html" class="btn-secondary">Join Free Meditation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── ABOUT ── -->
 <section class="about-section" id="about">
   <div class="section-label">Meet the founder</div>
@@ -851,11 +811,13 @@
       <div class="about-avatar"><img src="assets/tina.jpeg" alt="Tina Puri, Founder &amp; Program Director, ThinkRoot" /></div>
     </div>
     <div>
-      <p class="section-body">Tina Puri is a Certified Wellness Educator and Senior Peer Counselor for the cities of Fremont, Union City, and Newark, and a former software professional with more than 20 years of experience. She brings both scientific rigor and deep hands-on teaching experience to ThinkRoot.</p>
-      <p class="section-body" style="margin-top:1rem;">She has worked directly with children, teens, adults, and seniors across schools and community settings, including high school stress-management programming, elementary and middle school character development, HOSA mentoring, and Stanford Challenge Success volunteering.</p>
-      <p class="section-body" style="margin-top:1rem;">The result is a program shaped by real teaching practice, not theory alone.</p>
+      <p class="section-body">Tina Puri is the Founder and Program Director of ThinkRoot Young Leaders, a Certified Wellness Educator, and a Senior Peer Counselor for the cities of Fremont, Union City, and Newark. She brings more than 22 years of professional experience in technology together with extensive experience in youth development, wellness, and community-based programs.</p>
+      <p class="section-body" style="margin-top:1rem;">Her work with young people began through years of volunteering in schools and community programs while her children were growing up. About 15 years ago, a personal health challenge led her to a deeper study of wellness, mindfulness, and the mind-body connection, and that experience gradually reshaped the direction of her work.</p>
+      <p class="section-body" style="margin-top:1rem;">Since then, Tina has founded and led student well-being initiatives across elementary, middle, and high-school settings, including stress-management, yoga, and gratitude programs. She has also mentored students through HOSA, speech and debate programs across Fremont Unified School District, and Stanford Challenge Success.</p>
+      <p class="section-body" style="margin-top:1rem;">Tina co-founded Rewired to Inspire with Fremont high-school students, a four-year intergenerational service initiative recognized by Tri-City Voice and Congressman Michael M. Honda.</p>
+      <p class="section-body" style="margin-top:1rem;">ThinkRoot brings together her systems-thinking background, wellness education, and years of direct work with young people to help students build the skills to meet school, relationships, pressure, and life with greater awareness, resilience, and sound judgment.</p>
       <div class="about-note">
-        <p>"I teach this because I have seen how deeply these skills can change a life. ThinkRoot is the result of years of personal practice, scientific translation, and direct work with real students and families."</p>
+        <p>"I teach this because I have seen how deeply these skills can change a life. ThinkRoot grew from years of study, practice, and direct work with students and families — turning what I have learned into practical tools young people can use in real life."</p>
       </div>
     </div>
   </div>
@@ -865,17 +827,16 @@
 <section class="community-section" id="community">
   <div class="section-label">The ThinkRoot Community Projects</div>
   <h2 class="section-h2">Leadership through real-world contribution.</h2>
-  <p class="section-body community-intro">After completing a ThinkRoot program, students may have opportunities to turn their learning into meaningful contribution through school clubs, youth groups, and local community projects.</p>
+  <p class="section-body community-intro">Leadership and service opportunities are available for interested students. Contact ThinkRoot for more details.</p>
 
   <div class="community-pillars">
     <div class="community-card">
-      <div class="community-card-label">Future Pathway</div>
-      <div class="community-card-title">A next step for leadership, service, and real-world experience.</div>
-      <div class="community-card-body">These experiences help students build communication, confidence, responsibility, and leadership through action.</div>
-      <div class="community-card-body" style="margin-top:1rem;">Where appropriate, opportunities may also contribute toward volunteer service hours while helping students make a meaningful difference in their school, youth group, or local community.</div>
+      <div class="community-card-label">Student Opportunities</div>
+      <div class="community-card-title">Leadership and service through real-world contribution.</div>
+      <div class="community-card-body">Students can apply ThinkRoot skills through meaningful leadership and service in school and community settings. Opportunities may include school clubs, Scouts, youth groups, community organizations, and student-led mindfulness or well-being activities with guidance.</div>
       <a href="#connect" class="whatsapp-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Stay connected with ThinkRoot →
+        Contact ThinkRoot →
       </a>
     </div>
   </div>
@@ -914,7 +875,7 @@
 
     <details class="faq-item">
       <summary>My child is already doing well in school. Do they still need this?</summary>
-      <div class="faq-answer">Academic performance and inner resilience are two different things. A child can have strong grades and still shut down under pressure, give up after a mistake, or struggle with self-doubt and anxiety. ThinkRoot builds the layer underneath performance — so everything your child already does works better, and holds up when things get hard.</div>
+      <div class="faq-answer">Academic performance and the skills that support performance are not the same. A child can have strong grades and still shut down under pressure, give up after a mistake, or struggle with self-doubt. ThinkRoot develops the focus, regulation, recovery, and judgment students need when things get hard.</div>
     </details>
 
     <details class="faq-item">
@@ -924,12 +885,12 @@
 
     <details class="faq-item">
       <summary>Where are sessions held?</summary>
-      <div class="faq-answer">Fall 2026 Resilience Lab meets live online on Zoom each Wednesday, 3:30–4:30 PM PT | 6:30–7:30 PM ET. Enrolled families will also receive details about the local Bay Area group experiences included with the Fall pathway.</div>
+      <div class="faq-answer">For Fall 2026, we are currently planning live Zoom sessions on Wednesdays, 3:30–4:30 PM PT | 6:30–7:30 PM ET. Families should still submit the enrollment form if that time does not work; the final schedule will be confirmed after family availability has been reviewed. Enrolled families will also receive details about the local Bay Area group experience connected with each enrolled series.</div>
     </details>
 
     <details class="faq-item">
       <summary>What happens after I submit a registration request?</summary>
-      <div class="faq-answer">Tina will review your request and follow up personally with next steps. Registration is confirmed after the family has received the enrollment details and completed payment.</div>
+      <div class="faq-answer">ThinkRoot will review your request and follow up with next steps. Enrollment is confirmed after the family has received the program details and completed payment.</div>
     </details>
 
   </div>
@@ -939,12 +900,14 @@
 <section class="cta-section" id="connect">
   <div class="section-label">Stay Connected with ThinkRoot</div>
   <h2 class="cta-h2">Support that meets students where real life happens.</h2>
-  <p class="cta-sub">Enroll in Fall Resilience Lab for a complete guided pathway, or join Vibe Check now for free, live online meditation open to all school-aged students.</p>
-  <div class="details-grid" style="margin-top:2rem; text-align:left;">
+  <p class="cta-sub">Questions about Resilience Lab, Leadership &amp; Service, or the best next step for your family? Contact ThinkRoot directly.</p>
+  <p class="cta-info"><a href="mailto:thinkrootyoungleaders@gmail.com" style="color:var(--gold-light);">thinkrootyoungleaders@gmail.com</a></p>
+  <a href="mailto:thinkrootyoungleaders@gmail.com" class="btn-primary-light">Contact ThinkRoot</a>
+  <div class="details-grid centered-offerings" style="margin-top:2rem; text-align:left;">
     <div class="detail-card">
       <span class="detail-icon">🌟</span>
       <div class="detail-value">Fall Resilience Lab</div>
-      <div class="detail-label">A 10-session live Zoom pathway for Grades 4–9, with parent consultations and two local, in-person Bay Area group experiences for students able to participate locally.<br><br>Planned Wednesdays, 3:30–4:30 PM PT | 6:30–7:30 PM ET<br><em>(Final day and time will be confirmed with enrolled families before the series begins.)</em></div>
+      <div class="detail-label">A 10-session live Zoom pathway for Grades 4–9. Each enrolled series includes one parent consultation and one local Bay Area group experience.<br><br>Currently planned for Wednesdays, 3:30–4:30 PM PT | 6:30–7:30 PM ET.<br><em>Please submit the enrollment form even if this time does not work; the final schedule will be confirmed after family availability has been reviewed.</em></div>
       <a href="fall-2026.html" class="btn-primary" style="margin-top:1.25rem;">Explore Fall Enrollment</a>
     </div>
     <div class="detail-card" id="vibe-check">

@@ -39,6 +39,13 @@
   .nav-links a:hover { color:var(--sage); }
   .nav-cta { display:inline-flex; align-items:center; justify-content:center; background:var(--forest); border:1px solid var(--forest); color:var(--white); padding:13px 21px; border-radius:2px; font-size:0.75rem; font-weight:600; letter-spacing:0.09em; text-transform:uppercase; white-space:nowrap; flex-shrink:0; transition:0.2s ease; }
   .nav-cta:hover { background:var(--sage); border-color:var(--sage); transform:translateY(-1px); }
+  .mobile-menu-toggle { display:none; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:9px 13px; border:1px solid var(--forest); border-radius:2px; background:var(--cream); color:var(--forest); font-family:'DM Sans',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; }
+  .mobile-menu-symbol { font-size:1.05rem; line-height:1; }
+  .mobile-menu-panel { display:none; }
+  .mobile-menu-inner { padding:8px 24px 20px; }
+  .mobile-menu-inner a { min-height:48px; display:flex; align-items:center; border-bottom:1px solid rgba(74,124,74,0.15); color:var(--text-mid); font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:500; letter-spacing:0.06em; text-decoration:none; text-transform:uppercase; }
+  .mobile-menu-inner a:hover { color:var(--forest); }
+  .mobile-menu-inner .mobile-menu-primary { justify-content:center; min-height:46px; margin-top:14px; border:1px solid var(--forest); background:var(--forest); color:var(--white); font-weight:600; }
 
   .hero { padding:8rem 5rem 4rem; display:grid; grid-template-columns:1.1fr 0.9fr; gap:3rem; align-items:center; }
   .eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:0.75rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--sage); margin-bottom:1.4rem; }
@@ -125,7 +132,11 @@
     .hero, .proof-grid, .value-grid, .format-grid, .session-grid, .story-grid, .next-step-grid { grid-template-columns:1fr 1fr; }
   }
   @media (max-width: 1120px) { .nav-cta { display:none; } }
-  @media (max-width: 1000px) { .nav-links { display:none; } .nav-cta { display:inline-flex; } }
+  @media (max-width: 1000px) {
+    .nav-links, .nav-cta { display:none; }
+    .mobile-menu-toggle { display:inline-flex; }
+    .mobile-menu-panel:not([hidden]) { position:absolute; top:100%; left:0; right:0; display:block; max-height:calc(100vh - 65px); overflow-y:auto; background:rgba(250,248,242,0.99); border-bottom:1px solid rgba(74,124,74,0.22); box-shadow:0 14px 24px rgba(26,58,26,0.12); }
+  }
   @media (max-width: 768px) {
     .nav-links { display:none; }
     .hero, .proof-grid, .value-grid, .format-grid, .session-grid, .story-grid, .next-step-grid { grid-template-columns:1fr; }
@@ -161,6 +172,18 @@
     <a href="index.html#connect">Contact</a>
   </div>
   <a href="fall-2026.html" class="nav-cta">Begin Fall Enrollment</a>
+  <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu"><span>Menu</span><span class="mobile-menu-symbol" aria-hidden="true">☰</span></button>
+  <div class="mobile-menu-panel" id="mobile-menu" hidden>
+    <div class="mobile-menu-inner">
+      <a href="fall-2026.html">Fall Enrollment</a>
+      <a href="resilience-lab.html">Resilience Lab</a>
+      <a href="vibe-check.html">Free Meditation</a>
+      <a href="index.html#community">Leadership &amp; Service</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#connect">Contact</a>
+      <a href="fall-2026.html" class="mobile-menu-primary">Begin Fall Enrollment</a>
+    </div>
+  </div>
 </nav>
 
 <section class="hero">
@@ -386,5 +409,27 @@
   <div class="footer-logo">ThinkRoot <span>Young Leaders</span></div>
   <div class="footer-copy"><a href="mailto:thinkrootyoungleaders@gmail.com" style="color:var(--text-light); text-decoration:none;">thinkrootyoungleaders@gmail.com</a> · <a href="https://chat.whatsapp.com/CEMm4Hn4ZnF024vQz8Rp0q" style="color:var(--text-light); text-decoration:none;" target="_blank" rel="noopener">Vibe Check Community</a> · © 2026 ThinkRoot Young Leaders</div>
 </footer>
+<script>
+  (function () {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const symbol = toggle && toggle.querySelector('.mobile-menu-symbol');
+    if (!toggle || !menu) return;
+    const setOpen = (open) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      menu.hidden = !open;
+      if (symbol) symbol.textContent = open ? '×' : '☰';
+    };
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('click', (event) => { if (event.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); } });
+    document.addEventListener('click', (event) => { if (!menu.hidden && !menu.contains(event.target) && !toggle.contains(event.target)) setOpen(false); });
+    const desktop = window.matchMedia('(min-width: 1001px)');
+    const closeOnDesktop = (event) => { if (event.matches) setOpen(false); };
+    if (desktop.addEventListener) desktop.addEventListener('change', closeOnDesktop);
+    else desktop.addListener(closeOnDesktop);
+  })();
+</script>
 </body>
 </html>

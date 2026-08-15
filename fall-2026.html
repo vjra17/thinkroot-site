@@ -25,6 +25,13 @@
     .btn { display:inline-flex; align-items:center; justify-content:center; border-radius:2px; padding:13px 21px; text-decoration:none; font-size:.75rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase; transition:.2s ease; }
     .btn-primary { background:var(--forest); border:1px solid var(--forest); color:var(--white); }
     .btn-primary:hover { background:var(--sage); border-color:var(--sage); transform:translateY(-1px); }
+    .mobile-menu-toggle { display:none; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:9px 13px; border:1px solid var(--forest); border-radius:2px; background:var(--cream); color:var(--forest); font-family:'DM Sans',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; }
+    .mobile-menu-symbol { font-size:1.05rem; line-height:1; }
+    .mobile-menu-panel { display:none; }
+    .mobile-menu-inner { width:min(1120px,calc(100% - 48px)); margin:auto; padding:8px 0 20px; }
+    .mobile-menu-inner a { min-height:48px; display:flex; align-items:center; border-bottom:1px solid var(--border); color:var(--text); font-size:.78rem; font-weight:500; letter-spacing:.06em; text-decoration:none; text-transform:uppercase; }
+    .mobile-menu-inner a:hover { color:var(--forest); }
+    .mobile-menu-inner .mobile-menu-primary { justify-content:center; min-height:46px; margin-top:14px; border:1px solid var(--forest); background:var(--forest); color:var(--white); font-weight:600; }
     .btn-light { border:1px solid rgba(255,255,255,.65); color:var(--white); }
     .btn-light:hover { background:var(--white); color:var(--forest); }
     .hero { position:relative; overflow:hidden; background:linear-gradient(128deg,#f7f2e6 0%,#e4f0e5 58%,#d6e9df 100%); padding:100px 0 86px; border-bottom:1px solid var(--border); }
@@ -100,13 +107,16 @@
     footer { background:#102713; color:rgba(255,255,255,.7); padding:28px 0; font-size:.78rem; }
     footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; }
     @media (max-width:1120px) { .nav-inner > .btn { display:none; } }
-    @media (max-width:1000px) { .nav-links { display:none; } .nav-inner > .btn { display:inline-flex; } .hero-grid { grid-template-columns:1fr; } .offer-card { width:100%; max-width:620px; justify-self:center; } }
+    @media (max-width:1000px) { .nav-links, .nav-inner > .btn { display:none; } .mobile-menu-toggle { display:inline-flex; } .mobile-menu-panel:not([hidden]) { position:absolute; top:100%; left:0; right:0; display:block; max-height:calc(100vh - 65px); overflow-y:auto; background:rgba(250,248,242,.99); border-bottom:1px solid var(--border); box-shadow:0 14px 24px rgba(26,58,26,.12); } .hero-grid { grid-template-columns:1fr; } .offer-card { width:100%; max-width:620px; justify-self:center; } }
     @media (max-width:850px) { .hero-grid,.practice-grid { grid-template-columns:1fr; } .outcome-grid { grid-template-columns:1fr 1fr; } .hero { padding-top:75px; } }
     @media (max-width:580px) { .wrap { width:min(100% - 32px,1120px); } .nav-inner { min-height:65px; gap:8px; } .brand { font-size:1rem; } .nav-inner > .btn { padding:10px 11px; font-size:.61rem; white-space:nowrap; } .hero { padding:62px 0; } .section { padding:64px 0; } .parts,.included { grid-template-columns:1fr; } .outcome-grid { grid-template-columns:1fr; } .pathway { display:block; } .path-step + .path-step { border-left:1px solid rgba(255,255,255,.25); border-top:0; } .offer-line { display:block; } .offer-line strong { display:block; margin-bottom:2px; } }
   </style>
 </head>
 <body>
-  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="index.html">ThinkRoot <span>Young Leaders</span></a><div class="nav-links"><a href="fall-2026.html">Fall Enrollment</a><a href="resilience-lab.html">Resilience Lab</a><a href="vibe-check.html">Free Meditation</a><a href="index.html#community">Leadership &amp; Service</a><a href="index.html#about">About</a><a href="index.html#connect">Contact</a></div><a class="btn btn-primary" href="https://forms.gle/wjWwSHbDraFuzU6b6" target="_blank" rel="noopener">Begin Fall Enrollment</a></div></nav>
+  <nav class="nav">
+    <div class="wrap nav-inner"><a class="brand" href="index.html">ThinkRoot <span>Young Leaders</span></a><div class="nav-links"><a href="fall-2026.html">Fall Enrollment</a><a href="resilience-lab.html">Resilience Lab</a><a href="vibe-check.html">Free Meditation</a><a href="index.html#community">Leadership &amp; Service</a><a href="index.html#about">About</a><a href="index.html#connect">Contact</a></div><a class="btn btn-primary" href="https://forms.gle/wjWwSHbDraFuzU6b6" target="_blank" rel="noopener">Begin Fall Enrollment</a><button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu"><span>Menu</span><span class="mobile-menu-symbol" aria-hidden="true">☰</span></button></div>
+    <div class="mobile-menu-panel" id="mobile-menu" hidden><div class="mobile-menu-inner"><a href="fall-2026.html">Fall Enrollment</a><a href="resilience-lab.html">Resilience Lab</a><a href="vibe-check.html">Free Meditation</a><a href="index.html#community">Leadership &amp; Service</a><a href="index.html#about">About</a><a href="index.html#connect">Contact</a><a class="mobile-menu-primary" href="https://forms.gle/wjWwSHbDraFuzU6b6" target="_blank" rel="noopener">Begin Fall Enrollment</a></div></div>
+  </nav>
 
   <main>
 <section class="hero">
@@ -250,5 +260,27 @@
     </section>
   </main>
   <footer><div class="wrap"><span>ThinkRoot Young Leaders · Grow from the Inside Out.</span><span><a href="mailto:thinkrootyoungleaders@gmail.com">thinkrootyoungleaders@gmail.com</a> · <a href="https://vjra.net" target="_blank" rel="noopener">vjra.net</a></span></div></footer>
+  <script>
+    (function () {
+      const toggle = document.querySelector('.mobile-menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const symbol = toggle && toggle.querySelector('.mobile-menu-symbol');
+      if (!toggle || !menu) return;
+      const setOpen = (open) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+        menu.hidden = !open;
+        if (symbol) symbol.textContent = open ? '×' : '☰';
+      };
+      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+      menu.addEventListener('click', (event) => { if (event.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); } });
+      document.addEventListener('click', (event) => { if (!menu.hidden && !menu.contains(event.target) && !toggle.contains(event.target)) setOpen(false); });
+      const desktop = window.matchMedia('(min-width: 1001px)');
+      const closeOnDesktop = (event) => { if (event.matches) setOpen(false); };
+      if (desktop.addEventListener) desktop.addEventListener('change', closeOnDesktop);
+      else desktop.addListener(closeOnDesktop);
+    })();
+  </script>
 </body>
 </html>

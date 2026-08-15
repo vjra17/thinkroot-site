@@ -45,8 +45,19 @@
   .nav-links { display: flex; gap: 11px; align-items: center; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
   .nav-links a { font-family: 'DM Sans', sans-serif; font-size: inherit; font-weight: inherit; color: var(--text-mid); text-decoration: none; letter-spacing: inherit; text-transform: inherit; white-space: nowrap; }
   .nav-links a:hover { color: var(--sage); }
+  .mobile-menu-toggle { display: none; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 9px 13px; border: 1px solid var(--forest); border-radius: 2px; background: var(--cream); color: var(--forest); font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; }
+  .mobile-menu-symbol { font-size: 1.05rem; line-height: 1; }
+  .mobile-menu-panel { display: none; }
+  .mobile-menu-inner { padding: 8px 24px 20px; }
+  .mobile-menu-inner a { min-height: 48px; display: flex; align-items: center; border-bottom: 1px solid rgba(74,124,74,0.15); color: var(--text-mid); font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; text-transform: uppercase; }
+  .mobile-menu-inner a:hover { color: var(--forest); }
+  .mobile-menu-inner .mobile-menu-primary { justify-content: center; min-height: 46px; margin-top: 14px; border: 1px solid var(--forest); background: var(--forest); color: var(--white); font-weight: 600; }
   @media (max-width: 1120px) { .nav-cta { display: none; } }
-  @media (max-width: 1000px) { .nav-links { display: none; } .nav-cta { display: inline-flex; } }
+  @media (max-width: 1000px) {
+    .nav-links, .nav-cta { display: none; }
+    .mobile-menu-toggle { display: inline-flex; }
+    .mobile-menu-panel:not([hidden]) { position: absolute; top: 100%; left: 0; right: 0; display: block; max-height: calc(100vh - 65px); overflow-y: auto; background: rgba(250,248,242,0.99); border-bottom: 1px solid rgba(74,124,74,0.22); box-shadow: 0 14px 24px rgba(26,58,26,0.12); }
+  }
 
   /* ── HERO ── */
   .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 80px; }
@@ -546,6 +557,18 @@
     <a href="#connect">Contact</a>
   </div>
   <a href="fall-2026.html" class="nav-cta">Begin Fall Enrollment</a>
+  <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu"><span>Menu</span><span class="mobile-menu-symbol" aria-hidden="true">☰</span></button>
+  <div class="mobile-menu-panel" id="mobile-menu" hidden>
+    <div class="mobile-menu-inner">
+      <a href="fall-2026.html">Fall Enrollment</a>
+      <a href="resilience-lab.html">Resilience Lab</a>
+      <a href="vibe-check.html">Free Meditation</a>
+      <a href="#community">Leadership &amp; Service</a>
+      <a href="#about">About</a>
+      <a href="#connect">Contact</a>
+      <a href="fall-2026.html" class="mobile-menu-primary">Begin Fall Enrollment</a>
+    </div>
+  </div>
 </nav>
 
 <!-- ── HERO ── -->
@@ -967,6 +990,30 @@
 </footer>
 
 <script>
+  // Accessible navigation for phones and tablets.
+  (function () {
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const symbol = toggle && toggle.querySelector('.mobile-menu-symbol');
+    if (!toggle || !menu) return;
+
+    const setOpen = (open) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      menu.hidden = !open;
+      if (symbol) symbol.textContent = open ? '×' : '☰';
+    };
+
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('click', (event) => { if (event.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { setOpen(false); toggle.focus(); } });
+    document.addEventListener('click', (event) => { if (!menu.hidden && !menu.contains(event.target) && !toggle.contains(event.target)) setOpen(false); });
+    const desktop = window.matchMedia('(min-width: 1001px)');
+    const closeOnDesktop = (event) => { if (event.matches) setOpen(false); };
+    if (desktop.addEventListener) desktop.addEventListener('change', closeOnDesktop);
+    else desktop.addListener(closeOnDesktop);
+  })();
+
   // Nav scroll shadow
   window.addEventListener('scroll', function() {
     document.getElementById('main-nav').style.borderBottomColor =

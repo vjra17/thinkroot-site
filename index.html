@@ -88,8 +88,8 @@
   .btn-secondary:hover { background: var(--mist); }
   .hero-right { background: var(--forest); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; min-height: 600px; }
   .hero-visual { position: relative; z-index: 2; text-align: center; padding: 3rem; }
-  .tree-svg { width: 220px; opacity: 0.92; margin-bottom: 2rem; }
-  .hero-quote { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: var(--mint); line-height: 1.5; max-width: 300px; }
+  .tree-svg { width: 400px; opacity: 0.92; margin-bottom: 2rem; }
+  .hero-quote { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: var(--mint); line-height: 1.5; max-width: 500px; }
   .hero-quote-attr { font-size: 0.75rem; color: var(--fern); margin-top: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
   .circle-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(106,170,106,0.2); }
   .c1 { width: 400px; height: 400px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
@@ -405,9 +405,10 @@
   .inter-press-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fern); margin-bottom: 0.6rem; }
   .inter-press a { color: var(--gold-light); font-size: 0.85rem; text-decoration: none; display: block; margin-bottom: 0.35rem; transition: color 0.2s; }
   .inter-press a:hover { color: var(--gold); text-decoration: underline; }
+  @media (min-width: 901px) { .hero-visual { transform: translateY(-7rem); } }
   @media (max-width: 900px) { .community-pillars { grid-template-columns: 1fr; } .inter-block { grid-template-columns: 1fr; gap: 1.5rem; } .inter-stat { text-align: left; } .inter-evidence { grid-template-columns: 1fr; } }
   @media (max-width: 900px) { .gap-proof-band { grid-template-columns: 1fr; } .gap-proof-source { text-align: left; } }
-  @media (max-width: 768px) { .hero-quote { max-width: 360px; } }
+  @media (max-width: 768px) { .tree-svg { width: 260px; } .hero-quote { max-width: 360px; } }
 
   /* ── COMING SOON ── */
   .coming-section { background: var(--forest); }
@@ -597,21 +598,7 @@
     <div class="circle-deco c2"></div>
     <div class="circle-deco c3"></div>
     <div class="hero-visual">
-      <svg class="tree-svg" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="100" cy="80" rx="60" ry="70" fill="#2d5a2d" opacity="0.7"/>
-        <ellipse cx="100" cy="60" rx="45" ry="55" fill="#3d7a3d" opacity="0.8"/>
-        <ellipse cx="100" cy="42" rx="32" ry="40" fill="#4a7c4a" opacity="0.9"/>
-        <rect x="92" y="145" width="16" height="55" rx="2" fill="#3d2b1a" opacity="0.8"/>
-        <ellipse cx="70" cy="100" rx="25" ry="28" fill="#2d5a2d" opacity="0.5"/>
-        <ellipse cx="130" cy="95" rx="28" ry="30" fill="#2d5a2d" opacity="0.5"/>
-        <line x1="100" y1="200" x2="60" y2="220" stroke="#3d2b1a" stroke-width="2.5" opacity="0.5"/>
-        <line x1="100" y1="200" x2="140" y2="220" stroke="#3d2b1a" stroke-width="2.5" opacity="0.5"/>
-        <line x1="100" y1="200" x2="100" y2="228" stroke="#3d2b1a" stroke-width="3" opacity="0.6"/>
-        <circle cx="88" cy="52" r="3" fill="#c8963c" opacity="0.9"/>
-        <circle cx="108" cy="38" r="2.5" fill="#c8963c" opacity="0.8"/>
-        <circle cx="100" cy="60" r="2" fill="#e8c078" opacity="0.7"/>
-        <circle cx="116" cy="55" r="2.5" fill="#c8963c" opacity="0.85"/>
-      </svg>
+      <img class="tree-svg" src="assets/website-homepage-bigger-boy-meditating-among-golden-roots.png" alt="" />
       <div class="hero-quote">“We cannot prepare young people for every outcome. We can prepare them to meet whatever comes with inner steadiness, clear judgment, and the courage to choose wisely.”</div>
       <div class="hero-quote-attr">— Tina Puri, Founder</div>
     </div>

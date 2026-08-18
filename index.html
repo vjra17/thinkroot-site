@@ -88,13 +88,27 @@
   .btn-secondary:hover { background: var(--mist); }
   .hero-right { background: var(--forest); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; min-height: 600px; }
   .hero-visual { position: relative; z-index: 2; text-align: center; padding: 3rem; }
-  .tree-svg { width: 400px; opacity: 0.92; margin-bottom: 2rem; }
+  .tree-svg { display: block; width: 360px; max-width: 100%; height: auto; opacity: 0.92; margin: 0 auto 2rem; }
   .hero-quote { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: var(--mint); line-height: 1.5; max-width: 500px; }
   .hero-quote-attr { font-size: 0.75rem; color: var(--fern); margin-top: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
   .circle-deco { position: absolute; border-radius: 50%; border: 1px solid rgba(106,170,106,0.2); }
   .c1 { width: 400px; height: 400px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
   .c2 { width: 580px; height: 580px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
   .c3 { width: 760px; height: 760px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+  /* ── FOUNDER VIDEO ── */
+  .founder-video-section { padding: 5rem; background: var(--white); border-bottom: 1px solid rgba(74,124,74,0.1); }
+  .founder-video-grid { width: min(1120px, 100%); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); gap: 4rem; align-items: center; }
+  .founder-video-copy .section-h2 { margin-bottom: 1rem; }
+  .founder-video-copy .section-body { max-width: 480px; }
+  .founder-video-actions { margin-top: 1.75rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.25rem; }
+  .founder-video-meta { color: var(--text-light); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+  .founder-video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid rgba(74,124,74,0.18); border-radius: 4px; background: var(--forest); box-shadow: 0 20px 45px rgba(26,58,26,0.16); }
+  .founder-video-facade { position: relative; width: 100%; height: 100%; display: block; padding: 0; border: 0; background: var(--cream); cursor: pointer; font: inherit; }
+  .founder-video-facade img { width: 100%; height: 100%; display: block; object-fit: cover; transition: filter 0.2s ease; }
+  .founder-video-facade:hover img,
+  .founder-video-facade:focus-visible img { filter: brightness(1.04); }
+  .founder-video-frame iframe { width: 100%; height: 100%; display: block; border: 0; }
 
   /* ── PROBLEM STRIP ── */
   .problem-strip { background: var(--gold); padding: 1.1rem 2rem; text-align: center; font-family: 'Playfair Display', serif; font-size: 1.05rem; font-style: italic; color: var(--bark); letter-spacing: 0.01em; }
@@ -408,7 +422,8 @@
   @media (min-width: 901px) { .hero-visual { transform: translateY(-7rem); } }
   @media (max-width: 900px) { .community-pillars { grid-template-columns: 1fr; } .inter-block { grid-template-columns: 1fr; gap: 1.5rem; } .inter-stat { text-align: left; } .inter-evidence { grid-template-columns: 1fr; } }
   @media (max-width: 900px) { .gap-proof-band { grid-template-columns: 1fr; } .gap-proof-source { text-align: left; } }
-  @media (max-width: 768px) { .tree-svg { width: 260px; } .hero-quote { max-width: 360px; } }
+  @media (max-width: 900px) { .founder-video-grid { grid-template-columns: 1fr; gap: 2.5rem; } .founder-video-copy .section-body { max-width: 640px; } }
+  @media (max-width: 768px) { .tree-svg { width: 240px; } .hero-quote { max-width: 360px; } .founder-video-section { padding: 4rem 1.5rem; } }
 
   /* ── COMING SOON ── */
   .coming-section { background: var(--forest); }
@@ -598,9 +613,44 @@
     <div class="circle-deco c2"></div>
     <div class="circle-deco c3"></div>
     <div class="hero-visual">
-      <img class="tree-svg" src="assets/website-homepage-bigger-boy-meditating-among-golden-roots.png" alt="" />
+      <picture>
+        <source
+          type="image/webp"
+          srcset="assets/website-homepage-boy-roots-520.webp 520w, assets/website-homepage-boy-roots-800.webp 800w"
+          sizes="(max-width: 768px) 240px, 360px"
+        />
+        <img
+          class="tree-svg"
+          src="assets/website-homepage-bigger-boy-meditating-among-golden-roots.png"
+          width="800"
+          height="800"
+          fetchpriority="high"
+          decoding="async"
+          alt=""
+        />
+      </picture>
       <div class="hero-quote">“We cannot prepare young people for every outcome. We can prepare them to meet whatever comes with inner steadiness, clear judgment, and the courage to choose wisely.”</div>
       <div class="hero-quote-attr">— Tina Puri, Founder</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOUNDER VIDEO ── -->
+<section class="founder-video-section" aria-labelledby="founder-video-title">
+  <div class="founder-video-grid">
+    <div class="founder-video-copy">
+      <div class="section-label">A Message from Our Founder</div>
+      <h2 class="section-h2" id="founder-video-title">Why Resilience Lab Exists</h2>
+      <p class="section-body">In this short message, ThinkRoot founder Tina Puri explains why young people need practical tools for pressure, frustration, attention, and everyday choices—and how Resilience Lab helps them practice those skills now.</p>
+      <div class="founder-video-actions">
+        <a href="fall-2026.html" class="btn-secondary">View Schedule &amp; Enroll</a>
+        <span class="founder-video-meta">Founder message · 2:41</span>
+      </div>
+    </div>
+    <div class="founder-video-frame">
+      <button class="founder-video-facade" type="button" data-youtube-id="ipIazAhwDjg" aria-label="Play Why Resilience Lab Exists, a 2 minute 41 second message from founder Tina Puri">
+        <img src="assets/thinkroot-founder-video-thumbnail.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="" />
+      </button>
     </div>
   </div>
 </section>
@@ -1015,6 +1065,22 @@
     document.getElementById('main-nav').style.borderBottomColor =
       window.scrollY > 10 ? 'rgba(74,124,74,0.3)' : 'rgba(74,124,74,0.15)';
   });
+
+  // Load the privacy-enhanced YouTube player only after the visitor chooses to play it.
+  (function () {
+    const facade = document.querySelector('.founder-video-facade');
+    if (!facade) return;
+    facade.addEventListener('click', function () {
+      const videoId = facade.getAttribute('data-youtube-id');
+      const frame = document.createElement('iframe');
+      frame.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+      frame.title = 'Why Resilience Lab Exists — a message from ThinkRoot founder Tina Puri';
+      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      frame.allowFullscreen = true;
+      facade.replaceWith(frame);
+    });
+  })();
 
   // Real stories carousel: manual controls preserve reading time and support touch scrolling.
   (function () {
